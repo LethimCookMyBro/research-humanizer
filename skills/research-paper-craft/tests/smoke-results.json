@@ -1,0 +1,22 @@
+{
+  "fixtures": "Artificial prose for software tests, not research data",
+  "checks": [
+    {
+      "case": "clean",
+      "exit_code": 0,
+      "findings": 0,
+      "input_unchanged": true
+    },
+    {
+      "case": "flagged",
+      "exit_code": 1,
+      "findings": 4,
+      "input_unchanged": true
+    },
+    {
+      "case": "unsupported_docx",
+      "exit_code": 2,
+      "rejected": true
+    }
+  ]
+}

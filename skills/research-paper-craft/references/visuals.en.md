@@ -1,0 +1,67 @@
+# Scientific visuals and tables
+
+Read only for the current task phase. The core rules in SKILL.md remain active.
+
+## R18 Plan visuals by scientific function
+
+Create a visual specification before making each figure. Record the question it answers, visual type, data or source asset, inclusion rule, transformations, units, notation, planned caption, manuscript location, and editable source format.
+
+Use the smallest set of visuals that makes the method and evidence understandable. A full-paper request does not mean every paper needs a system overview, infographic, photograph, heatmap, and schematic. Remove a visual that repeats another without adding information.
+
+Separate an explanatory schematic, a plot calculated from data, an observed scientific image, and a generated illustrative image. Their evidentiary roles are different. Never present a conceptual rendering as a photograph of an experiment or use generated pixels as a substitute for a measured plot.
+
+Use reproducible data plotting for quantitative evidence and an editable diagram workflow for exact system relationships. Use image generation only for a requested, clearly labeled illustrative role when the target venue permits it. Generated scientific outputs that are themselves the subject of the research require the actual method, provenance, and evaluation, not fabricated substitutes.
+
+Prefer a restrained visual hierarchy, clear labels, readable spacing, and consistent terminology. Do not default to glowing gradients, decorative network nodes, arbitrary icons, pseudo-3D blocks, or a poster-like marketing layout. A graphical abstract must remain faithful to the verified paper.
+
+Before producing a planned visual, check that its required data and source assets are available and match the study. If an original environment photograph, setup image, actual screenshot, or other necessary input is missing, apply R01 and ask the researcher before searching for or generating a substitute. Do not silently change an evidence figure into an illustration.
+
+## R19 Make the system overview correspond to the method
+
+Show the actual system boundary, inputs, essential processing stages, outputs, and material external dependencies. Identify training, inference, offline, online, human, and automated steps when those distinctions matter.
+
+Give each arrow a clear meaning such as data flow, control, dependency, or feedback. Use a legend when different arrow styles carry different meanings. Do not draw a connection merely to fill space. Do not imply feedback, parallelism, or causal influence that the implementation does not contain.
+
+Keep module names consistent with the method and implementation map. Show optional or proposed components differently from implemented ones and explain the distinction. Do not visually present a proposed extension as evaluated functionality.
+
+Arrange the diagram with a coherent reading direction. Avoid crossing connectors, unexplained abbreviations, and long sentences inside boxes. Use a separate detail figure when an overview would otherwise become unreadable.
+
+Inspect the rendered diagram at its actual manuscript size. Check arrow direction, labels, symbols, clipping, panel order, and grayscale readability. Keep editable source and a publication-ready export. Do not claim that a diagram has been verified against code without inspecting the relevant implementation.
+
+## R20 Produce graphs from verified data
+
+Choose a graph for the comparison. Use lines for ordered trends, scatter plots for relationships, and appropriate distribution or interval plots for variation. Do not connect unordered categories as though they were a continuous progression. A bar chart is not a substitute for showing a distribution when distributional differences drive the claim.
+
+Generate quantitative graphics from the verified data or result export through a recorded script or equivalent reproducible workflow. Retain the plotted data and transformations. Do not redraw a more attractive trend by hand, invent points, smooth a curve without disclosure, or hide unsuccessful runs.
+
+Label axes with the measured quantity and units. State normalization, logarithmic scaling, aggregation, uncertainty, sample size where relevant, and missing or excluded values. Use comparable axis ranges for direct comparisons or clearly explain differences. Magnitude-encoding bars ordinarily need a meaningful baseline. Any truncation or axis break must be visible and justified.
+
+Use the same visual encoding for the same method across the paper. Make groups distinguishable through labels, line styles, markers, or patterns as well as color. Check grayscale readability. Do not use a misleading color scale, unnecessary 3D effects, or background decoration that interferes with the data.
+
+Show uncertainty only when it is actually calculated and defined. A shaded band must not imply a confidence interval if it represents a range or standard deviation. Explain nonlinear transformations and the scale on which intervals were computed when relevant.
+
+Use the venue's actual font, size, resolution, and format requirements. Prefer vector output for line art when the venue supports it. Retain suitable raster originals for image data. Do not invent a universal resolution requirement or shrink labels below readability to fit a page.
+
+If the data, units, conditions, or transformation needed for a plot are missing or unverified, ask the researcher for the correct source under R01. Do not estimate unseen measurements or borrow another study's data to finish the figure.
+
+## R21 Protect scientific image integrity
+
+For photographs, screenshots, microscopy, maps, sensor imagery, or other observed images, record the source, acquisition context, sample identifier where appropriate, permissions, and processing history. Keep the original unmodified asset.
+
+Use only justified transformations. Disclose cropping, contrast adjustments, denoising, registration, compositing, or annotation when they affect interpretation. Apply comparison processing consistently. Do not remove inconvenient features, duplicate evidence panels, move objects, or add an apparent experimental result.
+
+Explain scale bars, orientation, color mappings, and annotations. Do not invent a scale bar without calibration. Document the sample-selection rule for representative images and show failure examples when they matter to the claim.
+
+Check copyright, consent, privacy, and the target venue's current image and AI policy. Label illustrative renders and synthetic examples clearly. An illustration cannot establish that a device was built or an experiment occurred. Do not upload confidential source images to an external service without authorization.
+
+For a real-world environment or apparatus figure, establish that the asset belongs to this study and corresponds to the described setup. When the file or that connection is missing, ask the researcher under R01. A similar-looking scene is not a verified scene from this experiment.
+
+## R22 Make tables and captions independently interpretable
+
+Use a table when readers need exact values, multiple conditions, or structured comparisons. Keep column names short and put units in headers or notes. Separate incomparable protocols rather than ranking them as though they were equivalent.
+
+Distinguish zero, missing, not measured, not applicable, and not reported. Explain all abbreviations and uncertainty notation. Use consistent precision within a meaningful comparison without concealing a relevant difference.
+
+Emphasize a best value only after defining the direction, comparison set, tie policy, and relevant uncertainty. Do not imply that a numerically larger value is statistically better. Do not use checkmarks for an unverified capability.
+
+A caption should explain what is shown, the relevant data or conditions, the meaning of panels and encodings, and any essential uncertainty or processing convention. Include a source credit when needed. Do not repeat the entire results paragraph or introduce an unsupported interpretation. Apply the prose punctuation rules to captions and notes.

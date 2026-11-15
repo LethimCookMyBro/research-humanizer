@@ -1,0 +1,14 @@
+{
+  "checked_on": "2026-11-15",
+  "upstream_repository": "blader/humanizer",
+  "inspected_ref": "v4.0.0",
+  "source_git_blob_sha": "175bf05f45ae3bf566059a560467166d93a9599c",
+  "source_sha256": "804a119e924ac30295b298213e0b71b3e38b2667b8ef4fb7b69e9246369b9045",
+  "source_matches_upstream_blob": true,
+  "license_git_blob_sha": "625297fb778f32eb39d3a5b97e3e3b611b7304d6",
+  "license_sha256": "4ac4810254ab36d45419141aeb8e69bf50652cfafe5b2dab947d06d44e5cbf96",
+  "license_matches_upstream_blob": true,
+  "license_notice": "Copyright (c) 2025 Siqi Chen",
+  "verification_method": "GitHub repository fetch returned upstream blob SHA. Local bytes were hashed using the Git blob header and compared.",
+  "scope": "Source and license identification, not comprehensive legal review."
+}

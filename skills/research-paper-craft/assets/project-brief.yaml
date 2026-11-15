@@ -1,0 +1,39 @@
+# Fill from the conversation and files before asking the user.
+# Unknown fields remain null. This template contains no study findings.
+task_mode: null
+research_question: null
+article_type: null
+manuscript_language: null
+parallel_thai_english_manuscripts: false
+target_venue: null
+template_source: null
+page_limit: null
+page_limit_inclusions: null
+word_limit: null
+anonymity_status: null
+authoritative_sources:
+  manuscript: []
+  implementation: []
+  run_configuration: []
+  approved_results: []
+  raw_records: []
+  literature: []
+requested_deliverables: []
+scientific_contribution_candidates: []
+known_decisions: []
+source_conflicts: []
+blocking_questions: []
+# Record missing item, affected section, researcher question and reply, and status.
+missing_researcher_inputs: []
+researcher_approved_illustrative_alternatives: []
+tool_availability:
+  source_access: null
+  computation: null
+  plotting: null
+  editable_diagram_creation: null
+  image_generation_if_permitted: null
+  microsoft_word: null
+  pdf_page_inspection: null
+native_word_verification_required_if_docx: true
+external_upload_authorized: false
+publication_or_submission_authorized: false

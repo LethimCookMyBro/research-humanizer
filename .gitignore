@@ -1,0 +1,24 @@
+# Python caches and local environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Local secrets and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Local research work, not example fixtures
+/private-work/
+/local-manuscripts/
+/local-results/
+
+# Editor and operating-system artifacts
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

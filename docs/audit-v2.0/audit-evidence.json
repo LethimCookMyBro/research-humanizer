@@ -1,0 +1,248 @@
+{
+  "python": "3.13.5",
+  "zip_sha256": "cb08afe6d5b70fdf3069c792ccc9dc8a1d62cd59f3d12a287566a1fc332edd80",
+  "hash_checks": [
+    {
+      "file": "README.md",
+      "match": true
+    },
+    {
+      "file": "SKILL.md",
+      "match": true
+    },
+    {
+      "file": "assets/project-brief.yaml",
+      "match": true
+    },
+    {
+      "file": "assets/qa-report.md",
+      "match": true
+    },
+    {
+      "file": "provenance/change-notes.md",
+      "match": true
+    },
+    {
+      "file": "provenance/humanizer-original.md",
+      "match": true
+    },
+    {
+      "file": "provenance/origin-v1.1.md",
+      "match": true
+    },
+    {
+      "file": "provenance/rule-map.json",
+      "match": true
+    },
+    {
+      "file": "provenance/sources-v1.1.md",
+      "match": true
+    },
+    {
+      "file": "references/evaluation.en.md",
+      "match": true
+    },
+    {
+      "file": "references/evaluation.th.md",
+      "match": true
+    },
+    {
+      "file": "references/evidence.en.md",
+      "match": true
+    },
+    {
+      "file": "references/evidence.th.md",
+      "match": true
+    },
+    {
+      "file": "references/methods.en.md",
+      "match": true
+    },
+    {
+      "file": "references/methods.th.md",
+      "match": true
+    },
+    {
+      "file": "references/paper.en.md",
+      "match": true
+    },
+    {
+      "file": "references/paper.th.md",
+      "match": true
+    },
+    {
+      "file": "references/records.en.md",
+      "match": true
+    },
+    {
+      "file": "references/records.th.md",
+      "match": true
+    },
+    {
+      "file": "references/submission.en.md",
+      "match": true
+    },
+    {
+      "file": "references/submission.th.md",
+      "match": true
+    },
+    {
+      "file": "references/visuals.en.md",
+      "match": true
+    },
+    {
+      "file": "references/visuals.th.md",
+      "match": true
+    },
+    {
+      "file": "references/writing.en.md",
+      "match": true
+    },
+    {
+      "file": "references/writing.th.md",
+      "match": true
+    },
+    {
+      "file": "scripts/lint_manuscript.py",
+      "match": true
+    },
+    {
+      "file": "tests/acceptance-scenarios.md",
+      "match": true
+    },
+    {
+      "file": "tests/smoke-results.json",
+      "match": true
+    },
+    {
+      "file": "tests/test_lint_manuscript.py",
+      "match": true
+    },
+    {
+      "file": "tests/test_package.py",
+      "match": true
+    },
+    {
+      "file": "tests/unit-test-results.txt",
+      "match": true
+    },
+    {
+      "file": "tests/verification-report.md",
+      "match": true
+    }
+  ],
+  "original_humanizer_match": true,
+  "probe_results": [
+    {
+      "id": "control-clean",
+      "input": "The result is not verified.",
+      "expectation": "No style finding expected.",
+      "actual_findings": []
+    },
+    {
+      "id": "control-prohibited",
+      "input": "The estimate isn't verified; it is pending: verification.",
+      "expectation": "Contraction, semicolon, and colon must be found.",
+      "actual_findings": [
+        {
+          "line": 1,
+          "rule": "PUNCT_SEMICOLON",
+          "message": "Replace the prose semicolon with a complete sentence.",
+          "excerpt": "The estimate isn't verified; it is pending: verification."
+        },
+        {
+          "line": 1,
+          "rule": "PUNCT_COLON",
+          "message": "Review the prose colon. Keywords label and reference entries are exceptions.",
+          "excerpt": "The estimate isn't verified; it is pending: verification."
+        },
+        {
+          "line": 1,
+          "rule": "CONTRACTION",
+          "message": "Expand the contraction unless this is an exact protected source string.",
+          "excerpt": "The estimate isn't verified; it is pending: verification."
+        }
+      ]
+    },
+    {
+      "id": "heres-contraction",
+      "input": "Here's the result.",
+      "expectation": "Unambiguous English contraction prohibited by R07.",
+      "actual_findings": []
+    },
+    {
+      "id": "greek-prose",
+      "input": "The parameter α was held fixed.",
+      "expectation": "Greek letter in ordinary prose restricted by R07.",
+      "actual_findings": []
+    },
+    {
+      "id": "contribution-number",
+      "input": "## Contributions\n- The method improves accuracy by 12%.",
+      "expectation": "Numerical performance result in contributions prohibited by R10.",
+      "actual_findings": []
+    },
+    {
+      "id": "hidden-placeholder-inline-math",
+      "input": "The measured result is $[RESULT UNVERIFIED]$.",
+      "expectation": "Unresolved draft marker must not disappear inside protected math.",
+      "actual_findings": []
+    },
+    {
+      "id": "hidden-placeholder-inline-code",
+      "input": "The measured result is `[RESULT UNVERIFIED]`.",
+      "expectation": "Unresolved draft marker must not disappear inside protected formatting.",
+      "actual_findings": []
+    },
+    {
+      "id": "quoted-text-inline",
+      "input": "The source states \"It isn't ready: leave it unchanged.\"",
+      "expectation": "Exact quotation is protected by R07. Automated editing would be unsafe.",
+      "actual_findings": [
+        {
+          "line": 1,
+          "rule": "PUNCT_COLON",
+          "message": "Review the prose colon. Keywords label and reference entries are exceptions.",
+          "excerpt": "The source states \"It isn't ready: leave it unchanged.\""
+        },
+        {
+          "line": 1,
+          "rule": "CONTRACTION",
+          "message": "Expand the contraction unless this is an exact protected source string.",
+          "excerpt": "The source states \"It isn't ready: leave it unchanged.\""
+        }
+      ]
+    },
+    {
+      "id": "plain-text-references",
+      "input": "References\nA. Author. Title: subtitle; 2024.",
+      "expectation": "Bibliography punctuation in accepted plain text format needs correct scope.",
+      "actual_findings": [
+        {
+          "line": 2,
+          "rule": "PUNCT_SEMICOLON",
+          "message": "Replace the prose semicolon with a complete sentence.",
+          "excerpt": "A. Author. Title: subtitle; 2024."
+        },
+        {
+          "line": 2,
+          "rule": "PUNCT_COLON",
+          "message": "Review the prose colon. Keywords label and reference entries are exceptions.",
+          "excerpt": "A. Author. Title: subtitle; 2024."
+        }
+      ]
+    },
+    {
+      "id": "unclosed-frontmatter",
+      "input": "---\nThe model isn't ready; its source is unknown.",
+      "expectation": "Unclosed YAML-like delimiter must not silently hide all manuscript checks.",
+      "actual_findings": []
+    },
+    {
+      "id": "unclosed-math",
+      "input": "$$\nx = 1\nThe model isn't ready; its source is unknown.",
+      "expectation": "Unclosed display-math delimiter must not silently hide following prose.",
+      "actual_findings": []
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+test_blockquote_is_manual_review (test_lint_manuscript.LintTests.test_blockquote_is_manual_review) ... ok
+test_clean_prose (test_lint_manuscript.LintTests.test_clean_prose) ... ok
+test_code_and_frontmatter (test_lint_manuscript.LintTests.test_code_and_frontmatter) ... ok
+test_colon (test_lint_manuscript.LintTests.test_colon) ... ok
+test_contractions_and_possessives (test_lint_manuscript.LintTests.test_contractions_and_possessives) ... ok
+test_dashes (test_lint_manuscript.LintTests.test_dashes) ... ok
+test_html_comment_is_reported (test_lint_manuscript.LintTests.test_html_comment_is_reported) ... ok
+test_implementation_exists (test_lint_manuscript.LintTests.test_implementation_exists) ... ok
+test_inline_equations (test_lint_manuscript.LintTests.test_inline_equations) ... ok
+test_keyword_label_only (test_lint_manuscript.LintTests.test_keyword_label_only) ... ok
+test_line_numbers (test_lint_manuscript.LintTests.test_line_numbers) ... ok
+test_multiline_equations (test_lint_manuscript.LintTests.test_multiline_equations) ... ok
+test_numbered_references (test_lint_manuscript.LintTests.test_numbered_references) ... ok
+test_placeholders (test_lint_manuscript.LintTests.test_placeholders) ... ok
+test_references_then_appendix (test_lint_manuscript.LintTests.test_references_then_appendix) ... ok
+test_semicolon (test_lint_manuscript.LintTests.test_semicolon) ... ok
+test_thai_references (test_lint_manuscript.LintTests.test_thai_references) ... ok
+test_urls_and_link_labels (test_lint_manuscript.LintTests.test_urls_and_link_labels) ... ok
+test_all_local_links_resolve (test_package.PackageTests.test_all_local_links_resolve) ... ok
+test_bilingual_rule_alignment (test_package.PackageTests.test_bilingual_rule_alignment) ... ok
+test_eight_bilingual_routes (test_package.PackageTests.test_eight_bilingual_routes) ... ok
+test_existing_tools_and_source_preserved (test_package.PackageTests.test_existing_tools_and_source_preserved) ... ok
+test_main_size_budget (test_package.PackageTests.test_main_size_budget) ... ok
+test_metadata_and_folder_name (test_package.PackageTests.test_metadata_and_folder_name) ... ok
+test_missing_evidence_gate_in_core (test_package.PackageTests.test_missing_evidence_gate_in_core) ... ok
+test_no_bulk_guide_requirement (test_package.PackageTests.test_no_bulk_guide_requirement) ... ok
+test_no_cache_or_secret_files (test_package.PackageTests.test_no_cache_or_secret_files) ... ok
+test_no_double_translation_loading (test_package.PackageTests.test_no_double_translation_loading) ... ok
+test_original_rule_fingerprints (test_package.PackageTests.test_original_rule_fingerprints) ... ok
+test_rules_present_once_per_language (test_package.PackageTests.test_rules_present_once_per_language) ... ok
+test_style_and_integrity_remain_in_core (test_package.PackageTests.test_style_and_integrity_remain_in_core) ... ok
+
+----------------------------------------------------------------------
+Ran 31 tests in 0.014s
+
+OK

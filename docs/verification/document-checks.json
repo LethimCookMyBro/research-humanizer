@@ -1,0 +1,28 @@
+{
+  "checked_on": "2026-11-15",
+  "python": "3.13.5",
+  "local_link_targets_checked": 83,
+  "errors": [],
+  "installation_copy_checks": [
+    {
+      "host": "Claude Code",
+      "shell": "Bash",
+      "fresh_copy_matches": true,
+      "existing_destination_unchanged": true,
+      "live_host_tested": false
+    },
+    {
+      "host": "Codex",
+      "shell": "Bash",
+      "fresh_copy_matches": true,
+      "existing_destination_unchanged": true,
+      "live_host_tested": false
+    }
+  ],
+  "bilingual_shell_commands_identical": true,
+  "powershell_executed": false,
+  "live_claude_code_invocation": false,
+  "live_codex_invocation": false,
+  "public_github_published": false,
+  "http_badges_rendered_remotely": false
+}

@@ -1,0 +1,157 @@
+{
+  "source_archive": "research-paper-craft-v2.0.zip",
+  "source_files": [
+    {
+      "file": "README.md",
+      "unchanged": false
+    },
+    {
+      "file": "SHA256SUMS.txt",
+      "unchanged": false
+    },
+    {
+      "file": "SKILL.md",
+      "unchanged": true
+    },
+    {
+      "file": "assets/project-brief.yaml",
+      "unchanged": true
+    },
+    {
+      "file": "assets/qa-report.md",
+      "unchanged": true
+    },
+    {
+      "file": "provenance/change-notes.md",
+      "unchanged": true
+    },
+    {
+      "file": "provenance/humanizer-original.md",
+      "unchanged": true
+    },
+    {
+      "file": "provenance/origin-v1.1.md",
+      "unchanged": true
+    },
+    {
+      "file": "provenance/rule-map.json",
+      "unchanged": true
+    },
+    {
+      "file": "provenance/sources-v1.1.md",
+      "unchanged": true
+    },
+    {
+      "file": "references/evaluation.en.md",
+      "unchanged": true
+    },
+    {
+      "file": "references/evaluation.th.md",
+      "unchanged": true
+    },
+    {
+      "file": "references/evidence.en.md",
+      "unchanged": true
+    },
+    {
+      "file": "references/evidence.th.md",
+      "unchanged": true
+    },
+    {
+      "file": "references/methods.en.md",
+      "unchanged": true
+    },
+    {
+      "file": "references/methods.th.md",
+      "unchanged": true
+    },
+    {
+      "file": "references/paper.en.md",
+      "unchanged": true
+    },
+    {
+      "file": "references/paper.th.md",
+      "unchanged": true
+    },
+    {
+      "file": "references/records.en.md",
+      "unchanged": true
+    },
+    {
+      "file": "references/records.th.md",
+      "unchanged": true
+    },
+    {
+      "file": "references/submission.en.md",
+      "unchanged": true
+    },
+    {
+      "file": "references/submission.th.md",
+      "unchanged": true
+    },
+    {
+      "file": "references/visuals.en.md",
+      "unchanged": true
+    },
+    {
+      "file": "references/visuals.th.md",
+      "unchanged": true
+    },
+    {
+      "file": "references/writing.en.md",
+      "unchanged": true
+    },
+    {
+      "file": "references/writing.th.md",
+      "unchanged": true
+    },
+    {
+      "file": "scripts/lint_manuscript.py",
+      "unchanged": true
+    },
+    {
+      "file": "tests/acceptance-scenarios.md",
+      "unchanged": true
+    },
+    {
+      "file": "tests/smoke-results.json",
+      "unchanged": true
+    },
+    {
+      "file": "tests/test_lint_manuscript.py",
+      "unchanged": true
+    },
+    {
+      "file": "tests/test_package.py",
+      "unchanged": true
+    },
+    {
+      "file": "tests/unit-test-results.txt",
+      "unchanged": true
+    },
+    {
+      "file": "tests/verification-report.md",
+      "unchanged": true
+    }
+  ],
+  "added_skill_files": [
+    "KNOWN_ISSUES.md",
+    "LICENSE",
+    "THIRD_PARTY_NOTICES.md",
+    "licenses/humanizer-MIT.txt",
+    "provenance/SHA256SUMS.v2.0.original.txt",
+    "provenance/repository-edition.md",
+    "provenance/upstream-license.json"
+  ],
+  "modified_original_skill_files": [
+    "README.md",
+    "SHA256SUMS.txt"
+  ],
+  "core_and_checker_unchanged": true,
+  "checksum_entries": 39,
+  "checksum_verification": true,
+  "git_staged_whitespace_check": {
+    "returncode": 0,
+    "output": ""
+  }
+}

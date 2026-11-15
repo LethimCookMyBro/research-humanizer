@@ -1,0 +1,59 @@
+test_unambiguous_heres_contraction (__main__.AuditRegressions.test_unambiguous_heres_contraction) ... FAIL
+test_unclosed_display_math_is_not_silently_clean (__main__.AuditRegressions.test_unclosed_display_math_is_not_silently_clean) ... FAIL
+test_unclosed_frontmatter_is_not_silently_clean (__main__.AuditRegressions.test_unclosed_frontmatter_is_not_silently_clean) ... FAIL
+test_unresolved_marker_inside_inline_code (__main__.AuditRegressions.test_unresolved_marker_inside_inline_code) ... FAIL
+test_unresolved_marker_inside_inline_math (__main__.AuditRegressions.test_unresolved_marker_inside_inline_math) ... FAIL
+
+======================================================================
+FAIL: test_unambiguous_heres_contraction (__main__.AuditRegressions.test_unambiguous_heres_contraction)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/research-paper-craft-audit-2026-11-15/audit_regressions.py", line 26, in test_unambiguous_heres_contraction
+    self.assertIn('CONTRACTION', self.codes("Here's the result."))
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'CONTRACTION' not found in set()
+
+======================================================================
+FAIL: test_unclosed_display_math_is_not_silently_clean (__main__.AuditRegressions.test_unclosed_display_math_is_not_silently_clean)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/research-paper-craft-audit-2026-11-15/audit_regressions.py", line 39, in test_unclosed_display_math_is_not_silently_clean
+    self.assertTrue(module.lint_text("$$\nx = 1\nThe model isn't ready; its source is unknown."),
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                    'Malformed protected regions should trigger review, not return a clean report.')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [] is not true : Malformed protected regions should trigger review, not return a clean report.
+
+======================================================================
+FAIL: test_unclosed_frontmatter_is_not_silently_clean (__main__.AuditRegressions.test_unclosed_frontmatter_is_not_silently_clean)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/research-paper-craft-audit-2026-11-15/audit_regressions.py", line 35, in test_unclosed_frontmatter_is_not_silently_clean
+    self.assertTrue(module.lint_text("---\nThe model isn't ready; its source is unknown."),
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                    'Malformed protected regions should trigger review, not return a clean report.')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [] is not true : Malformed protected regions should trigger review, not return a clean report.
+
+======================================================================
+FAIL: test_unresolved_marker_inside_inline_code (__main__.AuditRegressions.test_unresolved_marker_inside_inline_code)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/research-paper-craft-audit-2026-11-15/audit_regressions.py", line 32, in test_unresolved_marker_inside_inline_code
+    self.assertIn('DRAFT_PLACEHOLDER', self.codes('Result `[RESULT UNVERIFIED]`.'))
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'DRAFT_PLACEHOLDER' not found in set()
+
+======================================================================
+FAIL: test_unresolved_marker_inside_inline_math (__main__.AuditRegressions.test_unresolved_marker_inside_inline_math)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/research-paper-craft-audit-2026-11-15/audit_regressions.py", line 29, in test_unresolved_marker_inside_inline_math
+    self.assertIn('DRAFT_PLACEHOLDER', self.codes('Result $[RESULT UNVERIFIED]$.'))
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'DRAFT_PLACEHOLDER' not found in set()
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.002s
+
+FAILED (failures=5)
