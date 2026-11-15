@@ -23,109 +23,128 @@ Research Humanizer รวมกฎเกลาสำนวนสำหรับ�
 **ขาดภาพสภาพแวดล้อมจริง ข้อมูลดิบ หรือค่าตั้งการทดลอง ต้องถามผู้วิจัยก่อน ห้ามแต่งขึ้นหรือหาสิ่งอื่นมาแทนเอง**
 
 > [!NOTE]
-> Repository นี้จัดแพ็กเกจจาก Research Paper Craft v2.0 ชื่อ skill ที่เรียกใช้ยังเป็น `research-paper-craft` ส่วนชื่อ repository คือ `research-humanizer` รอบนี้ปรับเอกสารและการเผยแพร่ ไม่ได้เขียนกฎหลักหรือตัวตรวจข้อความใหม่ ดูข้อบกพร่องที่ยังค้างและส่วนที่ยังไม่ได้ทดสอบในหัวข้อ [การทดสอบ](#validation)
+> Repository นี้บรรจุ Research Paper Craft v2.0 เป็น plugin ชื่อ `research-humanizer` สำหรับ Claude Code และ Codex ตัว plugin ใช้เวอร์ชัน `2.0.1` ส่วนชื่อ skill และเวอร์ชันแกนหลักยังเป็น `research-paper-craft` และ `2.0.0` กฎวิจัยกับตัวตรวจข้อความไม่ได้เปลี่ยน ดูข้อจำกัดในหัวข้อ [การทดสอบ](#validation)
 
 <a id="install"></a>
 ## ติดตั้ง
 
-วิธีนี้ใช้กับ **Claude Code และ Codex CLI ที่รันบนเครื่องของคุณ** ต้องติดตั้งและเข้าสู่ระบบเครื่องมือเหล่านั้นก่อน ตัวตรวจข้อความเสริมต้องใช้ Python 3.10 ขึ้นไป แต่การอ่านคำสั่งของ skill ไม่ต้องใช้ Python
+แนะนำให้ติดตั้ง **Research Humanizer เป็น plugin** ซึ่งบรรจุ skill `research-paper-craft` และคู่มือไทยกับอังกฤษไว้แล้ว วิธีหลักนี้ไม่ต้อง clone repository หรือคัดลอกโฟลเดอร์ skill เอง
 
-### ดาวน์โหลด repository
-
-เปลี่ยน `YOUR_USERNAME` เป็นชื่อบัญชี GitHub ของเจ้าของ repository จากนั้นรันคำสั่งติดตั้งในโฟลเดอร์หลักที่ดาวน์โหลดมา
-
-```bash
-git clone https://github.com/YOUR_USERNAME/research-humanizer.git
-cd research-humanizer
-```
-
-ดาวน์โหลดเป็น ZIP ก็ได้ แตกไฟล์แล้วเปิด terminal ในโฟลเดอร์ที่มี README นี้และโฟลเดอร์ `skills/`
+ใช้ **Claude Code CLI หรือ Codex CLI รุ่นที่รองรับ plugin** และมี Git ในเครื่อง ต้องติดตั้งและเข้าสู่ระบบเครื่องมือหลักก่อน Python 3.10 ขึ้นไปจำเป็นเฉพาะตัวตรวจข้อความเสริม ชุดนี้ไม่เพิ่ม MCP server, hook หรือการเชื่อมต่อบัญชีอื่น
 
 ### Claude Code
 
-ติดตั้งสำหรับบัญชีผู้ใช้บน macOS, Linux หรือ WSL
-
-```bash
-destination="$HOME/.claude/skills/research-paper-craft"
-if [ -e "$destination" ] || [ -L "$destination" ]; then
-  printf '%s\n' "Already installed. Back up the existing folder before updating."
-else
-  mkdir -p "$(dirname "$destination")" &&
-    cp -R skills/research-paper-craft "$destination"
-fi
-```
-
-จากนั้นพิมพ์คำสั่งนี้ใน **ช่องแชตของ Claude Code ไม่ใช่ terminal**
+พิมพ์คำสั่งต่อไปนี้ **ในช่องแชตของ Claude Code** ทีละคำสั่ง
 
 ```text
-/research-paper-craft ปรับบทความจากไฟล์ในโปรเจกต์นี้ รักษาหลักฐานเดิม และถามผมก่อนเมื่อข้อมูลของงานยังขาด
+/plugin marketplace add LethimCookMyBro/research-humanizer
+/plugin install research-humanizer@research-humanizer
 ```
 
-ตำแหน่งติดตั้งและการเรียกด้วยเครื่องหมายทับอ้างอิงจาก [คู่มือ skills ของ Claude Code](https://code.claude.com/docs/en/skills)
-
-### Codex
-
-ติดตั้งสำหรับบัญชีผู้ใช้บน macOS, Linux หรือ WSL
-
-```bash
-destination="$HOME/.agents/skills/research-paper-craft"
-if [ -e "$destination" ] || [ -L "$destination" ]; then
-  printf '%s\n' "Already installed. Back up the existing folder before updating."
-else
-  mkdir -p "$(dirname "$destination")" &&
-    cp -R skills/research-paper-craft "$destination"
-fi
-```
-
-จากนั้นพิมพ์คำสั่งนี้ใน **ช่องแชตของ Codex ไม่ใช่ terminal**
+เลือกขอบเขตติดตั้งเมื่อระบบถาม แล้วทำตามข้อความแจ้งการเปิดใช้งาน หากยังไม่ทำงานให้ใช้ `/reload-plugins` หรือเริ่ม session ใหม่ จากนั้นเรียก skill ด้วยชื่อที่มีชื่อ plugin นำหน้า
 
 ```text
-$research-paper-craft ปรับบทความจากไฟล์ในโปรเจกต์นี้ รักษาหลักฐานเดิม และถามผมก่อนเมื่อข้อมูลของงานยังขาด
+/research-humanizer:research-paper-craft ปรับบทความจากไฟล์ในโปรเจกต์นี้ รักษาหลักฐานเดิม และถามผมก่อนเมื่อข้อมูลของงานยังขาด
 ```
-
-วิธีนี้ใช้โฟลเดอร์ `~/.agents/skills/` ตาม [คู่มือ skills ของ Codex](https://developers.openai.com/codex/skills/) ไม่ได้ใช้โฟลเดอร์ `~/.codex/` เป็นที่ติดตั้ง
 
 <details>
-<summary><strong>Windows PowerShell</strong></summary>
+<summary><strong>ทางเลือกสำหรับ Claude Code ผ่าน terminal</strong></summary>
 
-รันจากโฟลเดอร์หลักของ repository หลังดาวน์โหลด เลือก `.claude` สำหรับ Claude Code หรือ `.agents` สำหรับ Codex หากเครื่องมือทำงานใน WSL ให้ใช้คำสั่ง Linux ภายใน WSL นั้นแทน
+รันใน terminal ไม่ใช่ช่องแชต ค่าเริ่มต้นติดตั้งสำหรับบัญชีผู้ใช้ หากต้องการให้ใช้ร่วมกันในโปรเจกต์วิจัย ให้เพิ่ม `--scope project` ท้ายคำสั่งติดตั้ง
 
-```powershell
-# Use .claude for Claude Code or .agents for Codex.
-$skillsRoot = ".claude"
-$destination = Join-Path $HOME "$skillsRoot/skills/research-paper-craft"
-if (Test-Path -LiteralPath $destination) {
-    throw "Already installed. Back up the existing folder before updating."
-}
-New-Item -ItemType Directory -Force -Path (Split-Path -Parent $destination) | Out-Null
-Copy-Item -LiteralPath "skills/research-paper-craft" -Destination $destination -Recurse -ErrorAction Stop
+```bash
+claude plugin marketplace add LethimCookMyBro/research-humanizer
+claude plugin install research-humanizer@research-humanizer
 ```
 
-คำสั่งนี้คัดลอกไฟล์เท่านั้น ไม่ได้ติดตั้ง Claude Code, Codex หรือ Python ตัวอย่าง PowerShell ยังไม่ได้รันในสภาพแวดล้อมที่ใช้จัดแพ็กเกจนี้
+</details>
+
+การเพิ่ม marketplace กับการติดตั้ง plugin เป็นคนละขั้น ในชุดนี้ทั้งสองชื่อคือ `research-humanizer` อ้างอิงจาก [คู่มือติดตั้งทางการ](https://code.claude.com/docs/en/discover-plugins) และ [คู่มือชื่อเรียก skill ใน plugin](https://code.claude.com/docs/en/plugins)
+
+### Codex CLI
+
+รันคำสั่งต่อไปนี้ **ใน terminal ไม่ใช่ช่องแชตของ Codex**
+
+```bash
+codex plugin marketplace add LethimCookMyBro/research-humanizer
+codex plugin add research-humanizer@research-humanizer
+```
+
+เริ่ม Codex session ใหม่ แล้วพิมพ์ `/plugins` เพื่อตรวจว่า **Research Humanizer** ติดตั้งและเปิดใช้งานแล้ว อีกวิธีคือเพิ่ม marketplace ด้วยคำสั่งแรก จากนั้นเปิด `/plugins` แล้วเลือกติดตั้ง Research Humanizer จาก marketplace นี้
+
+สั่งให้ Codex ใช้ skill `research-paper-craft` กับไฟล์งานของคุณ หรือพิมพ์ `$` เพื่อเลือก skill จากรายการ
+
+```text
+ใช้ skill research-paper-craft จาก Research Humanizer ปรับบทความในโปรเจกต์นี้ รักษาหลักฐานเดิม และถามผมก่อนเมื่อข้อมูลของงานยังขาด
+```
+
+Codex ใช้ `codex plugin add` เพื่อติดตั้ง และใช้ `/plugins` เพื่อเปิดหน้าจัดการ ไม่ใช่คำสั่งเดียวกับ Claude Code อ้างอิงจาก [คู่มือ Codex CLI](https://learn.chatgpt.com/docs/cli/reference) และ [คู่มือ plugin](https://developers.openai.com/codex/plugins)
+
+> [!TIP]
+> หากเคยติดตั้งด้วยวิธีคัดลอกไฟล์ ให้สำรองและย้ายโฟลเดอร์ `research-paper-craft` แบบเดี่ยวออกจาก `~/.claude/skills/`, `~/.agents/skills/` หรือโฟลเดอร์ skills ในโปรเจกต์ก่อนเปลี่ยนมาใช้ plugin ไม่ต้องย้ายไฟล์บทความ และไม่ควรเปิดใช้สำเนาแบบเดี่ยวกับแบบ plugin ซ้ำกัน
+
+<details>
+<summary><strong>ตรวจ อัปเดต หรือถอนการติดตั้ง plugin</strong></summary>
+
+ตรวจรายการที่ติดตั้งจาก terminal
+
+```bash
+claude plugin list
+codex plugin list
+```
+
+สำหรับ Claude Code ให้รีเฟรช marketplace แล้วอัปเดต plugin
+
+```bash
+claude plugin marketplace update research-humanizer
+claude plugin update research-humanizer@research-humanizer
+```
+
+สำหรับ Codex ให้รีเฟรชรายการใน marketplace
+
+```bash
+codex plugin marketplace upgrade research-humanizer
+```
+
+การรีเฟรชรายการยังไม่ยืนยันว่าสำเนาที่ติดตั้งอัปเดตแล้ว ตรวจเวอร์ชันใน `/plugins` หากยังเป็นฉบับเก่า ให้สำรองสิ่งที่เคยแก้เองและติดตั้งใหม่ผ่านหน้าจัดการนั้น จากนั้นเริ่ม session ใหม่
+
+ถอนการติดตั้งจาก terminal หาก Claude Code ติดตั้งแบบเฉพาะโปรเจกต์ ให้เพิ่ม `--scope project`
+
+```bash
+claude plugin uninstall research-humanizer@research-humanizer
+codex plugin remove research-humanizer@research-humanizer
+```
+
+คำสั่งเหล่านี้จัดการ plugin ไม่ใช่ไฟล์บทความ หากระบบไม่รู้จักคำสั่ง plugin ให้อัปเดตเครื่องมือหลักตามคู่มือทางการ นโยบายขององค์กรอาจจำกัด marketplace ภายนอกด้วย ไม่ควรข้ามข้อจำกัดนั้น
 
 </details>
 
 <details>
-<summary><strong>ติดตั้งเฉพาะโปรเจกต์วิจัยเดียว</strong></summary>
+<summary><strong>ทางเลือกสำหรับติดตั้ง skill แบบเดี่ยว</strong></summary>
 
-คัดลอกโฟลเดอร์ `skills/research-paper-craft` ทั้งโฟลเดอร์ไปไว้ **ภายในโปรเจกต์วิจัย** ตามตำแหน่งนี้ โดยคงชื่อโฟลเดอร์ปลายทางไว้
+ใช้เฉพาะกรณีต้องการ skill แบบเดี่ยวแทน plugin ไม่ต้องทำเพิ่มหากติดตั้ง plugin ตามวิธีหลักแล้ว
 
-| เครื่องมือ | ตำแหน่งไฟล์เมื่อเริ่มจากโฟลเดอร์หลักของโปรเจกต์วิจัย |
-| --- | --- |
-| Claude Code | `.claude/skills/research-paper-craft/SKILL.md` |
-| Codex | `.agents/skills/research-paper-craft/SKILL.md` |
+```bash
+git clone https://github.com/LethimCookMyBro/research-humanizer.git
+cd research-humanizer
+```
 
-เก็บคู่มือ แบบบันทึก สคริปต์ และข้อความสิทธิที่อยู่ข้างกันไว้ครบ อย่าคัดลอกเฉพาะ `SKILL.md` สำหรับแต่ละเครื่องมือควรเลือกติดตั้งระดับผู้ใช้หรือระดับโปรเจกต์อย่างใดอย่างหนึ่ง ไม่เก็บหลายเวอร์ชันให้เรียกชนกัน
+คัดลอกโฟลเดอร์ `skills/research-paper-craft` ทั้งโฟลเดอร์ไปยังปลายทางแห่งเดียว หากมีฉบับเดิม ให้สำรองและย้ายออกนอกโฟลเดอร์ skills ก่อน ห้ามเขียนทับหรือคัดลอกเฉพาะ `SKILL.md`
+
+| เครื่องมือ | ติดตั้งสำหรับผู้ใช้ | ติดตั้งเฉพาะโปรเจกต์ |
+| --- | --- | --- |
+| Claude Code | `~/.claude/skills/research-paper-craft/` | `.claude/skills/research-paper-craft/` |
+| Codex | `~/.agents/skills/research-paper-craft/` | `.agents/skills/research-paper-craft/` |
+
+ตำแหน่งแบบโปรเจกต์เริ่มจากโฟลเดอร์หลักของงานวิจัย บน Windows ให้ใช้โฟลเดอร์ผู้ใช้แทน `~` หากเครื่องมือรันใน WSL ให้ใช้ตำแหน่งภายใน WSL นั้น เก็บคู่มือ สคริปต์ แบบบันทึก และข้อความสิทธิไว้ครบ
+
+Claude Code แบบ skill เดี่ยวเรียกด้วย `/research-paper-craft` โดยไม่มีชื่อ plugin นำหน้า ส่วน Codex เลือก skill โดยพิมพ์ `$` เริ่ม session ใหม่หลังเปลี่ยนไฟล์ที่ติดตั้ง
+
+สำเนาแบบนี้ไม่อัปเดตผ่าน plugin manager ให้ตรวจการเปลี่ยนแปลงต้นทาง รัน `git pull --ff-only` สำรองสำเนาที่ติดตั้ง แล้วเปลี่ยนเป็นฉบับใหม่โดยตั้งใจ ถอนการติดตั้งโดยย้ายโฟลเดอร์ skill ออกนอกตำแหน่งที่ระบบค้นหา ไม่ต้องย้ายไฟล์บทความ
+
+อ้างอิงจาก [คู่มือ skills ของ Claude Code](https://code.claude.com/docs/en/skills) และ [คู่มือ skills ของ Codex](https://developers.openai.com/codex/skills/)
 
 </details>
-
-### ตรวจว่าพบ skill และอัปเดตอย่างปลอดภัย
-
-เปิดโปรเจกต์วิจัยในเครื่องมือ หากยังไม่เห็น skill ให้เริ่ม session ใหม่แล้วเรียกด้วยชื่อโดยตรง ตรวจว่า AI อ่านคู่มือที่อ้างถึงได้ด้วย ไม่ใช่อ่านได้เฉพาะไฟล์หลัก การคัดลอกไฟล์สำเร็จยังไม่เท่ากับทดสอบการทำงานจริงในเครื่องมือแล้ว
-
-อัปเดต repository ที่ดาวน์โหลดด้วย Git โดยตรวจการแก้ไขในเครื่องก่อน แล้วรัน `git pull --ff-only` จากโฟลเดอร์หลัก สำรองโฟลเดอร์ skill ที่ติดตั้งไว้ **นอกโฟลเดอร์ skills ของเครื่องมือ** ย้ายฉบับเก่าออก แล้วคัดลอกฉบับใหม่ตามขั้นตอนเดิม คำสั่งติดตั้งตั้งใจไม่เขียนทับของเดิม และสำเนาที่ติดตั้งจะไม่อัปเดตเองเมื่อ repository ต้นทางเปลี่ยน
-
-ถอนการติดตั้งโดยย้ายโฟลเดอร์ `research-paper-craft` ที่ติดตั้งไว้ออกจากโฟลเดอร์ skills แล้วเริ่ม session ใหม่ ไม่ต้องย้ายหรือลบไฟล์บทความ
 
 <a id="use"></a>
 ## เริ่มใช้
@@ -201,7 +220,8 @@ Copy-Item -LiteralPath "skills/research-paper-craft" -Destination $destination -
 | การทดสอบตัวตรวจข้อความและโครงสร้างที่มากับชุดเดิม | ผ่าน 31 ข้อในการรันที่บันทึกไว้ |
 | กรณีทดสอบเจาะจงจากการตรวจ v2.0 | ยังไม่ผ่าน 5 ข้อ และยังไม่ได้แก้ |
 | การทดลองกับโมเดลอิสระ | มีโจทย์ 40 สถานการณ์ แต่ยังไม่ได้รัน |
-| การใช้งานใน Claude Code และ Codex | ตรวจตำแหน่งติดตั้งกับเอกสารทางการแล้ว แต่ยังไม่ได้เรียกใช้งานจริงผ่านทั้งสองระบบในสภาพแวดล้อมนี้ |
+| ไฟล์ plugin และวิธีติดตั้ง | เพิ่มไฟล์สำหรับทั้งสองระบบและชุดทดสอบแบบไม่เรียก host จริง ดูผลล่าสุดในบันทึกการตรวจ |
+| การใช้งานใน Claude Code และ Codex | ตรวจคำสั่งกับเอกสารทางการแล้ว ยังไม่ได้ติดตั้งและเรียกผ่านโปรแกรมจริงในสภาพแวดล้อมนี้ |
 | Word และขั้นตอนส่งบทความทั้งชุด | ยังไม่ได้ทดสอบครบตั้งแต่ต้นจนจบกับบทความวิจัยจริง |
 
 ดู [ปัญหาที่ทราบ](docs/KNOWN_ISSUES.md), [รายงานตรวจเดิม](docs/audit-v2.0/README.md) และ [บันทึกการตรวจรอบนี้](docs/VERIFICATION.md) ชุดเอกสารนี้ไม่ได้อ้างว่าแก้ตัวตรวจข้อความ v2.0 แล้ว
@@ -213,6 +233,7 @@ Copy-Item -LiteralPath "skills/research-paper-craft" -Destination $destination -
 ```bash
 python3 skills/research-paper-craft/scripts/lint_manuscript.py /path/to/manuscript.md --json
 python3 -B -m unittest discover -s skills/research-paper-craft/tests -v
+python3 -B -m unittest discover -s tests -v
 ```
 
 ตัวตรวจอ่าน Markdown หรือข้อความธรรมดาแบบ UTF-8 และไม่แก้ไฟล์ให้เอง ไม่ได้ตรวจ DOCX, PDF, ความถูกต้องของสมการ อ้างอิง ความแท้ของภาพ anonymous หรือข้อกล่าวอ้างทางวิทยาศาสตร์ ผลที่ไม่พบปัญหาจึงไม่ใช่การอนุมัติบทความ
@@ -227,6 +248,15 @@ python3 -B docs/audit-v2.0/audit_regressions.py skills/research-paper-craft
 
 ```text
 research-humanizer/
+├── .claude-plugin/
+│   ├── plugin.json
+│   └── marketplace.json
+├── .codex-plugin/
+│   └── plugin.json
+├── .agents/plugins/
+│   └── marketplace.json
+├── tests/
+│   └── test_plugin_packaging.py
 ├── README.md
 ├── README(TH).md
 ├── LICENSE

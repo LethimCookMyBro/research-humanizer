@@ -1,0 +1,19 @@
+{
+  "name": "research-humanizer",
+  "version": "2.0.1",
+  "description": "Evidence-first research writing with English and Thai guidance. Preserve claims, check sources, and ask for missing study inputs.",
+  "author": {
+    "name": "LethimCookMyBro"
+  },
+  "homepage": "https://github.com/LethimCookMyBro/research-humanizer",
+  "repository": "https://github.com/LethimCookMyBro/research-humanizer",
+  "license": "MIT",
+  "keywords": [
+    "research",
+    "academic-writing",
+    "humanizer",
+    "english",
+    "thai"
+  ],
+  "skills": "./skills/"
+}

@@ -1,5 +1,14 @@
 # Changelog
 
+## Plugin packaging 2.0.1, 2026-11-15
+
+- Added native Claude Code and Codex plugin manifests and repository marketplace catalogs.
+- Made plugin-manager installation the recommended route in both READMEs.
+- Replaced installation URL placeholders with `LethimCookMyBro/research-humanizer`.
+- Documented Claude Code namespacing, Codex CLI commands, migration, and management.
+- Added offline packaging regression tests. Live host installation remains unverified.
+- Kept the core skill at `2.0.0` and preserved all bundled skill files. The five known checker failures remain open.
+
 ## Documentation and licensing edition, 2026-11-15
 
 - Added the Research Humanizer repository identity and English and Thai GitHub READMEs.

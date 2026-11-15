@@ -1,4 +1,37 @@
-# Documentation edition verification
+# Verification record
+
+## Plugin packaging 2.0.1, 2026-11-15
+
+This update adds native plugin manifests and marketplace catalogs. It does not modify the bundled skill or fix its known text-checker defects.
+
+| Check | Result |
+| --- | --- |
+| Baseline source | Local source tree exactly matches the live repository tree at commit `1f8b1465f8ae63433b462286cf39c6716bd5a013` |
+| New packaging tests before changes | Failed on missing manifests and installation documentation |
+| New packaging tests after changes | 11 passed |
+| Existing skill suite, rerun | 31 passed |
+| Known targeted regressions, rerun | 5 failed, unchanged |
+| Existing skill payload | All 40 files remain byte-identical |
+| README command parity and local links | Checked by the new tests |
+| Live Claude Code and Codex installation | Not run. Neither executable is available in this environment |
+
+Reproduce from the repository root.
+
+```bash
+python3 -B -m unittest discover -s tests -v
+python3 -B -m unittest discover -s skills/research-paper-craft/tests -v
+python3 -B docs/audit-v2.0/audit_regressions.py skills/research-paper-craft
+```
+
+The third command is expected to fail on the unchanged v2.0 checker. It is not a packaging test. See the [machine-readable record](verification/plugin-packaging.json).
+
+Installation commands and schemas were checked against [Claude Code plugin installation](https://code.claude.com/docs/en/discover-plugins), [Claude Code marketplace documentation](https://code.claude.com/docs/en/plugin-marketplaces), [OpenAI plugin packaging](https://developers.openai.com/plugins/build/plugins), and the [Codex CLI reference](https://learn.chatgpt.com/docs/cli/reference). This is documentation and offline validation, not proof of live host compatibility.
+
+For a host-level test, record the installed host version, add the repository marketplace, install the plugin, start a fresh session, and confirm that the skill reads a referenced module. Keep preview status until those trials and the other outstanding checks are recorded.
+
+## Historical documentation edition
+
+The record below describes the original packaging run before this repository was published. Its copy-install checks and placeholder notes are historical, not the current recommended installation method.
 
 Checked on 2026-11-15 using Python 3.13.5.
 

@@ -1,0 +1,13 @@
+{
+  "name": "research-humanizer",
+  "owner": {
+    "name": "LethimCookMyBro"
+  },
+  "plugins": [
+    {
+      "name": "research-humanizer",
+      "source": "./",
+      "description": "Evidence-first research writing with English and Thai guidance. Preserve claims, check sources, and ask for missing study inputs."
+    }
+  ]
+}

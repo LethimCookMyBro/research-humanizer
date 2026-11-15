@@ -23,109 +23,128 @@ Research Humanizer combines research-specific editing rules with evidence checks
 **Missing a real environment photo, raw record, or experimental setting? Ask the researcher first. Do not invent it or quietly replace it.**
 
 > [!NOTE]
-> This repository packages the existing Research Paper Craft v2.0 skill. The installed skill is still named `research-paper-craft`. The repository name is `research-humanizer`. Core instructions and checker code have not been rewritten for this documentation edition. Known checker defects and untested workflows are listed under [Validation](#validation).
+> This repository packages Research Paper Craft v2.0 as the `research-humanizer` plugin for Claude Code and Codex. The plugin wrapper is version `2.0.1`. The bundled skill remains `research-paper-craft` at core version `2.0.0`. Research instructions and checker code are unchanged. See [Validation](#validation) for known limitations.
 
 <a id="install"></a>
 ## Install
 
-These instructions target **local Claude Code and Codex CLI**. Install and sign in to the host separately. The optional text checker requires Python 3.10 or later. The skill instructions themselves do not require Python.
+Install **Research Humanizer as a plugin**. The plugin bundles the existing `research-paper-craft` skill and its English and Thai guides. You do not need to clone the repository or copy skill folders for the recommended installation.
 
-### Get the repository
-
-Replace `YOUR_USERNAME` with the repository owner's GitHub username. Run the remaining installation commands from the cloned repository root.
-
-```bash
-git clone https://github.com/YOUR_USERNAME/research-humanizer.git
-cd research-humanizer
-```
-
-A downloaded ZIP works too. Extract it and open a terminal in the folder that contains this README and `skills/`.
+Use a current **Claude Code CLI or Codex CLI** with plugin support and Git available. Install and sign in to the host separately. Python 3.10 or later is needed only for the optional text checker. This package adds no MCP servers, hooks, or extra account connection.
 
 ### Claude Code
 
-Install for your user account on macOS, Linux, or WSL.
-
-```bash
-destination="$HOME/.claude/skills/research-paper-craft"
-if [ -e "$destination" ] || [ -L "$destination" ]; then
-  printf '%s\n' "Already installed. Back up the existing folder before updating."
-else
-  mkdir -p "$(dirname "$destination")" &&
-    cp -R skills/research-paper-craft "$destination"
-fi
-```
-
-In Claude Code, type the following **in the chat input**, not in your shell.
+Run these commands **inside the Claude Code chat**, one at a time.
 
 ```text
-/research-paper-craft Revise the manuscript in this workspace. Preserve the evidence and ask me about missing study inputs.
+/plugin marketplace add LethimCookMyBro/research-humanizer
+/plugin install research-humanizer@research-humanizer
 ```
 
-The personal skill directory and slash invocation follow the [Claude Code skills documentation](https://code.claude.com/docs/en/skills).
-
-### Codex
-
-Install for your user account on macOS, Linux, or WSL.
-
-```bash
-destination="$HOME/.agents/skills/research-paper-craft"
-if [ -e "$destination" ] || [ -L "$destination" ]; then
-  printf '%s\n' "Already installed. Back up the existing folder before updating."
-else
-  mkdir -p "$(dirname "$destination")" &&
-    cp -R skills/research-paper-craft "$destination"
-fi
-```
-
-In Codex, type the following **in the chat input**, not in your shell.
+Choose the installation scope when prompted. Follow the activation message. If needed, run `/reload-plugins` or start a new session. Then invoke the bundled skill with its plugin namespace.
 
 ```text
-$research-paper-craft Revise the manuscript in this workspace. Preserve the evidence and ask me about missing study inputs.
+/research-humanizer:research-paper-craft Revise the manuscript in this workspace. Preserve the evidence and ask me about missing study inputs.
 ```
-
-The user skill directory is `~/.agents/skills/`. This follows the [Codex skills documentation](https://developers.openai.com/codex/skills/). The separate `~/.codex/` directory is not the destination used by this guide.
 
 <details>
-<summary><strong>Windows PowerShell</strong></summary>
+<summary><strong>Claude Code terminal alternative</strong></summary>
 
-After cloning the repository, run this from its root. Choose `.claude` for Claude Code or `.agents` for Codex. For a host running inside WSL, use the Linux instructions inside that WSL environment instead.
+Run these in your terminal, not in the chat. The default scope is your user account. Add `--scope project` to the install command for a shared research project.
 
-```powershell
-# Use .claude for Claude Code or .agents for Codex.
-$skillsRoot = ".claude"
-$destination = Join-Path $HOME "$skillsRoot/skills/research-paper-craft"
-if (Test-Path -LiteralPath $destination) {
-    throw "Already installed. Back up the existing folder before updating."
-}
-New-Item -ItemType Directory -Force -Path (Split-Path -Parent $destination) | Out-Null
-Copy-Item -LiteralPath "skills/research-paper-craft" -Destination $destination -Recurse -ErrorAction Stop
+```bash
+claude plugin marketplace add LethimCookMyBro/research-humanizer
+claude plugin install research-humanizer@research-humanizer
 ```
 
-This copies files only. It does not install Claude Code, Codex, or Python. The PowerShell example has not been executed in this packaging environment.
+</details>
+
+The marketplace registration and plugin installation are separate steps. The plugin name and marketplace name are both `research-humanizer`. See the official [installation guide](https://code.claude.com/docs/en/discover-plugins) and [plugin namespace guide](https://code.claude.com/docs/en/plugins).
+
+### Codex CLI
+
+Run these commands **in your terminal**, not in the Codex chat.
+
+```bash
+codex plugin marketplace add LethimCookMyBro/research-humanizer
+codex plugin add research-humanizer@research-humanizer
+```
+
+Start a new Codex session. Enter `/plugins` to confirm that **Research Humanizer** is installed and enabled. The interactive alternative is to register the marketplace with the first command above, then open `/plugins` and install Research Humanizer from that marketplace.
+
+Ask Codex to use the `research-paper-craft` skill on your project files. You can also select it from the skill picker by typing `$`.
+
+```text
+Use the research-paper-craft skill from Research Humanizer to revise the manuscript in this workspace. Preserve the evidence and ask me about missing study inputs.
+```
+
+Codex uses `codex plugin add` for installation and `/plugins` for its browser. These are different from Claude Code's commands. See the official [Codex CLI reference](https://learn.chatgpt.com/docs/cli/reference) and [plugin guide](https://developers.openai.com/codex/plugins).
+
+> [!TIP]
+> Migrating from the earlier manual installation? Back up and move your standalone `research-paper-craft` folder outside `~/.claude/skills/`, `~/.agents/skills/`, or the corresponding project skills directory before switching to the plugin. Keep your manuscript files untouched. Do not leave competing standalone and plugin copies enabled.
+
+<details>
+<summary><strong>Verify, update, or uninstall the plugin</strong></summary>
+
+Check installed plugins from your terminal.
+
+```bash
+claude plugin list
+codex plugin list
+```
+
+For Claude Code, refresh the marketplace and update the plugin.
+
+```bash
+claude plugin marketplace update research-humanizer
+claude plugin update research-humanizer@research-humanizer
+```
+
+For Codex, refresh the marketplace catalog.
+
+```bash
+codex plugin marketplace upgrade research-humanizer
+```
+
+A refreshed catalog is not proof that the installed cache changed. Check the installed version in `/plugins`. If the installed copy is still old, back up any local customizations and reinstall it through that browser. Start a new session afterward.
+
+Uninstall from your terminal. For a Claude Code project-scope install, add `--scope project`.
+
+```bash
+claude plugin uninstall research-humanizer@research-humanizer
+codex plugin remove research-humanizer@research-humanizer
+```
+
+These commands manage plugins, not manuscript files. If plugin commands are not recognized, update the host using its official installation instructions. Organization policies may also restrict custom marketplaces. Do not bypass those policies.
 
 </details>
 
 <details>
-<summary><strong>Install for one research project</strong></summary>
+<summary><strong>Manual alternative for a standalone skill</strong></summary>
 
-Copy the complete `skills/research-paper-craft` folder into the appropriate directory **inside the research project**, keeping the final folder name unchanged.
+Use this only when you need a plain skill instead of a plugin. Do not perform it in addition to the recommended plugin installation.
 
-| Host | Final entry point relative to the research project root |
-| --- | --- |
-| Claude Code | `.claude/skills/research-paper-craft/SKILL.md` |
-| Codex | `.agents/skills/research-paper-craft/SKILL.md` |
+```bash
+git clone https://github.com/LethimCookMyBro/research-humanizer.git
+cd research-humanizer
+```
 
-Keep the adjacent references, templates, scripts, and license notices. Do not copy only `SKILL.md`. Choose a user-level or project-level installation for each host, rather than keeping competing versions at both scopes.
+Copy the complete `skills/research-paper-craft` directory to one destination. Back up and move an existing installation outside the skills directory first. Do not overwrite it or copy only `SKILL.md`.
+
+| Host | User-level destination | Project-level destination |
+| --- | --- | --- |
+| Claude Code | `~/.claude/skills/research-paper-craft/` | `.claude/skills/research-paper-craft/` |
+| Codex | `~/.agents/skills/research-paper-craft/` | `.agents/skills/research-paper-craft/` |
+
+Project paths are relative to the research project's root. On Windows, use your home directory for `~`. If the host runs in WSL, use the paths inside that WSL environment. Keep all references, scripts, templates, and license notices.
+
+A standalone Claude Code skill uses `/research-paper-craft` rather than the plugin-namespaced command. In Codex, select the skill by typing `$`. Start a new session after changing the installed files.
+
+Manual copies do not update through the plugin manager. Review source changes, run `git pull --ff-only`, back up the installed copy, and replace it deliberately. To uninstall, move the installed skill folder outside the discovery directory. Leave manuscript files untouched.
+
+See the official [Claude Code skills guide](https://code.claude.com/docs/en/skills) and [Codex skills guide](https://developers.openai.com/codex/skills/).
 
 </details>
-
-### Verify discovery and update safely
-
-Open your research project in the host. Start a new session if the skill does not appear, then invoke it explicitly. Confirm that the agent can read a referenced module, not just the entry point. A local file copy is not an end-to-end host test.
-
-To update a Git clone, review local changes and run `git pull --ff-only` from the repository root. Back up the installed skill folder **outside the host's skills directory**, move the old folder out, then repeat the copy step. The copy commands intentionally do not overwrite existing installations. A copied installation does not update automatically when the source repository changes.
-
-To uninstall, move the installed `research-paper-craft` folder outside the skills directory and start a new session. Do not move or delete your manuscript files.
 
 <a id="use"></a>
 ## Use
@@ -201,7 +220,8 @@ It does not certify scientific correctness, guarantee publication acceptance, or
 | Bundled checker and package tests | 31 tests pass in the documented local run |
 | Targeted v2.0 audit regressions | 5 tests fail and remain open |
 | Independent model trials | 40 scenarios are defined. They have not been executed |
-| Claude Code and Codex integration | Installation paths checked against official documentation. Live host invocation not tested here |
+| Plugin packaging and install docs | Both host manifests and catalogs added. Offline contract tests are recorded in the verification report |
+| Claude Code and Codex integration | Commands checked against official documentation. Live install and invocation not tested here |
 | Native Word and full submission workflow | Not tested end to end on a research manuscript |
 
 See [known issues](docs/KNOWN_ISSUES.md), the [original audit](docs/audit-v2.0/README.md), and the [current verification record](docs/VERIFICATION.md). The documentation edition does not claim to fix the v2.0 checker.
@@ -213,6 +233,7 @@ Run from the repository root. Replace the manuscript path with your own file. Us
 ```bash
 python3 skills/research-paper-craft/scripts/lint_manuscript.py /path/to/manuscript.md --json
 python3 -B -m unittest discover -s skills/research-paper-craft/tests -v
+python3 -B -m unittest discover -s tests -v
 ```
 
 The checker reads UTF-8 Markdown or plain text and does not edit files. It does not validate DOCX, PDF, mathematics, citations, image authenticity, anonymity, or scientific claims. A clean report does not approve a manuscript.
@@ -227,6 +248,15 @@ python3 -B docs/audit-v2.0/audit_regressions.py skills/research-paper-craft
 
 ```text
 research-humanizer/
+├── .claude-plugin/
+│   ├── plugin.json
+│   └── marketplace.json
+├── .codex-plugin/
+│   └── plugin.json
+├── .agents/plugins/
+│   └── marketplace.json
+├── tests/
+│   └── test_plugin_packaging.py
 ├── README.md
 ├── README(TH).md
 ├── LICENSE

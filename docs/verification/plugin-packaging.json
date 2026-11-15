@@ -1,0 +1,41 @@
+{
+  "checked_on": "2026-11-15",
+  "scope": "Native plugin packaging and bilingual installation documentation only",
+  "plugin_version": "2.0.1",
+  "core_skill_version": "2.0.0",
+  "base_commit": "1f8b1465f8ae63433b462286cf39c6716bd5a013",
+  "base_tree": "ae1357509032930139e655e2bd1118fc4bb8d471",
+  "local_base_matches_live_tree": true,
+  "python_version": "3.13.5",
+  "packaging_baseline": {
+    "tests": 11,
+    "failure_events_including_subtests": 19,
+    "exit_code": 1
+  },
+  "packaging_after": {
+    "tests": 11,
+    "passed": 11,
+    "exit_code": 0
+  },
+  "existing_skill_suite": {
+    "tests": 31,
+    "passed": 31,
+    "exit_code": 0
+  },
+  "known_checker_regressions": {
+    "tests": 5,
+    "failed": 5,
+    "exit_code": 1,
+    "fixed_in_this_update": false
+  },
+  "unchanged_skill_files": 40,
+  "live_claude_code_install_tested": false,
+  "live_codex_install_tested": false,
+  "native_validator_executed": false,
+  "independent_model_trials_executed": false,
+  "notes": [
+    "The source tree and changed files are verified independently of the installation commands.",
+    "Neither Claude Code nor Codex is installed in the execution container.",
+    "Tests validate package contracts, not research correctness or model compliance."
+  ]
+}

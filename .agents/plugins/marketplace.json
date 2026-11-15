@@ -1,0 +1,20 @@
+{
+  "name": "research-humanizer",
+  "interface": {
+    "displayName": "Research Humanizer"
+  },
+  "plugins": [
+    {
+      "name": "research-humanizer",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
