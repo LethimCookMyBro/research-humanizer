@@ -94,7 +94,7 @@ class PackageTests(unittest.TestCase):
                     'assets/qa-report.md', 'provenance/humanizer-original.md'):
             self.assertTrue((ROOT / rel).is_file(), rel)
 
-    def test_original_rule_fingerprints(self):
+    def test_current_rule_fingerprints(self):
         manifest = json.loads((ROOT / "provenance/rule-map.json").read_text(encoding="utf-8"))
         self.assertEqual(len(manifest["rules"]), 62)
         for item in manifest["rules"]:

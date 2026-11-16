@@ -1,7 +1,7 @@
 {
-  "baseline_file": "research-paper-craft-v1.1.zip",
+  "baseline_file": "provenance/rule-map.v2.1.0.json",
   "baseline_sha256": "e03f4537542c08524f91d59b4b36993c82030bfdedb59b88119f10fc1efa69f2",
-  "comparison": "Exact rule bodies after trimming outer whitespace",
+  "comparison": "Current rule bodies; intentional revisions documented in rule-changes.v2.2.0.json",
   "rules": [
     {
       "language": "en",
@@ -73,7 +73,7 @@
       "language": "en",
       "rule": "R06",
       "file": "references/paper.en.md",
-      "sha256": "3216a152c659e263e4f90e2431ace419f2b5ff4946f1eba8d898050074d3dc76"
+      "sha256": "27f0ff8fa87b38f4f28cb520391c07fd15165c52c0a59c9fbf4285ed18e543d7"
     },
     {
       "language": "en",
@@ -103,7 +103,7 @@
       "language": "en",
       "rule": "R29",
       "file": "references/records.en.md",
-      "sha256": "be1982d700cf441218fbefa65cfbdd8c5fd35a3176b05929be44bc2d65da846b"
+      "sha256": "31b8e514d5327dbf2f879c3777fe71987d568d2b7078c4bcc2d546bd56d7f1da"
     },
     {
       "language": "en",
@@ -133,31 +133,31 @@
       "language": "en",
       "rule": "R28",
       "file": "references/submission.en.md",
-      "sha256": "5f0322fd4f7543a42661f61c379033599d10294c12997d4e391276f700f3fc00"
+      "sha256": "8f733a7c65da583bfc88d0490bd0f2e84142f30512ca091b0942f3694c6d9416"
     },
     {
       "language": "en",
       "rule": "R18",
       "file": "references/visuals.en.md",
-      "sha256": "0aaedd77b94e5fdc5617baf48903ff716900741ce01ed5c6aebacecb8fc41d29"
+      "sha256": "f18016d78b47eb5a534189a9733d122fa36c04dff4f2440322c1b38573dfcdc8"
     },
     {
       "language": "en",
       "rule": "R19",
       "file": "references/visuals.en.md",
-      "sha256": "9c929f258e66c7f691216f73fb05edd04e6c182fd15f0152af6f8fed8b10ff2a"
+      "sha256": "034cf4e91db3d968e1ee0725532e42374f115914e0e5014577a1112a55b4015f"
     },
     {
       "language": "en",
       "rule": "R20",
       "file": "references/visuals.en.md",
-      "sha256": "f44df1c802e9b5388ad023ccc27dc5cfca931b0b7cca32bea7ca2de348bc366f"
+      "sha256": "12f8d1c5b916e6f127294b9b85c32f385d17c4f00bfe985bd2ec6ffdefe6f5ec"
     },
     {
       "language": "en",
       "rule": "R21",
       "file": "references/visuals.en.md",
-      "sha256": "72d6e61ebf17a3a92a8f4d925fda25178aff6830a1145c7f3ff3b91d5e800ca8"
+      "sha256": "a16ea1b80d09792a99f0efad032c50c0e8e897253aec8f38a7a09497c42d9f6e"
     },
     {
       "language": "en",
@@ -169,13 +169,13 @@
       "language": "en",
       "rule": "R07",
       "file": "references/writing.en.md",
-      "sha256": "6fd4a8b03d52a1719ead1b7c99e5b8f19ded4121b6e92f1f737ba2dffd36e3c2"
+      "sha256": "51ce4c91994ba59c06e7e2a0b0a9eb20d8a9b7dd52e480f8c56d0ecdf8135f18"
     },
     {
       "language": "en",
       "rule": "R08",
       "file": "references/writing.en.md",
-      "sha256": "63b3529822cb0e29d7c029c6f38619e5f9dae587f06e4b8b1ac627875ae13356"
+      "sha256": "dffcbeb386be96ccdf5e55be02dcc79b0014c83955c29d463c6b4fef342348e4"
     },
     {
       "language": "en",
@@ -187,7 +187,7 @@
       "language": "en",
       "rule": "R30",
       "file": "references/writing.en.md",
-      "sha256": "123b147bd0c288164ef9e1f09370764e8fb3080a7219b1db9e2ee74956e42d46"
+      "sha256": "0f018f7cee5ae62d5986c336edb3ca507f5ee6f2399f0e1fb654c5ac9557c4bd"
     },
     {
       "language": "th",
@@ -259,7 +259,7 @@
       "language": "th",
       "rule": "R06",
       "file": "references/paper.th.md",
-      "sha256": "4890bc4a2ff269546757c82f3bea0a98107eef42168236d4846727503169efe6"
+      "sha256": "aa18caa33bee757c1de7104c470f04f1d5b13d6d2e90c38699e59a991a938735"
     },
     {
       "language": "th",
@@ -289,7 +289,7 @@
       "language": "th",
       "rule": "R29",
       "file": "references/records.th.md",
-      "sha256": "9485289db07b3be608517c82c5b6c077eff05be114b67a3f0b1ac537d44330e3"
+      "sha256": "aedb99454befa6ee72ec09be7b8230ee3f2b344747610a9ed90d40d198962390"
     },
     {
       "language": "th",
@@ -319,31 +319,31 @@
       "language": "th",
       "rule": "R28",
       "file": "references/submission.th.md",
-      "sha256": "5943240ae365d184c53ad647b7195c3d4fe989b82103e942efafaa684199bac8"
+      "sha256": "a484e1db418bdda2856ef648e4b194586c09dcc00d6aab7a31ce8ff26ed5c1a6"
     },
     {
       "language": "th",
       "rule": "R18",
       "file": "references/visuals.th.md",
-      "sha256": "2ad2fe9e050451a9025d9e905958e61fd262a98b270c04385a960d881bc7aba5"
+      "sha256": "03708034ff5185505817ae5d2ab8e7bfb474e235fd48ede5035d05481dcdae17"
     },
     {
       "language": "th",
       "rule": "R19",
       "file": "references/visuals.th.md",
-      "sha256": "59d7e4d72759d600bd3cba47fa26597a932ddbe0310cbfef6fe400b643779e31"
+      "sha256": "5f3d14870e0582f69775e112f246b6b654ee19693552e39abe522eeed986aed4"
     },
     {
       "language": "th",
       "rule": "R20",
       "file": "references/visuals.th.md",
-      "sha256": "f4d3eed2ae314ceab1ffe9a011aa4fbdd70651f7869a3953784fe798e391938d"
+      "sha256": "d73556e42870f1f738ab87b4e0035d523e482ca8f1ea98acd4513a0350f7c0e6"
     },
     {
       "language": "th",
       "rule": "R21",
       "file": "references/visuals.th.md",
-      "sha256": "b9c2e45d7f2580666d8db531208c17c69e2ad16bc28be2665b49f84865ce0987"
+      "sha256": "6c5344f970f145889f28ee341480c32b8947ccfb765b4e768531eea4ebe8f36a"
     },
     {
       "language": "th",
@@ -355,13 +355,13 @@
       "language": "th",
       "rule": "R07",
       "file": "references/writing.th.md",
-      "sha256": "5d22997df987d6b35c24d5578e6cae326fe83ab5b0ff3b53b08f9ff47c6bb9d4"
+      "sha256": "16c317aa3cfc889b0ee115a265fcaacb3fe871d75e5a6d3e06f83763fdf1f113"
     },
     {
       "language": "th",
       "rule": "R08",
       "file": "references/writing.th.md",
-      "sha256": "d177768a3a1422234b42e3d05a9fba198a8d7e12147caca4f95c3a6505d9003e"
+      "sha256": "0049c270d76cc4a85d50d801d633e19cb79ecb2dfa4b22cf40eefc5e5909c61f"
     },
     {
       "language": "th",
@@ -373,7 +373,8 @@
       "language": "th",
       "rule": "R30",
       "file": "references/writing.th.md",
-      "sha256": "78ff7d8528d93a9a8da0c083078939795d96e2799dfb525fabdabf70c2296198"
+      "sha256": "71233a405ed127d32bba52de8e8fa95fd38261cd5be865ef4543a95f9d2a3ba7"
     }
-  ]
+  ],
+  "version": "2.2.0"
 }

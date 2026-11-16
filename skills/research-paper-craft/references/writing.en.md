@@ -20,6 +20,8 @@ Separate paragraphs by purpose. Substantive sections should normally have severa
 
 The prose rules do not rewrite code, YAML, LaTeX commands, equations, URLs, identifiers, bibliographic records, or exact quoted source material. The rules also cover prose in titles, captions, table notes, and figure annotations. Technical syntax is protected, not a loophole for hiding ordinary prose in code formatting.
 
+When author-approved samples are available, record their paths, section, language and accepted characteristics in [voice-profile.json](../assets/voice-profile.json). Keep the profile optional. Without samples, use this house style and continue. A profile guides diction and explanation, not factual content. Keep locked technical terms unchanged. Never copy another author's distinctive sentences or invent the researcher's experiences, preferences or rationale. Explicit project constraints, evidence and verified venue requirements outrank a style sample.
+
 ## R08 Remove empty writing without damaging science
 
 Rewrite at paragraph level when a passage has no clear point. Do not merely swap fashionable words for synonyms. Keep each sentence that contributes a fact, a definition, a justified inference, a necessary transition, or a consequential limitation.
@@ -57,6 +59,18 @@ These are editorial heuristics, not evidence of AI authorship. Do not ban a scie
 
 Preserve deliberate repetition needed for definitions, comparisons, and reader orientation. Preserve valid uncertainty, negative findings, exceptions, and distinctions between correlation, mechanism, prediction, and causation. When an original statement is false or unsupported, flag and correct it with evidence or remove it with a recorded reason. Fidelity does not require preserving a known error.
 
+### Revision contract
+
+Default to a minimal edit. Returning clear, supported text unchanged is a valid outcome. Rewrite a whole paragraph only when its organization prevents understanding. Do not add errors, irregular grammar, arbitrary synonyms or random sentence lengths to imitate a human. Never optimize against an AI-detector score.
+
+Before editing, identify the passage's purpose, accepted terminology and supported claims. For a short passage, keep a compact note. For a full paper, extend the existing claim ledger using [revision-ledger.csv](../assets/revision-ledger.csv), rather than inventing another source of truth.
+
+For each changed claim compare the actor, assertion, population, condition, time window, comparator, estimand, numbers and units, negation, uncertainty, exceptions and citation attachment. A retained reference number does not prove that it still supports the clause beside it. Classify edits as preserved, added, removed, narrowed, broadened or reversed. A scientific correction requires evidence and an explicit note, not concealment inside a language edit. Ask when the controlling source is ambiguous.
+
+After editing, read the passage against its source and check that the stated issue is resolved. Stop when the passage is clear, supported and consistent with the brief. An additional pass must address an identified defect. Repeated polish that only changes wording is not progress. Keep necessary terms and genuine repetitions. Do not impose a fixed paragraph formula.
+
+Optional `review_revision.py` compares selected lexical signals in two text exports. It can flag numbers, units, citations, mathematical source, negation, scope and locked terms. It cannot establish semantic equivalence or verify authorship. Use it alongside source-level review. A clean report does not release a disputed claim. Read [editing-examples.en.md](editing-examples.en.md) only when examples would help.
+
 ## R09 Keep Thai and English technically equivalent
 
 Maintain a terminology sheet containing the preferred Thai term, preferred English term, abbreviation, definition, and prohibited ambiguous alternatives. Use natural Thai rather than English sentence structure with Thai words. Use direct academic English rather than a literal translation of Thai connectors.
@@ -67,18 +81,8 @@ Explain unavoidable technical terms briefly at first use. Do not repeat English 
 
 For parallel manuscripts, keep a section correspondence record. Update both versions after a scientific revision. Treat an unresolved mismatch as a verification issue rather than choosing whichever sentence sounds smoother.
 
-## R30 Apply the rules through realistic examples
+## R30 Use source-bounded examples
 
-The examples below illustrate wording and decision rules. They are not findings about the user's project. Use a sentence only when the project's evidence supports its content.
+The [worked examples](editing-examples.en.md) contain synthetic source notes, a draft, one acceptable revision and invariants. They are teaching examples, not researcher-approved findings or model outputs. No sentence is a universal replacement. Return a good draft unchanged when appropriate.
 
-| Weak or overstated wording | More defensible wording |
-| --- | --- |
-| The proposed framework revolutionizes real-world performance | The method combines the preprocessing and estimation stages in a single pipeline |
-| The results clearly prove that the system is robust | The system was evaluated under the stated noise conditions |
-| The method is not only accurate but also efficient | Report accuracy and computational cost separately with their actual evidence |
-| The association demonstrates that the intervention causes improvement | The analysis found an association. The design does not establish causation |
-| Extensive experiments validate the universal applicability of the method | State the experiments actually performed and restrict the conclusion to those settings |
-
-When a table and a result export disagree, show the conflict in the working report and trace the computation. Do not silently choose a value. When code contains an untested new module, describe it as proposed or omit it from the evaluated pipeline. When raw measurements are missing, a finished-looking result plot is not an acceptable substitute.
-
-When there is no current-best literature search, name the methods actually compared instead of asserting state of the art. When an uncertainty measure has not been calculated, do not add a shaded band for appearance. When Word was not opened, report Word layout as not checked.
+When result exports conflict, show the discrepancy and trace its computation. Untested code is proposed, not evaluated. Missing measurements do not justify a finished-looking graph. Without a verified literature comparison, name the actual comparators instead of claiming state of the art. Never add uncertainty shading for appearance. Record native Word layout as not checked until it is actually inspected.

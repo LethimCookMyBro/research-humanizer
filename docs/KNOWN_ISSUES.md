@@ -1,41 +1,18 @@
-# Known issues
+# Known limits in 2.2.0
 
-Updated 2026-11-16. Plugin and core skill version 2.1.0. Historical v2.0 checker defects remain open.
+## Resolved regressions
 
-## Word layout and DOCX preflight limits
+The five historical v2.0 tests now pass. The checker catches the missing Here contraction, pending markers inside protected syntax, and unclosed YAML/display-math regions. It also reports incomplete fences/inline syntax, distinguishes mandatory fixes from review candidates, and makes incomplete parsing exit nonzero. The original regression test is retained unchanged.
 
-Version 2.1.0 adds a Word-first repair procedure and a read-only structural preflight. It does not include Microsoft Word or automatically repair formatting. It cannot resolve the full style cascade, verify fonts on the target machine, infer a corrupted mathematical symbol, measure rendered whitespace, or prove code correspondence. Candidate findings can be legitimate template choices. A clean report is not a layout pass.
+## Still not established
 
-The preflight has synthetic ZIP/XML tests, not native Word render tests. Twenty additional Word acceptance scenarios are defined but unexecuted. No user screenshot or private manuscript is included in this repository.
+- Independent model quality and author preference have not been evaluated. The 24-case bank contains synthetic examples, not model outputs. The earlier 40 behavior and 20 Word scenarios remain unexecuted independent trials.
+- Live Claude Code/Codex discovery, desktop update behavior and native Word repair are not verified here. Refreshing a marketplace is not proof that an installed cache changed.
+- Lexical revision checks miss semantic changes, including reordered citation attachment and some fluent paraphrases. No-flags is not semantic equivalence. Thai checks cover selected expressions, not a complete linguistic analysis.
+- Wording candidates can be legitimate. Technical terms, genuine comparisons, real triads, deliberate repetition and exact quotations require context. This is not an AI detector.
+- Figure manifests, hashes and reviewer-name fields do not prove authenticity, consent, source support, numerical recomputation or visual quality. The CSV checker reads only declared numeric columns. Other data formats and research-generated model imagery require manual review.
+- DOCX preflight does not render pages or resolve the full style cascade. Word-first safeguards remain mandatory for existing Word manuscripts.
 
-## Checker defects still open
+## Release status
 
-The optional `lint_manuscript.py` remains unchanged from v2.0. The audit reproduces five targeted failures in three groups.
-
-| ID | Failure | Consequence |
-| --- | --- | --- |
-| K01 | `Here's the result.` is not detected as a contraction | The contraction rule can be missed |
-| K02 | `[RESULT UNVERIFIED]` is masked inside inline math or inline code | An unresolved result marker can disappear from the report |
-| K03 | An unclosed YAML-like opening or display-math delimiter masks later text without warning | A malformed document can look clean |
-
-These are selected edge cases, not a measured population failure rate. Check unresolved placeholders manually across the entire manuscript. Check protected regions for balanced delimiters. Never use a zero-finding report as scientific or submission approval.
-
-## Coverage not implemented in the checker
-
-Greek-symbol context, numerical results inside contribution bullets, scientific meaning, mathematical correctness, source verification, real-image provenance, and anonymity require separate review. The checker is not a Markdown or LaTeX parser, does not render documents, and cannot inspect native Word pagination.
-
-## Behavioral evidence not yet collected
-
-Forty acceptance scenarios are supplied but have not been executed as independent model trials. Live discovery and invocation inside Claude Code or Codex were not tested in this documentation environment. No full research-paper, anonymization, or native Word workflow was validated here.
-
-A bilingual rule-ID alignment check does not prove semantic translation equivalence. Review meaning-preservation examples in both languages before making broader reliability claims.
-
-## Instruction clarification still pending
-
-The existing style prohibition rules are strong, but the submission guidance also mentions minor style warnings. A future instruction revision should explicitly distinguish mandatory house-style failures from optional refinements before claiming style compliance. This documentation edition does not silently rewrite those rule blocks.
-
-## Licensing status updated
-
-The earlier audit could not identify a complete upstream copyright notice within the supplied package. This documentation edition identifies the Humanizer v4.0.0 source by Git blob SHA and includes the matching MIT notice. That specific provenance gap has been addressed. The earlier audit is retained as a historical record, not rewritten to imply the license was already present.
-
-The remaining checker defects and missing behavioral tests have not been closed by adding documentation or a license.
+Preview remains intentional. Software regressions and documentation gaps can be fixed without pretending that external evaluation has been completed. See [verification](VERIFICATION.md) in the repository docs and the evaluation protocol. Never use a green program test to promise acceptance, authorship, zero errors or GitHub stars.

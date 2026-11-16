@@ -1,0 +1,379 @@
+{
+  "baseline_file": "research-paper-craft-v1.1.zip",
+  "baseline_sha256": "e03f4537542c08524f91d59b4b36993c82030bfdedb59b88119f10fc1efa69f2",
+  "comparison": "Exact rule bodies after trimming outer whitespace",
+  "rules": [
+    {
+      "language": "en",
+      "rule": "R14",
+      "file": "references/evaluation.en.md",
+      "sha256": "e88fd1d0e1480eaf25093f9c072e51ef719b74a9edb1d6e271472ee4d6fd8f9a"
+    },
+    {
+      "language": "en",
+      "rule": "R15",
+      "file": "references/evaluation.en.md",
+      "sha256": "33e8a4bb64279b9f2d32e46563ac54465a8d7e77e3b5cee73c81fa4768593b4e"
+    },
+    {
+      "language": "en",
+      "rule": "R23",
+      "file": "references/evaluation.en.md",
+      "sha256": "e1289dd2ff6f7be2fbdbfcb35625d383bb1069fe3c2c10a0ea0a51314eb3edb6"
+    },
+    {
+      "language": "en",
+      "rule": "R00",
+      "file": "references/evidence.en.md",
+      "sha256": "c8272bfbe8613f8f403118901bac935ba2c417853032f6174be60988f16d6245"
+    },
+    {
+      "language": "en",
+      "rule": "R01",
+      "file": "references/evidence.en.md",
+      "sha256": "e62a45033e5e51ce12061434844e82130ea11acdec6097b040547b3d467d8092"
+    },
+    {
+      "language": "en",
+      "rule": "R02",
+      "file": "references/evidence.en.md",
+      "sha256": "f59af19bc3237cc7ee3008bd295200d29ff62d0131b12c806d4374a7f9b25c75"
+    },
+    {
+      "language": "en",
+      "rule": "R03",
+      "file": "references/evidence.en.md",
+      "sha256": "d6117c1e79d5514286110d4e9ce2210b7b1b25b6f91cdc29515d10a64ac865f7"
+    },
+    {
+      "language": "en",
+      "rule": "R04",
+      "file": "references/evidence.en.md",
+      "sha256": "3f4aa82267355a29628851336f6dbedaac603afaf5a7b57dc142ddb5d274f1fb"
+    },
+    {
+      "language": "en",
+      "rule": "R05",
+      "file": "references/evidence.en.md",
+      "sha256": "ff135e6aa8d4bd46af1670a3888b698606ed17f8cab2dbba1afb397e768a31f8"
+    },
+    {
+      "language": "en",
+      "rule": "R12",
+      "file": "references/methods.en.md",
+      "sha256": "f4d9a04d71ca6af1c466969622554fccdb0ad59679dacd6dc646837fb13ebc35"
+    },
+    {
+      "language": "en",
+      "rule": "R13",
+      "file": "references/methods.en.md",
+      "sha256": "5d500a5f3f85ab1ac2cf5819ce279e014a768705c33562f519462d387523d58c"
+    },
+    {
+      "language": "en",
+      "rule": "R06",
+      "file": "references/paper.en.md",
+      "sha256": "3216a152c659e263e4f90e2431ace419f2b5ff4946f1eba8d898050074d3dc76"
+    },
+    {
+      "language": "en",
+      "rule": "R10",
+      "file": "references/paper.en.md",
+      "sha256": "c6acb81997d633169114966769ade4c5179a98c9061a62eaa5ef62fbe4714ca0"
+    },
+    {
+      "language": "en",
+      "rule": "R11",
+      "file": "references/paper.en.md",
+      "sha256": "f0e677ac50960ef2ad61c3b973d28764f3df6ce9ca0156501144e4580b780801"
+    },
+    {
+      "language": "en",
+      "rule": "R16",
+      "file": "references/paper.en.md",
+      "sha256": "f95cbb57efccfead25324c0279ede7a1e760292e4bb2cc4a42fc6d2a1d149cec"
+    },
+    {
+      "language": "en",
+      "rule": "R17",
+      "file": "references/paper.en.md",
+      "sha256": "999255a35e6e747abcf12c8629ee33ffbd89878e08b83ab71a0e534f48d5128a"
+    },
+    {
+      "language": "en",
+      "rule": "R29",
+      "file": "references/records.en.md",
+      "sha256": "be1982d700cf441218fbefa65cfbdd8c5fd35a3176b05929be44bc2d65da846b"
+    },
+    {
+      "language": "en",
+      "rule": "R24",
+      "file": "references/submission.en.md",
+      "sha256": "e44495cc7e2527f35dd022dd0c8c6280b7bc966ec8380bf6ad35040a8f7fab68"
+    },
+    {
+      "language": "en",
+      "rule": "R25",
+      "file": "references/submission.en.md",
+      "sha256": "6ec95f5f9840f132848240be5967dc38a3c2ac3ba7dcdccd39fd1be5ba9d78da"
+    },
+    {
+      "language": "en",
+      "rule": "R26",
+      "file": "references/submission.en.md",
+      "sha256": "e818792147c68bc0fa2ee42e9426a15f98d6ff556d39045ee8eada243724c461"
+    },
+    {
+      "language": "en",
+      "rule": "R27",
+      "file": "references/submission.en.md",
+      "sha256": "40d29743a1aac60708f92cf61e8276873603b376bab73b29d541ce005d2f571f"
+    },
+    {
+      "language": "en",
+      "rule": "R28",
+      "file": "references/submission.en.md",
+      "sha256": "5f0322fd4f7543a42661f61c379033599d10294c12997d4e391276f700f3fc00"
+    },
+    {
+      "language": "en",
+      "rule": "R18",
+      "file": "references/visuals.en.md",
+      "sha256": "0aaedd77b94e5fdc5617baf48903ff716900741ce01ed5c6aebacecb8fc41d29"
+    },
+    {
+      "language": "en",
+      "rule": "R19",
+      "file": "references/visuals.en.md",
+      "sha256": "9c929f258e66c7f691216f73fb05edd04e6c182fd15f0152af6f8fed8b10ff2a"
+    },
+    {
+      "language": "en",
+      "rule": "R20",
+      "file": "references/visuals.en.md",
+      "sha256": "f44df1c802e9b5388ad023ccc27dc5cfca931b0b7cca32bea7ca2de348bc366f"
+    },
+    {
+      "language": "en",
+      "rule": "R21",
+      "file": "references/visuals.en.md",
+      "sha256": "72d6e61ebf17a3a92a8f4d925fda25178aff6830a1145c7f3ff3b91d5e800ca8"
+    },
+    {
+      "language": "en",
+      "rule": "R22",
+      "file": "references/visuals.en.md",
+      "sha256": "634ef194ec6fa709c9b7d3914d59dc2b2389f2d9a959ecc4bbb65501599cbb66"
+    },
+    {
+      "language": "en",
+      "rule": "R07",
+      "file": "references/writing.en.md",
+      "sha256": "6fd4a8b03d52a1719ead1b7c99e5b8f19ded4121b6e92f1f737ba2dffd36e3c2"
+    },
+    {
+      "language": "en",
+      "rule": "R08",
+      "file": "references/writing.en.md",
+      "sha256": "63b3529822cb0e29d7c029c6f38619e5f9dae587f06e4b8b1ac627875ae13356"
+    },
+    {
+      "language": "en",
+      "rule": "R09",
+      "file": "references/writing.en.md",
+      "sha256": "53165ae7684b831ad5bd43bacf02a89fdfae4761202f0eb8f52a7d1c906d3ba8"
+    },
+    {
+      "language": "en",
+      "rule": "R30",
+      "file": "references/writing.en.md",
+      "sha256": "123b147bd0c288164ef9e1f09370764e8fb3080a7219b1db9e2ee74956e42d46"
+    },
+    {
+      "language": "th",
+      "rule": "R14",
+      "file": "references/evaluation.th.md",
+      "sha256": "664455f9c8cbad56c5eb2790f4aed0830f5759f27fbcfd7967da082972e4f22f"
+    },
+    {
+      "language": "th",
+      "rule": "R15",
+      "file": "references/evaluation.th.md",
+      "sha256": "45377857c511f3f43eef6e3521084b7ffd990a7da2538fd542a4c5ab9ffe867e"
+    },
+    {
+      "language": "th",
+      "rule": "R23",
+      "file": "references/evaluation.th.md",
+      "sha256": "1ba416f4cc74ec5435cb66d1102a810d65c35a34f7ceb659745c0b87c82295e4"
+    },
+    {
+      "language": "th",
+      "rule": "R00",
+      "file": "references/evidence.th.md",
+      "sha256": "3f176ad31e4fbf71d84ec969842ad6907f3b494d6288651482bb13ec4c8d50bc"
+    },
+    {
+      "language": "th",
+      "rule": "R01",
+      "file": "references/evidence.th.md",
+      "sha256": "5ad4d5d1fa4094a001bbf46f96ef304d99095553889c034ad20b344940b3de78"
+    },
+    {
+      "language": "th",
+      "rule": "R02",
+      "file": "references/evidence.th.md",
+      "sha256": "581e14ad9139df72d41418b066cf3eb7e2af7e60a65f1ed51923f3d7028137ff"
+    },
+    {
+      "language": "th",
+      "rule": "R03",
+      "file": "references/evidence.th.md",
+      "sha256": "a32a8a2f374f58c77caf46c380747826e09049cf4172e3c726edf1d3c2d7969e"
+    },
+    {
+      "language": "th",
+      "rule": "R04",
+      "file": "references/evidence.th.md",
+      "sha256": "9acaeab2363376d644f2f156188bd5f9a501f2630f2f7d7ba67ee156b40a92fd"
+    },
+    {
+      "language": "th",
+      "rule": "R05",
+      "file": "references/evidence.th.md",
+      "sha256": "4a719610180a981b784a75a09118d5bcc01f44a883b38c53971ecddfad5338f3"
+    },
+    {
+      "language": "th",
+      "rule": "R12",
+      "file": "references/methods.th.md",
+      "sha256": "8d1c8dd41d4f923478ad0357cd9044ecff467b573db1ed606020fd845c9f6d95"
+    },
+    {
+      "language": "th",
+      "rule": "R13",
+      "file": "references/methods.th.md",
+      "sha256": "637a5a30dbd6e0a7c35eb09947ffe14777fb0a63c1518666d49121c55e2526d4"
+    },
+    {
+      "language": "th",
+      "rule": "R06",
+      "file": "references/paper.th.md",
+      "sha256": "4890bc4a2ff269546757c82f3bea0a98107eef42168236d4846727503169efe6"
+    },
+    {
+      "language": "th",
+      "rule": "R10",
+      "file": "references/paper.th.md",
+      "sha256": "f2d7f3f04cf3b7cce0c7331f5b94a5af2f7c01068e064fb9e2df13d9d839da5f"
+    },
+    {
+      "language": "th",
+      "rule": "R11",
+      "file": "references/paper.th.md",
+      "sha256": "afc37a807f64fb7923dd08c8429a82b1ea4ec56e736d1d08fa9ddc1c3a7f5fde"
+    },
+    {
+      "language": "th",
+      "rule": "R16",
+      "file": "references/paper.th.md",
+      "sha256": "61f2af10d546887912721d145539228950d6c552b79eeae8fdaca68ba0116081"
+    },
+    {
+      "language": "th",
+      "rule": "R17",
+      "file": "references/paper.th.md",
+      "sha256": "b3de640b860e33e7f0595f4ca96e441657efa6f9538b374671597b177cc26fae"
+    },
+    {
+      "language": "th",
+      "rule": "R29",
+      "file": "references/records.th.md",
+      "sha256": "9485289db07b3be608517c82c5b6c077eff05be114b67a3f0b1ac537d44330e3"
+    },
+    {
+      "language": "th",
+      "rule": "R24",
+      "file": "references/submission.th.md",
+      "sha256": "04670b56a4aff7bf7aa66692884b4fd8d1cbf20a3f63bce81983abbf1a6beaa4"
+    },
+    {
+      "language": "th",
+      "rule": "R25",
+      "file": "references/submission.th.md",
+      "sha256": "1c189a4ac2945fe0a524d05faf26c369fd541a7556ee6cb28728454977bf8ea1"
+    },
+    {
+      "language": "th",
+      "rule": "R26",
+      "file": "references/submission.th.md",
+      "sha256": "75acf14314f326dc293e201d23b046f62c411f962346000959bfc2a4a671efce"
+    },
+    {
+      "language": "th",
+      "rule": "R27",
+      "file": "references/submission.th.md",
+      "sha256": "d69214aed3411e455c9aa11ebcbd62852b65ee5f5d082e6de86f5f55cf1e5e4c"
+    },
+    {
+      "language": "th",
+      "rule": "R28",
+      "file": "references/submission.th.md",
+      "sha256": "5943240ae365d184c53ad647b7195c3d4fe989b82103e942efafaa684199bac8"
+    },
+    {
+      "language": "th",
+      "rule": "R18",
+      "file": "references/visuals.th.md",
+      "sha256": "2ad2fe9e050451a9025d9e905958e61fd262a98b270c04385a960d881bc7aba5"
+    },
+    {
+      "language": "th",
+      "rule": "R19",
+      "file": "references/visuals.th.md",
+      "sha256": "59d7e4d72759d600bd3cba47fa26597a932ddbe0310cbfef6fe400b643779e31"
+    },
+    {
+      "language": "th",
+      "rule": "R20",
+      "file": "references/visuals.th.md",
+      "sha256": "f4d3eed2ae314ceab1ffe9a011aa4fbdd70651f7869a3953784fe798e391938d"
+    },
+    {
+      "language": "th",
+      "rule": "R21",
+      "file": "references/visuals.th.md",
+      "sha256": "b9c2e45d7f2580666d8db531208c17c69e2ad16bc28be2665b49f84865ce0987"
+    },
+    {
+      "language": "th",
+      "rule": "R22",
+      "file": "references/visuals.th.md",
+      "sha256": "8af84458b2bfdff226e2e2283dd71cda7a06e7919b8fb5517d9c7cb7f25aed46"
+    },
+    {
+      "language": "th",
+      "rule": "R07",
+      "file": "references/writing.th.md",
+      "sha256": "5d22997df987d6b35c24d5578e6cae326fe83ab5b0ff3b53b08f9ff47c6bb9d4"
+    },
+    {
+      "language": "th",
+      "rule": "R08",
+      "file": "references/writing.th.md",
+      "sha256": "d177768a3a1422234b42e3d05a9fba198a8d7e12147caca4f95c3a6505d9003e"
+    },
+    {
+      "language": "th",
+      "rule": "R09",
+      "file": "references/writing.th.md",
+      "sha256": "e049a87fcf7311626087407922b7691354857fef5d52d297123877fb102558f9"
+    },
+    {
+      "language": "th",
+      "rule": "R30",
+      "file": "references/writing.th.md",
+      "sha256": "78ff7d8528d93a9a8da0c083078939795d96e2799dfb525fabdabf70c2296198"
+    }
+  ]
+}

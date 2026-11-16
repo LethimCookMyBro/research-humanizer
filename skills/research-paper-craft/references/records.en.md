@@ -18,3 +18,5 @@ The following field sets are templates, not populated research findings. Keep a 
 | QA report | check ID, artifact and version, operation performed, evidence location, status, issue, action, reviewer or tool, date |
 | Decision log | issue, alternatives, evidence, chosen decision, decision owner, affected artifacts, unresolved dependencies |
 | Missing-input register | request ID, missing item, affected section or figure, reason needed, sources already checked, question sent, researcher reply, source received or approved alternative, evidence class, unresolved dependency, status |
+
+Extend existing records rather than duplicating them. An optional author voice profile records approved sample locations, section and language, accepted traits, locked terms and approving person. The revision ledger links each before/after claim to its source and classifies scope, negation, uncertainty and citation attachment changes. The paper map records paragraph function and evidence. Figure records distinguish each panel's original source, evidence role, transformation and reviewer. An unfilled template or a declared reviewer name is not an executed check.

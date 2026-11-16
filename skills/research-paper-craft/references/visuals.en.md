@@ -16,6 +16,14 @@ Prefer a restrained visual hierarchy, clear labels, readable spacing, and consis
 
 Before producing a planned visual, check that its required data and source assets are available and match the study. If an original environment photograph, setup image, actual screenshot, or other necessary input is missing, apply R01 and ask the researcher before searching for or generating a substitute. Do not silently change an evidence figure into an illustration.
 
+### Real-first visual decision
+
+When a figure must show what the experiment actually looked like, use the matching original photograph or actual system capture. Prefer a real-first panel with concise, traceable annotations over a photorealistic substitute. A photograph is not automatically better than a diagram for an abstract computation. Select the medium for the scientific question, and combine separate labeled panels when both context and logic matter.
+
+If the original is unavailable, ask the researcher and offer the [capture checklist](../assets/capture-checklist.md). Record the missing input and continue unrelated work. Never search stock sites or generate a similar environment in its place. Never use generative fill, object removal, synthetic participants, fabricated displays or invented equipment as observed evidence. Preserve the unmodified original and an edit log. Privacy redaction must be authorized, visible where relevant and kept separate from the original.
+
+Use [figure-manifest.json](../assets/figure-manifest.json) only as an unfilled register. Record each panel's role, claim links, source hashes, study/configuration linkage, selection rule, transformations, rights and final-size review. Mixed photo/diagram figures need panel-level provenance. A hash proves byte identity, not authenticity or permission. Source review remains a human responsibility. The default is original assets plus reproducible plots and editable vector diagrams, not generated artwork.
+
 ## R19 Make the system overview correspond to the method
 
 Show the actual system boundary, inputs, essential processing stages, outputs, and material external dependencies. Identify training, inference, offline, online, human, and automated steps when those distinctions matter.
@@ -27,6 +35,8 @@ Keep module names consistent with the method and implementation map. Show option
 Arrange the diagram with a coherent reading direction. Avoid crossing connectors, unexplained abbreviations, and long sentences inside boxes. Use a separate detail figure when an overview would otherwise become unreadable.
 
 Inspect the rendered diagram at its actual manuscript size. Check arrow direction, labels, symbols, clipping, panel order, and grayscale readability. Keep editable source and a publication-ready export. Do not claim that a diagram has been verified against code without inspecting the relevant implementation.
+
+Build a component-and-edge register before drawing. Each node and arrow needs a source locator in the method, code revision, configuration or confirmed researcher note. Distinguish data flow from causal inference. Label implemented, proposed and external elements. Use real screenshots or apparatus crops as separate evidence panels when they answer the figure's question. The connecting diagram remains a schematic, not a photograph. Explain one reading path with aligned labels, restrained grouping and useful whitespace. Remove decorative icons, redundant arrows and unexplained color. A graphical abstract or infographic must let the reader recover the question, operation and supported outcome without invented numbers or a marketing headline.
 
 ## R20 Produce graphs from verified data
 
@@ -44,6 +54,12 @@ Use the venue's actual font, size, resolution, and format requirements. Prefer v
 
 If the data, units, conditions, or transformation needed for a plot are missing or unverified, ask the researcher for the correct source under R01. Do not estimate unseen measurements or borrow another study's data to finish the figure.
 
+Record the independent unit before plotting. Repeated frames, trials or folds are not automatically independent participants. Preserve pairing and clustering. Define the displayed estimand, weighting, denominator and inclusion rule. Choose uncertainty appropriate to that unit. Do not use within-trial variation as participant-level uncertainty or treat SD, SE and confidence intervals as interchangeable. Show distributional information when a summary conceals the relevant structure. Do not imply significance from error-bar overlap alone.
+
+Reconcile the plotted values with the approved result export using an explicit numerical tolerance justified by precision. Keep raw data, plot-ready data, filters, aggregation, code revision, random seed if used, environment and output hashes. Recompute a spot check independently where feasible. Check nonfinite values, missing groups, duplicate records, reversed labels, unit conversions and excluded failures. Declared hashes and a successful script run are not a statistical validation.
+
+Inspect graph exports at the actual single- or double-column size, in grayscale and at readable zoom. Check tick density, label collisions, legend order, numerical precision, clipping, contrast and distinguishable markers. Keep axis ranges comparable when needed, justify any break, and disclose smoothing or jitter. Do not impose a single aesthetic on every dataset. Use [graph-review.md](../assets/graph-review.md) for evidence of the checks. `audit_figures.py` checks local contracts and selected CSV values, not rendered quality or the analysis itself.
+
 ## R21 Protect scientific image integrity
 
 For photographs, screenshots, microscopy, maps, sensor imagery, or other observed images, record the source, acquisition context, sample identifier where appropriate, permissions, and processing history. Keep the original unmodified asset.
@@ -55,6 +71,8 @@ Explain scale bars, orientation, color mappings, and annotations. Do not invent 
 Check copyright, consent, privacy, and the target venue's current image and AI policy. Label illustrative renders and synthetic examples clearly. An illustration cannot establish that a device was built or an experiment occurred. Do not upload confidential source images to an external service without authorization.
 
 For a real-world environment or apparatus figure, establish that the asset belongs to this study and corresponds to the described setup. When the file or that connection is missing, ask the researcher under R01. A similar-looking scene is not a verified scene from this experiment.
+
+If generated images are themselves the object of the study, preserve the actual experimental outputs, model/configuration and evaluation provenance. This is a distinct research-output case, not permission to manufacture a missing experiment photo. The optional figure checker does not certify that case and may flag it for manual review. Check the target venue's current policy instead of assuming one publisher's rules apply everywhere.
 
 ## R22 Make tables and captions independently interpretable
 

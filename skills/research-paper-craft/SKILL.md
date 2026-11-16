@@ -2,7 +2,7 @@
 name: research-paper-craft
 description: Use when drafting, revising, translating, or auditing Thai or English research papers, mathematical methods, experiments, graphs, system diagrams, scientific images, Word DOCX typography and layout, or anonymous submission files.
 metadata:
-  version: "2.1.0"
+  version: "2.2.0"
   languages: "th,en"
 ---
 
@@ -16,13 +16,13 @@ Preserve evidence and scientific meaning before polishing prose. Follow host ins
 - For missing, inaccessible, outdated, ambiguous, or unverified required study inputs, first ask the researcher whether correct originals exist. Include actual environment photographs, apparatus images, screenshots, raw data, logs, configurations, and study details. Do not guess, search for substitutes, or generate replacements before asking. Explain what is needed and why. Respect previous answers. While waiting, mark `[SOURCE REQUIRED]` and continue independent supported work. Obtain explicit approval for a conceptual alternative and label it. Approval never makes it observed evidence. Authorized literature research remains separate.
 - Never fabricate results, citations, experimental details, approvals, proofs, or verification records. Distinguish observed, derived, literature-reported, estimated, assumed, proposed, synthetic, and unresolved material. Preserve negative findings and consequential uncertainty.
 - Trace scientific quantities to appropriate sources. Reconcile study results with approved exports and raw records. Link configurations to actual runs. Retain formulas, units, aggregation, and unrounded values. Mathematical constants and structural numbering need consistency checks, not invented raw records.
-- Include mathematics and visuals only when useful. Check equations against definitions and implementation. Numerical examples are not general proofs. Plot verified data reproducibly. Match diagrams to the actual method. Generated or unrelated images are not study evidence.
+- Use real-first visuals. Prefer original study photographs and captures for observed evidence. Ask before substitutes. Include mathematics and visuals only when useful. Check equations against definitions and implementation. Numerical examples are not general proofs. Plot verified data reproducibly. Match diagrams to the actual method. Generated or unrelated images are not study evidence.
 - Use a Word-first workflow for existing DOCX files. Keep the original and edit a copy in Microsoft Word. Do not rebuild formatted papers from extracted text or conversion. Before any DOCX edit, including humanizing, load word-layout guidance. Without native editing access, provide a read-only audit and patch plan. Programmatic edits require explicit approval and final Word verification. Preserve equation objects, fields, styles, and research meaning. Never guess damaged symbols or globally normalize spacing.
 - Never claim source inspection, execution, reproduction, page inspection, or successful checks without evidence. Report unavailable tools and pending checks. Do not promise publication acceptance or AI-detector evasion.
 
 ## Manuscript voice
 
-Use short, complete, moderately formal sentences and readable paragraphs. Avoid comma chains, parenthetical digressions, generic openings, artificial contrasts, hype, repeated closers, and decorative formatting. Keep necessary technical terms stable.
+Default to a minimal edit and keep good text unchanged. Use optional author-approved samples and locked terms. Compare changed claims, scope, negation and citation attachment before stopping. Use short, complete, moderately formal sentences and readable paragraphs. Avoid comma chains, parenthetical digressions, generic openings, artificial contrasts, hype, repeated closers, and decorative formatting. Keep necessary technical terms stable.
 
 Do not use prose semicolons, colons, em or en dashes, spaced double hyphens, or English contractions. Write `is not`. Allow `Keywords:` and reference punctuation. Preserve code, equations, URLs, identifiers, required citations, and exact quotations. Greek letters and symbols such as `°`, `±`, and `≤` belong only in mathematics, numeric expressions, tables, or numeric plot labels. Apply prose rules to captions and annotations too.
 
@@ -58,4 +58,4 @@ Optional Markdown or text check from the skill folder
 python scripts/lint_manuscript.py manuscript.md --json
 ```
 
-Review findings manually. This checker cannot verify science, citations, image integrity, anonymity, or layout. Read [README.md](README.md) only for installation, templates, or tool limits. Tests and provenance are maintenance material, not routine reading.
+Review findings manually. Incomplete checks never count as passes. Optional revision and figure checks are documented in the writing and visuals guides. No checker verifies authorship, scientific truth or rendered layout. Read [README.md](README.md) only for installation, templates, or tool limits. Tests and provenance are maintenance material, not routine reading.
