@@ -22,6 +22,8 @@ Record the manuscript path, version or hash, data snapshot, code revision, resul
 | Figures and plotted data | Not recorded | Not recorded | Not checked | Inspect sources and final-size rendering |
 | Scientific image integrity and rights | Not recorded | Not recorded | Not checked | Inspect originals and processing history |
 | Thai and English consistency | Not recorded | Not recorded | Not checked | Apply when parallel versions are requested |
+| Author voice and minimal-edit check | Not recorded | Not recorded | Not checked | Preserve accepted terms and avoid unnecessary rewriting |
+| Before/after claim and citation attachment | Not recorded | Not recorded | Not checked | Review revision-ledger differences against sources |
 | House style and semantic preservation | Not recorded | Not recorded | Not checked | Review prose after scientific edits |
 | Reproducibility and execution record | Not recorded | Not recorded | Not checked | Distinguish inspected from executed |
 | Ethics and AI disclosure requirements | Not recorded | Not recorded | Not checked | Confirm actual requirements and author statements |

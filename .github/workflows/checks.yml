@@ -1,0 +1,21 @@
+name: Local contracts and regressions
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Record interpreter
+        run: python3 --version
+      - name: Repository contracts
+        run: python3 -B -m unittest discover -s tests -v
+      - name: Skill tools and contracts
+        run: python3 -B -m unittest discover -s skills/research-paper-craft/tests -v
+      - name: Historical regressions must stay fixed
+        run: python3 -B docs/audit-v2.0/audit_regressions.py skills/research-paper-craft

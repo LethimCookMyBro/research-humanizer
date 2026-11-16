@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.2.0, 2026-11-16
+
+- Added an author-approved voice profile, minimal-edit/stop rules and source-level before/after claim review in the existing writing guides.
+- Replaced source-free substitution examples with source-bounded English/Thai teaching fixtures and whole-paper coherence checks.
+- Fixed all five retained text-checker regressions. Added explicit severity, checked scope, incomplete status and conservative wording candidates.
+- Added read-only revision and figure audits, including local hash checks, CSV sanity checks and evidence-linked overview nodes/edges.
+- Strengthened real-first photo/screenshot provenance, researcher requests, graph independent units and final-size review.
+- Added a 24-case public synthetic evaluation bank, prompt export and execution-record checks. Independent model quality is not established.
+- Retained Word-first safeguards, upstream Humanizer and licenses. Archived baseline fingerprints and documented intentional rule revisions.
+
 ## 2.1.0, 2026-11-16
 
 - Added Word-first preservation guards and task-loaded English/Thai layout guidance under R31 to R40.

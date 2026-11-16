@@ -1,0 +1,53 @@
+{
+  "version": "2.2.0",
+  "date": "2026-11-16",
+  "base_commit": "21dfaf56da1f59fbd48d5810d8b867ec9a667cc1",
+  "base_tree": "be654c513ed5401f0c9eee00351a44807c65ac34",
+  "baseline_tree_matched": true,
+  "python": "3.13.5",
+  "results": [
+    {
+      "suite": "repository",
+      "tests": 34,
+      "passed": 34,
+      "failed": 0,
+      "log_sha256": "1938b507dd46b6dc16afd136c00978f4963bdae03a342f75123d5c8e663e9118"
+    },
+    {
+      "suite": "skill",
+      "tests": 105,
+      "passed": 105,
+      "failed": 0,
+      "log_sha256": "8723130e04748059abcad0cc6e6904059fd2566050ce8ad84bf8c5cbf074c92d"
+    },
+    {
+      "suite": "historical_regressions",
+      "tests": 5,
+      "passed": 5,
+      "failed": 0,
+      "log_sha256": "bd705032d36ec09215221bc60a4b057c4af613e84e374c4b4f4bb81524b3b105"
+    }
+  ],
+  "test_total": 144,
+  "baseline": {
+    "repository_passed": 19,
+    "skill_passed": 58,
+    "historical_failures": 5,
+    "new_tool_tests": 38,
+    "new_tool_failures_before_implementation": 34,
+    "new_instruction_contracts_failed_before_changes": 8
+  },
+  "evaluation_cases": 24,
+  "exported_baseline_prompts": 24,
+  "exported_skill_prompts": 24,
+  "independent_model_trials_executed": false,
+  "independent_review_attempt": "Connected delegation was unavailable. No response was obtained or scored.",
+  "live_host_install_tested": false,
+  "native_word_tested": false,
+  "rendered_figure_tested": false,
+  "scientific_quality_improvement_established": false,
+  "upstream_humanizer_preserved": true,
+  "word_layout_modules_unchanged": true,
+  "user_research_images_uploaded": false,
+  "limitations": "Unit and contract tests, not empirical validation of research writing or visual authenticity."
+}

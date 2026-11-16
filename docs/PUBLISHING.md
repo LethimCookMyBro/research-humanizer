@@ -83,7 +83,7 @@ On a machine with Claude Code installed, also run `claude plugin validate .`. Fo
 
 Keep the before-and-after writing example labeled as illustrative. Keep the preview badge and known-issue link until there is new evidence supporting a stronger status. Add screenshots or demonstrations only after running the corresponding workflow. Never use a fabricated chat transcript or green CI badge as proof of compatibility.
 
-A useful first contribution list is the three checker defect groups in KNOWN_ISSUES, meaning-preservation tests in both languages, and recorded host installation trials. Do not claim a release fixes issues that remain open.
+Useful contributions include documented model/author evaluations, additional checker edge cases, meaning-preservation tests in both languages, and recorded host installation trials. The five historical checker regressions are fixed in 2.2.0. Do not claim a release fixes issues that remain open.
 
 MIT was selected to allow broad reuse with a short notice requirement. License choice alone does not guarantee GitHub stars. The package makes the purpose, installation path, example behavior, and current limitations visible so readers can decide whether to use it.
 

@@ -12,6 +12,8 @@ Make a section plan and a visual plan. Give every section and visual one scienti
 
 Draft the evidence-bearing parts first, usually methods, mathematics, experimental setup, results, and figures. Write the discussion from those parts. Then refine the introduction, abstract, title, and contributions. Recheck that all summaries make claims no stronger than the detailed sections.
 
+For a full-paper revision, make a reverse outline using [paper-map.csv](../assets/paper-map.csv). Record each paragraph's role, claim, evidence and relationship to the next paragraph. Check that the research question, method, result, abstract and conclusion agree on population and scope. Repetition is useful when it restores orientation or a necessary limitation, not when it adds only importance. A sentence that could fit almost any paper is a review candidate, not an automatic deletion. Obtain method-selection reasons from the actual decision record or researcher. Never invent a fieldwork anecdote or rejected alternative to make the text sound personal.
+
 ## R10 Write the title, abstract, introduction, and contributions
 
 Use a title that identifies the actual problem, approach, or study scope. Avoid promotional adjectives, unexplained acronym chains, and a novelty claim that the literature review cannot support.

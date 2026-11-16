@@ -52,13 +52,14 @@ class WordLayoutContractTests(unittest.TestCase):
 
     def test_version_is_bumped_consistently(self):
         core = (SKILL / 'SKILL.md').read_text(encoding='utf-8')
-        self.assertIn('version: "2.1.0"', core)
+        version=(ROOT / 'VERSION').read_text().strip()
+        self.assertIn(f'version: "{version}"', core)
         for manifest in ('.claude-plugin/plugin.json', '.codex-plugin/plugin.json'):
             path = ROOT / manifest
             self.assertTrue(path.exists(), manifest)
-            self.assertEqual(json.loads(path.read_text())['version'], '2.1.0')
+            self.assertEqual(json.loads(path.read_text())['version'], version)
 
-    def test_humanizer_original_and_writing_are_unchanged(self):
+    def test_humanizer_original_and_current_writing_integrity(self):
         expected = {
             'provenance/humanizer-original.md': '175bf05f45ae3bf566059a560467166d93a9599c',
         }

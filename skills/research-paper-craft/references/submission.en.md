@@ -70,3 +70,5 @@ Do not assign an AI-likeness percentage or an arbitrary quality score. Report sp
 Use independent review when a suitable reviewer or tool is actually available. Otherwise perform a separate self-review pass and identify it honestly. Do not fabricate a second reviewer, a completed agent test, or a tool execution.
 
 Check that every required missing input was raised with the researcher, that previous answers were respected, and that no unauthorized substitute entered the text or visuals. An unresolved required input blocks a submission-candidate claim. A recorded author decision can resolve a nonessential illustration choice, but cannot validate invented study evidence.
+
+For language QA, explicit house-style prohibitions are `required_fix`, not optional cosmetic warnings. A supported but verbose phrase is a review candidate. An incomplete parse or inaccessible source is not a style pass. Record checked scope and not-checked scope separately. Pending-source markers remain visible to integrity checks even inside code or mathematics. A checker cannot approve a manuscript by hiding a region it could not parse.

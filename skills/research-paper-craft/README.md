@@ -1,90 +1,34 @@
-> [!IMPORTANT]
-> Version 2.1.0 adds Word-first layout guidance and a read-only DOCX preflight. Original R00 to R30 research rules and text-checker code are unchanged. Read [KNOWN_ISSUES.md](KNOWN_ISSUES.md) before relying on the checker. Five targeted audit regressions remain open. MIT and upstream notices are included in [LICENSE](LICENSE) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+# Research Paper Craft 2.2.0
 
-# Research paper craft 2.1.0
+The skill inside Research Humanizer. Start with SKILL.md. Load one language and only the guidance needed for the current task. The core stays under 1,000 English whitespace-delimited words. Detailed Word, scientific and language rules are task-loaded.
 
-## ใช้แพ็กเกจนี้ชุดเดียว
+Research humanizing preserves sources, terminology, scope and uncertainty. Real evidence images stay real. Quantitative graphs come from approved data. Overview diagrams map components and arrows to the implemented method. Existing DOCX files stay Word-first.
 
-ชุดนี้ใช้แทน v1.1 ได้ ไม่ต้องติดตั้งไฟล์รวมไทยและอังกฤษเพิ่ม และไม่ควรเปิดใช้สองเวอร์ชันพร้อมกัน
+## New in this version
 
-หากระบบรองรับการนำเข้า skill ด้วย ZIP ให้นำเข้า ZIP นี้ หากระบบใช้โฟลเดอร์ skills ให้แตกไฟล์แล้ววางโฟลเดอร์ `research-paper-craft` ทั้งโฟลเดอร์ไว้ในตำแหน่ง skills ของระบบนั้น เก็บโครงสร้างภายในไว้ครบ
+Optional author voice profile, minimal-edit and stop rules, before/after claim review, source-bound examples, whole-paper coherence checks, real-first figure provenance and explicit checker coverage. Five historical text-checker regressions are fixed. Independent model quality and native Word execution are not established.
 
-ไฟล์ [SKILL.md](SKILL.md) คือจุดเริ่มของ AI คู่มือ 9 หมวดใน `references` มีทั้งไทยและอังกฤษ แต่กำหนดให้อ่านภาษาเดียวและอ่านเฉพาะช่วงงานที่ต้องใช้ ภาษาในคู่มือไม่ได้บังคับภาษาของบทความ
+## Local tools
 
-ทดสอบการเรียกใช้ด้วยข้อความนี้
-
-```text
-ใช้ skill research-paper-craft กับไฟล์ที่แนบเพื่อเขียนบทความวิจัย
-อ่านคำสั่งหลักและเปิดคู่มือเฉพาะส่วนที่กำลังทำ
-ตรวจไฟล์และคำตอบเดิมก่อนถาม
-หากขาดข้อมูลหรือภาพจริงที่จำเป็น ให้ถามผมก่อนว่ามีต้นฉบับหรือไม่
-ห้ามเดาหรือใช้สิ่งอื่นแทนเอง
-แยกต้นฉบับออกจากรายงานสิ่งที่ตรวจแล้วและสิ่งที่ยังค้าง
-```
-
-การแนบเฉพาะ SKILL.md โดยไม่มีไฟล์คู่มือไม่เท่ากับติดตั้งแพ็กเกจนี้ครบ ระบบต้องอ่านไฟล์ที่อ้างถึงได้ด้วย การนำเข้า ZIP และตำแหน่งติดตั้งขึ้นกับเครื่องมือที่ใช้งาน ไม่ได้อ้างว่าทดสอบติดตั้งแล้วในบัญชีหรือเครื่องของผู้ใช้
-
-## English quick start
-
-Use this package instead of version 1.1. Import the ZIP if the host supports skill ZIP import. Otherwise extract the complete `research-paper-craft` folder into that host's configured skills directory. Keep the relative paths intact. Do not activate both versions.
-
-Invoke `research-paper-craft` with the actual project files and requested deliverable. SKILL.md is the entry point. Guidance is available in Thai and English. Read one language of the relevant module at the appropriate phase. Reading the instructions does not require producing a bilingual manuscript.
-
-The host must support reading bundled reference files. Attaching only SKILL.md does not supply those references. Host installation and model behavior still require testing in the actual environment.
-
-## สิ่งที่อยู่ในชุด
-
-| ส่วน | หน้าที่ |
-| --- | --- |
-| SKILL.md | กฎหลักและการเลือกคู่มือ |
-| references | คู่มือ 9 หมวด แยกไทยและอังกฤษ |
-| assets | แบบบันทึกโจทย์และรายงานตรวจที่ยังไม่กรอกผล |
-| scripts | ตัวตรวจข้อความและโครงสร้าง DOCX แบบอ่านอย่างเดียว |
-| tests | การทดสอบเครื่องมือ โครงสร้างแพ็กเกจ และโจทย์ทดสอบโมเดล |
-| provenance | ไฟล์ต้นทางและบันทึกที่มา ไม่ใช่คำสั่งให้โหลดทุกงาน |
-
-## Optional records
-
-Use [assets/project-brief.yaml](assets/project-brief.yaml) only when establishing or updating the brief. Fill from existing files and decisions first. Unknown values stay unknown.
-
-Use [assets/qa-report.md](assets/qa-report.md) when recording applicable verification. It is an unfilled template, not a completed audit. Working-record fields are in the records module.
-
-## Optional text checker
-
-Requires Python 3.10 or newer. It uses only the standard library and does not edit manuscript files. Run from the skill directory. Use the actual manuscript path.
+Run from this skill folder. Python 3.10 or later is required only for the tools. No network requests or research-input edits occur.
 
 ```bash
-python scripts/lint_manuscript.py manuscript.md --json
-python scripts/lint_manuscript.py manuscript.md --fail-on-findings
-PYTHONDONTWRITEBYTECODE=1 python -m unittest discover -s tests -v
-```
-
-The environment-variable prefix on the test command is for POSIX shells. On other shells, run `python -B -m unittest discover -s tests -v`.
-
-The checker flags common prose punctuation, contractions, draft markers, HTML comments, and quotations needing review. It preserves common code, YAML frontmatter, URLs, mathematical notation, and reference sections. It is a heuristic scanner, not a complete Markdown or LaTeX parser. Review every finding. Some valid strings may be flagged and some defects may be missed.
-
-It does not verify numerical provenance, citations, scientific validity, statistical assumptions, symbol meaning, scientific image integrity, authorship, anonymity, or page layout. It cannot open Word or inspect DOCX metadata. A clean report is not scientific or submission approval. Do not lint the instruction guides as though their examples were manuscript prose.
-
-## Word layout and typography
-
-Read [word-layout.en.md](references/word-layout.en.md) or [word-layout.th.md](references/word-layout.th.md) before editing an existing DOCX, including language-only edits. Keep the original and use native Microsoft Word. Without Word access, provide a read-only audit and anchored patch plan. Do not rebuild the paper from text or conversion.
-
-```bash
+python scripts/lint_manuscript.py manuscript.md --json --fail-on-errors
+python scripts/review_revision.py before.md after.md --terms terms.json
+python scripts/audit_figures.py figure-manifest.json --root /path/to/project
 python scripts/audit_docx.py manuscript.docx --json
 ```
 
-This optional standard-library tool does not write or render files. It lists review candidates and part hashes. It does not resolve all style inheritance, determine actual page geometry, verify equations against code, or inspect Word pagination. Zero findings do not approve the layout. It accepts transitional DOCX only and rejects unsupported, encrypted, malformed, or oversized inputs. Limits are 256 MiB archive and total uncompressed content, 8 MiB per XML part, 32 MiB combined XML, and 4096 entries.
+terms.json contains a JSON list of exact terms. The voice-profile is optional and is not automatically loaded by these tools. Figure manifest documentation is in the repository quality guide. Empty templates do not pass an audit.
 
-Use [layout-qa.md](assets/layout-qa.md) and [equation-code-map.csv](assets/equation-code-map.csv) as unfilled records. The original Humanizer and research safeguards remain active. Runtime R31 to R40 are the new Word rules. The historical v1.1 R31 origin note stays archived in provenance and is not a runtime rule.
+Text checks flag selected house-style rules and generic wording candidates. Revision checks flag selected lexical differences. Figure checks validate records, local hashes and selected CSV values. DOCX checks inspect XML structure. None proves authorship, truth, statistical validity, visual quality or Word pagination. An incomplete text parse returns exit 2 and cannot be reported as a pass.
 
-## การตรวจรุ่นนี้
+## Records
 
-ผลของ v2.0 เก็บเป็นประวัติใน [tests/verification-report.md](tests/verification-report.md) และ [tests/unit-test-results.txt](tests/unit-test-results.txt) ผลของ v2.1.0 อยู่ใน [tests/verification-v2.1.md](tests/verification-v2.1.md)
+assets contains the project brief, author profile, claim revision ledger, paper map, figure manifest, capture checklist, graph review, equation-code map and layout/submission QA templates. Keep only the records required by the task. All start unverified.
 
-การทดสอบโครงสร้างและตัวตรวจข้อความไม่ใช่การทดสอบว่าโมเดลปฏิบัติตามกฎครบทุกข้อ โจทย์ใน [tests/acceptance-scenarios.md](tests/acceptance-scenarios.md) ยังต้องทดลองกับโมเดลและระบบที่ใช้งานจริง
+## ไทย
 
-## Changes and origin
+ใช้ SKILL.md เป็นจุดเริ่ม แล้วอ่านคู่มือภาษาเดียวตามงาน เก็บศัพท์และความหมายของเจ้าของงาน แก้เฉพาะที่มีเหตุผล ภาพหลักฐานใช้ต้นฉบับจริง กราฟใช้ข้อมูลที่ตรวจแล้ว สมการต้องตรงกับโค้ด และเอกสาร Word ต้องแก้จากสำเนาต้นฉบับ ไม่สร้างไฟล์จัดหน้าใหม่จากข้อความที่ดึงออกมา
 
-Version 2.0 replaces the monolithic-guide loading rule with eight task-specific modules. R00 through R30 are preserved from both version 1.1 guides. R31 and the historical source notes are retained separately in provenance. The missing-input requirement remains directly in SKILL.md.
-
-The uploaded humanizer source is preserved unchanged with its original license metadata. Its original instructions are historical material and do not override this skill. House style is the user's requirement, not a universal publishing standard. See [provenance/change-notes.md](provenance/change-notes.md) for packaging references and verification scope.
+เครื่องมือช่วยชี้จุดตรวจ ไม่รับรองว่าข้อความเป็นของมนุษย์หรือบทความถูกต้องทั้งหมด อ่าน [ข้อจำกัด](KNOWN_ISSUES.md) และเก็บบันทึกตรวจแยกจากบทความ

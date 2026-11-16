@@ -2,329 +2,140 @@
 
 # Research Humanizer
 
-**Natural prose. Verifiable claims.**
+**Clear research writing. Traceable claims. Real evidence.**
 
-A research-writing skill for Claude Code and Codex.<br>
-From manuscript revisions to equations, figures, and submission checks.
+[![Version](https://img.shields.io/badge/version-2.2.0-2563eb?style=flat-square)](CHANGELOG.md)
+[![License](https://img.shields.io/badge/license-MIT-0f766e?style=flat-square)](LICENSE)
+[![Languages](https://img.shields.io/badge/guides-English%20%2B%20Thai-475569?style=flat-square)](skills/research-paper-craft/SKILL.md)
+[![Status](https://img.shields.io/badge/status-preview-b45309?style=flat-square)](docs/KNOWN_ISSUES.md)
 
-[![License MIT](https://img.shields.io/badge/License-MIT-2563eb?style=flat-square)](LICENSE)
-[![Guides English and Thai](https://img.shields.io/badge/Guides-English%20%2B%20Thai-0f766e?style=flat-square)](skills/research-paper-craft/references/writing.en.md)
-[![Format Agent Skills](https://img.shields.io/badge/Format-Agent%20Skills-475569?style=flat-square)](skills/research-paper-craft/SKILL.md)
-[![Status Preview](https://img.shields.io/badge/Status-Preview-b45309?style=flat-square)](docs/KNOWN_ISSUES.md)
+<a href="README.md">English</a> · <a href="README%28TH%29.md">ภาษาไทย</a>
 
-**English** · <a href="README%28TH%29.md">ภาษาไทย</a>
-
-[Install](#install) · [Use](#use) · [Word layout](#word-layout) · [Scope](#scope) · [Validation](#validation) · [Contribute](CONTRIBUTING.md)
+[Install](#install) · [Use](#use) · [Scope](#scope) · [Validation](#validation)
 
 </div>
 
-Research Humanizer combines research-specific editing rules with evidence checks. It tells the agent to preserve scientific meaning, trace numerical claims, and ask the researcher for missing originals before filling a gap.
+A research-writing skill for Claude Code and Codex. Remove generic filler without inventing specificity, changing the science or replacing the author's voice. Keep good text unchanged. Build graphs from verified data and use actual study photographs when the figure must show the real setup.
 
-**Missing a real environment photo, raw record, or experimental setting? Ask the researcher first. Do not invent it or quietly replace it.**
+> [!IMPORTANT]
+> Missing originals? Ask the researcher. A plausible sentence, a synthetic lab image or an attractive curve is not evidence.
 
-> [!NOTE]
-> Version `2.1.0` adds Word-first layout and typography safeguards to the `research-humanizer` plugin and `research-paper-craft` skill. Original research humanizing rules remain unchanged. The optional DOCX preflight is read-only, not a rendering validator. The five known text-checker regressions remain open. See [Word layout](#word-layout) and [Validation](#validation).
+**2.2.0** adds author voice profiles, before/after claim review, real-first figures and a repaired text checker. Word-first safeguards and the original Humanizer remain. [See the gap-closure record](docs/QUALITY.md).
 
 <a id="install"></a>
 ## Install
 
-Install **Research Humanizer as a plugin**. The plugin bundles the existing `research-paper-craft` skill and its English and Thai guides. You do not need to clone the repository or copy skill folders for the recommended installation.
-
-Use a current **Claude Code CLI or Codex CLI** with plugin support and Git available. Install and sign in to the host separately. Python 3.10 or later is needed only for the optional text checker. This package adds no MCP servers, hooks, or extra account connection.
-
 ### Claude Code
 
-Run these commands **inside the Claude Code chat**, one at a time.
+Run inside Claude Code, one line at a time.
 
 ```text
 /plugin marketplace add LethimCookMyBro/research-humanizer
 /plugin install research-humanizer@research-humanizer
 ```
 
-Choose the installation scope when prompted. Follow the activation message. If needed, run `/reload-plugins` or start a new session. Then invoke the bundled skill with its plugin namespace.
+Then invoke the skill.
 
 ```text
-/research-humanizer:research-paper-craft Revise the manuscript in this workspace. Preserve the evidence and ask me about missing study inputs.
+/research-humanizer:research-paper-craft Revise this manuscript. Preserve my claims and ask for missing originals.
 ```
-
-<details>
-<summary><strong>Claude Code terminal alternative</strong></summary>
-
-Run these in your terminal, not in the chat. The default scope is your user account. Add `--scope project` to the install command for a shared research project.
-
-```bash
-claude plugin marketplace add LethimCookMyBro/research-humanizer
-claude plugin install research-humanizer@research-humanizer
-```
-
-</details>
-
-The marketplace registration and plugin installation are separate steps. The plugin name and marketplace name are both `research-humanizer`. See the official [installation guide](https://code.claude.com/docs/en/discover-plugins) and [plugin namespace guide](https://code.claude.com/docs/en/plugins).
 
 ### Codex CLI
 
-Run these commands **in your terminal**, not in the Codex chat.
+Run in your terminal, not the chat.
 
 ```bash
 codex plugin marketplace add LethimCookMyBro/research-humanizer
 codex plugin add research-humanizer@research-humanizer
 ```
 
-Start a new Codex session. Enter `/plugins` to confirm that **Research Humanizer** is installed and enabled. The interactive alternative is to register the marketplace with the first command above, then open `/plugins` and install Research Humanizer from that marketplace.
-
-Ask Codex to use the `research-paper-craft` skill on your project files. You can also select it from the skill picker by typing `$`.
-
-```text
-Use the research-paper-craft skill from Research Humanizer to revise the manuscript in this workspace. Preserve the evidence and ask me about missing study inputs.
-```
-
-Codex uses `codex plugin add` for installation and `/plugins` for its browser. These are different from Claude Code's commands. See the official [Codex CLI reference](https://learn.chatgpt.com/docs/cli/reference) and [plugin guide](https://developers.openai.com/codex/plugins).
-
-> [!TIP]
-> Migrating from the earlier manual installation? Back up and move your standalone `research-paper-craft` folder outside `~/.claude/skills/`, `~/.agents/skills/`, or the corresponding project skills directory before switching to the plugin. Keep your manuscript files untouched. Do not leave competing standalone and plugin copies enabled.
+Start a new session and use `/plugins` to check installation. Select `research-paper-craft` with `$` or ask Codex to use it. The plugin is named `research-humanizer`; its bundled skill is `research-paper-craft`. A compatible host with plugin support and Git is required. Python 3.10+ is optional for local checks. No hooks or MCP servers are added.
 
 <details>
-<summary><strong>Verify, update, or uninstall the plugin</strong></summary>
+<summary><strong>Update, migration and standalone installation</strong></summary>
 
-Check installed plugins from your terminal.
-
-```bash
-claude plugin list
-codex plugin list
-```
-
-For Claude Code, refresh the marketplace and update the plugin.
+Claude Code terminal update.
 
 ```bash
 claude plugin marketplace update research-humanizer
 claude plugin update research-humanizer@research-humanizer
+claude plugin list
 ```
 
-For Codex, refresh the marketplace catalog.
+Codex marketplace refresh.
 
 ```bash
 codex plugin marketplace upgrade research-humanizer
 ```
 
-A refreshed catalog is not proof that the installed cache changed. Check the installed version in `/plugins`. If the installed copy is still old, back up any local customizations and reinstall it through that browser. Start a new session afterward.
+Check the installed version in `/plugins`. Restart the host session. A refreshed catalog or a GitHub push does not prove the installed cache changed. If a desktop app still shows an older version, check that its installation and the CLI use the same account/configuration. Back up local customizations before reinstalling. Do not delete the entire host configuration directory.
 
-Uninstall from your terminal. For a Claude Code project-scope install, add `--scope project`.
-
-```bash
-claude plugin uninstall research-humanizer@research-humanizer
-codex plugin remove research-humanizer@research-humanizer
-```
-
-These commands manage plugins, not manuscript files. If plugin commands are not recognized, update the host using its official installation instructions. Organization policies may also restrict custom marketplaces. Do not bypass those policies.
+For a standalone installation, copy the complete `skills/research-paper-craft` folder into `~/.claude/skills/` or `~/.agents/skills/`, or the corresponding project directory. Do not enable both standalone and plugin copies. Keep references, scripts and license notices together.
 
 </details>
 
-<details>
-<summary><strong>Manual alternative for a standalone skill</strong></summary>
-
-Use this only when you need a plain skill instead of a plugin. Do not perform it in addition to the recommended plugin installation.
-
-```bash
-git clone https://github.com/LethimCookMyBro/research-humanizer.git
-cd research-humanizer
-```
-
-Copy the complete `skills/research-paper-craft` directory to one destination. Back up and move an existing installation outside the skills directory first. Do not overwrite it or copy only `SKILL.md`.
-
-| Host | User-level destination | Project-level destination |
-| --- | --- | --- |
-| Claude Code | `~/.claude/skills/research-paper-craft/` | `.claude/skills/research-paper-craft/` |
-| Codex | `~/.agents/skills/research-paper-craft/` | `.agents/skills/research-paper-craft/` |
-
-Project paths are relative to the research project's root. On Windows, use your home directory for `~`. If the host runs in WSL, use the paths inside that WSL environment. Keep all references, scripts, templates, and license notices.
-
-A standalone Claude Code skill uses `/research-paper-craft` rather than the plugin-namespaced command. In Codex, select the skill by typing `$`. Start a new session after changing the installed files.
-
-Manual copies do not update through the plugin manager. Review source changes, run `git pull --ff-only`, back up the installed copy, and replace it deliberately. To uninstall, move the installed skill folder outside the discovery directory. Leave manuscript files untouched.
-
-See the official [Claude Code skills guide](https://code.claude.com/docs/en/skills) and [Codex skills guide](https://developers.openai.com/codex/skills/).
-
-</details>
+Commands follow the [Claude plugin guide](https://code.claude.com/docs/en/discover-plugins) and [Codex CLI reference](https://learn.chatgpt.com/docs/cli/reference). Live host installation remains unverified in the development environment.
 
 <a id="use"></a>
 ## Use
 
-Give the agent access to the actual project files. State the output language, target venue, and which result exports are authoritative when these are known. It must read existing decisions before asking again.
-
 ```text
-Use research-paper-craft on the files in this workspace.
-Write the manuscript in English and discuss open questions with me in Thai.
-Inspect the manuscript, code, approved results, and source records first.
-Ask me for any missing original data, images, or study details.
-Create equations and visuals only where the research needs them.
-Keep the manuscript separate from the verification report.
-Do not claim checks that were not actually performed.
+Use research-paper-craft on the files in this project.
+Preserve my accepted terminology and make only necessary language changes.
+Compare changed claims with their sources, including scope and uncertainty.
+Use real originals for evidence images and verified data for graphs.
+Map overview components and arrows to the actual method.
+Ask me for missing study inputs. Do not substitute them.
+Keep the original Word document and edit a copy.
+Separate the manuscript from the verification report.
 ```
 
-For a language-only edit, ask for that narrower scope. The skill should not redesign the study while polishing a paragraph. It loads relevant guidance progressively in one language, rather than reading both complete language sets at startup.
+### What a useful edit looks like
 
-### A small example
+*An authored teaching example, not a model benchmark.* The supplied note states only that the method combines sensor readings. No evaluation results are supplied.
 
-*Illustrative writing example, not an executed model benchmark.*
-
-The supplied note states only that a method combines sensor readings. It includes no evaluation results or field photographs.
-
-| Stage | Text |
+| Draft | Source-bounded revision |
 | --- | --- |
-| Inflated draft | Our groundbreaking framework seamlessly integrates sensor measurements and demonstrates robust real-world performance. |
-| Supported rewrite | The method combines sensor readings. |
-| Researcher question | Do you have the evaluation results and original environment photographs for this study? |
+| Our groundbreaking framework seamlessly integrates sensor measurements and demonstrates robust real-world performance. | The method combines sensor readings. |
 
-The performance claim stays unresolved until evidence is supplied. It is not strengthened, replaced with a guess, or silently treated as established.
-
-<a id="word-layout"></a>
-## Word-first layout checks
-
-**Humanize the prose without rebuilding the formatted paper.** Version 2.1.0 adds a task-loaded Word layout module in [English](skills/research-paper-craft/references/word-layout.en.md) and [Thai](skills/research-paper-craft/references/word-layout.th.md). The original research-writing and evidence rules remain intact.
-
-| Problem | Required review |
-| --- | --- |
-| Stretched words or letters | Character tracking, scale, kerning, justification, tabs, nonbreaking spaces, manual line breaks |
-| Uneven or clipped lines | Line height, paragraph before/after spacing, styles, grid, Thai combining marks |
-| Cramped tables | Column width, cell margins, row height, wrapping, header repetition, row splitting |
-| Broken or crowded equations | Original symbols, OMML or legacy objects, fonts, numbering, spacing, necessity, equation-to-code consistency |
-| Empty column bottoms or page gaps | Keep chains, section and column breaks, floating anchors, footnotes, legitimate whitespace |
-| Formatting drift after editing | Original-copy preservation, targeted Word edits, field and object checks, saved-file and PDF review |
-
-The agent must keep an untouched original and use a working copy. It must not recreate the DOCX from Markdown, extracted text, or screenshots. Without native Word editing access, it provides a read-only audit and a location-specific patch plan. Programmatic edits require explicit approval and final verification in Word.
-
-```text
-Use research-paper-craft in Word-first mode on the original DOCX.
-Preserve research meaning, equation objects, fields, and the venue template.
-Audit character, word, line, paragraph, table, equation, and page spacing.
-Ask before replacing uncertain symbols or changing scientific definitions.
-Keep a backup and verify every final page in Microsoft Word.
-If Word access is unavailable, return an anchored patch plan rather than a rebuilt document.
-```
-
-An optional read-only preflight finds structural review candidates. Run it from a local repository checkout. It does not fix files or render pages.
-
-```bash
-python3 skills/research-paper-craft/scripts/audit_docx.py /path/to/manuscript.docx --json
-```
-
-Use the [layout QA record](skills/research-paper-craft/assets/layout-qa.md) and [equation-to-code map](skills/research-paper-craft/assets/equation-code-map.csv) when applicable. These are unfilled templates. A clean preflight does not prove that the layout is correct. Native Word access, every-page inspection, and the final saved artifact remain required.
+The performance claim is flagged as unsupported, not silently treated as true. A clear sentence such as “The logger records each action and the corresponding workpiece state” can stay unchanged.
 
 <a id="scope"></a>
 ## Scope
 
-| Area | What the instructions require |
+| Area | Contract |
 | --- | --- |
-| Research humanizing | Remove filler and formulaic prose while preserving meaning, numbers, citations, negation, and uncertainty |
-| Evidence and versions | Resolve conflicting documents and code with the researcher. Trace study results to approved exports and raw records |
-| Paper structure | Keep the Introduction accessible. Use concise contribution bullets without numerical results |
-| Methods and equations | Define variables, units, dimensions, assumptions, and boundary cases. Check consistency with implementation |
-| Evaluation and statistics | Review comparison fairness, aggregation, uncertainty, and reproducibility |
-| Figures and tables | Plot verified data. Match system diagrams to the real method. Label conceptual illustrations |
-| Submission | Check identity leakage, metadata, headers, and supplements. Verify Word pagination and every final page when required |
-| Working records | Separate manuscript deliverables from source, claim, and verification records |
+| Humanizing | Minimal edits, author-approved voice, stable terminology and explicit stopping rules |
+| Scientific meaning | Trace sources, compare before/after claims, preserve negation, scope and citation attachment |
+| Whole papers | Link questions, methods, results and limitations; remove paragraphs that only repeat importance |
+| Mathematics | Editable equations, defined symbols and units, implementation mapping |
+| Graphs | Reproducible plot data, independent units, calculated uncertainty and final-size review |
+| Real images | Matching originals, capture context, consent and disclosed processing |
+| Overview / infographic | Evidence-linked nodes and arrows, readable hierarchy, no decorative invented components |
+| Word and submission | Preserve DOCX structure, inspect native Word pagination and every final page, audit anonymity |
 
-The nine guidance modules are available in [English](skills/research-paper-craft/references/writing.en.md) and [Thai](skills/research-paper-craft/references/writing.th.md). The full routing table is in [SKILL.md](skills/research-paper-craft/SKILL.md).
-
-<details>
-<summary><strong>Default manuscript style</strong></summary>
-
-Use short, complete, moderately formal sentences. Avoid comma chains and crowded paragraphs. Keep necessary terminology stable.
-
-The default house style prohibits prose semicolons, colons, long dashes, and English contractions. `Keywords:` and reference punctuation are exceptions. Code, equations, URLs, identifiers, required citations, and exact quotations remain protected. Use Greek letters and restricted symbols in mathematical or numerical contexts rather than decorative prose.
-
-These are this project's defaults, not universal publishing rules. Report conflicts with a verified venue template or the researcher's explicit requirements. Never change scientific meaning to satisfy a style checker.
-
-</details>
-
-### Boundaries
-
-This is a set of agent instructions with optional read-only text and DOCX structural checkers. It does not itself provide browsing, image generation, document rendering, or Microsoft Word. Those capabilities depend on the host and its tools.
-
-It does not certify scientific correctness, guarantee publication acceptance, or promise to evade AI detectors. Follow the venue's AI-use disclosure requirements. Without native Word access, Word pagination remains unchecked rather than being inferred from another renderer.
+Guidance is task-loaded in one language. An ordinary paragraph edit does not load all guides. Start with [SKILL.md](skills/research-paper-craft/SKILL.md), [writing](skills/research-paper-craft/references/writing.en.md), [visuals](skills/research-paper-craft/references/visuals.en.md) or [Word layout](skills/research-paper-craft/references/word-layout.en.md). Optional record templates are in [assets](skills/research-paper-craft/assets).
 
 <a id="validation"></a>
-## Validation
+## Validation and limits
 
-**Preview status is deliberate.** Instruction coverage, executable tests, and real-model behavior are different forms of evidence.
+The five historical text-checker regressions are fixed. New tests cover revision signals, figure contracts, malformed inputs and path confinement. Full commands, counts and evidence are in [VERIFICATION.md](docs/VERIFICATION.md). Independent model quality, native Word repair and live host installation remain **not established**. The [24-case evaluation bank](evals/README.md) contains synthetic fixtures, not fabricated benchmark results.
 
-| Check | Current evidence |
+| Tool | What it does not certify |
 | --- | --- |
-| Bundled checker and package tests | 31 tests pass in the documented local run |
-| Targeted v2.0 audit regressions | 5 tests fail and remain open |
-| DOCX structural preflight | 27 tests on synthetic ZIP/XML fixtures pass. No native Word rendering |
-| Word layout instruction contracts | 8 static tests pass. They do not establish model compliance |
-| Independent model trials | 40 research scenarios and 20 Word layout scenarios are defined. They have not been executed |
-| Plugin packaging and install docs | Both host manifests and catalogs added. Offline contract tests are recorded in the verification report |
-| Claude Code and Codex integration | Commands checked against official documentation. Live install and invocation not tested here |
-| Native Word and full submission workflow | Not tested end to end on a research manuscript |
+| Text checker | Scientific truth, every syntax form, or AI authorship |
+| Revision reviewer | Semantic equivalence or correct citation attachment |
+| Figure audit | Photo authenticity, permissions, statistical recomputation or rendered quality |
+| DOCX preflight | Native Word pagination or visual layout |
 
-See [known issues](docs/KNOWN_ISSUES.md), the [original audit](docs/audit-v2.0/README.md), and the [current verification record](docs/VERIFICATION.md). Version 2.1.0 does not claim to fix the v2.0 text checker.
-
-### Optional checker and tests
-
-Run from the repository root. Replace the manuscript path with your own file. Use `python` in place of `python3` when that is your Python 3 command.
-
-```bash
-python3 skills/research-paper-craft/scripts/lint_manuscript.py /path/to/manuscript.md --json
-python3 -B -m unittest discover -s skills/research-paper-craft/tests -v
-python3 -B -m unittest discover -s tests -v
-```
-
-The checker reads UTF-8 Markdown or plain text and does not edit files. It does not validate DOCX, PDF, mathematics, citations, image authenticity, anonymity, or scientific claims. A clean report does not approve a manuscript.
-
-To reproduce the **currently failing** targeted audit checks, run the following separately. A nonzero exit is expected on the unchanged v2.0 checker and must not be reported as a pass.
-
-```bash
-python3 -B docs/audit-v2.0/audit_regressions.py skills/research-paper-craft
-```
-
-## Repository layout
-
-```text
-research-humanizer/
-├── .claude-plugin/
-│   ├── plugin.json
-│   └── marketplace.json
-├── .codex-plugin/
-│   └── plugin.json
-├── .agents/plugins/
-│   └── marketplace.json
-├── tests/
-│   └── test_plugin_packaging.py
-├── README.md
-├── README(TH).md
-├── LICENSE
-├── THIRD_PARTY_NOTICES.md
-├── CONTRIBUTING.md
-├── docs/
-│   ├── PUBLISHING.md
-│   ├── KNOWN_ISSUES.md
-│   ├── VERIFICATION.md
-│   └── audit-v2.0/
-└── skills/
-    └── research-paper-craft/
-        ├── SKILL.md
-        ├── references/
-        ├── assets/
-        ├── scripts/
-        ├── tests/
-        ├── provenance/
-        └── licenses/
-```
+All checks are local and non-mutating. [Tool usage and schemas](docs/QUALITY.md). A no-flags report is not submission approval. Follow the venue's AI-disclosure policy. This project does not promise detector evasion, paper acceptance or a particular number of stars.
 
 ## Contribute
 
-Start with a reproducible issue or a small pull request. Useful contributions include checker regression fixes, bilingual meaning-preservation examples, and documented host trials. Use synthetic or shareable fixtures. Do not upload private manuscripts, participant data, credentials, or unpublished results without permission.
+[CONTRIBUTING.md](CONTRIBUTING.md) · [Known limits](docs/KNOWN_ISSUES.md) · [Changelog](CHANGELOG.md) · [Publishing](docs/PUBLISHING.md)
 
-Read [CONTRIBUTING.md](CONTRIBUTING.md). For repository setup, the About description, and suggested topics, see [PUBLISHING.md](docs/PUBLISHING.md).
+Useful contributions are reproducible edge cases, source-bounded bilingual examples and recorded host/model trials. Never submit private manuscripts, participant data or credentials without authorization.
 
 ## License and attribution
 
-Released under the [MIT License](LICENSE). Preserve the included copyright and permission notices when redistributing this work.
-
-The Humanizer source is credited to [Siqi Chen's Humanizer project](https://github.com/blader/humanizer). The bundled original matches the upstream v4.0.0 Git blob. Its MIT notice is retained in [licenses/humanizer-MIT.txt](licenses/humanizer-MIT.txt). Research-specific adaptations and provenance are documented in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
-
-Claude Code and Codex are products of their respective providers. This repository is an independent project and does not imply their endorsement.
-
-<sub>Installation documentation checked on 15 November 2026. Product behavior can change.</sub>
+[MIT](LICENSE). The original Humanizer by [Siqi Chen](https://github.com/blader/humanizer) is retained with its [MIT notice](licenses/humanizer-MIT.txt) and [provenance](THIRD_PARTY_NOTICES.md). This is an independent project, not an endorsement by the providers of Claude Code or Codex.
