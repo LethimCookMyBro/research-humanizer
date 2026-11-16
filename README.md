@@ -14,7 +14,7 @@ From manuscript revisions to equations, figures, and submission checks.
 
 **English** · <a href="README%28TH%29.md">ภาษาไทย</a>
 
-[Install](#install) · [Use](#use) · [Scope](#scope) · [Validation](#validation) · [Contribute](CONTRIBUTING.md)
+[Install](#install) · [Use](#use) · [Word layout](#word-layout) · [Scope](#scope) · [Validation](#validation) · [Contribute](CONTRIBUTING.md)
 
 </div>
 
@@ -23,7 +23,7 @@ Research Humanizer combines research-specific editing rules with evidence checks
 **Missing a real environment photo, raw record, or experimental setting? Ask the researcher first. Do not invent it or quietly replace it.**
 
 > [!NOTE]
-> This repository packages Research Paper Craft v2.0 as the `research-humanizer` plugin for Claude Code and Codex. The plugin wrapper is version `2.0.1`. The bundled skill remains `research-paper-craft` at core version `2.0.0`. Research instructions and checker code are unchanged. See [Validation](#validation) for known limitations.
+> Version `2.1.0` adds Word-first layout and typography safeguards to the `research-humanizer` plugin and `research-paper-craft` skill. Original research humanizing rules remain unchanged. The optional DOCX preflight is read-only, not a rendering validator. The five known text-checker regressions remain open. See [Word layout](#word-layout) and [Validation](#validation).
 
 <a id="install"></a>
 ## Install
@@ -177,6 +177,39 @@ The supplied note states only that a method combines sensor readings. It include
 
 The performance claim stays unresolved until evidence is supplied. It is not strengthened, replaced with a guess, or silently treated as established.
 
+<a id="word-layout"></a>
+## Word-first layout checks
+
+**Humanize the prose without rebuilding the formatted paper.** Version 2.1.0 adds a task-loaded Word layout module in [English](skills/research-paper-craft/references/word-layout.en.md) and [Thai](skills/research-paper-craft/references/word-layout.th.md). The original research-writing and evidence rules remain intact.
+
+| Problem | Required review |
+| --- | --- |
+| Stretched words or letters | Character tracking, scale, kerning, justification, tabs, nonbreaking spaces, manual line breaks |
+| Uneven or clipped lines | Line height, paragraph before/after spacing, styles, grid, Thai combining marks |
+| Cramped tables | Column width, cell margins, row height, wrapping, header repetition, row splitting |
+| Broken or crowded equations | Original symbols, OMML or legacy objects, fonts, numbering, spacing, necessity, equation-to-code consistency |
+| Empty column bottoms or page gaps | Keep chains, section and column breaks, floating anchors, footnotes, legitimate whitespace |
+| Formatting drift after editing | Original-copy preservation, targeted Word edits, field and object checks, saved-file and PDF review |
+
+The agent must keep an untouched original and use a working copy. It must not recreate the DOCX from Markdown, extracted text, or screenshots. Without native Word editing access, it provides a read-only audit and a location-specific patch plan. Programmatic edits require explicit approval and final verification in Word.
+
+```text
+Use research-paper-craft in Word-first mode on the original DOCX.
+Preserve research meaning, equation objects, fields, and the venue template.
+Audit character, word, line, paragraph, table, equation, and page spacing.
+Ask before replacing uncertain symbols or changing scientific definitions.
+Keep a backup and verify every final page in Microsoft Word.
+If Word access is unavailable, return an anchored patch plan rather than a rebuilt document.
+```
+
+An optional read-only preflight finds structural review candidates. Run it from a local repository checkout. It does not fix files or render pages.
+
+```bash
+python3 skills/research-paper-craft/scripts/audit_docx.py /path/to/manuscript.docx --json
+```
+
+Use the [layout QA record](skills/research-paper-craft/assets/layout-qa.md) and [equation-to-code map](skills/research-paper-craft/assets/equation-code-map.csv) when applicable. These are unfilled templates. A clean preflight does not prove that the layout is correct. Native Word access, every-page inspection, and the final saved artifact remain required.
+
 <a id="scope"></a>
 ## Scope
 
@@ -191,7 +224,7 @@ The performance claim stays unresolved until evidence is supplied. It is not str
 | Submission | Check identity leakage, metadata, headers, and supplements. Verify Word pagination and every final page when required |
 | Working records | Separate manuscript deliverables from source, claim, and verification records |
 
-The eight guidance modules are available in [English](skills/research-paper-craft/references/writing.en.md) and [Thai](skills/research-paper-craft/references/writing.th.md). The full routing table is in [SKILL.md](skills/research-paper-craft/SKILL.md).
+The nine guidance modules are available in [English](skills/research-paper-craft/references/writing.en.md) and [Thai](skills/research-paper-craft/references/writing.th.md). The full routing table is in [SKILL.md](skills/research-paper-craft/SKILL.md).
 
 <details>
 <summary><strong>Default manuscript style</strong></summary>
@@ -206,7 +239,7 @@ These are this project's defaults, not universal publishing rules. Report confli
 
 ### Boundaries
 
-This is a set of agent instructions with an optional heuristic checker. It does not itself provide browsing, image generation, document rendering, or Microsoft Word. Those capabilities depend on the host and its tools.
+This is a set of agent instructions with optional read-only text and DOCX structural checkers. It does not itself provide browsing, image generation, document rendering, or Microsoft Word. Those capabilities depend on the host and its tools.
 
 It does not certify scientific correctness, guarantee publication acceptance, or promise to evade AI detectors. Follow the venue's AI-use disclosure requirements. Without native Word access, Word pagination remains unchecked rather than being inferred from another renderer.
 
@@ -219,12 +252,14 @@ It does not certify scientific correctness, guarantee publication acceptance, or
 | --- | --- |
 | Bundled checker and package tests | 31 tests pass in the documented local run |
 | Targeted v2.0 audit regressions | 5 tests fail and remain open |
-| Independent model trials | 40 scenarios are defined. They have not been executed |
+| DOCX structural preflight | 27 tests on synthetic ZIP/XML fixtures pass. No native Word rendering |
+| Word layout instruction contracts | 8 static tests pass. They do not establish model compliance |
+| Independent model trials | 40 research scenarios and 20 Word layout scenarios are defined. They have not been executed |
 | Plugin packaging and install docs | Both host manifests and catalogs added. Offline contract tests are recorded in the verification report |
 | Claude Code and Codex integration | Commands checked against official documentation. Live install and invocation not tested here |
 | Native Word and full submission workflow | Not tested end to end on a research manuscript |
 
-See [known issues](docs/KNOWN_ISSUES.md), the [original audit](docs/audit-v2.0/README.md), and the [current verification record](docs/VERIFICATION.md). The documentation edition does not claim to fix the v2.0 checker.
+See [known issues](docs/KNOWN_ISSUES.md), the [original audit](docs/audit-v2.0/README.md), and the [current verification record](docs/VERIFICATION.md). Version 2.1.0 does not claim to fix the v2.0 text checker.
 
 ### Optional checker and tests
 

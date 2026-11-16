@@ -1,5 +1,28 @@
 # Verification record
 
+## Word-first layout 2.1.0, 2026-11-16
+
+The update adds bilingual Word-preservation rules and a non-mutating DOCX structural preflight. It preserves research humanizing and the earlier scientific evidence rules. It does not claim that formatting cannot break.
+
+| Check | Result |
+| --- | --- |
+| Source baseline | Reconstructed tree exactly matches remote tree `0265b690c778e6e4d50df65a700f121bbdcb2e27` at commit `aeea3b277a0560d13a91b21b0c9721fe18b9482e` |
+| New tests before implementation | 7 of 8 instruction contracts failed. All 27 preflight tests failed on the absent implementation |
+| Repository tests after changes | 19 passed, comprising 11 existing plugin tests and 8 new contracts |
+| Skill tests after changes | 58 passed, comprising 31 existing tests and 27 new preflight tests |
+| Historical text-checker regressions | 5 failed, unchanged |
+| Original scientific and writing rules | All 62 R00 to R30 language-specific bodies preserved |
+| Humanizer original and text-checker source | Unchanged |
+| Word-layout coverage | Ten new rules in each language plus unfilled layout and equation-code records |
+| Native Word, actual paper repair, independent model trials | Not performed |
+| User screenshots or private manuscript data published | None |
+
+The DOCX fixtures are synthetic ZIP/XML packages. They test the scanner, not Word's renderer. The new tool reports review candidates without editing or rendering the input. It does not resolve the full style cascade, measure visible whitespace, verify equation meaning, or replace page inspection in native Word.
+
+See the [machine-readable report](verification/word-layout-v2.1.0.json) and [skill-level verification](../skills/research-paper-craft/tests/verification-v2.1.md). New [Word acceptance scenarios](../skills/research-paper-craft/tests/word-layout-scenarios.md) are a proposed evaluation set, not executed evidence. Preview status remains appropriate.
+
+The reproduction commands below also run the updated suites. The separate historical audit still exits nonzero with five failures. No old failure was relabeled as a pass.
+
 ## Plugin packaging 2.0.1, 2026-11-15
 
 This update adds native plugin manifests and marketplace catalogs. It does not modify the bundled skill or fix its known text-checker defects.
@@ -27,7 +50,7 @@ The third command is expected to fail on the unchanged v2.0 checker. It is not a
 
 Installation commands and schemas were checked against [Claude Code plugin installation](https://code.claude.com/docs/en/discover-plugins), [Claude Code marketplace documentation](https://code.claude.com/docs/en/plugin-marketplaces), [OpenAI plugin packaging](https://developers.openai.com/plugins/build/plugins), and the [Codex CLI reference](https://learn.chatgpt.com/docs/cli/reference). This is documentation and offline validation, not proof of live host compatibility.
 
-For a host-level test, record the installed host version, add the repository marketplace, install the plugin, start a fresh session, and confirm that the skill reads a referenced module. Keep preview status until those trials and the other outstanding checks are recorded.
+For a host-level test, record the installed host version, add the repository marketplace, install the plugin, start a new session, and confirm that the skill reads a referenced module. Keep preview status until those trials and the other outstanding checks are recorded.
 
 ## Historical documentation edition
 

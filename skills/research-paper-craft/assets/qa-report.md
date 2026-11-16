@@ -26,6 +26,8 @@ Record the manuscript path, version or hash, data snapshot, code revision, resul
 | Reproducibility and execution record | Not recorded | Not recorded | Not checked | Distinguish inspected from executed |
 | Ethics and AI disclosure requirements | Not recorded | Not recorded | Not checked | Confirm actual requirements and author statements |
 | Visible and hidden identity information | Not recorded | Not recorded | Not checked | Apply to every anonymous submission artifact |
+| Word original, template baseline, and targeted editing route | Not recorded | Not recorded | Not checked | Apply R31 to R40 and the layout QA record |
+| Character, word, line, paragraph, table, and equation spacing | Not recorded | Not recorded | Not checked | Inspect actual saved Word pages |
 | Native Word pagination | Not recorded | Not recorded | Not checked | Required for the requested Word workflow |
 | Every final page visually inspected | Not recorded | Not recorded | Not checked | Identify final file and inspection route |
 | Final archive content | Not recorded | Not recorded | Not checked | Exclude private working material |

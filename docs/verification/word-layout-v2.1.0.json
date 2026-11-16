@@ -1,0 +1,59 @@
+{
+  "checked_on": "2026-11-16",
+  "version": "2.1.0",
+  "scope": "Word-first instruction coverage, read-only DOCX structural preflight, packaging and original-rule preservation",
+  "base_commit": "aeea3b277a0560d13a91b21b0c9721fe18b9482e",
+  "base_tree": "0265b690c778e6e4d50df65a700f121bbdcb2e27",
+  "reconstructed_baseline_matches_live_tree": true,
+  "python_version": "3.13.5",
+  "baseline_word_contract_tests": {
+    "tests": 8,
+    "failed": 7,
+    "passed": 1,
+    "exit_code": 1
+  },
+  "baseline_preflight_tests": {
+    "tests": 27,
+    "failed": 27,
+    "exit_code": 1,
+    "reason": "Implementation file absent"
+  },
+  "repository_tests": {
+    "tests": 19,
+    "passed": 19,
+    "exit_code": 0,
+    "composition": "11 existing plugin tests and 8 new instruction contracts"
+  },
+  "skill_tests": {
+    "tests": 58,
+    "passed": 58,
+    "exit_code": 0,
+    "composition": "31 existing tests and 27 synthetic DOCX preflight tests"
+  },
+  "known_text_checker_regressions": {
+    "tests": 5,
+    "failed": 5,
+    "exit_code": 1,
+    "fixed_in_this_update": false
+  },
+  "original_R00_to_R30_language_blocks_preserved": 62,
+  "original_humanizer_unchanged": true,
+  "original_text_checker_unchanged": true,
+  "core_lines": 61,
+  "core_whitespace_delimited_words": 901,
+  "runtime_modules_per_language": 9,
+  "new_layout_rules_per_language": 10,
+  "new_layout_acceptance_scenarios": 20,
+  "native_word_rendering_tested": false,
+  "real_manuscript_repaired": false,
+  "independent_model_trials_executed": false,
+  "live_plugin_installation_tested": false,
+  "user_screenshots_included_in_repository": false,
+  "limitations": [
+    "Synthetic XML fixtures are not native Word documents verified by rendering.",
+    "Static instruction tests do not establish model compliance.",
+    "The DOCX preflight reports candidates, not confirmed defects or layout approval.",
+    "Full style inheritance, actual fonts and rendered spacing, pagination, and scientific meaning remain manual checks.",
+    "The five earlier text-linter failures remain open."
+  ]
+}

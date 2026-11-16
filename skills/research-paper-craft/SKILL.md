@@ -1,8 +1,8 @@
 ---
 name: research-paper-craft
-description: Use when drafting, revising, translating, or auditing Thai or English research papers, mathematical methods, experiments, graphs, system diagrams, scientific images, or anonymous submission files.
+description: Use when drafting, revising, translating, or auditing Thai or English research papers, mathematical methods, experiments, graphs, system diagrams, scientific images, Word DOCX typography and layout, or anonymous submission files.
 metadata:
-  version: "2.0.0"
+  version: "2.1.0"
   languages: "th,en"
 ---
 
@@ -17,6 +17,7 @@ Preserve evidence and scientific meaning before polishing prose. Follow host ins
 - Never fabricate results, citations, experimental details, approvals, proofs, or verification records. Distinguish observed, derived, literature-reported, estimated, assumed, proposed, synthetic, and unresolved material. Preserve negative findings and consequential uncertainty.
 - Trace scientific quantities to appropriate sources. Reconcile study results with approved exports and raw records. Link configurations to actual runs. Retain formulas, units, aggregation, and unrounded values. Mathematical constants and structural numbering need consistency checks, not invented raw records.
 - Include mathematics and visuals only when useful. Check equations against definitions and implementation. Numerical examples are not general proofs. Plot verified data reproducibly. Match diagrams to the actual method. Generated or unrelated images are not study evidence.
+- Use a Word-first workflow for existing DOCX files. Keep the original and edit a copy in Microsoft Word. Do not rebuild formatted papers from extracted text or conversion. Before any DOCX edit, including humanizing, load word-layout guidance. Without native editing access, provide a read-only audit and patch plan. Programmatic edits require explicit approval and final Word verification. Preserve equation objects, fields, styles, and research meaning. Never guess damaged symbols or globally normalize spacing.
 - Never claim source inspection, execution, reproduction, page inspection, or successful checks without evidence. Report unavailable tools and pending checks. Do not promise publication acceptance or AI-detector evasion.
 
 ## Manuscript voice
@@ -29,7 +30,7 @@ The Introduction opens with a concrete problem and a high-level account. Contrib
 
 ## Load guidance by task
 
-Choose one language for guidance, normally the conversation's language. Manuscript language follows the brief. Read the relevant module before that phase, not both translations. Do not load all modules at startup. Full-paper work loads modules progressively. A paragraph edit normally needs only writing. Reuse already-read guidance.
+Choose one language for guidance, normally the conversation's language. Manuscript language follows the brief. Read the relevant module before that phase, not both translations. Do not load all modules at startup. Full-paper work loads modules progressively. A plain-text paragraph edit normally needs only writing. Reuse already-read guidance.
 
 | Task | Rules | English | ไทย |
 | --- | --- | --- | --- |
@@ -40,6 +41,7 @@ Choose one language for guidance, normally the conversation's language. Manuscri
 | Evaluation, statistics, execution, reproducibility | R14, R15, R23 | [Evaluation](references/evaluation.en.md) | [การประเมิน](references/evaluation.th.md) |
 | System overview, infographic, graph, photograph, table | R18 to R22 | [Visuals](references/visuals.en.md) | [ภาพและตาราง](references/visuals.th.md) |
 | Final checks, ethics, anonymity, layout, delivery | R24 to R28 | [Submission](references/submission.en.md) | [ก่อนส่ง](references/submission.th.md) |
+| Existing Word files, typography, spacing, layout repair | R31 to R40 | [Word layout](references/word-layout.en.md) | [รูปแบบ Word](references/word-layout.th.md) |
 | Working-record fields | R29 | [Records](references/records.en.md) | [บันทึก](references/records.th.md) |
 
 ## Work and deliver

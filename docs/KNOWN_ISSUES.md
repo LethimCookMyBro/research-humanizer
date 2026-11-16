@@ -1,6 +1,12 @@
 # Known issues
 
-Documentation packaging date 2026-11-15. Core skill version 2.0.0.
+Updated 2026-11-16. Plugin and core skill version 2.1.0. Historical v2.0 checker defects remain open.
+
+## Word layout and DOCX preflight limits
+
+Version 2.1.0 adds a Word-first repair procedure and a read-only structural preflight. It does not include Microsoft Word or automatically repair formatting. It cannot resolve the full style cascade, verify fonts on the target machine, infer a corrupted mathematical symbol, measure rendered whitespace, or prove code correspondence. Candidate findings can be legitimate template choices. A clean report is not a layout pass.
+
+The preflight has synthetic ZIP/XML tests, not native Word render tests. Twenty additional Word acceptance scenarios are defined but unexecuted. No user screenshot or private manuscript is included in this repository.
 
 ## Checker defects still open
 

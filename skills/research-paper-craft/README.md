@@ -1,7 +1,7 @@
 > [!IMPORTANT]
-> Repository documentation edition, 2026-11-15. Core v2.0 instructions and checker code are unchanged. Read [KNOWN_ISSUES.md](KNOWN_ISSUES.md) before relying on the checker. Five targeted audit regressions remain open. MIT and upstream notices are included in [LICENSE](LICENSE) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+> Version 2.1.0 adds Word-first layout guidance and a read-only DOCX preflight. Original R00 to R30 research rules and text-checker code are unchanged. Read [KNOWN_ISSUES.md](KNOWN_ISSUES.md) before relying on the checker. Five targeted audit regressions remain open. MIT and upstream notices are included in [LICENSE](LICENSE) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
-# Research paper craft 2.0
+# Research paper craft 2.1.0
 
 ## ใช้แพ็กเกจนี้ชุดเดียว
 
@@ -9,7 +9,7 @@
 
 หากระบบรองรับการนำเข้า skill ด้วย ZIP ให้นำเข้า ZIP นี้ หากระบบใช้โฟลเดอร์ skills ให้แตกไฟล์แล้ววางโฟลเดอร์ `research-paper-craft` ทั้งโฟลเดอร์ไว้ในตำแหน่ง skills ของระบบนั้น เก็บโครงสร้างภายในไว้ครบ
 
-ไฟล์ [SKILL.md](SKILL.md) คือจุดเริ่มของ AI คู่มือ 8 หมวดใน `references` มีทั้งไทยและอังกฤษ แต่กำหนดให้อ่านภาษาเดียวและอ่านเฉพาะช่วงงานที่ต้องใช้ ภาษาในคู่มือไม่ได้บังคับภาษาของบทความ
+ไฟล์ [SKILL.md](SKILL.md) คือจุดเริ่มของ AI คู่มือ 9 หมวดใน `references` มีทั้งไทยและอังกฤษ แต่กำหนดให้อ่านภาษาเดียวและอ่านเฉพาะช่วงงานที่ต้องใช้ ภาษาในคู่มือไม่ได้บังคับภาษาของบทความ
 
 ทดสอบการเรียกใช้ด้วยข้อความนี้
 
@@ -37,9 +37,9 @@ The host must support reading bundled reference files. Attaching only SKILL.md d
 | ส่วน | หน้าที่ |
 | --- | --- |
 | SKILL.md | กฎหลักและการเลือกคู่มือ |
-| references | คู่มือ 8 หมวด แยกไทยและอังกฤษ |
+| references | คู่มือ 9 หมวด แยกไทยและอังกฤษ |
 | assets | แบบบันทึกโจทย์และรายงานตรวจที่ยังไม่กรอกผล |
-| scripts | ตัวตรวจข้อความแบบอ่านอย่างเดียว |
+| scripts | ตัวตรวจข้อความและโครงสร้าง DOCX แบบอ่านอย่างเดียว |
 | tests | การทดสอบเครื่องมือ โครงสร้างแพ็กเกจ และโจทย์ทดสอบโมเดล |
 | provenance | ไฟล์ต้นทางและบันทึกที่มา ไม่ใช่คำสั่งให้โหลดทุกงาน |
 
@@ -65,9 +65,21 @@ The checker flags common prose punctuation, contractions, draft markers, HTML co
 
 It does not verify numerical provenance, citations, scientific validity, statistical assumptions, symbol meaning, scientific image integrity, authorship, anonymity, or page layout. It cannot open Word or inspect DOCX metadata. A clean report is not scientific or submission approval. Do not lint the instruction guides as though their examples were manuscript prose.
 
+## Word layout and typography
+
+Read [word-layout.en.md](references/word-layout.en.md) or [word-layout.th.md](references/word-layout.th.md) before editing an existing DOCX, including language-only edits. Keep the original and use native Microsoft Word. Without Word access, provide a read-only audit and anchored patch plan. Do not rebuild the paper from text or conversion.
+
+```bash
+python scripts/audit_docx.py manuscript.docx --json
+```
+
+This optional standard-library tool does not write or render files. It lists review candidates and part hashes. It does not resolve all style inheritance, determine actual page geometry, verify equations against code, or inspect Word pagination. Zero findings do not approve the layout. It accepts transitional DOCX only and rejects unsupported, encrypted, malformed, or oversized inputs. Limits are 256 MiB archive and total uncompressed content, 8 MiB per XML part, 32 MiB combined XML, and 4096 entries.
+
+Use [layout-qa.md](assets/layout-qa.md) and [equation-code-map.csv](assets/equation-code-map.csv) as unfilled records. The original Humanizer and research safeguards remain active. Runtime R31 to R40 are the new Word rules. The historical v1.1 R31 origin note stays archived in provenance and is not a runtime rule.
+
 ## การตรวจรุ่นนี้
 
-ดูผลที่รันจริงใน [tests/verification-report.md](tests/verification-report.md) และ [tests/unit-test-results.txt](tests/unit-test-results.txt)
+ผลของ v2.0 เก็บเป็นประวัติใน [tests/verification-report.md](tests/verification-report.md) และ [tests/unit-test-results.txt](tests/unit-test-results.txt) ผลของ v2.1.0 อยู่ใน [tests/verification-v2.1.md](tests/verification-v2.1.md)
 
 การทดสอบโครงสร้างและตัวตรวจข้อความไม่ใช่การทดสอบว่าโมเดลปฏิบัติตามกฎครบทุกข้อ โจทย์ใน [tests/acceptance-scenarios.md](tests/acceptance-scenarios.md) ยังต้องทดลองกับโมเดลและระบบที่ใช้งานจริง
 
