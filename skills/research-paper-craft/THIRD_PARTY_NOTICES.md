@@ -32,3 +32,9 @@ The maintainers should retain authorship records in Git and review incoming mate
 Claude Code and Codex names identify the products for which installation instructions are supplied. No affiliation, certification, or endorsement is claimed.
 
 The original is stored at [provenance/humanizer-original.md](provenance/humanizer-original.md). The complete upstream permission text is in [licenses/humanizer-MIT.txt](licenses/humanizer-MIT.txt).
+
+## Additional inspected integrations, 2026-11-17
+
+Academic Research Skills by Cheng-I Wu is an external CC BY-NC 4.0 dependency. No ARS source is vendored or relicensed by this project. The adapter describes its public entrypoints and adds independently written requirements. Check the upstream license before using ARS. No upstream endorsement is implied.
+
+Aboudjem/humanizer-skill by Adam Boudjemaa was inspected at commit a58df065367550b6ce40ff3f648335018d8e0589. Research-specific adaptations select source fidelity, context, coherence and artifact cleanup while rejecting detector optimization, invented personality and blanket removal of uncertainty. No upstream CLI or 55-pattern catalog is copied. Its MIT permission notice is retained with the skill. Existing blader Humanizer provenance remains unchanged.

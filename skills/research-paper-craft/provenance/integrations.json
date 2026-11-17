@@ -1,0 +1,64 @@
+{
+  "checked_on": "2026-11-17",
+  "ars_vendored": false,
+  "aboudjem_cli_vendored": false,
+  "live_host_tested": false,
+  "sources": [
+    {
+      "repository": "Imbad0202/academic-research-skills",
+      "ref": "23bd688bbc121da6ae98ec3c4d4a7675cefc4c83",
+      "declared_suite_version": "3.24.3",
+      "license": "CC-BY-NC-4.0",
+      "paths": [
+        "README.md",
+        "LICENSE",
+        "commands/ars-full.md",
+        "academic-pipeline/SKILL.md",
+        "academic-paper/SKILL.md"
+      ],
+      "inspection_scope": "Entry command and relevant routing, stage, confirmation, drafting and finalization sections; not the entire repository"
+    },
+    {
+      "repository": "Aboudjem/humanizer-skill",
+      "ref": "a58df065367550b6ce40ff3f648335018d8e0589",
+      "license": "MIT",
+      "paths": [
+        "README.md",
+        "LICENSE",
+        "skills/humanizer/SKILL.md"
+      ],
+      "inspection_scope": "README, license and relevant catalog/voice/rewrite sections; no CLI score imported"
+    }
+  ],
+  "additional_sources": [
+    {
+      "url": "https://github.com/Imbad0202/academic-research-skills-codex/blob/main/README.md",
+      "observed_version": "3.24.2",
+      "scope": "Codex-specific distribution and installation documentation, not live runtime validation"
+    },
+    {
+      "url": "https://code.claude.com/docs/en/skills",
+      "scope": "Skill invocation and plugin namespace"
+    },
+    {
+      "url": "https://code.claude.com/docs/en/memory",
+      "scope": "Host-provided memory is not a shared cross-platform store"
+    },
+    {
+      "url": "https://developers.openai.com/codex/skills/",
+      "scope": "Codex skill invocation"
+    },
+    {
+      "url": "https://conferences.ieeeauthorcenter.ieee.org/write-your-paper/authoring-tools-and-templates/",
+      "scope": "Official templates as authoritative sources, not a universal template"
+    },
+    {
+      "url": "https://neurips.cc/public/guides/PaperChecklist",
+      "scope": "Example reporting guidance for variability and error bars"
+    },
+    {
+      "url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "scope": "Dependency licensing boundary"
+    }
+  ]
+}

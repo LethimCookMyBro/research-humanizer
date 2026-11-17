@@ -1,7 +1,7 @@
 {
   "name": "research-humanizer",
-  "version": "2.2.0",
-  "description": "Evidence-first research writing with English and Thai guidance. Preserve claims, check sources, and ask for missing study inputs.",
+  "version": "2.3.0",
+  "description": "Full-paper research writing with ARS integration, source-bound humanizing, literature and metric checks, real figures, and Word preservation. English + Thai.",
   "author": {
     "name": "LethimCookMyBro"
   },
@@ -15,5 +15,6 @@
     "english",
     "thai"
   ],
-  "skills": "./skills/"
+  "skills": "./skills/",
+  "commands": "./commands/"
 }

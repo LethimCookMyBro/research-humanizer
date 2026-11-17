@@ -1,5 +1,36 @@
 # Verification record
 
+## 2.3.0, 17 November 2026
+
+| Suite | Local result |
+| --- | --- |
+| Repository contracts, packaging and release configuration | 50 passed |
+| Skill tools and contracts | 134 passed |
+| Retained historical regressions | 5 passed |
+| Total | 189 passed |
+
+All three suites were executed with Python 3.13.5. The 12 new full-paper instruction contracts failed before their implementation. The 29 new record-auditor tests failed before the script existed. The four release-configuration tests failed before its workflow and notes existed. The final local suites pass. Original R00 to R40 reference modules and the bundled original Humanizer remain byte-identical to 2.2.0. The new modules add R41 to R46 plus a separate integration guide. The prior rule-map remains a fingerprint of those unchanged historical rule bodies, not the runtime package version.
+
+The ARS full command, orchestration contract, writing entry, license and relevant setup were inspected at the source pins in the integration record. The Aboudjem skill, README and MIT notice were inspected as a design reference. The Codex sibling's README was checked separately. ARS was not vendored, installed, or run. The general Humanizer CLI and its 55-pattern catalog were not copied into this package.
+
+The record auditor reads synthetic JSON fixtures. It tests declared completeness and relationships, not the truth of declarations. Even a consistent report always returns submission_approved false. It does not retrieve papers, select a scientifically valid metric, invoke ARS, run code, authenticate photographs, check semantic equivalence or render Word.
+
+Live Claude Code and Codex integration, independent model evaluation, real full-paper production and native Word inspection were not performed. The 12 added full-paper acceptance scenarios are an unexecuted evaluation plan. No private manuscript, user screenshot or original study asset is published.
+
+[Machine-readable record](verification/release-v2.3.0.json) · [Integration contract](INTEGRATION.md) · [Proposed full-paper scenarios](../evals/full-paper-scenarios.md)
+
+The release workflow reruns all suites on the published main commit before creating a preview release and source archive. Check that workflow's actual status. Local tests and the presence of a workflow do not establish that publication has succeeded.
+
+## Reproduce the current revision
+
+```bash
+python3 -B -m unittest discover -s tests -v
+python3 -B -m unittest discover -s skills/research-paper-craft/tests -v
+python3 -B docs/audit-v2.0/audit_regressions.py skills/research-paper-craft
+```
+
+## Historical 2.2.0 record
+
 ## 2.2.0, 16 November 2026
 
 | Suite | Result |

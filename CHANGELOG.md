@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.3.0, 2026-11-17
+
+- Added explicit full-paper, revision and read-only audit modes while retaining R00 to R40.
+- Added a prompt-level ARS adapter and research-full Claude command. ARS remains a separate CC BY-NC dependency, with its confirmations and integrity checks intact.
+- Added bilingual guidance for current primary-source search, exemplar analysis, official venue rules and metric-to-data decisions before drafting.
+- Added scoped private author context, source-bound drafting and complete artifact handoffs to writers, reviewers and formatters.
+- Added a research-specific policy for Aboudjem Humanizer concepts without importing its score, personality injection or aggressive rewriting defaults.
+- Added a read-only full-paper record auditor and synthetic tests. These do not verify source truth or model quality.
+- Added release notes and a version-gated preview release workflow. A release does not itself refresh installed Claude caches.
+
 ## 2.2.0, 2026-11-16
 
 - Added an author-approved voice profile, minimal-edit/stop rules and source-level before/after claim review in the existing writing guides.
@@ -37,4 +47,4 @@
 - Added an MIT license, verified upstream notices, known-issue documentation, publishing guidance, and contribution instructions.
 - Retained the previous audit as history and recorded current documentation verification separately.
 
-This is not a checker bug-fix release. The five targeted v2.0 regressions remain open. Independent model and native Word workflows are not newly validated.
+Historical note for the documentation edition only. At that point the five targeted v2.0 regressions were still open. They were fixed in 2.2.0. Independent model and native Word workflows remain unverified.

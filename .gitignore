@@ -22,3 +22,6 @@ venv/
 Thumbs.db
 .vscode/
 .idea/
+
+# Per-project author context, handoffs and unpublished research
+.research-humanizer/

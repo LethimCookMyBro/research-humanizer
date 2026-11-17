@@ -100,3 +100,7 @@ MIT was selected to allow broad reuse with a short notice requirement. License c
 | [Agent Skills specification](https://agentskills.io/specification) | Portable skill directory and metadata |
 | [MIT License](https://opensource.org/license/mit) | Permission text and notice requirement |
 | [Humanizer v4.0.0 license](https://github.com/blader/humanizer/blob/v4.0.0/LICENSE) | Upstream permission and copyright notice |
+
+## 2.3.0 full-paper preview
+
+Keep the plugin manifests, VERSION and core metadata synchronized. The optional ARS dependency remains external. Publish the versioned release with its notes and checksums only after tests pass, and preserve preview status until live host and researcher evaluations exist. Do not describe this as an ARS fork, an official integration or a detector-evasion tool. Keep the new research-full command directory in plugin archives. Author profiles and project handoffs must not be included.

@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "mode": "full-paper",
+  "workflow": "ars",
+  "dependencies": {
+    "ars": {
+      "loaded": false,
+      "version": null,
+      "entry": null,
+      "confirmations_preserved": false
+    }
+  },
+  "study": {
+    "question": null,
+    "source_version": null
+  },
+  "literature": {
+    "status": "not_searched",
+    "searched_on": null,
+    "queries": [],
+    "venue": {
+      "url": null,
+      "requirements_locator": null
+    },
+    "sources": []
+  },
+  "metrics": [],
+  "sections": [],
+  "docx_requested": true,
+  "checks": {
+    "numbers": {
+      "status": "not_checked",
+      "evidence_locator": null
+    },
+    "citations": {
+      "status": "not_checked",
+      "evidence_locator": null
+    },
+    "meaning": {
+      "status": "not_checked",
+      "evidence_locator": null
+    },
+    "style": {
+      "status": "not_checked",
+      "evidence_locator": null
+    },
+    "visuals": {
+      "status": "not_checked",
+      "evidence_locator": null
+    },
+    "equations": {
+      "status": "not_checked",
+      "evidence_locator": null
+    },
+    "anonymity": {
+      "status": "not_checked",
+      "evidence_locator": null
+    },
+    "word_layout": {
+      "status": "not_checked",
+      "evidence_locator": null
+    }
+  }
+}

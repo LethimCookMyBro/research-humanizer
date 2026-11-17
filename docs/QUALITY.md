@@ -1,6 +1,20 @@
 # Quality contract and gap closure
 
-Version 2.2.0 implements the November gap review without claiming every possible failure is eliminated.
+Version 2.3.0 adds whole-paper drafting and ARS coordination to the 2.2.0 quality work. It does not claim every possible failure is eliminated.
+
+## Whole-paper additions
+
+| Requirement | Implementation | Evidence boundary |
+| --- | --- | --- |
+| Draft a whole paper, not only polish | Explicit modes, first-draft style and complete applicable deliverables | Static guide contracts, not a successful real manuscript run |
+| Pair with ars-full | Dedicated Claude coordinator and host-specific adapter | Source interface inspected. No enforcement hook or live compatibility claim |
+| Read related papers before drafting | Actual-study search, source access/locators, official venue and exemplar matrix | Procedure and blank records. Agent still needs real retrieval tools |
+| Select relevant metrics | Definition, independent unit, input/code mapping and author decision | Suggestions are not measured outcomes. Auditor checks declarations only |
+| Serve many researchers | Scoped accessible memory and approved context outside the plugin | No automatic access to other chats, no inferred personal identity |
+| Adapt general humanizing to research | Compatibility matrix for uncertainty, terms, notation, Unicode and scores | No classifier or publication guarantee |
+| Publish a versioned download | Main-only tested preview-release workflow | GitHub Release does not refresh an installed host cache |
+
+The older revision-quality changes below remain available. Use minimal editing for existing text, not as a restriction on writing missing sections in full-paper mode.
 
 | Gap | Change | Evidence boundary |
 | --- | --- | --- |
@@ -18,7 +32,7 @@ Version 2.2.0 implements the November gap review without claiming every possible
 ## Working loop
 
 ```text
-Source snapshot → claim and figure contracts → minimal edit / verified construction
+Study snapshot → literature / metric / author context → source-bound drafting or revision
         → before-after and source checks → actual-size / saved-artifact inspection
         → author decisions and explicit delivery status
 ```
@@ -27,13 +41,14 @@ Keep records proportional. A one-sentence edit needs no folder of empty CSVs. A 
 
 ## Tool contracts
 
-Run from the repository root. All tools are local and read-only with respect to research inputs. They make no API calls and do not upload sources.
+Run from the repository root. All tools are local and read-only with respect to research inputs. The bundled Python auditors make no API calls and do not upload sources. The full-paper workflow separately requires authorized web or scholarly retrieval by the host; it is not an offline-only writing service.
 
 ```bash
 python3 skills/research-paper-craft/scripts/lint_manuscript.py manuscript.md --json --fail-on-errors
 python3 skills/research-paper-craft/scripts/review_revision.py before.md after.md --terms terms.json
 python3 skills/research-paper-craft/scripts/audit_figures.py figure-manifest.json --root /path/to/project
 python3 skills/research-paper-craft/scripts/audit_docx.py manuscript.docx --json
+python3 skills/research-paper-craft/scripts/audit_full_paper.py full-paper-run.json --json
 ```
 
 terms.json is a JSON list of exact protected phrases. It is not the entire voice-profile object. Text exports are analysis inputs only, never a reason to recreate a formatted DOCX. Reports can reveal filenames or draft details. Keep them outside public submission packages unless disclosure is authorized.

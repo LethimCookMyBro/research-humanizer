@@ -1,4 +1,4 @@
-# Known limits in 2.2.0
+# Known limits in 2.3.0
 
 ## Resolved regressions
 
@@ -16,3 +16,9 @@ The five historical v2.0 tests now pass. The checker catches the missing Here co
 ## Release status
 
 Preview remains intentional. Software regressions and documentation gaps can be fixed without pretending that external evaluation has been completed. See [verification](VERIFICATION.md) in the repository docs and the evaluation protocol. Never use a green program test to promise acceptance, authorship, zero errors or GitHub stars.
+
+## Full-paper integration limits
+
+ARS handoff and stage propagation are prompt-level instructions, not runtime enforcement. Live paired runs, checkpoint preservation and private-memory behavior have not been measured in either host. A missing dependency blocks ARS mode. The standalone route must be named explicitly. Aboudjem is an inspected optional reference, not an installed dependency.
+
+The full-paper record auditor checks assertions and references within a JSON record. It does not verify URLs, read papers, establish metric validity, inspect source-code execution, certify native Word pages or judge authorship. Even a consistent record leaves submission approval false. Record evidence can itself be incorrect and needs researcher review.

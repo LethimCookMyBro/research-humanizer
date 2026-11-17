@@ -1,10 +1,14 @@
-# Research Paper Craft 2.2.0
+# Research Paper Craft 2.3.0
 
 The skill inside Research Humanizer. Start with SKILL.md. Load one language and only the guidance needed for the current task. The core stays under 1,000 English whitespace-delimited words. Detailed Word, scientific and language rules are task-loaded.
 
 Research humanizing preserves sources, terminology, scope and uncertainty. Real evidence images stay real. Quantitative graphs come from approved data. Overview diagrams map components and arrows to the implemented method. Existing DOCX files stay Word-first.
 
-## New in this version
+## New in 2.3.0
+
+Full-paper mode, ARS handoff and a Claude research-full command, literature/venue reconnaissance, metric-data planning, private multi-author context, and a read-only record-completeness audit. See [full-paper](references/full-paper.en.md), [literature](references/literature.en.md), and [integration](references/ars-integration.en.md). ARS is installed separately under CC BY-NC 4.0. Host invocation has not been tested here.
+
+## Retained from 2.2.0
 
 Optional author voice profile, minimal-edit and stop rules, before/after claim review, source-bound examples, whole-paper coherence checks, real-first figure provenance and explicit checker coverage. Five historical text-checker regressions are fixed. Independent model quality and native Word execution are not established.
 
@@ -17,6 +21,7 @@ python scripts/lint_manuscript.py manuscript.md --json --fail-on-errors
 python scripts/review_revision.py before.md after.md --terms terms.json
 python scripts/audit_figures.py figure-manifest.json --root /path/to/project
 python scripts/audit_docx.py manuscript.docx --json
+python scripts/audit_full_paper.py full-paper-run.json --json
 ```
 
 terms.json contains a JSON list of exact terms. The voice-profile is optional and is not automatically loaded by these tools. Figure manifest documentation is in the repository quality guide. Empty templates do not pass an audit.
@@ -32,3 +37,5 @@ assets contains the project brief, author profile, claim revision ledger, paper 
 ใช้ SKILL.md เป็นจุดเริ่ม แล้วอ่านคู่มือภาษาเดียวตามงาน เก็บศัพท์และความหมายของเจ้าของงาน แก้เฉพาะที่มีเหตุผล ภาพหลักฐานใช้ต้นฉบับจริง กราฟใช้ข้อมูลที่ตรวจแล้ว สมการต้องตรงกับโค้ด และเอกสาร Word ต้องแก้จากสำเนาต้นฉบับ ไม่สร้างไฟล์จัดหน้าใหม่จากข้อความที่ดึงออกมา
 
 เครื่องมือช่วยชี้จุดตรวจ ไม่รับรองว่าข้อความเป็นของมนุษย์หรือบทความถูกต้องทั้งหมด อ่าน [ข้อจำกัด](KNOWN_ISSUES.md) และเก็บบันทึกตรวจแยกจากบทความ
+
+The full-paper auditor checks declared record consistency only. Exit 0 means consistent declarations, 1 means unresolved record findings, and 2 means unreadable or unsupported input. It never approves submission or fetches sources. Blank templates are deliberately incomplete. Private run records belong in the research project, not the installed skill.

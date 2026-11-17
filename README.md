@@ -4,7 +4,7 @@
 
 **Clear research writing. Traceable claims. Real evidence.**
 
-[![Version](https://img.shields.io/badge/version-2.2.0-2563eb?style=flat-square)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-2.3.0-2563eb?style=flat-square)](CHANGELOG.md)
 [![License](https://img.shields.io/badge/license-MIT-0f766e?style=flat-square)](LICENSE)
 [![Languages](https://img.shields.io/badge/guides-English%20%2B%20Thai-475569?style=flat-square)](skills/research-paper-craft/SKILL.md)
 [![Status](https://img.shields.io/badge/status-preview-b45309?style=flat-square)](docs/KNOWN_ISSUES.md)
@@ -15,12 +15,12 @@
 
 </div>
 
-A research-writing skill for Claude Code and Codex. Remove generic filler without inventing specificity, changing the science or replacing the author's voice. Keep good text unchanged. Build graphs from verified data and use actual study photographs when the figure must show the real setup.
+A full-paper research-writing companion for Claude Code and Codex. Pair it with ARS `ars-full` to apply research-specific humanizing from the first draft through literature, metrics, figures and final document checks. Use it for different researchers and fields, with private author context when available. Revision and read-only audit modes remain available.
 
 > [!IMPORTANT]
 > Missing originals? Ask the researcher. A plausible sentence, a synthetic lab image or an attractive curve is not evidence.
 
-**2.2.0** adds author voice profiles, before/after claim review, real-first figures and a repaired text checker. Word-first safeguards and the original Humanizer remain. [See the gap-closure record](docs/QUALITY.md).
+**2.3.0** adds full-paper mode, an ARS coordinator, mandatory literature/venue reconnaissance, metric-to-data planning and scoped author context. Existing humanizing, graph, equation, evidence and Word safeguards remain. [Integration and limits](docs/INTEGRATION.md) · [2.3.0 release notes](docs/releases/v2.3.0.md).
 
 <a id="install"></a>
 ## Install
@@ -34,10 +34,10 @@ Run inside Claude Code, one line at a time.
 /plugin install research-humanizer@research-humanizer
 ```
 
-Then invoke the skill.
+Then invoke the skill in the requested mode.
 
 ```text
-/research-humanizer:research-paper-craft Revise this manuscript. Preserve my claims and ask for missing originals.
+/research-humanizer:research-paper-craft Draft a full paper from these materials. Apply the research style from the first paragraph and ask for missing evidence.
 ```
 
 ### Codex CLI
@@ -68,7 +68,7 @@ Codex marketplace refresh.
 codex plugin marketplace upgrade research-humanizer
 ```
 
-Check the installed version in `/plugins`. Restart the host session. A refreshed catalog or a GitHub push does not prove the installed cache changed. If a desktop app still shows an older version, check that its installation and the CLI use the same account/configuration. Back up local customizations before reinstalling. Do not delete the entire host configuration directory.
+Check the installed version in `/plugins`. Restart the host session. A refreshed catalog, a GitHub push or a GitHub Release does not prove the installed cache changed. Releases identify downloadable revisions; plugin updates still depend on their configured source and version. If a desktop app still shows an older version, check that its installation and the CLI use the same account/configuration. Back up local customizations before reinstalling. Do not delete the entire host configuration directory.
 
 For a standalone installation, copy the complete `skills/research-paper-craft` folder into `~/.claude/skills/` or `~/.agents/skills/`, or the corresponding project directory. Do not enable both standalone and plugin copies. Keep references, scripts and license notices together.
 
@@ -81,7 +81,10 @@ Commands follow the [Claude plugin guide](https://code.claude.com/docs/en/discov
 
 ```text
 Use research-paper-craft on the files in this project.
-Preserve my accepted terminology and make only necessary language changes.
+Use full-paper mode. Draft every applicable section, not only an outline.
+Inspect the actual study and search related papers, official venue instructions and metric definitions.
+Use accessible author-approved context without inventing memory.
+Apply the research style from the first draft and preserve accepted terminology.
 Compare changed claims with their sources, including scope and uncertainty.
 Use real originals for evidence images and verified data for graphs.
 Map overview components and arrows to the actual method.
@@ -89,6 +92,38 @@ Ask me for missing study inputs. Do not substitute them.
 Keep the original Word document and edit a copy.
 Separate the manuscript from the verification report.
 ```
+
+### Full paper with ARS
+
+Install ARS separately in Claude Code. Its own license is **CC BY-NC 4.0**. Our MIT license does not relicense that dependency. This package does not copy or install ARS for you.
+
+```text
+/plugin marketplace add Imbad0202/academic-research-skills
+/plugin install academic-research-skills
+```
+
+After both plugins are loaded, invoke the new coordinator in Claude Code.
+
+```text
+/research-humanizer:research-full Draft a full paper from this project's actual materials with ARS. Apply research-paper-craft from the first draft. Search primary papers, official venue requirements and metric definitions. Ask for missing originals and preserve ARS confirmation points.
+```
+
+The existing `ars-full` entry can be used too.
+
+```text
+/academic-research-skills:ars-full Draft the complete applicable manuscript. Load research-humanizer:research-paper-craft first and carry its full-paper, literature, style, real-image and Word-first contract to every writer, reviewer and formatter.
+```
+
+The coordinator loads the actual installed ARS pipeline, not a copy of it. Missing ARS stops the ARS route. It is a **prompt-level adapter**, not an enforcement hook, and it preserves ARS's researcher confirmations. It does not submit a paper or fabricate a finished experiment from a topic.
+
+For Codex, install the upstream [ARS-Codex distribution](https://github.com/Imbad0202/academic-research-skills-codex) and select its installed `academic-research-suite` skill alongside `research-paper-craft`. Ask for ARS full-paper orchestration and our contract in the same request. Claude slash commands and hooks do not transfer automatically. See the [integration guide](skills/research-paper-craft/references/ars-integration.en.md) for the exact source versions, permissions and known conflicts.
+
+<details>
+<summary><strong>Without ARS or when revising only</strong></summary>
+
+Use `research-paper-craft` with an explicit `full-paper` request for the standalone procedure. This must not be reported as an ARS run. Select `revise` for existing text and `audit` for a read-only report. Existing Word masters still require the Word-first path.
+
+</details>
 
 ### What a useful edit looks like
 
@@ -105,9 +140,9 @@ The performance claim is flagged as unsupported, not silently treated as true. A
 
 | Area | Contract |
 | --- | --- |
-| Humanizing | Minimal edits, author-approved voice, stable terminology and explicit stopping rules |
+| Humanizing | Source-bound prose from the first draft, private author context, minimal changes during revision |
 | Scientific meaning | Trace sources, compare before/after claims, preserve negation, scope and citation attachment |
-| Whole papers | Link questions, methods, results and limitations; remove paragraphs that only repeat importance |
+| Whole papers | Draft all applicable sections with ARS or standalone. Link questions, literature, metrics, results and limitations |
 | Mathematics | Editable equations, defined symbols and units, implementation mapping |
 | Graphs | Reproducible plot data, independent units, calculated uncertainty and final-size review |
 | Real images | Matching originals, capture context, consent and disclosed processing |
@@ -119,16 +154,19 @@ Guidance is task-loaded in one language. An ordinary paragraph edit does not loa
 <a id="validation"></a>
 ## Validation and limits
 
-The five historical text-checker regressions are fixed. New tests cover revision signals, figure contracts, malformed inputs and path confinement. Full commands, counts and evidence are in [VERIFICATION.md](docs/VERIFICATION.md). Independent model quality, native Word repair and live host installation remain **not established**. The [24-case evaluation bank](evals/README.md) contains synthetic fixtures, not fabricated benchmark results.
+Version 2.3.0 local checks pass **50 repository + 134 skill + 5 historical regression tests**. These are software and instruction contracts, not a model-quality benchmark.
+
+The 2.3.0 tests add full-paper and ARS instruction contracts plus synthetic record checks. These do not establish live ARS integration or whole-paper quality. The five historical text-checker regressions remain fixed. New tests cover revision signals, figure contracts, malformed inputs and path confinement. Full commands, counts and evidence are in [VERIFICATION.md](docs/VERIFICATION.md). Independent model quality, native Word repair and live host installation remain **not established**. The [24-case evaluation bank](evals/README.md) contains synthetic fixtures, not fabricated benchmark results.
 
 | Tool | What it does not certify |
 | --- | --- |
+| Full-paper record audit | Whether sources were actually read, the study is valid, or the paper is ready |
 | Text checker | Scientific truth, every syntax form, or AI authorship |
 | Revision reviewer | Semantic equivalence or correct citation attachment |
 | Figure audit | Photo authenticity, permissions, statistical recomputation or rendered quality |
 | DOCX preflight | Native Word pagination or visual layout |
 
-All checks are local and non-mutating. [Tool usage and schemas](docs/QUALITY.md). A no-flags report is not submission approval. Follow the venue's AI-disclosure policy. This project does not promise detector evasion, paper acceptance or a particular number of stars.
+The bundled Python audits are local and do not modify research inputs. Host-led literature searches use the authorized network tools. [Tool usage and schemas](docs/QUALITY.md). A no-flags report is not submission approval. Follow the venue's AI-disclosure policy. This project does not promise detector evasion, paper acceptance or a particular number of stars.
 
 ## Contribute
 
@@ -139,3 +177,6 @@ Useful contributions are reproducible edge cases, source-bounded bilingual examp
 ## License and attribution
 
 [MIT](LICENSE). The original Humanizer by [Siqi Chen](https://github.com/blader/humanizer) is retained with its [MIT notice](licenses/humanizer-MIT.txt) and [provenance](THIRD_PARTY_NOTICES.md). This is an independent project, not an endorsement by the providers of Claude Code or Codex.
+
+
+ARS is separately installed under CC BY-NC 4.0. The inspected Aboudjem Humanizer informs a research-specific compatibility policy, not a bundled AI detector or an unrestricted rewrite pass. Its [MIT notice](skills/research-paper-craft/licenses/aboudjem-humanizer-MIT.txt) and [source record](skills/research-paper-craft/provenance/integrations.json) are retained.

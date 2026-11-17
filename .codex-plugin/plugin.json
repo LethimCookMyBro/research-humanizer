@@ -1,7 +1,7 @@
 {
   "name": "research-humanizer",
-  "version": "2.2.0",
-  "description": "Evidence-first research writing with English and Thai guidance. Preserve claims, check sources, and ask for missing study inputs.",
+  "version": "2.3.0",
+  "description": "Full-paper research writing with ARS integration, source-bound humanizing, literature and metric checks, real figures, and Word preservation. English + Thai.",
   "author": {
     "name": "LethimCookMyBro"
   },
@@ -18,13 +18,13 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Research Humanizer",
-    "shortDescription": "Research writing with evidence checks",
-    "longDescription": "Write and revise research papers without inventing results, citations, or missing study materials. Includes English and Thai guidance for prose, equations, figures, and submission checks.",
+    "shortDescription": "Full papers with research-specific humanizing",
+    "longDescription": "Draft full research papers with an optional ARS workflow, current literature and metric planning, research-specific prose, original study images, reproducible graphs and Word-first checks. Confirm study decisions and never invent missing evidence.",
     "developerName": "LethimCookMyBro",
     "category": "Productivity",
     "websiteURL": "https://github.com/LethimCookMyBro/research-humanizer",
     "defaultPrompt": [
-      "Use research-paper-craft to revise this manuscript while preserving the evidence and asking for missing study inputs."
+      "Use research-paper-craft in full-paper mode with my research materials. Apply its research style from the first draft, search relevant papers and official venue requirements, and ask for missing evidence."
     ]
   }
 }
