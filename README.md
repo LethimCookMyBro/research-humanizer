@@ -4,7 +4,7 @@
 
 **Clear research writing. Traceable claims. Real evidence.**
 
-[![Version](https://img.shields.io/badge/version-2.3.0-2563eb?style=flat-square)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-2.3.1-2563eb?style=flat-square)](CHANGELOG.md)
 [![License](https://img.shields.io/badge/license-MIT-0f766e?style=flat-square)](LICENSE)
 [![Languages](https://img.shields.io/badge/guides-English%20%2B%20Thai-475569?style=flat-square)](skills/research-paper-craft/SKILL.md)
 [![Status](https://img.shields.io/badge/status-preview-b45309?style=flat-square)](docs/KNOWN_ISSUES.md)
@@ -14,7 +14,7 @@
 [Install](#install) · [Use](#use) · [Scope](#scope) · [Validation](#validation)
 
 
-**[Project website](https://research-humanizer.vercel.app/)** · [Release v2.3.0](https://github.com/LethimCookMyBro/research-humanizer/releases/tag/v2.3.0)
+**[Project website](https://research-humanizer.vercel.app/)** · [Release v2.3.1](https://github.com/LethimCookMyBro/research-humanizer/releases/tag/v2.3.1)
 
 </div>
 
@@ -24,6 +24,8 @@ Research Humanizer is an academic writing skill and full-paper research companio
 > Missing originals? Ask the researcher. A plausible sentence, a synthetic lab image or an attractive curve is not evidence.
 
 **2.3.0** adds full-paper mode, an ARS coordinator, mandatory literature/venue reconnaissance, metric-to-data planning and scoped author context. Existing humanizing, graph, equation, evidence and Word safeguards remain. [Integration and limits](docs/INTEGRATION.md) · [2.3.0 release notes](docs/releases/v2.3.0.md).
+
+**2.3.1 punctuation patch** reviews comma-heavy sentences and symbolic shorthand without deleting scientific notation. New findings are advisory. [Punctuation guide](skills/research-paper-craft/references/punctuation.en.md) · [Release notes](docs/releases/v2.3.1.md)
 
 <a id="install"></a>
 ## Install

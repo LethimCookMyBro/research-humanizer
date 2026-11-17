@@ -1,4 +1,4 @@
-# Known limits in 2.3.0
+# Known limits in 2.3.1
 
 ## Resolved regressions
 
@@ -22,3 +22,7 @@ Preview remains intentional. Software regressions and documentation gaps can be 
 ARS handoff and stage propagation are prompt-level instructions, not runtime enforcement. Live paired runs, checkpoint preservation and private-memory behavior have not been measured in either host. A missing dependency blocks ARS mode. The standalone route must be named explicitly. Aboudjem is an inspected optional reference, not an installed dependency.
 
 The full-paper record auditor checks assertions and references within a JSON record. It does not verify URLs, read papers, establish metric validity, inspect source-code execution, certify native Word pages or judge authorship. Even a consistent record leaves submission approval false. Record evidence can itself be incorrect and needs researcher review.
+
+## Punctuation review limits in 2.3.1
+
+The text checker uses approximate sentence boundaries and selected recognized syntax. New punctuation warnings require manual adjudication and never rewrite an input. Thresholds are not grammar rules. Unrecognized technical notation, quotations, citation formats, complex Markdown and Thai sentence boundaries can still produce missed or unnecessary flags. No-flags does not certify grammar, authorship or scientific fidelity. Use the bilingual punctuation guide and source comparison before marking review complete.

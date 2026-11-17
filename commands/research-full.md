@@ -12,6 +12,6 @@ If ARS is already running, attach the handoff at the next permitted checkpoint a
 
 Keep ARS confirmation, integrity, privacy, and tool-consent gates. Pass source versions, mandatory style, literature/metric plans, original-image requirements, Word-first restrictions and pending inputs to each delegated writer, reviewer and formatter. Record actual resource loading. This is a prompt-level coordinator, not a runtime hook that intercepts other plugins.
 
-Apply scientific humanizing during drafting. Return a full source-bound manuscript when evidence supports it, not only an outline or rewritten abstract. Unknown study details remain marked and require researcher input. Never turn another paper's metrics or results into this study's observations. Review the saved artifact, figures, equations, anonymity and applicable native Word checks before assigning delivery status.
+Apply scientific humanizing during drafting. Load the punctuation review through the writing guide. Each writer and reviewer must check clause load and preserve necessary notation. Return a full source-bound manuscript when evidence supports it, not only an outline or rewritten abstract. Unknown study details remain marked and require researcher input. Never turn another paper's metrics or results into this study's observations. Review the saved artifact, figures, equations, anonymity and applicable native Word checks before assigning delivery status.
 
 User request follows in `$ARGUMENTS`.

@@ -1,0 +1,39 @@
+{
+  "version": "2.3.1",
+  "checked_on": "2026-11-17",
+  "base_commit": "bedb58e290b4dc6365c47be669927d6c94246977",
+  "python": "3.13.5",
+  "local_baseline": "supplied v2.3.0 archive; later website files tested in source-preparation CI",
+  "local_results": {
+    "repository": 58,
+    "skill": 221,
+    "historical": 5,
+    "total": 284
+  },
+  "new_tests": {
+    "punctuation_tool_cases": 87,
+    "instruction_contracts": 8
+  },
+  "red_evidence": {
+    "initial_72_cases": {
+      "failures": 33
+    },
+    "13_added_edges": {
+      "failures": 8
+    },
+    "2_citation_edges": {
+      "failures": 2
+    },
+    "8_instruction_contracts": {
+      "failures": 7
+    }
+  },
+  "not_verified": [
+    "independent model writing quality",
+    "live Claude/Codex paired ARS execution",
+    "native Word pagination",
+    "all grammar and technical syntax"
+  ],
+  "new_diagnostics": "review only; no automatic edits or authorship score",
+  "remote_results": "See actual source preparation and main CI run logs. Website adds ten repository tests to the archive baseline."
+}
