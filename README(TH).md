@@ -13,6 +13,9 @@
 
 [Install](#install) · [Use](#use) · [Scope](#scope) · [Validation](#validation)
 
+
+**[เว็บไซต์โครงการ](https://research-humanizer.vercel.app/th/)** · [Release v2.3.0](https://github.com/LethimCookMyBro/research-humanizer/releases/tag/v2.3.0)
+
 </div>
 
 Skill สำหรับให้ AI ร่าง paper ทั้งฉบับใน Claude Code และ Codex ใช้คู่กับ `ars-full` ของ ARS เพื่อกำกับสำนวนวิจัยตั้งแต่ร่างแรก ผ่านการค้นงานอ้างอิง เลือก metric สร้างภาพ และตรวจไฟล์สุดท้าย ใช้ได้กับผู้วิจัยหลายคนและหลายสาขา พร้อมบริบทผู้เขียนแบบส่วนตัวเมื่อมี ยังใช้แก้ต้นฉบับหรือตรวจอย่างเดียวได้
@@ -180,3 +183,6 @@ codex plugin marketplace upgrade research-humanizer
 
 
 ARS ต้องติดตั้งแยกและใช้ CC BY-NC 4.0 ส่วน Humanizer ของ Aboudjem ใช้เป็นแนวคิดสำหรับกฎวิจัยเฉพาะ ไม่ได้บรรจุ detector หรือรันการเขียนใหม่แบบไม่จำกัด เก็บ [ข้อความ MIT](skills/research-paper-craft/licenses/aboudjem-humanizer-MIT.txt) และ [บันทึกต้นทาง](skills/research-paper-craft/provenance/integrations.json) ไว้ครบ
+
+
+[เว็บไซต์โครงการและการตั้งค่าการค้นหา](docs/DISCOVERY.md)

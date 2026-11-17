@@ -13,9 +13,12 @@
 
 [Install](#install) · [Use](#use) · [Scope](#scope) · [Validation](#validation)
 
+
+**[Project website](https://research-humanizer.vercel.app/)** · [Release v2.3.0](https://github.com/LethimCookMyBro/research-humanizer/releases/tag/v2.3.0)
+
 </div>
 
-A full-paper research-writing companion for Claude Code and Codex. Pair it with ARS `ars-full` to apply research-specific humanizing from the first draft through literature, metrics, figures and final document checks. Use it for different researchers and fields, with private author context when available. Revision and read-only audit modes remain available.
+Research Humanizer is an academic writing skill and full-paper research companion for Claude Code and Codex. Pair it with ARS `ars-full` to apply research-specific humanizing from the first draft through literature, metrics, figures and final document checks. Use it for different researchers and fields, with private author context when available. Revision and read-only audit modes remain available.
 
 > [!IMPORTANT]
 > Missing originals? Ask the researcher. A plausible sentence, a synthetic lab image or an attractive curve is not evidence.
@@ -170,7 +173,7 @@ The bundled Python audits are local and do not modify research inputs. Host-led 
 
 ## Contribute
 
-[CONTRIBUTING.md](CONTRIBUTING.md) · [Known limits](docs/KNOWN_ISSUES.md) · [Changelog](CHANGELOG.md) · [Publishing](docs/PUBLISHING.md)
+[CONTRIBUTING.md](CONTRIBUTING.md) · [Known limits](docs/KNOWN_ISSUES.md) · [Changelog](CHANGELOG.md) · [Publishing](docs/PUBLISHING.md) · [Website and search setup](docs/DISCOVERY.md)
 
 Useful contributions are reproducible edge cases, source-bounded bilingual examples and recorded host/model trials. Never submit private manuscripts, participant data or credentials without authorization.
 
