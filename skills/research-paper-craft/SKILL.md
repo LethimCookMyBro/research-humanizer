@@ -2,7 +2,7 @@
 name: research-paper-craft
 description: Use when drafting full research papers, working with ars-full, revising or auditing Thai or English manuscripts, literature and metrics, equations, graphs, real study images, or Word DOCX submission files.
 metadata:
-  version: "2.3.0"
+  version: "2.3.1"
   languages: "th,en"
 ---
 
@@ -31,6 +31,8 @@ An explicit full-paper or ars-full request selects full-paper, not outline-only 
 - Never claim source inspection, execution, reproduction, or page inspection without evidence. Report unavailable tools and pending checks. Do not promise publication acceptance or AI-detector evasion.
 
 ## Manuscript voice
+
+Load punctuation review with writing. Check each drafted section and revision for overloaded clauses. Preserve notation and grammar. A threshold is not a quota.
 
 Use short, complete, moderately formal sentences and readable paragraphs. Avoid comma chains, parenthetical digressions, generic openings, artificial contrasts, hype, repeated closers, and decorative formatting. Keep technical terms stable. Use accessible author-approved samples and preferences without inventing memory or treating a previous AI draft as author approval. Profiles are private and researcher-specific.
 

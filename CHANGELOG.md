@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.3.1, 2026-11-17
+
+- Added context-aware punctuation candidates to the read-only text checker, including sentence-level comma load across soft wraps.
+- Added safe handling of common citations, quoted strings, numeric ratios/times and technical punctuation.
+- Added bilingual R47 punctuation guidance and required section-level review during drafting, revision and ARS handoff.
+- Preserved scientific notation, complete sentences and all original evidence/Word/full-paper guards. Thresholds are advisory, not authorship scores or quotas.
+- Added synthetic positive, protection and CLI regression tests. Live model and Word quality remain unverified.
+
 ## 2.3.0, 2026-11-17
 
 - Added explicit full-paper, revision and read-only audit modes while retaining R00 to R40.

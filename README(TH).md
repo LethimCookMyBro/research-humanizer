@@ -4,7 +4,7 @@
 
 **Clear research writing. Traceable claims. Real evidence.**
 
-[![Version](https://img.shields.io/badge/version-2.3.0-2563eb?style=flat-square)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-2.3.1-2563eb?style=flat-square)](CHANGELOG.md)
 [![License](https://img.shields.io/badge/license-MIT-0f766e?style=flat-square)](LICENSE)
 [![Languages](https://img.shields.io/badge/guides-English%20%2B%20Thai-475569?style=flat-square)](skills/research-paper-craft/SKILL.md)
 [![Status](https://img.shields.io/badge/status-preview-b45309?style=flat-square)](docs/KNOWN_ISSUES.md)
@@ -14,7 +14,7 @@
 [Install](#install) · [Use](#use) · [Scope](#scope) · [Validation](#validation)
 
 
-**[เว็บไซต์โครงการ](https://research-humanizer.vercel.app/th/)** · [Release v2.3.0](https://github.com/LethimCookMyBro/research-humanizer/releases/tag/v2.3.0)
+**[เว็บไซต์โครงการ](https://research-humanizer.vercel.app/th/)** · [Release v2.3.1](https://github.com/LethimCookMyBro/research-humanizer/releases/tag/v2.3.1)
 
 </div>
 
@@ -24,6 +24,8 @@ Skill สำหรับให้ AI ร่าง paper ทั้งฉบับ
 > ขาดต้นฉบับต้องถามผู้วิจัย ประโยคที่ฟังน่าเชื่อ ภาพห้องทดลองที่สร้างขึ้น และเส้นกราฟที่ดูดี ใช้แทนหลักฐานไม่ได้
 
 **2.3.0** เพิ่ม full-paper ตัวประสาน ARS ขั้นค้นงานและแม่แบบ แผน metric ที่เชื่อมกับข้อมูลจริง และบริบทผู้เขียนแยกต่อโครงการ โดยเก็บกฎ Humanizer กราฟ สมการ หลักฐาน และ Word เดิมครบ [การเชื่อมระบบและข้อจำกัด](docs/INTEGRATION.md)
+
+**2.3.1** เพิ่มการตรวจลูกน้ำและสัญลักษณ์ตามบริบท แบ่งประโยคตามความหมายโดยรักษาสูตรและตัวเลข คำเตือนใหม่ต้องทบทวน ไม่ลบอัตโนมัติ [คู่มือเครื่องหมาย](skills/research-paper-craft/references/punctuation.th.md) · [บันทึกรุ่น](docs/releases/v2.3.1.md)
 
 <a id="install"></a>
 ## ติดตั้ง

@@ -1,5 +1,26 @@
 # Verification record
 
+## 2.3.1, 17 November 2026
+
+The patch adds context-aware punctuation candidates and bilingual drafting guidance. It does not remove punctuation automatically or certify prose as human-written.
+
+| Local suite against the supplied v2.3.0 archive plus this patch | Result |
+| --- | --- |
+| Repository contracts | 58 passed |
+| Skill tools and contracts | 221 passed |
+| Unchanged historical regressions | 5 passed |
+| Total | 284 passed |
+
+The local archive predates the ten discovery-website tests on current main. Source-preparation CI and the publication workflow run the complete current repository, including those website tests, before publication. Read their actual logs rather than treating this local count as a claim about remote execution.
+
+The 87 new tool cases cover positive candidates, scientific/technical exclusions, wrapped sentences, source lines, severity, unchanged inputs and CLI exits. Before implementation the initial 72-case set had 33 failures. A subsequent 13-case edge set exposed eight failures, and two citation cases exposed two more. All are now passing. Seven of eight new instruction contracts failed before their implementation.
+
+Common citation, quote, ratio, timestamp and numeric-range false positives were repaired. Approximate grammar, unrecognized notation, unsupported citation/quotation forms and Thai sentence segmentation remain outside the tool's certification scope. New punctuation findings are advisory. Existing hard house-style rules and incomplete-parse status remain distinct. Raw inputs are not modified.
+
+Original rule bodies R00 to R46, Word-layout guides and the bundled Humanizer remain unchanged. The writing-guide preambles and core now load the separate R47 punctuation module. ARS handoff forwards it. New behavioral scenarios are proposed only. Independent model quality, host integration and native Word repair were not tested in this patch.
+
+[Machine-readable record](verification/release-v2.3.1.json) · [Release notes](releases/v2.3.1.md) · [English guidance](../skills/research-paper-craft/references/punctuation.en.md) · [คู่มือภาษาไทย](../skills/research-paper-craft/references/punctuation.th.md)
+
 ## 2.3.0, 17 November 2026
 
 | Suite | Local result |

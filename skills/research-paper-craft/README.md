@@ -1,10 +1,14 @@
-# Research Paper Craft 2.3.0
+# Research Paper Craft 2.3.1
 
 The skill inside Research Humanizer. Start with SKILL.md. Load one language and only the guidance needed for the current task. The core stays under 1,000 English whitespace-delimited words. Detailed Word, scientific and language rules are task-loaded.
 
 Research humanizing preserves sources, terminology, scope and uncertainty. Real evidence images stay real. Quantitative graphs come from approved data. Overview diagrams map components and arrows to the implemented method. Existing DOCX files stay Word-first.
 
-## New in 2.3.0
+## New in 2.3.1
+
+Context-aware punctuation review now runs through the existing text checker. Soft-wrapped prose is reviewed as a sentence. New advisory candidates cover comma load, symbolic shorthand, ellipses, repeated marks and overloaded asides. Common numerical, citation and quoted contexts are protected. Load [English punctuation guidance](references/punctuation.en.md) or [ภาษาไทย](references/punctuation.th.md) with writing. No automatic edits, grammatical certification or AI score are added. Thresholds are review triggers, not writing quotas.
+
+## Added in 2.3.0
 
 Full-paper mode, ARS handoff and a Claude research-full command, literature/venue reconnaissance, metric-data planning, private multi-author context, and a read-only record-completeness audit. See [full-paper](references/full-paper.en.md), [literature](references/literature.en.md), and [integration](references/ars-integration.en.md). ARS is installed separately under CC BY-NC 4.0. Host invocation has not been tested here.
 
