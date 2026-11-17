@@ -7,7 +7,7 @@
     {
       "name": "research-humanizer",
       "source": "./",
-      "description": "Evidence-first research writing with English and Thai guidance. Preserve claims, check sources, and ask for missing study inputs."
+      "description": "Full-paper research writing with ARS integration, source-bound humanizing, literature and metric checks, real figures, and Word preservation. English + Thai."
     }
   ]
 }

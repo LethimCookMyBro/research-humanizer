@@ -1,0 +1,61 @@
+name: Publish tested preview release
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - VERSION
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: research-humanizer-release
+  cancel-in-progress: false
+jobs:
+  publish:
+    if: github.repository == 'LethimCookMyBro/research-humanizer' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Test repository contracts
+        run: python3 -B -m unittest discover -s tests -v
+      - name: Test skill tools
+        run: python3 -B -m unittest discover -s skills/research-paper-craft/tests -v
+      - name: Test historical regressions
+        run: python3 -B docs/audit-v2.0/audit_regressions.py skills/research-paper-craft
+      - name: Publish immutable preview assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          version="$(cat VERSION)"
+          [[ "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]
+          tag="v$version"
+          notes="docs/releases/$tag.md"
+          test -f "$notes"
+          if git rev-parse --verify "refs/tags/$tag" >/dev/null 2>&1; then
+            target="$(git rev-list -n 1 "$tag")"
+            if [ "$target" != "$GITHUB_SHA" ]; then
+              echo 'Existing tag does not match this commit. Refusing to move it.' >&2
+              exit 1
+            fi
+          fi
+          if gh release view "$tag" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo "Release $tag already exists. Existing assets are not overwritten."
+            exit 0
+          fi
+          mkdir -p dist
+          archive="research-humanizer-$tag.zip"
+          git archive --format=zip --prefix=research-humanizer/ "$GITHUB_SHA" -o "dist/$archive"
+          (cd dist && sha256sum "$archive" > SHA256SUMS.txt)
+          gh release create "$tag" "dist/$archive" dist/SHA256SUMS.txt \
+            --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" \
+            --title "Research Humanizer $tag · Full-paper companion" \
+            --notes-file "$notes" --prerelease

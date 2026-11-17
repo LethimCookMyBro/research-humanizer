@@ -1,0 +1,49 @@
+{
+  "version": "2.3.0",
+  "checked_on": "2026-11-17",
+  "baseline_commit": "b9b5e01eceeda98e3ad6bdcc0744849b8c0bd509",
+  "baseline_tree": "1e6110eabc528d9685326986a567c6bc44be22a0",
+  "python_version": "3.13.5",
+  "test_suites": {
+    "repository": {
+      "tests": 50,
+      "passed": 50,
+      "exit_code": 0
+    },
+    "skill": {
+      "tests": 134,
+      "passed": 134,
+      "exit_code": 0
+    },
+    "historical_regressions": {
+      "tests": 5,
+      "passed": 5,
+      "exit_code": 0
+    }
+  },
+  "total_tests": 189,
+  "before_implementation": {
+    "instruction_contracts": {
+      "tests": 12,
+      "failed": 12
+    },
+    "full_paper_auditor": {
+      "tests": 29,
+      "failed": 29,
+      "failure_events_including_subtests": 32
+    },
+    "release_configuration": {
+      "tests": 4,
+      "failed": 4
+    }
+  },
+  "native_word_tested": false,
+  "independent_model_trials_executed": false,
+  "live_ars_integration_tested": false,
+  "live_claude_install_tested": false,
+  "live_codex_install_tested": false,
+  "runtime_claim": "Static guide and command contracts plus synthetic JSON fixtures only. No actual paper was drafted, no ARS pipeline executed, and no scholarly search was delegated by the record auditor.",
+  "original_reference_modules_preserved": true,
+  "upstream_integrations": "skills/research-paper-craft/provenance/integrations.json",
+  "release_automation": "Runs tests before creating an immutable preview release. The result must be checked in GitHub Actions; this local record is not a remote success claim."
+}
