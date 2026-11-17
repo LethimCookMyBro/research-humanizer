@@ -1,0 +1,280 @@
+{
+  "version": "2.3.2",
+  "scope": "Exact retained 28 synthetic probes. No model-quality claim.",
+  "source_probe_sha256": "145ba96de80f3802c582523d0771e000ea031bb6d1e42127eb59d77c947e6d9b",
+  "cases": [
+    {
+      "case": "period_normal",
+      "input": "The system records actions. It exports the log.",
+      "before_rules": [],
+      "after_rules": [],
+      "after_status": "no_flags_in_checked_scope"
+    },
+    {
+      "case": "double_period",
+      "input": "The system records actions..",
+      "before_rules": [
+        "PUNCT_REPEAT_REVIEW"
+      ],
+      "after_rules": [
+        "PUNCT_REPEAT_REVIEW"
+      ],
+      "after_status": "needs_review"
+    },
+    {
+      "case": "ellipsis_ascii",
+      "input": "The system records actions...",
+      "before_rules": [
+        "ELLIPSIS_REVIEW"
+      ],
+      "after_rules": [
+        "ELLIPSIS_REVIEW"
+      ],
+      "after_status": "needs_review"
+    },
+    {
+      "case": "ellipsis_unicode",
+      "input": "The system records actions…",
+      "before_rules": [
+        "ELLIPSIS_REVIEW"
+      ],
+      "after_rules": [
+        "ELLIPSIS_REVIEW"
+      ],
+      "after_status": "needs_review"
+    },
+    {
+      "case": "ellipsis_spaced",
+      "input": "The system records actions . . .",
+      "before_rules": [
+        "ELLIPSIS_REVIEW",
+        "PUNCT_SPACING_REVIEW"
+      ],
+      "after_rules": [
+        "ELLIPSIS_REVIEW",
+        "PUNCT_SPACING_REVIEW"
+      ],
+      "after_status": "needs_review"
+    },
+    {
+      "case": "fragment_chain",
+      "input": "Fast. Clear. Effective.",
+      "before_rules": [
+        "FRAGMENT_CHAIN_REVIEW"
+      ],
+      "after_rules": [
+        "FRAGMENT_CHAIN_REVIEW"
+      ],
+      "after_status": "needs_review"
+    },
+    {
+      "case": "space_before_dot",
+      "input": "The system records actions .",
+      "before_rules": [
+        "PUNCT_SPACING_REVIEW"
+      ],
+      "after_rules": [
+        "PUNCT_SPACING_REVIEW"
+      ],
+      "after_status": "needs_review"
+    },
+    {
+      "case": "missing_space_upper",
+      "input": "The system records actions.It exports the log.",
+      "before_rules": [
+        "PUNCT_SPACING_REVIEW"
+      ],
+      "after_rules": [
+        "PUNCT_SPACING_REVIEW"
+      ],
+      "after_status": "needs_review"
+    },
+    {
+      "case": "missing_space_lower",
+      "input": "The system records actions.it exports the log.",
+      "before_rules": [],
+      "after_rules": [
+        "PUNCT_SPACING_REVIEW"
+      ],
+      "after_status": "needs_review"
+    },
+    {
+      "case": "decimal",
+      "input": "The duration was 0.25 seconds.",
+      "before_rules": [],
+      "after_rules": [],
+      "after_status": "no_flags_in_checked_scope"
+    },
+    {
+      "case": "version",
+      "input": "We used v2.3.1 for the analysis.",
+      "before_rules": [],
+      "after_rules": [],
+      "after_status": "no_flags_in_checked_scope"
+    },
+    {
+      "case": "abbreviation",
+      "input": "Fig. 2 shows the recording procedure.",
+      "before_rules": [],
+      "after_rules": [],
+      "after_status": "no_flags_in_checked_scope"
+    },
+    {
+      "case": "citation",
+      "input": "The procedure followed prior work (Smith, 2020; Jones, 2021).",
+      "before_rules": [],
+      "after_rules": [],
+      "after_status": "no_flags_in_checked_scope"
+    },
+    {
+      "case": "math",
+      "input": "We recorded n = 6 and x = -0.5.",
+      "before_rules": [],
+      "after_rules": [],
+      "after_status": "no_flags_in_checked_scope"
+    },
+    {
+      "case": "hyphen",
+      "input": "The system - after setup - records actions.",
+      "before_rules": [
+        "PUNCT_SPACED_HYPHEN"
+      ],
+      "after_rules": [
+        "PUNCT_SPACED_HYPHEN"
+      ],
+      "after_status": "needs_review"
+    },
+    {
+      "case": "equals_prose",
+      "input": "Feedback = successful learning.",
+      "before_rules": [
+        "PROSE_OPERATOR_REVIEW"
+      ],
+      "after_rules": [
+        "PROSE_OPERATOR_REVIEW"
+      ],
+      "after_status": "needs_review"
+    },
+    {
+      "case": "slash",
+      "input": "We recorded guidance/feedback.",
+      "before_rules": [
+        "SLASH_SHORTHAND_REVIEW"
+      ],
+      "after_rules": [
+        "SLASH_SHORTHAND_REVIEW"
+      ],
+      "after_status": "needs_review"
+    },
+    {
+      "case": "repeated_marks",
+      "input": "The system works!!",
+      "before_rules": [
+        "PUNCT_REPEAT_REVIEW"
+      ],
+      "after_rules": [
+        "PUNCT_REPEAT_REVIEW"
+      ],
+      "after_status": "needs_review"
+    },
+    {
+      "case": "multiple_asides",
+      "input": "The system (after setup) records actions (during each trial).",
+      "before_rules": [
+        "PARENTHETICAL_LOAD_REVIEW"
+      ],
+      "after_rules": [
+        "PARENTHETICAL_LOAD_REVIEW"
+      ],
+      "after_status": "needs_review"
+    },
+    {
+      "case": "long_dash",
+      "input": "The system—after setup—records actions.",
+      "before_rules": [
+        "PUNCT_LONG_DASH"
+      ],
+      "after_rules": [
+        "PUNCT_LONG_DASH"
+      ],
+      "after_status": "needs_review"
+    },
+    {
+      "case": "comma_chain",
+      "input": "The system records actions, tracks reference use, stores states, and exports the log.",
+      "before_rules": [
+        "COMMA_DENSITY_REVIEW"
+      ],
+      "after_rules": [
+        "COMMA_DENSITY_REVIEW"
+      ],
+      "after_status": "needs_review"
+    },
+    {
+      "case": "short_fragments_two_words",
+      "input": "Very fast. Very clear. Highly effective.",
+      "before_rules": [],
+      "after_rules": [
+        "FRAGMENT_CHAIN_REVIEW"
+      ],
+      "after_status": "needs_review"
+    },
+    {
+      "case": "fullwidth_period",
+      "input": "The system records actions．．",
+      "before_rules": [],
+      "after_rules": [
+        "PUNCT_REPEAT_REVIEW",
+        "PUNCT_WIDTH_REVIEW"
+      ],
+      "after_status": "needs_review"
+    },
+    {
+      "case": "unicode_replacement",
+      "input": "The system records � actions.",
+      "before_rules": [],
+      "after_rules": [
+        "UNICODE_REPLACEMENT_REVIEW"
+      ],
+      "after_status": "needs_review"
+    },
+    {
+      "case": "square_glyph",
+      "input": "The system records □ actions.",
+      "before_rules": [],
+      "after_rules": [
+        "GLYPH_CONTEXT_REVIEW"
+      ],
+      "after_status": "needs_review"
+    },
+    {
+      "case": "zero_width",
+      "input": "The system records ac​tions.",
+      "before_rules": [],
+      "after_rules": [
+        "INVISIBLE_CHARACTER_REVIEW"
+      ],
+      "after_status": "needs_review"
+    },
+    {
+      "case": "unbalanced_double_quote",
+      "input": "The system records \"actions.",
+      "before_rules": [],
+      "after_rules": [
+        "QUOTE_BALANCE_REVIEW"
+      ],
+      "after_status": "needs_review"
+    },
+    {
+      "case": "unbalanced_parenthesis",
+      "input": "The system records (actions.",
+      "before_rules": [
+        "PUNCT_UNBALANCED_REVIEW"
+      ],
+      "after_rules": [
+        "PUNCT_UNBALANCED_REVIEW"
+      ],
+      "after_status": "needs_review"
+    }
+  ]
+}

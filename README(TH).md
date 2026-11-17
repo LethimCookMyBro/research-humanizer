@@ -4,7 +4,7 @@
 
 **Clear research writing. Traceable claims. Real evidence.**
 
-[![Version](https://img.shields.io/badge/version-2.3.1-2563eb?style=flat-square)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-2.3.2-2563eb?style=flat-square)](CHANGELOG.md)
 [![License](https://img.shields.io/badge/license-MIT-0f766e?style=flat-square)](LICENSE)
 [![Languages](https://img.shields.io/badge/guides-English%20%2B%20Thai-475569?style=flat-square)](skills/research-paper-craft/SKILL.md)
 [![Status](https://img.shields.io/badge/status-preview-b45309?style=flat-square)](docs/KNOWN_ISSUES.md)
@@ -14,9 +14,13 @@
 [Install](#install) · [Use](#use) · [Scope](#scope) · [Validation](#validation)
 
 
-**[เว็บไซต์โครงการ](https://research-humanizer.vercel.app/th/)** · [Release v2.3.1](https://github.com/LethimCookMyBro/research-humanizer/releases/tag/v2.3.1)
+**[เว็บไซต์โครงการ](https://research-humanizer.vercel.app/th/)** · [Release v2.3.2](https://github.com/LethimCookMyBro/research-humanizer/releases/tag/v2.3.2)
 
 </div>
+
+**2.3.2** เพิ่มการตรวจจุด อัญประกาศ และอักขระแฝงตามบริบท ครอบคลุมกรณีที่หลุดทั้งเจ็ดข้อจากการตรวจเดิม โดยรักษาสูตรและไม่แก้ไฟล์อัตโนมัติ [สิ่งที่แก้](docs/releases/v2.3.2.md) · [ผลตรวจ](docs/VERIFICATION.md)
+
+
 
 Skill สำหรับให้ AI ร่าง paper ทั้งฉบับใน Claude Code และ Codex ใช้คู่กับ `ars-full` ของ ARS เพื่อกำกับสำนวนวิจัยตั้งแต่ร่างแรก ผ่านการค้นงานอ้างอิง เลือก metric สร้างภาพ และตรวจไฟล์สุดท้าย ใช้ได้กับผู้วิจัยหลายคนและหลายสาขา พร้อมบริบทผู้เขียนแบบส่วนตัวเมื่อมี ยังใช้แก้ต้นฉบับหรือตรวจอย่างเดียวได้
 

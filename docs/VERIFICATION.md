@@ -1,5 +1,16 @@
 # Verification record
 
+## 2.3.2, 17 November 2026
+
+Source preparation executed 71 repository/documentation tests, 311 skill tests and 5 historical regressions. All 387 passed. The 90 new tool tests first ran against the exact v2.3.1 linter and produced 38 assertion failures with no test errors. New documentation contracts also failed before the corresponding patch. After implementation the complete suites passed. The release workflow reruns them on the published commit.
+
+The original 28-case public synthetic probe is retained byte-for-byte. All seven previously unflagged gap inputs now trigger their intended review diagnostics. Previously passing probe controls and existing detection expectations are preserved. Additional tests cover source positions, valid quotations across soft wraps, technical notation, multilingual controls, CLI return codes, unchanged input bytes and deterministic malformed-text cases. Test counts are not model-quality scores.
+
+Only the selected syntax and patterns are covered. Unusual quotation conventions, arbitrary dotted identifiers, general grammar and rendered missing-font boxes still need review. No live host installation, ARS paper run, native Word check or independent model evaluation is claimed. Core evidence, figures, methods, full-paper guidance and the original Humanizer remain unchanged apart from the main routing sentence/version and the expanded punctuation guide.
+
+[Executed record](verification/release-v2.3.2.json) · [Before/after probes](verification/punctuation-probes.v2.3.2.json) · [Patch notes](releases/v2.3.2.md)
+
+
 ## 2.3.1, 17 November 2026
 
 The patch adds context-aware punctuation candidates and bilingual drafting guidance. It does not remove punctuation automatically or certify prose as human-written.

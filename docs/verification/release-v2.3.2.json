@@ -1,0 +1,55 @@
+{
+  "version": "2.3.2",
+  "base_commit": "4f4e0297895cc2dad40811b7e7321a41010edc67",
+  "baseline_linter_blob": "5ec1f7e45d5745dc4b46def8701da21bb50364bd",
+  "execution": "GitHub Actions source preparation",
+  "source_preparation_run": "44027155472",
+  "python": "3.12.3",
+  "baseline_new_tests": {
+    "suite": "New tests on v2.3.1",
+    "tests": 90,
+    "failures": 38,
+    "errors": 0,
+    "exit_code": 1
+  },
+  "baseline_new_contracts": {
+    "suite": "New documentation contracts before patch",
+    "tests": 3,
+    "failures": 3,
+    "errors": 0,
+    "exit_code": 1
+  },
+  "suites": [
+    {
+      "suite": "Repository and documentation",
+      "tests": 71,
+      "failures": 0,
+      "errors": 0,
+      "exit_code": 0
+    },
+    {
+      "suite": "Skill tools and contracts",
+      "tests": 311,
+      "failures": 0,
+      "errors": 0,
+      "exit_code": 0
+    },
+    {
+      "suite": "Historical regressions",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "exit_code": 0
+    }
+  ],
+  "total_tests": 387,
+  "probe_cases": 28,
+  "repaired_probe_misses": 7,
+  "scope": "Software and static-contract tests with synthetic text. Not a model-quality or scientific-validity benchmark.",
+  "not_performed": [
+    "live Claude/Codex/ARS run",
+    "native Word rendering",
+    "independent model-quality evaluation",
+    "universal grammar verification"
+  ]
+}

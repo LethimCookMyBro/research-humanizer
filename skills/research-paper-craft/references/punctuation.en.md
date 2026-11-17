@@ -63,3 +63,21 @@ Reviewed on 17 November 2026. These sources describe punctuation roles and edito
 - [Microsoft punctuation guidance](https://learn.microsoft.com/en-us/style-guide/punctuation/)
 - [Purdue OWL comma rules](https://owl.purdue.edu/owl/general_writing/punctuation/commas/index.html)
 - [Microsoft dashes, hyphens and minus signs](https://learn.microsoft.com/en-us/style-guide/punctuation/dashes-hyphens)
+
+### Text integrity in 2.3.2
+
+Review missing spaces after periods even when the next English word begins in lowercase. Check repeated fullwidth or small full stops as well as ASCII dots. An isolated fullwidth stop in Latin prose merits review. Japanese sentence-ending punctuation is not an error by itself. The checker recognizes common addresses, file extensions and function calls. Other unmarked dotted identifiers can still need manual classification.
+
+Review selected short phrase chains such as “Very fast. Very clear. Highly effective.” and “Low cost. High accuracy. Rapid feedback.” Do not combine correct short sentences merely because they are short. Figure labels and exact quotations may deliberately use fragments. This is a finite pattern check rather than a complete English or Thai grammar analysis.
+
+Check quotation balance before changing punctuation inside a quotation. The checker recognizes straight double quotes, English curly double quotes, guillemets and Japanese corner brackets. It can protect a complete quotation across soft-wrapped lines within one paragraph. It does not pair across blank paragraphs or omitted code/reference regions. Unmatched marks trigger QUOTE_BALANCE_REVIEW and do not hide the remaining manuscript. Single-quote conventions, primes and unusual nested quotations still require manual review. Never invent the missing quoted words or silently move quotation boundaries.
+
+Inspect U+FFFD and U+FFFC against the original source. They may reflect replacement or embedded-object export issues, but a deliberately quoted character is also possible. Inspect literal U+25A1 squares in prose without guessing what they should be. A square stored in the text differs from a missing-font box shown only by a renderer. Mathematical proof symbols, checkboxes and exact quoted text may be intentional. The text checker cannot inspect rendered glyph appearance. Use native Word and the actual fonts for that check.
+
+Review zero-width characters, soft hyphens or word joiners inserted between Latin letters or digits. Report the code point and source position. Do not remove all invisible characters. U+200B can provide Thai word-break opportunities. Joining characters can be necessary in other scripts and emoji. Nonbreaking spaces may deliberately keep a number and unit together. Direction controls and internal byte-order marks are review findings rather than blanket errors. Never apply global Unicode normalization to scientific text or a Word file.
+
+Source-character diagnostics can appear inside code, quotations or reference sections. Their purpose is to expose possible source corruption or directional controls, not authorize rewriting protected content. Report excerpts escape invisible controls for inspection. The original input remains unchanged. New diagnostic severities are review. Invalid UTF-8 input and the previously supported incomplete-parse cases still cannot count as passes.
+
+After a contextual repair, compare numbers, units, formulae, scope, quotations and citation attachment against the original. Re-run the checker on the saved manuscript and inspect final pages. Resolving a warning means recording either the correction or the reason for keeping a legitimate expression. A clean report is not proof of grammar, human authorship or scientific correctness.
+
+Unicode background is documented by the [Unicode character and format-control specification](https://www.unicode.org/versions/Unicode17.0.0/core-spec/chapter-23/) and the [unsupported-character FAQ](https://www.unicode.org/faq/unsup_char.html). These sources do not validate this project's heuristic detectors.
