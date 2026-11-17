@@ -1,4 +1,4 @@
-# Known limits in 2.3.2
+# Known limits in 2.3.3 candidate
 
 ## Resolved regressions
 
@@ -30,3 +30,7 @@ The text checker uses approximate sentence boundaries and selected recognized sy
 ## Text-integrity coverage in 2.3.2
 
 The seven misses in the retained 28-case v2.3.1 probe are now regression-tested. This does not close every possible punctuation or scientific-writing gap. Single-quote conventions, unusual multiline/nested quotations, unmarked dotted names, arbitrary fragment grammar and rendered missing-font boxes remain contextual/manual checks. All new warnings are review candidates. Thai word-break controls and legitimate script joins must not be globally removed. Source-character diagnostics may intentionally flag quoted literal replacement characters.
+
+## Research reasoning limits in 2.3.3
+
+The six-dimensional procedure is a project review contract, not a validated universal quality instrument. Optional record checks inspect declarations and locators only. They do not open referenced evidence or establish novelty, causal validity, suitability, gap closure or genuine approval. Agent compliance, cross-domain performance and live ARS integration have not been evaluated. A language-only edit does not trigger a full research audit. No automatic memory learning, commit, publication or expert-rule promotion is implemented.

@@ -1,6 +1,6 @@
 {
   "name": "research-humanizer",
-  "version": "2.3.2",
+  "version": "2.3.3",
   "description": "Full-paper research writing with ARS integration, source-bound humanizing, literature and metric checks, real figures, and Word preservation. English + Thai.",
   "author": {
     "name": "LethimCookMyBro"

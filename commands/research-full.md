@@ -15,3 +15,5 @@ Keep ARS confirmation, integrity, privacy, and tool-consent gates. Pass source v
 Apply scientific humanizing during drafting. Load the punctuation review through the writing guide. Each writer and reviewer must check clause load and preserve necessary notation. Return a full source-bound manuscript when evidence supports it, not only an outline or rewritten abstract. Unknown study details remain marked and require researcher input. Never turn another paper's metrics or results into this study's observations. Review the saved artifact, figures, equations, anonymity and applicable native Word checks before assigning delivery status.
 
 User request follows in `$ARGUMENTS`.
+
+Within existing ARS Research, Planning and Review stages, apply the research-reasoning guide to gap/RQ fit, methods/evidence and findings/contribution/impact. Reuse the existing handoff and records. Preserve researcher confirmations.

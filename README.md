@@ -4,7 +4,7 @@
 
 **Clear research writing. Traceable claims. Real evidence.**
 
-[![Version](https://img.shields.io/badge/version-2.3.2-2563eb?style=flat-square)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-2.3.3-2563eb?style=flat-square)](CHANGELOG.md)
 [![License](https://img.shields.io/badge/license-MIT-0f766e?style=flat-square)](LICENSE)
 [![Languages](https://img.shields.io/badge/guides-English%20%2B%20Thai-475569?style=flat-square)](skills/research-paper-craft/SKILL.md)
 [![Status](https://img.shields.io/badge/status-preview-b45309?style=flat-square)](docs/KNOWN_ISSUES.md)
@@ -17,6 +17,8 @@
 **[Project website](https://research-humanizer.vercel.app/)** · [Release v2.3.2](https://github.com/LethimCookMyBro/research-humanizer/releases/tag/v2.3.2)
 
 </div>
+
+**2.3.3 Preview.** It adds scoped research-gap, originality, impact and RQ/evidence review to the existing skill. Language-only humanizing stays lightweight. [Upgrade notes](docs/releases/v2.3.3.md) · [Architecture audit](docs/plans/v2.3.3-architecture-audit.md). Refresh the marketplace and update the plugin to load this version. [Release and downloads](https://github.com/LethimCookMyBro/research-humanizer/releases/tag/v2.3.3).
 
 **2.3.2** closes the seven retained punctuation-probe misses and adds contextual quotation and Unicode checks. It preserves scientific notation and never rewrites inputs automatically. [Patch notes](docs/releases/v2.3.2.md) · [Executed checks](docs/VERIFICATION.md).
 
@@ -189,3 +191,7 @@ Useful contributions are reproducible edge cases, source-bounded bilingual examp
 
 
 ARS is separately installed under CC BY-NC 4.0. The inspected Aboudjem Humanizer informs a research-specific compatibility policy, not a bundled AI detector or an unrestricted rewrite pass. Its [MIT notice](skills/research-paper-craft/licenses/aboudjem-humanizer-MIT.txt) and [source record](skills/research-paper-craft/provenance/integrations.json) are retained.
+
+## Research reasoning review
+
+Use the same `research-paper-craft` skill. Request a Scientific Audit or Research Gap Review to inspect gap evidence, originality, impact, RQ alignment and finding support without editing the manuscript. In revise mode separate scientific proposals from language edits and obtain researcher approval for substantive changes. The optional extension of `audit_full_paper.py` checks declarations, not scientific truth. [Guide](skills/research-paper-craft/references/research-reasoning.en.md) · [Examples and compatibility](docs/UPGRADE-v2.3.3.md).

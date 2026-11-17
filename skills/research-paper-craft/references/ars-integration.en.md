@@ -2,6 +2,8 @@
 
 This is a prompt-level interoperability contract, not a runtime hook, automatic plugin merger, or measured end-to-end integration. Read the installed dependencies before using them. Their source versions and inspected paths are pinned in [integrations.json](../provenance/integrations.json). ARS is a separate dependency and is not copied into this package.
 
+For a scientific audit or substantive research decision, load [research reasoning](research-reasoning.en.md). Reuse the records below. Language-only edits do not require the full review.
+
 ## Entry and responsibility
 
 For Claude Code, the inspected ARS command `ars-full` loads `academic-research-skills:academic-pipeline` using the host Skill tool. Its command disables model invocation. Do not invoke the command itself as a Skill or replace the actual pipeline with its short command summary. Discover the exact installed identifier before dispatch. Our user command `/research-humanizer:research-full` loads research-paper-craft first and coordinates the handoff. The original `/academic-research-skills:ars-full` can also be used with an explicit instruction to apply research-paper-craft from the first stage.

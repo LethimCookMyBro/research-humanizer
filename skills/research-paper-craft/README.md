@@ -1,4 +1,4 @@
-# Research Paper Craft 2.3.2
+# Research Paper Craft 2.3.3
 
 The skill inside Research Humanizer. Start with SKILL.md. Load one language and only the guidance needed for the current task. The core stays under 1,000 English whitespace-delimited words. Detailed Word, scientific and language rules are task-loaded.
 
@@ -47,3 +47,7 @@ The full-paper auditor checks declared record consistency only. Exit 0 means con
 ## Text integrity in 2.3.2
 
 The same read-only lint command now checks the seven retained v2.3.1 misses and selected related forms. See the punctuation guide for quote balance, code-point diagnostics and protected contexts. Source-character warnings may appear inside protected source strings. They request comparison with the original, not deletion or normalization.
+
+## Optional scientific reasoning review in 2.3.3
+
+Use [research reasoning](references/research-reasoning.en.md) or [คู่มือไทย](references/research-reasoning.th.md) for substantive audits and full-paper decisions. Existing CLI commands and schema-1 records remain valid. The optional `reasoning_review` member is specified in [record fields](references/research-reasoning-records.md). No new skill or script entry is required. This candidate is not published.

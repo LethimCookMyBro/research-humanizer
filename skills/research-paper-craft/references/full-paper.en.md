@@ -2,6 +2,8 @@
 
 Use for an explicit whole-manuscript request, with ARS or standalone. Use the existing evidence, writing, methods, visuals and submission modules at the relevant phase. This contract applies to different researchers and disciplines, not one author's project.
 
+For a scientific audit or substantive research decision, load [research reasoning](research-reasoning.en.md). Reuse the records below. Language-only edits do not require the full review.
+
 ## R41 Draft the whole source-bound manuscript
 
 Full-paper means write the complete applicable manuscript, not just an outline and not a final rewrite pass over a generic AI draft. Start with the research question, article type, implemented work, available evidence, author decisions, venue and requested output. Read supplied materials before asking. A topic alone supports research and planning, not invented completed experiments.

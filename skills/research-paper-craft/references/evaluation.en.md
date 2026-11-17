@@ -2,6 +2,8 @@
 
 Read only for the current task phase. The core rules in SKILL.md remain active.
 
+For a scientific audit or substantive research decision, load [research reasoning](research-reasoning.en.md). Reuse the records below. Language-only edits do not require the full review.
+
 ## R14 Design and report a fair evaluation
 
 Derive the evaluation from the research questions and claims. For each experiment, identify what it tests, the experimental unit, data source, comparison, metric, operating conditions, and evidence that would contradict the claim.

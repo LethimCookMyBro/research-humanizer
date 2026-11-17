@@ -71,3 +71,23 @@ Checked 16 November 2026. These motivate source preservation and reporting check
 - [PLOS Biology submission guidance](https://journals.plos.org/plosbiology/s/submission-guidelines) gives journal-specific figure and data-presentation requirements.
 - [Nature AI policy](https://www.nature.com/nature/editorial-policies/ai) distinguishes assistive use, accountability and unverifiable outputs.
 - [Agent Skills specification](https://agentskills.io/specification) describes metadata and progressive disclosure.
+
+
+## v2.3.3 research-reasoning extension, unpublished
+
+The [architecture audit](plans/v2.3.3-architecture-audit.md) identifies overlapping existing rules before additions. R48–R50 add scoped gap/contribution/impact decisions, feedback validation and an audit output contract. They extend research-paper-craft; they do not replace its Humanizer or add a second workflow.
+
+### What the layers establish
+
+| Layer | Responsibility | Does not establish |
+| --- | --- | --- |
+| Humanizing | Readable prose that retains source claims and approved voice | A defensible research gap merely because the wording is persuasive |
+| Reasoning procedure | Read actual literature, methods and results; trace gap/RQ/evidence and record scoped decisions | Universal novelty, causality or demonstrated impact without sufficient evidence |
+| Optional record audit | Check declared statuses, required references and inconsistent assertions | That any referenced source is true, has been opened, or supports the assertion |
+| Software/static tests | Regressions, old APIs, routes, bilingual rule IDs and protected file integrity | Agent compliance, model-quality gains, live ARS coordination or native Word layout |
+
+Use Verified, Partially Supported, Unverified, Proposed, Contradicted and Not Applicable for scoped support judgments. Keep Passed, Failed and Not Run for operations. A complete record does not close a research gap. A consistent script result leaves scientific_verification as not_performed_by_this_tool and submission_approved false.
+
+The optional [record contract](../skills/research-paper-craft/references/research-reasoning-records.md) references the existing ledgers. Old CSV headers, the full-paper JSON template and archived rule fingerprints remain unchanged. No extension means the previous script checks only. A lightweight language edit must not be turned into an unsolicited literature audit.
+
+[Research-reasoning scenarios](../evals/research-reasoning-scenarios.md) describe future agent evaluation. They are not reported as executed model trials. See [the upgrade report](UPGRADE-v2.3.3.md) and [verification](VERIFICATION.md) for actual results and remaining limits.
