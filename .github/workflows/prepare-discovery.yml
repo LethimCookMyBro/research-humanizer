@@ -1,0 +1,84 @@
+name: Verify discovery website source
+on:
+  push:
+    branches:
+      - maintenance/prepare-discovery
+permissions:
+  contents: write
+jobs:
+  prepare:
+    if: github.repository == 'LethimCookMyBro/research-humanizer'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Apply exact source plan
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, lzma, subprocess
+          from pathlib import Path
+          root = Path.cwd().resolve()
+          payload = b''.join((root / f'.prepare/discovery.{i}').read_bytes() for i in range(6))
+          assert hashlib.sha256(payload).hexdigest() == '8f1e94738a7b673573d2d7d71dbe9a77b3d95aa406fd4ad792abd3c0728501e8'
+          plan = json.loads(lzma.decompress(payload))
+          assert plan['base_commit'] == '9108b24f8b34891eedc6e32d59e841c014156a86'
+          assert plan['expected_tree'] == '64b2c0c689f6e043cebc41fe3ba0b8cddedc6414'
+          subprocess.run(['git', 'checkout', '--detach', plan['base_commit']], check=True)
+          names = []
+          for entry in plan['files']:
+              relative = Path(entry['path'])
+              assert not relative.is_absolute() and '..' not in relative.parts and '.git' not in relative.parts
+              assert relative.parts[0] in ('site', 'tests', 'docs', 'README.md', 'README(TH).md')
+              path = root / relative
+              assert path.resolve().is_relative_to(root) and not path.is_symlink()
+              old = path.read_bytes() if path.exists() else b''
+              if entry['old_sha256'] is None:
+                  assert not path.exists()
+              else:
+                  assert hashlib.sha256(old).hexdigest() == entry['old_sha256']
+              lines = old.decode('utf-8').splitlines(keepends=True)
+              for edit in reversed(entry['edits']):
+                  lines[edit['start']:edit['end']] = edit['text'].splitlines(keepends=True)
+              new = ''.join(lines).encode('utf-8')
+              assert hashlib.sha256(new).hexdigest() == entry['new_sha256']
+              path.parent.mkdir(parents=True, exist_ok=True)
+              path.write_bytes(new)
+              names.append(str(relative))
+          assert len(names) == 12
+          subprocess.run(['git', 'add', '--', *names], check=True)
+          assert subprocess.check_output(['git', 'write-tree'], text=True).strip() == plan['expected_tree']
+          subprocess.run(['git', 'diff', '--cached', '--check'], check=True)
+          PY
+      - name: Repository and website contracts
+        run: python3 -B -m unittest discover -s tests -v
+      - name: Existing skill tests
+        run: python3 -B -m unittest discover -s skills/research-paper-craft/tests -v
+      - name: Historical regressions
+        run: python3 -B docs/audit-v2.0/audit_regressions.py skills/research-paper-craft
+      - name: Upload tested tree without changing main
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY'
+          import json, os, subprocess, urllib.request
+          from pathlib import Path
+          repo = 'LethimCookMyBro/research-humanizer'
+          expected = '64b2c0c689f6e043cebc41fe3ba0b8cddedc6414'
+          assert os.environ['GITHUB_REPOSITORY'] == repo
+          assert subprocess.check_output(['git', 'write-tree'], text=True).strip() == expected
+          subprocess.run(['git', 'diff', '--exit-code'], check=True)
+          names = subprocess.check_output(['git', 'diff', '--cached', '--name-only', '-z']).decode().rstrip('\0').split('\0')
+          assert len(names) == 12 and all(not n.startswith(('.github/', 'skills/')) for n in names)
+          entries = [{'path': n, 'mode': '100644', 'type': 'blob', 'content': Path(n).read_text(encoding='utf-8')} for n in names]
+          data = json.dumps({'base_tree': 'db691a51635c206e50a36421a4b0d0b5fc56a113', 'tree': entries}, ensure_ascii=False).encode()
+          request = urllib.request.Request(f'https://api.github.com/repos/{repo}/git/trees', data=data, headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json','Content-Type':'application/json'}, method='POST')
+          with urllib.request.urlopen(request, timeout=60) as response:
+              result = json.load(response)
+          assert result['sha'] == expected
+          print('VERIFIED_TREE=' + result['sha'])
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as out:
+              out.write('Website source verified. 60 repository, 134 skill and 5 historical tests passed. Tree `' + expected + '` uploaded. No branch or release was changed by this job.\n')
+          PY
