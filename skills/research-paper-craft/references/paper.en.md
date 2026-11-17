@@ -2,6 +2,8 @@
 
 Read only for the current task phase. The core rules in SKILL.md remain active.
 
+For a scientific audit or substantive research decision, load [research reasoning](research-reasoning.en.md). Reuse the records below. Language-only edits do not require the full review.
+
 ## R06 Build an argument before writing sections
 
 State the research question and the narrowest defensible answer in the working plan. Map each proposed contribution to the evidence needed to support it. Separate the motivation, method, evaluation, interpretation, and limits.

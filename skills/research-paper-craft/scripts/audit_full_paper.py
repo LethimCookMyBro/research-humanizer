@@ -36,6 +36,175 @@ def strings(value: Any) -> bool:
     return isinstance(value, list) and bool(value) and all(nonempty(x) for x in value)
 
 
+# These are support declarations, not execution states or automatic truth judgments.
+SUPPORT_STATES = ('Verified', 'Partially Supported', 'Unverified', 'Proposed',
+                  'Contradicted', 'Not Applicable')
+REASONING_CRITERIA = ('gap', 'originality', 'impact', 'alignment', 'finding',
+                      'limitation', 'metric', 'revision', 'feedback')
+FEEDBACK_CLASSES = ('Universal Research Principle', 'Domain-Specific Principle',
+                    'Project-Specific Correction', 'Unverified Recommendation')
+
+
+def audit_reasoning_review(review: Any, owner: Any, add: Any) -> None:
+    """Check optional declarations and references; never read or certify evidence.
+
+    Existing schema-1 records without this extension retain their exact behavior.
+    Locators are opaque references to existing records, not a parallel evidence store.
+    """
+    root = 'reasoning_review'
+    if not isinstance(review, dict):
+        add('REASONING_STRUCTURE', root, 'Expected an optional object, not a null or scalar.')
+        return
+    if type(review.get('schema_version')) is not int or review['schema_version'] != 1:
+        add('REASONING_SCHEMA', root, 'Expected reasoning_review schema_version integer 1.')
+        return
+    phase = review.get('phase')
+    required = {'planning': ('gap', 'originality', 'alignment'),
+                'evidence': ('alignment', 'finding'),
+                'review': ('gap', 'originality', 'impact', 'alignment', 'finding', 'limitation')}
+    if not isinstance(phase, str) or phase not in required:
+        add('REASONING_PHASE', root + '.phase', 'Use planning, evidence or review.')
+        phase = 'review'
+    if review.get('workflow_owner') != owner:
+        add('REASONING_WORKFLOW_OWNER', root, 'Reuse the parent workflow owner and its checkpoints.')
+    rq_refs = review.get('rq_refs')
+    if not strings(rq_refs):
+        add('REASONING_RQ_COVERAGE', root + '.rq_refs', 'Reference the actual questions in the paper map.')
+        rq_refs = []
+    elif len(rq_refs) != len(set(rq_refs)):
+        add('REASONING_RQ_COVERAGE', root + '.rq_refs', 'Question references must be unique.')
+    refs = review.get('record_refs')
+    if not isinstance(refs, dict) or not nonempty(refs.get('qa_report')):
+        add('REASONING_RECORD_REFS', root + '.record_refs', 'Locate the existing QA report. Do not duplicate evidence.')
+    assessments = review.get('assessments')
+    if not isinstance(assessments, list):
+        add('REASONING_STRUCTURE', root + '.assessments', 'Expected a list of scoped review declarations.')
+        return
+    seen_ids: set[str] = set()
+    seen_criteria: set[str] = set()
+    aligned: set[str] = set()
+    for index, item in enumerate(assessments):
+        path = f'{root}.assessments[{index}]'
+        if not isinstance(item, dict):
+            add('REASONING_STRUCTURE', path, 'Expected an assessment object.')
+            continue
+        key = item.get('id')
+        if not nonempty(key) or key in seen_ids:
+            add('REASONING_ID', path, 'Assessment IDs must be nonempty and unique.')
+        else:
+            seen_ids.add(key)
+        kind = item.get('criterion')
+        if not isinstance(kind, str) or kind not in REASONING_CRITERIA:
+            add('REASONING_CRITERION', path, 'Unrecognized research review criterion.')
+            continue
+        seen_criteria.add(kind)
+        status = item.get('status')
+        if status not in SUPPORT_STATES:
+            add('REASONING_STATUS', path, 'Use one of the six documented support states.')
+        for field in ('record_ref', 'scope', 'rationale'):
+            if not nonempty(item.get(field)):
+                add('REASONING_CONTEXT', path + '.' + field, 'Locate and justify the assessment within its stated scope.')
+        asserted = item.get('asserted_as_fact', False)
+        if type(asserted) is not bool:
+            add('REASONING_STRUCTURE', path + '.asserted_as_fact', 'Use a boolean, not a truthy string.')
+        if status == 'Verified' and (not strings(item.get('evidence_refs')) or not nonempty(item.get('review_locator'))):
+            add('REASONING_VERIFICATION', path, 'Verified needs evidence references and an actual review record. Presence is not truth verification.')
+        if asserted is True and status in ('Unverified', 'Proposed', 'Contradicted', 'Not Applicable'):
+            add('REASONING_UNSUPPORTED_ASSERTION', path, 'Do not present this support state as an established finding.')
+        if asserted is True and status == 'Partially Supported' and not nonempty(item.get('qualification_ref')):
+            add('REASONING_UNSUPPORTED_ASSERTION', path, 'Locate the qualification that limits the partially supported claim.')
+        if status == 'Not Applicable':
+            if kind == 'gap' and item.get('gap_closed') is True:
+                add('REASONING_GAP_CLOSURE', path, 'Not Applicable cannot be used to declare an evidence gap closed.')
+            continue
+
+        if kind == 'gap':
+            if not strings(item.get('prior_work_refs')) or not strings(item.get('closest_work_refs')):
+                add('REASONING_GAP_BASIS', path, 'Locate prior knowledge and closest work. Search absence is not proof of absence.')
+            if any(not nonempty(item.get(f)) for f in ('known', 'unknown', 'importance', 'study_fit')):
+                add('REASONING_GAP_BASIS', path, 'State known, unknown, importance and fit separately from the proposed solution.')
+            if item.get('absence_claim') is True and item.get('search_only') is not False:
+                add('REASONING_ABSENCE', path, 'A search that found nothing does not establish universal novelty.')
+            closed = item.get('gap_closed', False)
+            if type(closed) is not bool:
+                add('REASONING_STRUCTURE', path + '.gap_closed', 'Use a boolean; do not infer closure from a complete draft.')
+            if closed is True and (status != 'Verified' or not strings(item.get('closure_evidence_refs'))
+                                   or any(not nonempty(item.get(f)) for f in ('closure_scope', 'remaining_uncertainty'))):
+                add('REASONING_GAP_CLOSURE', path, 'Gap existence and closure differ. Locate sufficient closure evidence, its scope and remaining uncertainty.')
+        elif kind == 'originality':
+            if (not strings(item.get('prior_work_refs')) or not nonempty(item.get('contribution_type'))
+                    or not nonempty(item.get('knowledge_gain'))):
+                add('REASONING_ORIGINALITY', path, 'Compare prior work and explain the knowledge gain, including valid replication or negative evidence.')
+            if item.get('novelty_basis') == 'tool_or_context_change' and not nonempty(item.get('change_rationale_ref')):
+                add('REASONING_ORIGINALITY', path, 'A tool or context change needs a reason why it tests or adds knowledge.')
+        elif kind == 'impact':
+            if item.get('impact_type') not in ('Scientific Impact', 'Methodological Impact', 'Practical Impact'):
+                add('REASONING_IMPACT_TYPE', path, 'Classify the impact domain; use separate rows for distinct claims.')
+            basis, reported = item.get('impact_basis'), item.get('reported_impact')
+            if basis not in ('Expected Impact', 'Demonstrated Impact') or reported not in ('Expected Impact', 'Demonstrated Impact'):
+                add('REASONING_IMPACT_TYPE', path, 'Separate expected from demonstrated impact.')
+            if basis == 'Expected Impact' and reported == 'Demonstrated Impact':
+                add('REASONING_IMPACT_INFLATION', path, 'An expected benefit cannot be reported as demonstrated.')
+            if reported == 'Demonstrated Impact' and not strings(item.get('observed_support_refs')):
+                add('REASONING_IMPACT_EVIDENCE', path, 'Locate evidence of the claimed impact, not just task completion.')
+            if any(not nonempty(item.get(f)) for f in ('beneficiaries', 'application_limits')):
+                add('REASONING_CONTEXT', path, 'Identify intended users of the finding and application limits.')
+        elif kind == 'alignment':
+            rq = item.get('rq_ref')
+            if nonempty(rq) and rq in rq_refs:
+                aligned.add(rq)
+            else:
+                add('REASONING_ALIGNMENT', path, 'Link to a declared research question.')
+            if (item.get('suitable') is not True or not strings(item.get('data_or_argument_refs'))
+                    or any(not nonempty(item.get(f)) for f in ('method_ref', 'analysis_ref'))):
+                add('REASONING_ALIGNMENT', path, 'Locate suitable method, data or theoretical argument, and analysis for this question.')
+        elif kind == 'finding':
+            if item.get('finding_type') not in ('Observed Results', 'Derived Results', 'Interpretation', 'Hypothesis', 'Unsupported Claim'):
+                add('REASONING_FINDING_TYPE', path, 'Separate observation, derivation, interpretation, hypothesis and unsupported claim.')
+            if not strings(item.get('result_refs')):
+                add('REASONING_RESULT_LINK', path, 'Locate the results or argument supporting this finding, or leave support unresolved.')
+            if status == 'Verified' and item.get('consistency') in ('partial', 'unverified'):
+                add('REASONING_RESULT_CONFLICT', path, 'Verified support conflicts with a partial or unverified result-to-finding comparison.')
+            if item.get('consistency') == 'contradicted':
+                add('REASONING_RESULT_CONFLICT', path, 'The finding conflicts with the declared results. Preserve the conflict for researcher review.')
+            elif item.get('consistency') not in ('consistent', 'partial', 'unverified'):
+                add('REASONING_RESULT_LINK', path, 'Declare consistency, partial support or unverified comparison.')
+            if item.get('finding_type') == 'Derived Results' and not nonempty(item.get('derivation_ref')):
+                add('REASONING_DERIVATION', path, 'Locate the actual calculation or derivation.')
+            if item.get('relation') == 'causal' and (item.get('association_only') is True or not nonempty(item.get('causal_basis_ref'))):
+                add('REASONING_CAUSAL', path, 'Locate a defensible causal design/identification argument. Association alone is insufficient.')
+            if item.get('finding_type') in ('Hypothesis', 'Unsupported Claim') and (asserted is True or status == 'Verified'):
+                add('REASONING_UNSUPPORTED_ASSERTION', path, 'A hypothesis or unsupported claim is not an established result.')
+        elif kind == 'limitation':
+            if (any(not nonempty(item.get(f)) for f in ('original_answer', 'matters_answer', 'knowledge_answer'))
+                    or not strings(item.get('limitation_refs'))):
+                add('REASONING_CONTRIBUTION_REVIEW', path, 'Locate answers about originality, importance and new knowledge, with the limits of those answers.')
+        elif kind == 'metric':
+            if any(not nonempty(item.get(f)) for f in ('definition_ref', 'measurement_ref', 'selection_rationale', 'limitations')):
+                add('REASONING_METRIC', path, 'Reference the existing metric plan for definition, measurement, rationale and limitations.')
+        elif kind == 'revision':
+            if type(item.get('scientific_change')) is not bool:
+                add('REASONING_STRUCTURE', path, 'Declare whether the revision changes scientific content.')
+            elif item['scientific_change'] and not nonempty(item.get('approval_ref')):
+                add('REASONING_APPROVAL', path, 'A scientific change requires a researcher approval record, not a prose edit.')
+        elif kind == 'feedback':
+            if item.get('classification') not in FEEDBACK_CLASSES:
+                add('REASONING_FEEDBACK_CLASS', path, 'Classify the feedback before applying it outside its source project.')
+            promote = item.get('promote_to_general', False)
+            if type(promote) is not bool:
+                add('REASONING_STRUCTURE', path, 'Use a boolean for general-principle promotion.')
+            if promote is True and (status != 'Verified' or item.get('classification') != 'Universal Research Principle'
+                    or item.get('validation_basis') not in ('independent_sources', 'methodological_argument')
+                    or any(not nonempty(item.get(f)) for f in ('validation_ref', 'exceptions', 'approval_ref'))):
+                add('REASONING_FEEDBACK_PROMOTION', path, 'A single expert opinion is not universal. Require scoped validation, exceptions and approval before versioned promotion.')
+    missing = [kind for kind in required[phase] if kind not in seen_criteria]
+    if missing:
+        add('REASONING_COVERAGE', root, 'Missing scoped assessments: ' + ', '.join(missing) + '.')
+    for rq in rq_refs:
+        if rq not in aligned:
+            add('REASONING_RQ_COVERAGE', root, 'No alignment assessment for ' + rq + '.')
+
+
 def audit_record(data: Any) -> dict[str, Any]:
     """Return structural findings without upgrading a manuscript's release status."""
     findings: list[dict[str, str]] = []
@@ -172,6 +341,8 @@ def audit_record(data: Any) -> dict[str, Any]:
             add('CHECK_PENDING', f'checks.{name}', 'Failed or unperformed checks remain open.')
         if name == 'word_layout' and data.get('docx_requested') is True and check.get('status') != 'passed':
             add('WORD_PENDING', 'checks.word_layout', 'DOCX delivery still requires native Word inspection of the saved artifact.')
+    if 'reasoning_review' in data:
+        audit_reasoning_review(data['reasoning_review'], workflow, add)
     return done()
 
 

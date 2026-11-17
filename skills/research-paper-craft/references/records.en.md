@@ -2,6 +2,8 @@
 
 Read only for the current task phase. The core rules in SKILL.md remain active.
 
+For a scientific audit or substantive research decision, load [research reasoning](research-reasoning.en.md). Reuse the records below. Language-only edits do not require the full review.
+
 ## R29 Use explicit working-record schemas
 
 The following field sets are templates, not populated research findings. Keep a compact representation appropriate to the project. CSV, JSON, YAML, a spreadsheet, or a structured note is acceptable when the fields stay inspectable.

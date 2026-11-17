@@ -49,3 +49,17 @@ Blank working record. Complete from actual files and decisions. Keep outside the
 - Findings, edits, scientific questions and pending checks
 - Evidence of executed checks, not a claimed overall score
 - Lead review result and next permitted action
+
+## Research reasoning when in scope
+
+- Current Research, Planning or Review boundary and existing ARS state owner
+- Loaded research-reasoning guide and actual source/QA record locators
+- Gap, closest-work and RQ/evidence paths using existing register IDs
+- Scoped originality, expected versus demonstrated impact, and contradictory findings
+- Six support states kept separate from execution status
+- Scientific-change proposals and researcher approval locators
+- Feedback classification, validation, exceptions and approved persistence target
+- Scientific audit table and six summaries when requested
+- Language-only edit scope retained when a full research review is not requested
+
+Do not create a second pipeline or promote a filled record to scientific approval.

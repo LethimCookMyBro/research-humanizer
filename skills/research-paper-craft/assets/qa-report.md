@@ -41,3 +41,26 @@ Record the application and version actually used, final DOCX identity, actual Wo
 ## Delivery status
 
 Choose working draft, review draft, or submission candidate under R27. List unresolved scientific blockers, unperformed mandatory checks, and author decisions. Do not prefill this status as passed.
+
+## Scientific audit when requested
+
+Use the existing evidence and decision records. Leave this section unused for language-only work. Populate from actual inspection, not this blank template.
+
+| Issue | Evidence | Why It Matters | Recommended Fix | Status | Priority |
+| --- | --- | --- | --- | --- | --- |
+
+Support status is Verified, Partially Supported, Unverified, Proposed, Contradicted or Not Applicable. Record its scope and reason. This is separate from Passed, Failed or Not Run for execution.
+
+### Critical Research Problems
+
+### Verified Contributions
+
+### Unsupported Claims
+
+### Missing Evidence
+
+### Feasible Gap-Closure Actions
+
+### Decisions Requiring Researcher Approval
+
+Use none identified or not checked where appropriate. Do not prefill favorable findings.

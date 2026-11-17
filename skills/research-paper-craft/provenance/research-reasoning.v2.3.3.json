@@ -1,0 +1,26 @@
+{
+  "candidate_version": "2.3.3",
+  "base_commit": "dc9819514ea24abea5e924d9545de6b3ebfbe709",
+  "publication_status": "unpublished",
+  "requirements_source": "User Research Reasoning & Gap Validation Upgrade brief, 2026-11-17",
+  "rules_added": [
+    "R48",
+    "R49",
+    "R50"
+  ],
+  "rules_modified": [],
+  "validation_scope": "Software and static contracts only. No expert endorsement or universal research-quality validation is claimed.",
+  "background_sources": [
+    {
+      "url": "https://www.ncbi.nlm.nih.gov/sites/books/NBK62478/",
+      "locator": "2011 structured abstract; research gaps in systematic reviews",
+      "scope_limit": "PICOS is not imposed on all disciplines."
+    },
+    {
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK547524/",
+      "locator": "2019 chapter 5 opening discussion",
+      "scope_limit": "Replication is considered within a body of evidence."
+    }
+  ],
+  "feedback_policy": "One expert recommendation is not automatically universal. Versioned persistence requires a validated scope and approval. No private feedback is included."
+}

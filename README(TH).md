@@ -4,7 +4,7 @@
 
 **Clear research writing. Traceable claims. Real evidence.**
 
-[![Version](https://img.shields.io/badge/version-2.3.2-2563eb?style=flat-square)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-2.3.3-2563eb?style=flat-square)](CHANGELOG.md)
 [![License](https://img.shields.io/badge/license-MIT-0f766e?style=flat-square)](LICENSE)
 [![Languages](https://img.shields.io/badge/guides-English%20%2B%20Thai-475569?style=flat-square)](skills/research-paper-craft/SKILL.md)
 [![Status](https://img.shields.io/badge/status-preview-b45309?style=flat-square)](docs/KNOWN_ISSUES.md)
@@ -17,6 +17,8 @@
 **[เว็บไซต์โครงการ](https://research-humanizer.vercel.app/th/)** · [Release v2.3.2](https://github.com/LethimCookMyBro/research-humanizer/releases/tag/v2.3.2)
 
 </div>
+
+**2.3.3 รุ่น Preview** เพิ่มการตรวจ Gap ความใหม่ Impact และเส้นทาง RQ กับหลักฐานใน Skill เดิม งานเกลาภาษาอย่างเดียวยังทำแบบเบาได้ [บันทึกอัปเกรด](docs/releases/v2.3.3.md) · [ตรวจโครงสร้างเดิม](docs/plans/v2.3.3-architecture-audit.md) รีเฟรช Marketplace แล้วอัปเดต plugin เพื่อโหลดรุ่นนี้ [Release และไฟล์ดาวน์โหลด](https://github.com/LethimCookMyBro/research-humanizer/releases/tag/v2.3.3)
 
 **2.3.2** เพิ่มการตรวจจุด อัญประกาศ และอักขระแฝงตามบริบท ครอบคลุมกรณีที่หลุดทั้งเจ็ดข้อจากการตรวจเดิม โดยรักษาสูตรและไม่แก้ไฟล์อัตโนมัติ [สิ่งที่แก้](docs/releases/v2.3.2.md) · [ผลตรวจ](docs/VERIFICATION.md)
 
@@ -192,3 +194,7 @@ ARS ต้องติดตั้งแยกและใช้ CC BY-NC 4.0 �
 
 
 [เว็บไซต์โครงการและการตั้งค่าการค้นหา](docs/DISCOVERY.md)
+
+## ตรวจเหตุผลวิจัย
+
+ใช้ `research-paper-craft` ตัวเดิม สั่ง Scientific Audit หรือ Research Gap Review เพื่อตรวจหลักฐานของ Gap ความใหม่ Impact ความตรงของ RQ และ Findings โดยไม่แก้ต้นฉบับ โหมด revise แยกข้อเสนอเชิงวิจัยจากการแก้ภาษาและต้องขออนุมัติก่อนเปลี่ยนสาระ ส่วนเสริมของ `audit_full_paper.py` ตรวจบันทึกที่ประกาศ ไม่ได้พิสูจน์ความจริงทางวิทยาศาสตร์ [คู่มือ](skills/research-paper-craft/references/research-reasoning.th.md) · [ตัวอย่างและความเข้ากันได้](docs/UPGRADE-v2.3.3.md)

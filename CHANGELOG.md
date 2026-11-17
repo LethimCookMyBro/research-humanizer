@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.3.3, 2026-11-17
+
+- Add a bilingual research-reasoning module for scoped gaps, contribution, impact, RQ/evidence alignment and limits.
+- Reuse the existing QA, decision, paper-map, literature and metric records. Separate six support states from execution status and gap existence from closure.
+- Extend the existing full-paper record auditor with an optional, backward-compatible reasoning_review member. No new skill, pipeline or scientific certification.
+- Add feedback classification, validation and approval rules. Preserve language-only humanizing and scientific-change approval.
+- Route ARS checks through its existing stages and handoff. No live integration or model-quality result is claimed.
+- Publish the maintainer-approved Preview after rerunning all suites. The earlier candidate verification remains a dated pre-publication record.
+
+
 ## 2.3.2, 2026-11-17
 
 - Close seven retained punctuation-probe misses with contextual tests and preserve the original probe unchanged.

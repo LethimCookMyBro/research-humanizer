@@ -2,6 +2,8 @@
 
 Load before full-paper drafting. For a narrow language-only revision, do not add an unrelated literature project. This module supplies a research-writing procedure, not a preselected bibliography for an unknown study.
 
+For a scientific audit or substantive research decision, load [research reasoning](research-reasoning.en.md). Reuse the records below. Language-only edits do not require the full review.
+
 ## R44 Search from the actual study and read the sources
 
 First identify what the researcher actually built, measured, derived or observed. Distinguish the research question, population, intervention or system, setting and available records. Confirm versions and missing originals with the researcher. Do not search for a plausible experiment to substitute for their work.

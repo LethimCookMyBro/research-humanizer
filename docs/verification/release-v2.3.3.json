@@ -1,0 +1,955 @@
+{
+  "version": "2.3.3",
+  "publication_status": "unpublished_review_candidate",
+  "recorded_at": "2026-11-17T07:50:25.348704+00:00",
+  "base_commit": "dc9819514ea24abea5e924d9545de6b3ebfbe709",
+  "baseline_tree": "1e7dd35abf8e52e3e53392b61841764b46f0416e",
+  "environment": {
+    "python": "3.13.5",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "execution": "local isolated working copy; no GitHub Actions run for 2.3.3"
+  },
+  "baseline_suites": [
+    {
+      "suite": "repository",
+      "tests": 71,
+      "exit_code": 0,
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "status": "Passed"
+    },
+    {
+      "suite": "skill",
+      "tests": 311,
+      "exit_code": 0,
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "skills/research-paper-craft/tests",
+        "-v"
+      ],
+      "status": "Passed"
+    },
+    {
+      "suite": "historical",
+      "tests": 5,
+      "exit_code": 0,
+      "command": [
+        "python",
+        "-B",
+        "docs/audit-v2.0/audit_regressions.py",
+        "skills/research-paper-craft"
+      ],
+      "status": "Passed"
+    }
+  ],
+  "suites": [
+    {
+      "suite": "repository",
+      "tests": 82,
+      "exit_code": 0,
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "status": "Passed"
+    },
+    {
+      "suite": "skill",
+      "tests": 355,
+      "exit_code": 0,
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "skills/research-paper-craft/tests",
+        "-v"
+      ],
+      "status": "Passed"
+    },
+    {
+      "suite": "historical",
+      "tests": 5,
+      "exit_code": 0,
+      "command": [
+        "python",
+        "-B",
+        "docs/audit-v2.0/audit_regressions.py",
+        "skills/research-paper-craft"
+      ],
+      "status": "Passed"
+    }
+  ],
+  "total_tests": 442,
+  "new_tool_tests": 44,
+  "new_static_contracts": 11,
+  "red_before_implementation": {
+    "initial_tool_tests": 34,
+    "assertion_failures": 21,
+    "errors": 0,
+    "static_contracts": 11,
+    "static_assertion_failures": 9,
+    "intermediate_edge_tests_added": 10,
+    "intermediate_assertion_failures": 4
+  },
+  "rule_bodies_preserved": [
+    {
+      "file": "skills/research-paper-craft/references/evaluation.en.md",
+      "rule": "R14",
+      "sha256": "e88fd1d0e1480eaf25093f9c072e51ef719b74a9edb1d6e271472ee4d6fd8f9a"
+    },
+    {
+      "file": "skills/research-paper-craft/references/evaluation.en.md",
+      "rule": "R15",
+      "sha256": "33e8a4bb64279b9f2d32e46563ac54465a8d7e77e3b5cee73c81fa4768593b4e"
+    },
+    {
+      "file": "skills/research-paper-craft/references/evaluation.en.md",
+      "rule": "R23",
+      "sha256": "e1289dd2ff6f7be2fbdbfcb35625d383bb1069fe3c2c10a0ea0a51314eb3edb6"
+    },
+    {
+      "file": "skills/research-paper-craft/references/evaluation.th.md",
+      "rule": "R14",
+      "sha256": "664455f9c8cbad56c5eb2790f4aed0830f5759f27fbcfd7967da082972e4f22f"
+    },
+    {
+      "file": "skills/research-paper-craft/references/evaluation.th.md",
+      "rule": "R15",
+      "sha256": "45377857c511f3f43eef6e3521084b7ffd990a7da2538fd542a4c5ab9ffe867e"
+    },
+    {
+      "file": "skills/research-paper-craft/references/evaluation.th.md",
+      "rule": "R23",
+      "sha256": "1ba416f4cc74ec5435cb66d1102a810d65c35a34f7ceb659745c0b87c82295e4"
+    },
+    {
+      "file": "skills/research-paper-craft/references/evidence.en.md",
+      "rule": "R00",
+      "sha256": "c8272bfbe8613f8f403118901bac935ba2c417853032f6174be60988f16d6245"
+    },
+    {
+      "file": "skills/research-paper-craft/references/evidence.en.md",
+      "rule": "R01",
+      "sha256": "e62a45033e5e51ce12061434844e82130ea11acdec6097b040547b3d467d8092"
+    },
+    {
+      "file": "skills/research-paper-craft/references/evidence.en.md",
+      "rule": "R02",
+      "sha256": "f59af19bc3237cc7ee3008bd295200d29ff62d0131b12c806d4374a7f9b25c75"
+    },
+    {
+      "file": "skills/research-paper-craft/references/evidence.en.md",
+      "rule": "R03",
+      "sha256": "d6117c1e79d5514286110d4e9ce2210b7b1b25b6f91cdc29515d10a64ac865f7"
+    },
+    {
+      "file": "skills/research-paper-craft/references/evidence.en.md",
+      "rule": "R04",
+      "sha256": "3f4aa82267355a29628851336f6dbedaac603afaf5a7b57dc142ddb5d274f1fb"
+    },
+    {
+      "file": "skills/research-paper-craft/references/evidence.en.md",
+      "rule": "R05",
+      "sha256": "ff135e6aa8d4bd46af1670a3888b698606ed17f8cab2dbba1afb397e768a31f8"
+    },
+    {
+      "file": "skills/research-paper-craft/references/evidence.th.md",
+      "rule": "R00",
+      "sha256": "3f176ad31e4fbf71d84ec969842ad6907f3b494d6288651482bb13ec4c8d50bc"
+    },
+    {
+      "file": "skills/research-paper-craft/references/evidence.th.md",
+      "rule": "R01",
+      "sha256": "5ad4d5d1fa4094a001bbf46f96ef304d99095553889c034ad20b344940b3de78"
+    },
+    {
+      "file": "skills/research-paper-craft/references/evidence.th.md",
+      "rule": "R02",
+      "sha256": "581e14ad9139df72d41418b066cf3eb7e2af7e60a65f1ed51923f3d7028137ff"
+    },
+    {
+      "file": "skills/research-paper-craft/references/evidence.th.md",
+      "rule": "R03",
+      "sha256": "a32a8a2f374f58c77caf46c380747826e09049cf4172e3c726edf1d3c2d7969e"
+    },
+    {
+      "file": "skills/research-paper-craft/references/evidence.th.md",
+      "rule": "R04",
+      "sha256": "9acaeab2363376d644f2f156188bd5f9a501f2630f2f7d7ba67ee156b40a92fd"
+    },
+    {
+      "file": "skills/research-paper-craft/references/evidence.th.md",
+      "rule": "R05",
+      "sha256": "4a719610180a981b784a75a09118d5bcc01f44a883b38c53971ecddfad5338f3"
+    },
+    {
+      "file": "skills/research-paper-craft/references/full-paper.en.md",
+      "rule": "R41",
+      "sha256": "26750f3e9d14faa05e5f37c9c984bf667074a482bf78439b1c92a6bf54a8be3f"
+    },
+    {
+      "file": "skills/research-paper-craft/references/full-paper.en.md",
+      "rule": "R42",
+      "sha256": "08fab2e17aa3a961b2f298de9951c2617854ce28992c0e03e73788fb06388b2b"
+    },
+    {
+      "file": "skills/research-paper-craft/references/full-paper.en.md",
+      "rule": "R43",
+      "sha256": "ca5ab96088d7676963d5f680011762f04bae5e7c4a0151c1ce48d2609d639578"
+    },
+    {
+      "file": "skills/research-paper-craft/references/full-paper.th.md",
+      "rule": "R41",
+      "sha256": "6d3eeb695d3702d60a08e62f777d509e8f0468587c93c062b9cf13d167eb120c"
+    },
+    {
+      "file": "skills/research-paper-craft/references/full-paper.th.md",
+      "rule": "R42",
+      "sha256": "c5510e75411c54696953974895908c4638196ded4373e176b69806171c96535b"
+    },
+    {
+      "file": "skills/research-paper-craft/references/full-paper.th.md",
+      "rule": "R43",
+      "sha256": "48c5084f4fb80dd96aa2cfd2c34a8f0860ac1d911a90ead2a27cd2bf137bebde"
+    },
+    {
+      "file": "skills/research-paper-craft/references/literature.en.md",
+      "rule": "R44",
+      "sha256": "11c7135fb175ee0bb38114382c922311e36e56ba55459a350a68e88ba0104d1a"
+    },
+    {
+      "file": "skills/research-paper-craft/references/literature.en.md",
+      "rule": "R45",
+      "sha256": "117d8ddd2a9764fb90f8506df83ba35f08c1d46f9f06bd856d8fda48ab6fa092"
+    },
+    {
+      "file": "skills/research-paper-craft/references/literature.en.md",
+      "rule": "R46",
+      "sha256": "750bcec330a702787a115891200a0938a063823af79cbc108780e4381a352115"
+    },
+    {
+      "file": "skills/research-paper-craft/references/literature.th.md",
+      "rule": "R44",
+      "sha256": "3b20eac818318795e1babd49d1f2ca6e3e28cf3152140c8f202000309723916d"
+    },
+    {
+      "file": "skills/research-paper-craft/references/literature.th.md",
+      "rule": "R45",
+      "sha256": "a8ad78b1ff8596323ec027e7d5b73f59bd6b31b0befb85f0d5163dd4deb71971"
+    },
+    {
+      "file": "skills/research-paper-craft/references/literature.th.md",
+      "rule": "R46",
+      "sha256": "140bcb61f830a985b3ef4cec0bd6af63c87e39bf6de9bdd59a1d75beb810eea6"
+    },
+    {
+      "file": "skills/research-paper-craft/references/methods.en.md",
+      "rule": "R12",
+      "sha256": "f4d9a04d71ca6af1c466969622554fccdb0ad59679dacd6dc646837fb13ebc35"
+    },
+    {
+      "file": "skills/research-paper-craft/references/methods.en.md",
+      "rule": "R13",
+      "sha256": "5d500a5f3f85ab1ac2cf5819ce279e014a768705c33562f519462d387523d58c"
+    },
+    {
+      "file": "skills/research-paper-craft/references/methods.th.md",
+      "rule": "R12",
+      "sha256": "8d1c8dd41d4f923478ad0357cd9044ecff467b573db1ed606020fd845c9f6d95"
+    },
+    {
+      "file": "skills/research-paper-craft/references/methods.th.md",
+      "rule": "R13",
+      "sha256": "637a5a30dbd6e0a7c35eb09947ffe14777fb0a63c1518666d49121c55e2526d4"
+    },
+    {
+      "file": "skills/research-paper-craft/references/paper.en.md",
+      "rule": "R06",
+      "sha256": "27f0ff8fa87b38f4f28cb520391c07fd15165c52c0a59c9fbf4285ed18e543d7"
+    },
+    {
+      "file": "skills/research-paper-craft/references/paper.en.md",
+      "rule": "R10",
+      "sha256": "c6acb81997d633169114966769ade4c5179a98c9061a62eaa5ef62fbe4714ca0"
+    },
+    {
+      "file": "skills/research-paper-craft/references/paper.en.md",
+      "rule": "R11",
+      "sha256": "f0e677ac50960ef2ad61c3b973d28764f3df6ce9ca0156501144e4580b780801"
+    },
+    {
+      "file": "skills/research-paper-craft/references/paper.en.md",
+      "rule": "R16",
+      "sha256": "f95cbb57efccfead25324c0279ede7a1e760292e4bb2cc4a42fc6d2a1d149cec"
+    },
+    {
+      "file": "skills/research-paper-craft/references/paper.en.md",
+      "rule": "R17",
+      "sha256": "999255a35e6e747abcf12c8629ee33ffbd89878e08b83ab71a0e534f48d5128a"
+    },
+    {
+      "file": "skills/research-paper-craft/references/paper.th.md",
+      "rule": "R06",
+      "sha256": "aa18caa33bee757c1de7104c470f04f1d5b13d6d2e90c38699e59a991a938735"
+    },
+    {
+      "file": "skills/research-paper-craft/references/paper.th.md",
+      "rule": "R10",
+      "sha256": "f2d7f3f04cf3b7cce0c7331f5b94a5af2f7c01068e064fb9e2df13d9d839da5f"
+    },
+    {
+      "file": "skills/research-paper-craft/references/paper.th.md",
+      "rule": "R11",
+      "sha256": "afc37a807f64fb7923dd08c8429a82b1ea4ec56e736d1d08fa9ddc1c3a7f5fde"
+    },
+    {
+      "file": "skills/research-paper-craft/references/paper.th.md",
+      "rule": "R16",
+      "sha256": "61f2af10d546887912721d145539228950d6c552b79eeae8fdaca68ba0116081"
+    },
+    {
+      "file": "skills/research-paper-craft/references/paper.th.md",
+      "rule": "R17",
+      "sha256": "b3de640b860e33e7f0595f4ca96e441657efa6f9538b374671597b177cc26fae"
+    },
+    {
+      "file": "skills/research-paper-craft/references/punctuation.en.md",
+      "rule": "R47",
+      "sha256": "2f59654951fdf5896ef3ae7cb9472abd40c6f3e50903a733fdfa90afc8b2b356"
+    },
+    {
+      "file": "skills/research-paper-craft/references/punctuation.th.md",
+      "rule": "R47",
+      "sha256": "340458b6870031b055ae6aee6401d25cd6365282222a3301bd1a33f69fe270c7"
+    },
+    {
+      "file": "skills/research-paper-craft/references/records.en.md",
+      "rule": "R29",
+      "sha256": "31b8e514d5327dbf2f879c3777fe71987d568d2b7078c4bcc2d546bd56d7f1da"
+    },
+    {
+      "file": "skills/research-paper-craft/references/records.th.md",
+      "rule": "R29",
+      "sha256": "aedb99454befa6ee72ec09be7b8230ee3f2b344747610a9ed90d40d198962390"
+    },
+    {
+      "file": "skills/research-paper-craft/references/submission.en.md",
+      "rule": "R24",
+      "sha256": "e44495cc7e2527f35dd022dd0c8c6280b7bc966ec8380bf6ad35040a8f7fab68"
+    },
+    {
+      "file": "skills/research-paper-craft/references/submission.en.md",
+      "rule": "R25",
+      "sha256": "6ec95f5f9840f132848240be5967dc38a3c2ac3ba7dcdccd39fd1be5ba9d78da"
+    },
+    {
+      "file": "skills/research-paper-craft/references/submission.en.md",
+      "rule": "R26",
+      "sha256": "e818792147c68bc0fa2ee42e9426a15f98d6ff556d39045ee8eada243724c461"
+    },
+    {
+      "file": "skills/research-paper-craft/references/submission.en.md",
+      "rule": "R27",
+      "sha256": "40d29743a1aac60708f92cf61e8276873603b376bab73b29d541ce005d2f571f"
+    },
+    {
+      "file": "skills/research-paper-craft/references/submission.en.md",
+      "rule": "R28",
+      "sha256": "8f733a7c65da583bfc88d0490bd0f2e84142f30512ca091b0942f3694c6d9416"
+    },
+    {
+      "file": "skills/research-paper-craft/references/submission.th.md",
+      "rule": "R24",
+      "sha256": "04670b56a4aff7bf7aa66692884b4fd8d1cbf20a3f63bce81983abbf1a6beaa4"
+    },
+    {
+      "file": "skills/research-paper-craft/references/submission.th.md",
+      "rule": "R25",
+      "sha256": "1c189a4ac2945fe0a524d05faf26c369fd541a7556ee6cb28728454977bf8ea1"
+    },
+    {
+      "file": "skills/research-paper-craft/references/submission.th.md",
+      "rule": "R26",
+      "sha256": "75acf14314f326dc293e201d23b046f62c411f962346000959bfc2a4a671efce"
+    },
+    {
+      "file": "skills/research-paper-craft/references/submission.th.md",
+      "rule": "R27",
+      "sha256": "d69214aed3411e455c9aa11ebcbd62852b65ee5f5d082e6de86f5f55cf1e5e4c"
+    },
+    {
+      "file": "skills/research-paper-craft/references/submission.th.md",
+      "rule": "R28",
+      "sha256": "a484e1db418bdda2856ef648e4b194586c09dcc00d6aab7a31ce8ff26ed5c1a6"
+    },
+    {
+      "file": "skills/research-paper-craft/references/visuals.en.md",
+      "rule": "R18",
+      "sha256": "f18016d78b47eb5a534189a9733d122fa36c04dff4f2440322c1b38573dfcdc8"
+    },
+    {
+      "file": "skills/research-paper-craft/references/visuals.en.md",
+      "rule": "R19",
+      "sha256": "034cf4e91db3d968e1ee0725532e42374f115914e0e5014577a1112a55b4015f"
+    },
+    {
+      "file": "skills/research-paper-craft/references/visuals.en.md",
+      "rule": "R20",
+      "sha256": "12f8d1c5b916e6f127294b9b85c32f385d17c4f00bfe985bd2ec6ffdefe6f5ec"
+    },
+    {
+      "file": "skills/research-paper-craft/references/visuals.en.md",
+      "rule": "R21",
+      "sha256": "a16ea1b80d09792a99f0efad032c50c0e8e897253aec8f38a7a09497c42d9f6e"
+    },
+    {
+      "file": "skills/research-paper-craft/references/visuals.en.md",
+      "rule": "R22",
+      "sha256": "634ef194ec6fa709c9b7d3914d59dc2b2389f2d9a959ecc4bbb65501599cbb66"
+    },
+    {
+      "file": "skills/research-paper-craft/references/visuals.th.md",
+      "rule": "R18",
+      "sha256": "03708034ff5185505817ae5d2ab8e7bfb474e235fd48ede5035d05481dcdae17"
+    },
+    {
+      "file": "skills/research-paper-craft/references/visuals.th.md",
+      "rule": "R19",
+      "sha256": "5f3d14870e0582f69775e112f246b6b654ee19693552e39abe522eeed986aed4"
+    },
+    {
+      "file": "skills/research-paper-craft/references/visuals.th.md",
+      "rule": "R20",
+      "sha256": "d73556e42870f1f738ab87b4e0035d523e482ca8f1ea98acd4513a0350f7c0e6"
+    },
+    {
+      "file": "skills/research-paper-craft/references/visuals.th.md",
+      "rule": "R21",
+      "sha256": "6c5344f970f145889f28ee341480c32b8947ccfb765b4e768531eea4ebe8f36a"
+    },
+    {
+      "file": "skills/research-paper-craft/references/visuals.th.md",
+      "rule": "R22",
+      "sha256": "8af84458b2bfdff226e2e2283dd71cda7a06e7919b8fb5517d9c7cb7f25aed46"
+    },
+    {
+      "file": "skills/research-paper-craft/references/word-layout.en.md",
+      "rule": "R31",
+      "sha256": "8ec4c3f7f38fcdc554cca75eadd8071e6f7d7f5d3425e3870bf55c49f8231d59"
+    },
+    {
+      "file": "skills/research-paper-craft/references/word-layout.en.md",
+      "rule": "R32",
+      "sha256": "e2a09593e47854c3a4e2f404deb7c01d8b1bf047a70f1f8f6e9e77e5bd8d28a6"
+    },
+    {
+      "file": "skills/research-paper-craft/references/word-layout.en.md",
+      "rule": "R33",
+      "sha256": "8db8754c3e3bd13c884ebb49fec3c8db60b04db971b2661bab49eadd0185931b"
+    },
+    {
+      "file": "skills/research-paper-craft/references/word-layout.en.md",
+      "rule": "R34",
+      "sha256": "976b76b3c7bf708ddb6be15bd569b9b3aab8a27bc62ac1c094e46fceef5b64e3"
+    },
+    {
+      "file": "skills/research-paper-craft/references/word-layout.en.md",
+      "rule": "R35",
+      "sha256": "87d3e47d73657a33b14ecb57a8b1864225077bae92bc67568d6d8c40faa80c3e"
+    },
+    {
+      "file": "skills/research-paper-craft/references/word-layout.en.md",
+      "rule": "R36",
+      "sha256": "18d1563ca853f9ecf98a0504e998444f3e5d4d683e9ae4a7cba1b65e1b85371c"
+    },
+    {
+      "file": "skills/research-paper-craft/references/word-layout.en.md",
+      "rule": "R37",
+      "sha256": "7ce0a31ed3be947c79cf91d2d8e8a735421c2821de6850332d602e38cfe7791b"
+    },
+    {
+      "file": "skills/research-paper-craft/references/word-layout.en.md",
+      "rule": "R38",
+      "sha256": "23e3afae43fb5c1fbe05659281f5501f0ca53ed2bd8a00b19d2231f9abacd0e8"
+    },
+    {
+      "file": "skills/research-paper-craft/references/word-layout.en.md",
+      "rule": "R39",
+      "sha256": "d5aed78b187b839bd57b08a25a64004fc17304c5436c5ee4ce24cab942fff1ea"
+    },
+    {
+      "file": "skills/research-paper-craft/references/word-layout.en.md",
+      "rule": "R40",
+      "sha256": "3dd5b1a27ed711afec5295474f839f566e89ad21b3d2c6a1374812617c3db286"
+    },
+    {
+      "file": "skills/research-paper-craft/references/word-layout.th.md",
+      "rule": "R31",
+      "sha256": "f7d08863576f37f08cc5bca9cf02d7641a7e99e7527a9295168d9150a8c540da"
+    },
+    {
+      "file": "skills/research-paper-craft/references/word-layout.th.md",
+      "rule": "R32",
+      "sha256": "a22ad1e8500111a3c118b440c567226f20d43773e46a3cd8b41a5bab94a58dbf"
+    },
+    {
+      "file": "skills/research-paper-craft/references/word-layout.th.md",
+      "rule": "R33",
+      "sha256": "f3fd8564f72e0b3da3b10240fb46eeec10e3bbc62999ce5b04aac5dd0fa15193"
+    },
+    {
+      "file": "skills/research-paper-craft/references/word-layout.th.md",
+      "rule": "R34",
+      "sha256": "f83f49e539492eb75796aabf9857ad94c6a12439d34867093431195f3e21c4a7"
+    },
+    {
+      "file": "skills/research-paper-craft/references/word-layout.th.md",
+      "rule": "R35",
+      "sha256": "811b2f6c114b4e1d9ac44bf6cb639cc384942b8bd9f4f554127c68123a8b695f"
+    },
+    {
+      "file": "skills/research-paper-craft/references/word-layout.th.md",
+      "rule": "R36",
+      "sha256": "eb5a921a869854f4b1dfac6d8bbde7b2a4a412a9bd16c8ee9176c34679b8d00d"
+    },
+    {
+      "file": "skills/research-paper-craft/references/word-layout.th.md",
+      "rule": "R37",
+      "sha256": "016d37cbe82a83bec60b9984221e44f3ef11cf932a70768911ffb2c1add99eab"
+    },
+    {
+      "file": "skills/research-paper-craft/references/word-layout.th.md",
+      "rule": "R38",
+      "sha256": "63ab2592456b7407e21663e846d8ed253c5e1f71b75ddcdb7a35e655ddf0013c"
+    },
+    {
+      "file": "skills/research-paper-craft/references/word-layout.th.md",
+      "rule": "R39",
+      "sha256": "d86b595ff0806ec27704d14e1ae16673287674b8c75ca1f318b4447007ac3817"
+    },
+    {
+      "file": "skills/research-paper-craft/references/word-layout.th.md",
+      "rule": "R40",
+      "sha256": "16ab25412a3b28f3728e7f01034a7fa9d6feb220cadd9a783dc82b21da9bce22"
+    },
+    {
+      "file": "skills/research-paper-craft/references/writing.en.md",
+      "rule": "R07",
+      "sha256": "51ce4c91994ba59c06e7e2a0b0a9eb20d8a9b7dd52e480f8c56d0ecdf8135f18"
+    },
+    {
+      "file": "skills/research-paper-craft/references/writing.en.md",
+      "rule": "R08",
+      "sha256": "dffcbeb386be96ccdf5e55be02dcc79b0014c83955c29d463c6b4fef342348e4"
+    },
+    {
+      "file": "skills/research-paper-craft/references/writing.en.md",
+      "rule": "R09",
+      "sha256": "53165ae7684b831ad5bd43bacf02a89fdfae4761202f0eb8f52a7d1c906d3ba8"
+    },
+    {
+      "file": "skills/research-paper-craft/references/writing.en.md",
+      "rule": "R30",
+      "sha256": "0f018f7cee5ae62d5986c336edb3ca507f5ee6f2399f0e1fb654c5ac9557c4bd"
+    },
+    {
+      "file": "skills/research-paper-craft/references/writing.th.md",
+      "rule": "R07",
+      "sha256": "16c317aa3cfc889b0ee115a265fcaacb3fe871d75e5a6d3e06f83763fdf1f113"
+    },
+    {
+      "file": "skills/research-paper-craft/references/writing.th.md",
+      "rule": "R08",
+      "sha256": "0049c270d76cc4a85d50d801d633e19cb79ecb2dfa4b22cf40eefc5e5909c61f"
+    },
+    {
+      "file": "skills/research-paper-craft/references/writing.th.md",
+      "rule": "R09",
+      "sha256": "e049a87fcf7311626087407922b7691354857fef5d52d297123877fb102558f9"
+    },
+    {
+      "file": "skills/research-paper-craft/references/writing.th.md",
+      "rule": "R30",
+      "sha256": "71233a405ed127d32bba52de8e8fa95fd38261cd5be865ef4543a95f9d2a3ba7"
+    }
+  ],
+  "protected_byte_identical_files": [
+    {
+      "path": "skills/research-paper-craft/provenance/humanizer-original.md",
+      "sha256": "804a119e924ac30295b298213e0b71b3e38b2667b8ef4fb7b69e9246369b9045"
+    },
+    {
+      "path": ".github/workflows/checks.yml",
+      "sha256": "458a4681ed4c85259cc2e6461215ecef54fd586fb60697cb6b8550e7a4ebca29"
+    },
+    {
+      "path": ".github/workflows/release.yml",
+      "sha256": "f82d809530bdc285b043b67f4f4c967dfbccdfd69f8dfde1fb05a8a0fb439456"
+    },
+    {
+      "path": "skills/research-paper-craft/scripts/audit_figures.py",
+      "sha256": "17b4723d52f64e45bb02b95abfb3b457f74a5c0b44e7fa44b385210bd31acd7f"
+    },
+    {
+      "path": "skills/research-paper-craft/scripts/review_revision.py",
+      "sha256": "03f7dbe8e8f229c94924ee29b38a7151cd82b389c7b9e77916fb3ff1032494d6"
+    },
+    {
+      "path": "skills/research-paper-craft/scripts/lint_manuscript.py",
+      "sha256": "c4ff523ef809e3a959aaf490e5a90d9ca1b2bef04813375d9878da77244fee2a"
+    },
+    {
+      "path": "skills/research-paper-craft/scripts/audit_docx.py",
+      "sha256": "c566b7a6576fad31d77c84956a5094391b91997953cf9650f132ebc5ac035141"
+    },
+    {
+      "path": "skills/research-paper-craft/references/word-layout.th.md",
+      "sha256": "c58f9597bef394e58f5fc519bce32bb1ddaabfbfc51efea70397c4cc0e7308ab"
+    },
+    {
+      "path": "skills/research-paper-craft/references/word-layout.en.md",
+      "sha256": "d3302add6e2dd1f4eb10942e13e34f2d4d2bce902d1c77cc3f06c7d424517362"
+    },
+    {
+      "path": "skills/research-paper-craft/assets/metric-plan.csv",
+      "sha256": "2c49ba29ef7dfadb2e28e1273f4554457436de33c7713e4f3569a5d6fea9288d"
+    },
+    {
+      "path": "skills/research-paper-craft/assets/revision-ledger.csv",
+      "sha256": "29ccad2bb3c08b4b594d1315ba8660b3be9beb9454cda36d0264c2f5389e8454"
+    },
+    {
+      "path": "skills/research-paper-craft/assets/paper-map.csv",
+      "sha256": "38d42bd88f28471b69eaadf68e72c5535980043b3519f60dcf384ef921fb9883"
+    },
+    {
+      "path": "skills/research-paper-craft/assets/search-log.csv",
+      "sha256": "8ff98ad802da6639945b03af034536de6689f8f8da050553983390d2f45ae4fe"
+    },
+    {
+      "path": "skills/research-paper-craft/assets/literature-matrix.csv",
+      "sha256": "4425d42919eaff44fd3b588cc473f927b11ca9542bc8f0bed4ef5285f1961cb4"
+    },
+    {
+      "path": "skills/research-paper-craft/assets/equation-code-map.csv",
+      "sha256": "c40e96f62dd4f0cd16773a989eaea9c96ab20f832146a74b7b0e670eae070f75"
+    },
+    {
+      "path": "skills/research-paper-craft/assets/full-paper-run.json",
+      "sha256": "78aeab15c064010c389665a97353829024179cc750b379708678be7501119117"
+    },
+    {
+      "path": "skills/research-paper-craft/provenance/rule-map.json",
+      "sha256": "6a67790c5ddf672aaefd0d563a40c673e92db71da32a9697c78604c8551ba0ce"
+    },
+    {
+      "path": "skills/research-paper-craft/provenance/rule-map.v2.1.0.json",
+      "sha256": "24a969105351870d518a0bf1821c234be9a49f62b8e41e0ff042749d0d74efe9"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "sha256": "07a274766689a6a09ff945727641db32eeddeefbdd3eb8413eeeb5f478002013"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "46c7e237d2d615aa24045e26a5f6b21cde67f497f8ea6ea26e33550b5a617871"
+    }
+  ],
+  "changed_files": [
+    {
+      "path": ".claude-plugin/plugin.json",
+      "change": "modified",
+      "old_sha256": "87f7936ee670bb48d2759737571032d029b61c1ec0171245fceb585165fefc20",
+      "sha256": "0d0f7b5ff5288a696b42e36d3dae6630514a5dd6ca3a20944c1767f82f448f94"
+    },
+    {
+      "path": ".codex-plugin/plugin.json",
+      "change": "modified",
+      "old_sha256": "bccdc163c9594ef1ad8f785f6992095fb6fcdb5d7dcd3231714fb4245caa1278",
+      "sha256": "d408deee01bd9b7269649cbb3ac7c39841b7a7e1a326dccd36fcf9d636a6ee7d"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "change": "modified",
+      "old_sha256": "66bfe36df8d617aa6fb326ef865a88ac50f18e3d32aa926609a71eb25f6102cc",
+      "sha256": "ed43370decf0c346afaba57345cc80265027e74365c387f76d6d2c97793abd57"
+    },
+    {
+      "path": "README(TH).md",
+      "change": "modified",
+      "old_sha256": "e5c9ff51fd9768ebf4dce332b5b3f600e2ab66b863ec446afe2f4e41376022c7",
+      "sha256": "d31c74b4674f89b06c95912cad03d3c9d4e69353275779f8c246431456266e91"
+    },
+    {
+      "path": "README.md",
+      "change": "modified",
+      "old_sha256": "e22d6bdc300469d63a5101d8e0acd3b8511df3dc1a936f1707bd977a47d2ae7d",
+      "sha256": "be6fb7b02be2ad5ea3119ea6d4cd4688a020c5614949a15a1fb55593b0cede0e"
+    },
+    {
+      "path": "VERSION",
+      "change": "modified",
+      "old_sha256": "e1d31f14bed34a1c7e6227931673f0bb4ec1e26ee4278d00dac169809c4d9539",
+      "sha256": "ef6949f5950f6f55fd1676a55619a3decdff9426d41a7d8078d3c4dab2e4449b"
+    },
+    {
+      "path": "commands/research-full.md",
+      "change": "modified",
+      "old_sha256": "d274fa16b5ddfdbea6b4e3227a33617d3d8b2bc9113c2c17d299555c68ceebe3",
+      "sha256": "8f68d7bdf2e60d76563e9562bc5eb59a69055bb03b1689454fd864c3d583a303"
+    },
+    {
+      "path": "docs/KNOWN_ISSUES.md",
+      "change": "modified",
+      "old_sha256": "73a8c8bb5246aff25363c21306cf6c9514f8bb49edbc09d5ece3c70e46850777",
+      "sha256": "f1f530caa959a41056322fbd0e8c1c33ddd3d303d064bc738d85082f281fc7d2"
+    },
+    {
+      "path": "docs/QUALITY.md",
+      "change": "modified",
+      "old_sha256": "c326bfeea06976cee9c787b2461a63aa2219b1d157e9f29bd1dd9cc7b22d7554",
+      "sha256": "5cca58016fca080d7244487c4b97dd51a81226a482b9d7f614987f6d990636d2"
+    },
+    {
+      "path": "docs/UPGRADE-v2.3.3.md",
+      "change": "added",
+      "old_sha256": null,
+      "sha256": "025c75501e0d485e07ae06754bb3c47fe149e476bbaf067025f8a0cc5de6d7a0"
+    },
+    {
+      "path": "docs/VERIFICATION.md",
+      "change": "modified",
+      "old_sha256": "dd675776fb7e9767e00e755df4daae33c25f059a29e7f1af5622235672b560bc",
+      "sha256": "f9944813439499e38dd29ce7b57a1234858f53ec12c46093094c35e1b0adeadf"
+    },
+    {
+      "path": "docs/plans/v2.3.3-architecture-audit.md",
+      "change": "added",
+      "old_sha256": null,
+      "sha256": "eec3cf71599fe8c6bd712c6087aa7167bfb07ed5c38d03209685ecdb511232b3"
+    },
+    {
+      "path": "docs/releases/v2.3.3.md",
+      "change": "added",
+      "old_sha256": null,
+      "sha256": "f8f083b7616c0f914d2668908c2dfa6b5eea75e2c7958255cc9821765a9fe1aa"
+    },
+    {
+      "path": "evals/research-reasoning-scenarios.md",
+      "change": "added",
+      "old_sha256": null,
+      "sha256": "1239448b8578a59fc702fc7ff0bf74745952dd421c2f6b6bb1ddf2c198892a98"
+    },
+    {
+      "path": "site/index.html",
+      "change": "modified",
+      "old_sha256": "75a4b6aeb0437dc38348931726199e5b231aee54ac7746c8625de67013f03ed0",
+      "sha256": "68ac68e651723500acc20c6dd4b2192b1d4a723dbd5d7d9fc43010eb141a58b0"
+    },
+    {
+      "path": "site/th/index.html",
+      "change": "modified",
+      "old_sha256": "2d097f242b7e3d3f1fc77baa9a51ffcc8da08b160617b0829c54f27aba9336d3",
+      "sha256": "da5b2a8db4107f7639bd0c0868d85c1be1029c06371af292486717fefc6791cf"
+    },
+    {
+      "path": "skills/research-paper-craft/KNOWN_ISSUES.md",
+      "change": "modified",
+      "old_sha256": "8cfd9f187b22478a9af1752811f558be1940384fb71220fb63aa3e2b26b38035",
+      "sha256": "273ec782158c1be81eb75910ce8301516621771d552600660dc7c4412cebe8c1"
+    },
+    {
+      "path": "skills/research-paper-craft/README.md",
+      "change": "modified",
+      "old_sha256": "de170e3ec097dcbeda1ec2bfc87a2f0d1480ef7f086ad317fb01c071e911905c",
+      "sha256": "001a50261418c3704f228eca8eec29a67755e4a9517d9e3af0b40bc50001fd4d"
+    },
+    {
+      "path": "skills/research-paper-craft/SHA256SUMS.txt",
+      "change": "modified",
+      "old_sha256": "3fa2efc409d8c2fbe839f2a3518d4eb8a398300ddce981b642a5afa5b67a600b",
+      "sha256": "69913c842cc5a3687e65fe2d8de6b78160ac01f9455fd963d5ae94b400acf8c7"
+    },
+    {
+      "path": "skills/research-paper-craft/SKILL.md",
+      "change": "modified",
+      "old_sha256": "ef525e3d479e672be9ef35d0e0cf71eba8da44ff8f65a5dd2a1d990d12ba7f3a",
+      "sha256": "e882f46bba479b1c5a09688e7cc1520930cd3bc6ff613dc77e927d54591027b3"
+    },
+    {
+      "path": "skills/research-paper-craft/assets/ars-handoff.md",
+      "change": "modified",
+      "old_sha256": "1c58b4e9edf3b5c850f4ed15b16cc68ccbc5c6124e7d38ae740230ee92ca7589",
+      "sha256": "9e1763604197f70ed8adf904f16a9e6ade42cf6305d1ce2dbad63ebe62702813"
+    },
+    {
+      "path": "skills/research-paper-craft/assets/qa-report.md",
+      "change": "modified",
+      "old_sha256": "2ed3fe0dc3e220e92ab9cb865b51815f70b982aa92c6d17de861673ae5467a0f",
+      "sha256": "56a7e3b450e784ef443f91e12e7caac7b507fce496164dc71af1094725f70e42"
+    },
+    {
+      "path": "skills/research-paper-craft/provenance/research-reasoning.v2.3.3.json",
+      "change": "added",
+      "old_sha256": null,
+      "sha256": "67492f50f81b2ee97063ba4c95391be314da0985d66dc38d0835cc4b65aa0bf8"
+    },
+    {
+      "path": "skills/research-paper-craft/references/ars-integration.en.md",
+      "change": "modified",
+      "old_sha256": "3390b25275088029b176271d140210a8a66b7b3833740857c8679752f75d6802",
+      "sha256": "5d45130c16659e6da5a6459d75caf96fb1965bfe96879b2b7e4e9c4869bc6856"
+    },
+    {
+      "path": "skills/research-paper-craft/references/ars-integration.th.md",
+      "change": "modified",
+      "old_sha256": "20b38429eb6d417573a85abbb0b65bee3e6e38a0a27e67410c37d2570799ab75",
+      "sha256": "4ae0cbedc3a79f41810fa18d443262bba9259123272d72e522f37663afe9cd8c"
+    },
+    {
+      "path": "skills/research-paper-craft/references/evaluation.en.md",
+      "change": "modified",
+      "old_sha256": "0d737dca495fcb2ed5d3bce2b2255e8c493ba456661287469b05e801beaf5872",
+      "sha256": "c0ddb7771511093676a22aed66e8c1ef48f012a7e72c040abe0ab4fdc768fb73"
+    },
+    {
+      "path": "skills/research-paper-craft/references/evaluation.th.md",
+      "change": "modified",
+      "old_sha256": "818f196def90d979e8933e09c23334dabe77257225492423ebd84af000c6f4c1",
+      "sha256": "a295ec861ce6449800015436465db5543687ce226d35dc9833b67dc2c6aa9215"
+    },
+    {
+      "path": "skills/research-paper-craft/references/evidence.en.md",
+      "change": "modified",
+      "old_sha256": "eb1284118d6da06075eb01edb0a071748f417957f0230b717b2b6294bed7c505",
+      "sha256": "bd26a25d73f91c213145d1ab9d1c6c736fc79fc2530c0a9908920526a5df20b5"
+    },
+    {
+      "path": "skills/research-paper-craft/references/evidence.th.md",
+      "change": "modified",
+      "old_sha256": "b54019d12470081d5ebb067dc44f7348ebd003a7edac1f44361ff0b051ced4f0",
+      "sha256": "376b669f435d2ceff9afb089711a88e76c33149b4f56fe01280cb3e96bbae3ed"
+    },
+    {
+      "path": "skills/research-paper-craft/references/full-paper.en.md",
+      "change": "modified",
+      "old_sha256": "77badd5e2c4802b519c048d80308e7cc6f56e6b9b44a95aaec670e3b7dc6dfb5",
+      "sha256": "5d56c0637a950f76144758cf650a3042d6f3f972d325480d1424076e853fae31"
+    },
+    {
+      "path": "skills/research-paper-craft/references/full-paper.th.md",
+      "change": "modified",
+      "old_sha256": "96dabf357e0ec3557813185a1bdc347ae2ed570c6da4e7e55b8ed51231b2814f",
+      "sha256": "43d269849168759f1ad4662f29aad03d271e36bfdb0344b0adad1d6e5fd5632b"
+    },
+    {
+      "path": "skills/research-paper-craft/references/literature.en.md",
+      "change": "modified",
+      "old_sha256": "f682a725f7ae278555cefd246185d21f203ce306131e7e867890e9da3c225417",
+      "sha256": "20ca3a901ded8a17452f95d74e351ff8a8affd41f2ba518db83471a68e4fa6d8"
+    },
+    {
+      "path": "skills/research-paper-craft/references/literature.th.md",
+      "change": "modified",
+      "old_sha256": "7a3eb10b4890e17614df1043481dc7290f2d88dac77ed34555cb07027b32a8bc",
+      "sha256": "8bea86bcd3d9910cca6cb7bd1cdaa528d3f0f40eb95b47580b50bd5dc96792f7"
+    },
+    {
+      "path": "skills/research-paper-craft/references/paper.en.md",
+      "change": "modified",
+      "old_sha256": "7aa31d501b8c8903c35228c374afd29e2a82a8c18e31b8cec1ab320df849a225",
+      "sha256": "fb4a8365736de12b8d0863c31ed2627a78d9e593422fe19b994f7ffcb09e01dd"
+    },
+    {
+      "path": "skills/research-paper-craft/references/paper.th.md",
+      "change": "modified",
+      "old_sha256": "a5c0629a88d8394c359a487fdd02df3344bc000b3059b1daec6f8c1d2c5da9dc",
+      "sha256": "43fd309f6e2a27a51b9e5a29345da435db3f581f543f3df8258ed0c5f3cb71a1"
+    },
+    {
+      "path": "skills/research-paper-craft/references/records.en.md",
+      "change": "modified",
+      "old_sha256": "3b264a283d780875354d9cb0bdf3c7f025374452cc3041ec27dbc2bfb47dfb7e",
+      "sha256": "eade95be97746e1b7e7b44acadc5bd19f0817bedabe540456e25b2fb4a8632c1"
+    },
+    {
+      "path": "skills/research-paper-craft/references/records.th.md",
+      "change": "modified",
+      "old_sha256": "3dcda8901125f4bc62b580fa0b4e03c42b6eb386316e3e804387120f5eaca23c",
+      "sha256": "958662282ca1d0a966c64b339b49906434d05dd005c07dd588567114c85f2184"
+    },
+    {
+      "path": "skills/research-paper-craft/references/research-reasoning-records.md",
+      "change": "added",
+      "old_sha256": null,
+      "sha256": "65511bced637ce34bd7152f7425f77558517749fcd3abeee79404fa0d860fdca"
+    },
+    {
+      "path": "skills/research-paper-craft/references/research-reasoning.en.md",
+      "change": "added",
+      "old_sha256": null,
+      "sha256": "4ded13fc855bd37e2d8b972a954a790e5ec48158a939bf18645986b56edf6988"
+    },
+    {
+      "path": "skills/research-paper-craft/references/research-reasoning.th.md",
+      "change": "added",
+      "old_sha256": null,
+      "sha256": "0852768175e8b4f517e4966c6b6ac81dc36b3302b20d9380d22a96cd7f3b1137"
+    },
+    {
+      "path": "skills/research-paper-craft/scripts/audit_full_paper.py",
+      "change": "modified",
+      "old_sha256": "e88373c485a9730cf5f21d3b2bc128e299ced7282c285db046cb90d65228da34",
+      "sha256": "4f511cf861a8b866a80d0bfa1d786812b6ee0a5a262c6a9476b536b0b2d942f3"
+    },
+    {
+      "path": "skills/research-paper-craft/tests/test_research_reasoning.py",
+      "change": "added",
+      "old_sha256": null,
+      "sha256": "23437cc5fce02ce9ef8567f1edc82c4d9cc90aa6af848f168242bcd179140e6b"
+    },
+    {
+      "path": "tests/test_research_reasoning_contract.py",
+      "change": "added",
+      "old_sha256": null,
+      "sha256": "09cfe72caf80225aa3626ac7b3d2caf7eda8194b45479b2bfeadd1ff8a1d882b"
+    }
+  ],
+  "self_record_path": "docs/verification/release-v2.3.3.json",
+  "self_record_excluded_from_hashes": true,
+  "not_performed": [
+    "live Claude/Codex/ARS execution",
+    "independent model/author evaluation",
+    "native Word rendering or repair",
+    "external scientific adjudication",
+    "GitHub CI on v2.3.3",
+    "push, tag, Release, publication or public deployment"
+  ],
+  "scientific_verification": "not_performed_by_software_tests",
+  "agent_evaluation_scenarios": {
+    "count": 14,
+    "status": "Not Run"
+  }
+}

@@ -2,6 +2,8 @@
 
 Read only for the current task phase. The core rules in SKILL.md remain active.
 
+For a scientific audit or substantive research decision, load [research reasoning](research-reasoning.en.md). Reuse the records below. Language-only edits do not require the full review.
+
 ## R00 Purpose and limits
 
 Use this guide to plan, draft, revise, translate, or audit a research manuscript and its supporting artifacts. It covers prose, mathematics, methods, experiments, tables, plots, system diagrams, scientific images, references, anonymization, and delivery checks.

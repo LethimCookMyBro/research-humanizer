@@ -1,5 +1,34 @@
 # Verification record
 
+## 2.3.3 publication preparation, 17 November 2026
+
+The maintainer authorized publishing the existing candidate. Its source archive has SHA256 `8792aabcfd2d8a029dee6cad4baa93d03e17df60c4011bf87ae8b42188fe3958`. The source base was reconstructed from that archive and its reverse patch and matched Git tree `1e7dd35abf8e52e3e53392b61841764b46f0416e` exactly.
+
+Only publication wording, version labels, download links and their checksum were adjusted after the candidate. Scientific guidance, runtime code, legacy records and tests are unchanged from the candidate. All 82 repository checks, 355 skill tests and 5 historical regressions were rerun locally and passed. The publication workflow runs these suites again before releasing. Check that workflow's result, not this local record, to establish public CI and release status.
+
+The candidate-stage report below and its JSON record retain the original Not Run entries. Live Claude/Codex/ARS execution, model-quality evaluation and native Word validation remain Not Run. Tests do not certify scientific validity.
+
+## 2.3.3 unpublished candidate, 17 November 2026
+
+The exact source tree of v2.3.2 was inspected before changes. Base commit `dc9819514ea24abea5e924d9545de6b3ebfbe709` has tree `1e7dd35abf8e52e3e53392b61841764b46f0416e`. The baseline suites were rerun and all 387 tests passed. No GitHub mutation, publication or public deployment was performed for this candidate.
+
+| Executed candidate suite | Result |
+| --- | --- |
+| Repository, documentation and website contracts | 82 passed |
+| Skill tools and contracts | 355 passed |
+| Retained historical regressions | 5 passed |
+| Total | 442 passed |
+
+These are software tests and static instruction contracts with synthetic fixtures. Python 3.13.5 was used for the final working-copy checks. The 34 initial new record tests first produced 21 assertion failures on the baseline auditor. The 11 new static contracts produced 9 assertion failures before the guidance existed. Ten additional edge tests exposed four defects in the intermediate implementation. All 44 new record tests and 11 new static contracts now pass. Existing tests were not weakened or edited.
+
+Checks cover unsupported novelty, missing gap literature, missing RQ evidence, incomplete metric declarations, causal and impact inflation, result/finding inconsistency, negative and replication contributions, qualitative/theoretical paths, scientific-change approval, optional-schema compatibility, malformed field types and input preservation. The lightweight and ARS tests inspect instructions and declared ownership only. They do not run agents or demonstrate coordination.
+
+All pre-existing numbered rule bodies R00–R47 were compared with the pinned baseline and remain unchanged in both languages. The original Humanizer, four other scripts, Word guides, legacy CSVs, full-paper JSON template and release workflow were also checked byte-for-byte. Optional reasoning fields do not change legacy record outputs when absent. A consistent record never grants scientific or submission approval.
+
+The [machine-readable record](verification/release-v2.3.3.json) includes actual commands, source hashes, changed files and explicit Not Run items. [Upgrade report](UPGRADE-v2.3.3.md) · [Architecture audit](plans/v2.3.3-architecture-audit.md) · [Candidate notes](releases/v2.3.3.md).
+
+Live Claude/Codex/ARS runs, independent model/author evaluation, actual gap validity judgments, native Word rendering and public CI/publication are **Not Run** for this candidate. The 14 [agent scenarios](../evals/research-reasoning-scenarios.md) are an evaluation plan only. Tests do not prove scientific correctness or publication readiness.
+
 ## 2.3.2, 17 November 2026
 
 Source preparation executed 71 repository/documentation tests, 311 skill tests and 5 historical regressions. All 387 passed. The 90 new tool tests first ran against the exact v2.3.1 linter and produced 38 assertion failures with no test errors. New documentation contracts also failed before the corresponding patch. After implementation the complete suites passed. The release workflow reruns them on the published commit.
