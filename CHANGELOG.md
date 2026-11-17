@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.3.2, 2026-11-17
+
+- Close seven retained punctuation-probe misses with contextual tests and preserve the original probe unchanged.
+- Add selected lowercase dot-spacing, fullwidth/small stop, multiword fragment, quotation-balance and source-character diagnostics.
+- Protect complete soft-wrapped quotes and common dotted technical forms. Expose invisible controls in reports without rewriting research inputs.
+- Keep source-bound writing, real-image requirements, ARS integration and Word-first safeguards. Expand bilingual review guidance and synchronize package/site versions.
+- Retain explicit grammar, rendered-glyph and live-model limitations.
+
 ## 2.3.1, 2026-11-17
 
 - Added context-aware punctuation candidates to the read-only text checker, including sentence-level comma load across soft wraps.

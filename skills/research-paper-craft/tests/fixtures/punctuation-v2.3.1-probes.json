@@ -1,0 +1,377 @@
+{
+  "release": "v2.3.1",
+  "git_blob_sha": "5ec1f7e45d5745dc4b46def8701da21bb50364bd",
+  "source": "https://github.com/LethimCookMyBro/research-humanizer/blob/v2.3.1/skills/research-paper-craft/scripts/lint_manuscript.py",
+  "scope": "28 authored smoke probes on exact fetched source. Not a complete evaluation or modified release.",
+  "cases": [
+    {
+      "case": "period_normal",
+      "input": "The system records actions. It exports the log.",
+      "status": "no_flags_in_checked_scope",
+      "rules": [],
+      "findings": []
+    },
+    {
+      "case": "double_period",
+      "input": "The system records actions..",
+      "status": "needs_review",
+      "rules": [
+        "PUNCT_REPEAT_REVIEW"
+      ],
+      "findings": [
+        {
+          "line": 1,
+          "end_line": 1,
+          "rule": "PUNCT_REPEAT_REVIEW",
+          "severity": "review",
+          "message": "Review repeated punctuation. Keep literal strings and scientifically meaningful notation intact.",
+          "excerpt": "The system records actions.."
+        }
+      ]
+    },
+    {
+      "case": "ellipsis_ascii",
+      "input": "The system records actions...",
+      "status": "needs_review",
+      "rules": [
+        "ELLIPSIS_REVIEW"
+      ],
+      "findings": [
+        {
+          "line": 1,
+          "end_line": 1,
+          "rule": "ELLIPSIS_REVIEW",
+          "severity": "review",
+          "message": "Review an ellipsis in prose. Preserve documented omissions and mathematical sequences. Do not guess omitted text.",
+          "excerpt": "The system records actions..."
+        }
+      ]
+    },
+    {
+      "case": "ellipsis_unicode",
+      "input": "The system records actions…",
+      "status": "needs_review",
+      "rules": [
+        "ELLIPSIS_REVIEW"
+      ],
+      "findings": [
+        {
+          "line": 1,
+          "end_line": 1,
+          "rule": "ELLIPSIS_REVIEW",
+          "severity": "review",
+          "message": "Review an ellipsis in prose. Preserve documented omissions and mathematical sequences. Do not guess omitted text.",
+          "excerpt": "The system records actions…"
+        }
+      ]
+    },
+    {
+      "case": "ellipsis_spaced",
+      "input": "The system records actions . . .",
+      "status": "needs_review",
+      "rules": [
+        "ELLIPSIS_REVIEW",
+        "PUNCT_SPACING_REVIEW"
+      ],
+      "findings": [
+        {
+          "line": 1,
+          "end_line": 1,
+          "rule": "ELLIPSIS_REVIEW",
+          "severity": "review",
+          "message": "Review an ellipsis in prose. Preserve documented omissions and mathematical sequences. Do not guess omitted text.",
+          "excerpt": "The system records actions . . ."
+        },
+        {
+          "line": 1,
+          "end_line": 1,
+          "rule": "PUNCT_SPACING_REVIEW",
+          "severity": "review",
+          "message": "Review punctuation spacing in prose. Preserve decimal marks, source strings, language conventions and intentional notation.",
+          "excerpt": "The system records actions . . ."
+        }
+      ]
+    },
+    {
+      "case": "fragment_chain",
+      "input": "Fast. Clear. Effective.",
+      "status": "needs_review",
+      "rules": [
+        "FRAGMENT_CHAIN_REVIEW"
+      ],
+      "findings": [
+        {
+          "line": 1,
+          "end_line": 1,
+          "rule": "FRAGMENT_CHAIN_REVIEW",
+          "severity": "review",
+          "message": "Review isolated words separated by periods. Prefer a complete supported statement, not a mechanical short-sentence quota.",
+          "excerpt": "Fast. Clear. Effective."
+        }
+      ]
+    },
+    {
+      "case": "space_before_dot",
+      "input": "The system records actions .",
+      "status": "needs_review",
+      "rules": [
+        "PUNCT_SPACING_REVIEW"
+      ],
+      "findings": [
+        {
+          "line": 1,
+          "end_line": 1,
+          "rule": "PUNCT_SPACING_REVIEW",
+          "severity": "review",
+          "message": "Review punctuation spacing in prose. Preserve decimal marks, source strings, language conventions and intentional notation.",
+          "excerpt": "The system records actions ."
+        }
+      ]
+    },
+    {
+      "case": "missing_space_upper",
+      "input": "The system records actions.It exports the log.",
+      "status": "needs_review",
+      "rules": [
+        "PUNCT_SPACING_REVIEW"
+      ],
+      "findings": [
+        {
+          "line": 1,
+          "end_line": 1,
+          "rule": "PUNCT_SPACING_REVIEW",
+          "severity": "review",
+          "message": "Review punctuation spacing in prose. Preserve decimal marks, source strings, language conventions and intentional notation.",
+          "excerpt": "The system records actions.It exports the log."
+        }
+      ]
+    },
+    {
+      "case": "missing_space_lower",
+      "input": "The system records actions.it exports the log.",
+      "status": "no_flags_in_checked_scope",
+      "rules": [],
+      "findings": []
+    },
+    {
+      "case": "decimal",
+      "input": "The duration was 0.25 seconds.",
+      "status": "no_flags_in_checked_scope",
+      "rules": [],
+      "findings": []
+    },
+    {
+      "case": "version",
+      "input": "We used v2.3.1 for the analysis.",
+      "status": "no_flags_in_checked_scope",
+      "rules": [],
+      "findings": []
+    },
+    {
+      "case": "abbreviation",
+      "input": "Fig. 2 shows the recording procedure.",
+      "status": "no_flags_in_checked_scope",
+      "rules": [],
+      "findings": []
+    },
+    {
+      "case": "citation",
+      "input": "The procedure followed prior work (Smith, 2020; Jones, 2021).",
+      "status": "no_flags_in_checked_scope",
+      "rules": [],
+      "findings": []
+    },
+    {
+      "case": "math",
+      "input": "We recorded n = 6 and x = -0.5.",
+      "status": "no_flags_in_checked_scope",
+      "rules": [],
+      "findings": []
+    },
+    {
+      "case": "hyphen",
+      "input": "The system - after setup - records actions.",
+      "status": "needs_review",
+      "rules": [
+        "PUNCT_SPACED_HYPHEN"
+      ],
+      "findings": [
+        {
+          "line": 1,
+          "end_line": 1,
+          "rule": "PUNCT_SPACED_HYPHEN",
+          "severity": "review",
+          "message": "Review a spaced hyphen used as a prose separator. Preserve subtraction, negative signs, ranges and lexical hyphens.",
+          "excerpt": "The system - after setup - records actions."
+        }
+      ]
+    },
+    {
+      "case": "equals_prose",
+      "input": "Feedback = successful learning.",
+      "status": "needs_review",
+      "rules": [
+        "PROSE_OPERATOR_REVIEW"
+      ],
+      "findings": [
+        {
+          "line": 1,
+          "end_line": 1,
+          "rule": "PROSE_OPERATOR_REVIEW",
+          "severity": "review",
+          "message": "Review symbolic shorthand in prose. State the relationship in words when appropriate. Preserve genuine equations, names, diagram relations and definitions.",
+          "excerpt": "Feedback = successful learning."
+        }
+      ]
+    },
+    {
+      "case": "slash",
+      "input": "We recorded guidance/feedback.",
+      "status": "needs_review",
+      "rules": [
+        "SLASH_SHORTHAND_REVIEW"
+      ],
+      "findings": [
+        {
+          "line": 1,
+          "end_line": 1,
+          "rule": "SLASH_SHORTHAND_REVIEW",
+          "severity": "review",
+          "message": "Review slash shorthand for its intended relationship. Do not choose and or or without evidence. Preserve units, ratios, paths and defined labels.",
+          "excerpt": "We recorded guidance/feedback."
+        }
+      ]
+    },
+    {
+      "case": "repeated_marks",
+      "input": "The system works!!",
+      "status": "needs_review",
+      "rules": [
+        "PUNCT_REPEAT_REVIEW"
+      ],
+      "findings": [
+        {
+          "line": 1,
+          "end_line": 1,
+          "rule": "PUNCT_REPEAT_REVIEW",
+          "severity": "review",
+          "message": "Review repeated punctuation. Keep literal strings and scientifically meaningful notation intact.",
+          "excerpt": "The system works!!"
+        }
+      ]
+    },
+    {
+      "case": "multiple_asides",
+      "input": "The system (after setup) records actions (during each trial).",
+      "status": "needs_review",
+      "rules": [
+        "PARENTHETICAL_LOAD_REVIEW"
+      ],
+      "findings": [
+        {
+          "line": 1,
+          "end_line": 1,
+          "rule": "PARENTHETICAL_LOAD_REVIEW",
+          "severity": "review",
+          "message": "Review repeated or nested explanatory parentheses. Preserve citations, abbreviations and mathematical grouping.",
+          "excerpt": "The system (after setup) records actions (during each trial)."
+        }
+      ]
+    },
+    {
+      "case": "long_dash",
+      "input": "The system—after setup—records actions.",
+      "status": "needs_review",
+      "rules": [
+        "PUNCT_LONG_DASH"
+      ],
+      "findings": [
+        {
+          "line": 1,
+          "rule": "PUNCT_LONG_DASH",
+          "severity": "required_fix",
+          "message": "Rewrite prose without long dashes.",
+          "excerpt": "The system—after setup—records actions."
+        }
+      ]
+    },
+    {
+      "case": "comma_chain",
+      "input": "The system records actions, tracks reference use, stores states, and exports the log.",
+      "status": "needs_review",
+      "rules": [
+        "COMMA_DENSITY_REVIEW"
+      ],
+      "findings": [
+        {
+          "line": 1,
+          "end_line": 1,
+          "rule": "COMMA_DENSITY_REVIEW",
+          "severity": "review",
+          "message": "Three or more prose commas in an approximate sentence. Review clause load and split by meaning when useful. Preserve grammar, scope and genuine lists. This is not a comma ban.",
+          "excerpt": "The system records actions, tracks reference use, stores states, and exports the log."
+        }
+      ]
+    },
+    {
+      "case": "short_fragments_two_words",
+      "input": "Very fast. Very clear. Highly effective.",
+      "status": "no_flags_in_checked_scope",
+      "rules": [],
+      "findings": []
+    },
+    {
+      "case": "fullwidth_period",
+      "input": "The system records actions．．",
+      "status": "no_flags_in_checked_scope",
+      "rules": [],
+      "findings": []
+    },
+    {
+      "case": "unicode_replacement",
+      "input": "The system records � actions.",
+      "status": "no_flags_in_checked_scope",
+      "rules": [],
+      "findings": []
+    },
+    {
+      "case": "square_glyph",
+      "input": "The system records □ actions.",
+      "status": "no_flags_in_checked_scope",
+      "rules": [],
+      "findings": []
+    },
+    {
+      "case": "zero_width",
+      "input": "The system records ac​tions.",
+      "status": "no_flags_in_checked_scope",
+      "rules": [],
+      "findings": []
+    },
+    {
+      "case": "unbalanced_double_quote",
+      "input": "The system records \"actions.",
+      "status": "no_flags_in_checked_scope",
+      "rules": [],
+      "findings": []
+    },
+    {
+      "case": "unbalanced_parenthesis",
+      "input": "The system records (actions.",
+      "status": "needs_review",
+      "rules": [
+        "PUNCT_UNBALANCED_REVIEW"
+      ],
+      "findings": [
+        {
+          "line": 1,
+          "end_line": 1,
+          "rule": "PUNCT_UNBALANCED_REVIEW",
+          "severity": "review",
+          "message": "Check unmatched prose parentheses against the source. Do not delete mathematical delimiters automatically.",
+          "excerpt": "The system records (actions."
+        }
+      ]
+    }
+  ]
+}

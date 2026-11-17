@@ -1,4 +1,4 @@
-# Research Paper Craft 2.3.1
+# Research Paper Craft 2.3.2
 
 The skill inside Research Humanizer. Start with SKILL.md. Load one language and only the guidance needed for the current task. The core stays under 1,000 English whitespace-delimited words. Detailed Word, scientific and language rules are task-loaded.
 
@@ -43,3 +43,7 @@ assets contains the project brief, author profile, claim revision ledger, paper 
 เครื่องมือช่วยชี้จุดตรวจ ไม่รับรองว่าข้อความเป็นของมนุษย์หรือบทความถูกต้องทั้งหมด อ่าน [ข้อจำกัด](KNOWN_ISSUES.md) และเก็บบันทึกตรวจแยกจากบทความ
 
 The full-paper auditor checks declared record consistency only. Exit 0 means consistent declarations, 1 means unresolved record findings, and 2 means unreadable or unsupported input. It never approves submission or fetches sources. Blank templates are deliberately incomplete. Private run records belong in the research project, not the installed skill.
+
+## Text integrity in 2.3.2
+
+The same read-only lint command now checks the seven retained v2.3.1 misses and selected related forms. See the punctuation guide for quote balance, code-point diagnostics and protected contexts. Source-character warnings may appear inside protected source strings. They request comparison with the original, not deletion or normalization.

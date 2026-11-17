@@ -1,4 +1,4 @@
-# Known limits in 2.3.1
+# Known limits in 2.3.2
 
 ## Resolved regressions
 
@@ -26,3 +26,7 @@ The full-paper record auditor checks assertions and references within a JSON rec
 ## Punctuation review limits in 2.3.1
 
 The text checker uses approximate sentence boundaries and selected recognized syntax. New punctuation warnings require manual adjudication and never rewrite an input. Thresholds are not grammar rules. Unrecognized technical notation, quotations, citation formats, complex Markdown and Thai sentence boundaries can still produce missed or unnecessary flags. No-flags does not certify grammar, authorship or scientific fidelity. Use the bilingual punctuation guide and source comparison before marking review complete.
+
+## Text-integrity coverage in 2.3.2
+
+The seven misses in the retained 28-case v2.3.1 probe are now regression-tested. This does not close every possible punctuation or scientific-writing gap. Single-quote conventions, unusual multiline/nested quotations, unmarked dotted names, arbitrary fragment grammar and rendered missing-font boxes remain contextual/manual checks. All new warnings are review candidates. Thai word-break controls and legitimate script joins must not be globally removed. Source-character diagnostics may intentionally flag quoted literal replacement characters.

@@ -11,6 +11,7 @@ import json
 from pathlib import Path
 import re
 import sys
+import unicodedata
 from typing import Any
 
 CONTRACTIONS = re.compile(
@@ -38,17 +39,19 @@ def conceal(match: re.Match[str]) -> str:
     return ''.join('\n' if c == '\n' else MASK for c in match.group())
 
 
-def mask_inline(text: str) -> str:
+def mask_inline(text: str, protect_quotes: bool = True) -> str:
     """Protect common code/math and source syntax without hiding pending markers."""
     text = re.sub(r'(?<!`)(`+)(?!`).*?(?<!`)\1(?!`)', conceal, text)
     for pattern in (r'\\\(.*?\\\)', r'\$\$.*?\$\$',
                     r'(?<![\\$])\$(?!\$).*?(?<!\\)\$', r'\\\[.*?\\\]'):
         text = re.sub(pattern, conceal, text)
     # Link text remains prose; only targets are protected. Not a full Markdown parser.
-    text = re.sub(r'!?\[([^\]]*)\]\([^\n]*?\)', lambda m: m[1], text)
-    text = re.sub(r'(?:https?://|doi:)\S+', conceal, text, flags=re.I)
-    for pattern in (r'"(?:\\.|[^"\\])*"', r'“[^”]*”', r'«[^»]*»'):
-        text = re.sub(pattern, conceal, text)
+    text = re.sub(r'!?\[([^\]]*)\]\([^\n]*?\)',
+                  lambda m: MASK * (m.start(1)-m.start()) + m[1] + MASK * (m.end()-m.end(1)), text)
+    text = re.sub(r'(?:https?://|doi:)[^\s"“”«»「」『』<>]+', conceal, text, flags=re.I)
+    if protect_quotes:
+        for pattern in (r'"(?:\\.|[^"\\])*"', r'“[^”]*”', r'«[^»]*»'):
+            text = re.sub(pattern, conceal, text)
     text = re.sub(r'\[\d+(?:\s*[,;–-]\s*\d+)*\]', conceal, text)
     text = re.sub(r'\[\^[^\]\n]+\]', conceal, text)
     text = re.sub(r'\[[^\]\n]*@[A-Za-z0-9_][^\]\n]*\]', conceal, text)
@@ -77,13 +80,159 @@ def mask_numeric_context(text: str) -> str:
     text = re.sub(r'\((?:Eq\.?|Fig\.?|Section)\s+\d+(?:\.\d+)*\)', conceal, text, flags=re.I)
     text = re.sub(r'\b(?:kg|mg|g|km|cm|mm|m|ms|s|mol|mL|L|J|N|Pa)/(?:kg|g|ms|s|mL|L|mol|min|h)\b', conceal, text)
     text = re.sub(r'(?:[A-Za-z]:[\\/]|\.{1,2}/)[^\s]+', conceal, text)
-    text = re.sub(r'\b[\w.-]+\.(?:csv|py|json|md|txt|docx|pdf|tex|bib)\b', conceal, text, flags=re.I)
+    text = re.sub(r'\b[\w.-]+\.(?:csv|py|json|md|txt|docx|pdf|tex|bib|png|jpg|jpeg|svg|tif|tiff|webp|xlsx|xls|pptx|ipynb|npy|npz|zip|gz|yaml|yml|toml|ini|html|xml|log|dat|bin)\b', conceal, text, flags=re.I)
     text = re.sub(r'\b(?:v)?\d+(?:\.\d+){2,}\b', conceal, text)
     text = re.sub(r'(?<!\w)[+−-]?(?:\d+(?:[,.]\d+)*|\.\d+)(?:[eE][+-]?\d+)?', conceal, text)
     text = re.sub(r'\b(?:e\.g\.|i\.e\.|et al\.|Dr\.|Prof\.|Mr\.|Ms\.|Fig\.|Figs\.|Eq\.|Eqs\.|No\.|vs\.)', conceal, text)
     text = re.sub(r'\b(?:[A-Za-z]\.){2,}|\bPh\.D\.', conceal, text)
     text = re.sub(r'\b[A-Z]\.(?=\s*[A-Z])', conceal, text)
     return text
+
+
+# Integrity diagnostics never normalize source Unicode or propose missing glyphs.
+_INVISIBLE = {'\u00ad', '\u200b', '\u200c', '\u200d', '\u2060', '\ufeff'}
+_BIDI = {chr(n) for n in (*range(0x202a, 0x202f), *range(0x2066, 0x206a), 0x061c, 0x200e, 0x200f)}
+_QUOTE_PAIRS = {'"': '"', '“': '”', '«': '»', '「': '」', '『': '』'}
+
+
+def safe_excerpt(text: str) -> str:
+    """Escape invisible controls in reports only. Manuscript bytes stay intact."""
+    return ''.join(f'\\u{ord(c):04x}' if c in _INVISIBLE | _BIDI or
+                   (unicodedata.category(c) == 'Cc' and c not in '\n\t\r') else c
+                   for c in text)
+
+
+def character_findings(text: str) -> list[dict[str, Any]]:
+    """Inspect source characters even where a style pass protects quotations/code.
+
+    Replacement and directional controls require contextual review. An invisible
+    Latin-word interruption is suspicious; Thai word boundaries and script joins
+    are not classified as defects. This is not a rendered-font or encoding repair.
+    """
+    result = []
+    for number, line in enumerate(text.splitlines(keepends=True), 1):
+        seen = set()
+        for index, char in enumerate(line):
+            rule = None
+            if char in {'\ufffd', '\ufffc'}:
+                rule = 'UNICODE_REPLACEMENT_REVIEW'
+                reason = 'Compare the original export/encoding. A literal character may be intentional. Do not guess or replace it.'
+            elif char in _BIDI:
+                rule = 'BIDI_CONTROL_REVIEW'
+                reason = 'Check intended text direction and source. This control can be legitimate in multilingual text. Do not strip it blindly.'
+            elif char == '\ufeff' and not (number == 1 and index == 0):
+                rule = 'INVISIBLE_CHARACTER_REVIEW'
+                reason = 'Review an internal BOM/word-joining character against the original. Do not normalize the whole document.'
+            elif char in _INVISIBLE:
+                left = line[index-1] if index else ''
+                right = line[index+1] if index+1 < len(line) else ''
+                if re.fullmatch(r'[A-Za-z0-9]', left) and re.fullmatch(r'[A-Za-z0-9]', right):
+                    rule = 'INVISIBLE_CHARACTER_REVIEW'
+                    reason = 'Review a format character inside a Latin word or number. Preserve intentional shaping, hyphenation and line-break control.'
+            elif unicodedata.category(char) == 'Cc' and char not in '\t\n\r':
+                rule = 'CONTROL_CHARACTER_REVIEW'
+                reason = 'Inspect the source/export for an unexpected control character. Do not silently discard source data.'
+            if rule and (rule, char) not in seen:
+                seen.add((rule, char))
+                point = f'U+{ord(char):04X}'
+                name = unicodedata.name(char, 'CONTROL CHARACTER')
+                result.append({'line': number, 'column': index+1, 'rule': rule,
+                               'severity': 'review', 'codepoint': point,
+                               'message': f'{point} {name}. {reason}',
+                               'excerpt': safe_excerpt(line.strip())[:180]})
+    return result
+
+
+def quote_context(lines: list[tuple[int, str, str]]) -> tuple[list[tuple[int, str, str]], list[dict[str, Any]]]:
+    """Mask complete supported quotes over soft wraps; report unmatched marks.
+
+    Do not infer repairs, hide unclosed tails or pair across blank paragraphs,
+    omitted code/reference regions, separate list items, headings or table rows.
+    ASCII apostrophes and primes are deliberately not treated as quote openers.
+    """
+    output = []
+    findings = []
+    block = []
+
+    def flush() -> None:
+        if not block:
+            return
+        text = '\n'.join(row[1] for row in block)
+        masked = list(text)
+        stack = []
+        pairs = []
+        unmatched = []
+        for i, char in enumerate(text):
+            if char not in set(_QUOTE_PAIRS) | set(_QUOTE_PAIRS.values()):
+                continue
+            j = i-1
+            while j >= 0 and text[j] == '\\':
+                j -= 1
+            if (i-1-j) % 2:
+                continue
+            if stack and char == _QUOTE_PAIRS[stack[-1][0]]:
+                _, start = stack.pop()
+                pairs.append((start, i+1))
+            elif char == '"' and i and text[i-1].isdigit() and not any(q == '"' for q, _ in stack):
+                # Common inch mark. Mathematical prime syntax needs manual review.
+                continue
+            elif char in _QUOTE_PAIRS:
+                stack.append((char, i))
+            else:
+                unmatched.append(i)
+        unmatched.extend(index for _, index in stack)
+        for start, end in pairs:
+            for i in range(start, end):
+                if masked[i] != '\n':
+                    masked[i] = MASK
+        for offset in sorted(set(unmatched)):
+            row = text[:offset].count('\n')
+            column = offset-text.rfind('\n', 0, offset)
+            findings.append({'line': block[row][0], 'column': column,
+                             'rule': 'QUOTE_BALANCE_REVIEW', 'severity': 'review',
+                             'message': 'Review an unmatched supported quotation mark against the source. Escapes, inch/prime marks and language conventions matter. No quoted wording is repaired automatically.',
+                             'excerpt': safe_excerpt(block[row][2].strip())[:180]})
+        for row, clean in zip(block, ''.join(masked).split('\n')):
+            output.append((row[0], clean, row[2]))
+        block.clear()
+
+    for row in lines:
+        number, clean, _ = row
+        structural = bool(re.match(r'^\s*(?:#{1,6}\s|[-+*]\s|\d+[.)]\s|\|)', clean))
+        if block and (number != block[-1][0]+1 or not clean.strip() or structural):
+            flush()
+        if not clean.strip():
+            output.append(row)
+            continue
+        block.append(row)
+        if re.match(r'^\s*(?:#{1,6}\s|\|)', clean):
+            flush()
+    flush()
+    return output, findings
+
+
+def mask_dotted_tokens(text: str) -> str:
+    """Recognize common addresses and function calls, not arbitrary identifiers."""
+    patterns = (
+        r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b',
+        r'\b(?:[A-Za-z0-9-]+\.)+(?:com|org|net|edu|gov|io|ai|dev|app|local)\b(?:/[^\s]*)?',
+        r'\bwww\.[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b(?:/[^\s]*)?',
+        r'\b[A-Za-z_]\w*(?:\.[A-Za-z_]\w*)+(?=\()',
+    )
+    for pattern in patterns:
+        text = re.sub(pattern, conceal, text)
+    return text
+
+
+def phrase_fragment_offsets(text: str) -> list[int]:
+    """Selected short adjective/noun patterns only; not a clause parser."""
+    atom = (r'(?:[A-Za-z]{2,}|'
+            r'(?:Very|Highly|Extremely|Quite|Remarkably)\s+'
+            r'(?:fast|clear|effective|efficient|robust|accurate|reliable|simple|useful)|'
+            r'(?:Low|High|Minimal|Rapid|Clear|Strong)\s+'
+            r'(?:cost|accuracy|feedback|latency|overhead|performance|support))')
+    pattern = r'(?<![\w.])'+atom+r'\.\s+'+atom+r'\.\s+'+atom+r'\.(?=\s|$)'
+    return [m.start() for m in re.finditer(pattern, text, re.I)]
 
 
 def punctuation_findings(lines: list[tuple[int, str, str]]) -> list[dict[str, Any]]:
@@ -99,19 +248,23 @@ def punctuation_findings(lines: list[tuple[int, str, str]]) -> list[dict[str, An
         if not block:
             return
         raw = '\n'.join(row[1] for row in block)
-        clean = mask_numeric_context(raw)
+        clean = mask_dotted_tokens(mask_numeric_context(raw))
         def add(rule: str, message: str, offset: int = 0) -> None:
             index = min(clean[:offset].count('\n'), len(block)-1)
             found.append({'line': block[index][0], 'end_line': block[-1][0],
                           'rule': rule, 'severity': 'review', 'message': message,
                           'excerpt': ' '.join(row[2].strip() for row in block[index:])[:180]})
         # Scan punctuation runs before treating periods as sentence boundaries.
-        for match in re.finditer(r'\.{3,}|…|\.(?:\s+\.){2,}', clean):
+        for match in re.finditer(r'[.．﹒]{3,}|…|[.．﹒](?:\s+[.．﹒]){2,}', clean):
             add('ELLIPSIS_REVIEW', 'Review an ellipsis in prose. Preserve documented omissions and mathematical sequences. Do not guess omitted text.', match.start())
-        for match in re.finditer(r'(?<!\.)\.\.(?!\.)|[,，]{2,}|[!?！？]{2,}', clean):
+        for match in re.finditer(r'(?<![.．﹒])[.．﹒]{2}(?![.．﹒])|。{2,}|[,，]{2,}|[!?！？]{2,}', clean):
             add('PUNCT_REPEAT_REVIEW', 'Review repeated punctuation. Keep literal strings and scientifically meaningful notation intact.', match.start())
-        for match in re.finditer(r'\b[A-Za-z]{2,}\.\s+[A-Za-z]{2,}\.\s+[A-Za-z]{2,}\.(?=\s|$)',clean):
-            add('FRAGMENT_CHAIN_REVIEW', 'Review isolated words separated by periods. Prefer a complete supported statement, not a mechanical short-sentence quota.', match.start())
+        for offset in phrase_fragment_offsets(clean):
+            add('FRAGMENT_CHAIN_REVIEW', 'Review a run of short word/phrase fragments. Labels or quoted examples may be intentional. Do not impose a short-sentence quota or invent a missing claim.', offset)
+        for match in re.finditer(r'[A-Za-z][．﹒]', clean):
+            add('PUNCT_WIDTH_REVIEW', 'Check a fullwidth or small full stop in Latin prose against the target language and source. Do not normalize all Unicode punctuation.', match.end()-1)
+        for match in re.finditer('[□◻]', raw):
+            add('GLYPH_CONTEXT_REVIEW', 'Check whether this literal square is intentional notation or a damaged export. A text scan cannot see missing-font glyphs. Compare the original and never guess a replacement.', match.start())
         stack=[]; unbalanced=False
         for char in clean:
             if char=='(': stack.append(char)
@@ -120,7 +273,7 @@ def punctuation_findings(lines: list[tuple[int, str, str]]) -> list[dict[str, An
                 else: unbalanced=True
         if stack or unbalanced:
             add('PUNCT_UNBALANCED_REVIEW','Check unmatched prose parentheses against the source. Do not delete mathematical delimiters automatically.')
-        for segment in re.finditer(r'[^.!?。！？]+(?:[.!?。！？]+|$)', clean):
+        for segment in re.finditer(r'[^.!?。！？．﹒]+(?:[.!?。！？．﹒]+|$)', clean):
             sent=segment.group(); offset=segment.start()+len(sent)-len(sent.lstrip())
             if sum(sent.count(c) for c in ',，') >= PUNCTUATION_THRESHOLDS['commas_per_sentence']:
                 add('COMMA_DENSITY_REVIEW','Three or more prose commas in an approximate sentence. Review clause load and split by meaning when useful. Preserve grammar, scope and genuine lists. This is not a comma ban.',offset)
@@ -137,7 +290,7 @@ def punctuation_findings(lines: list[tuple[int, str, str]]) -> list[dict[str, An
             if (len(re.findall(r'\band\b',sent,re.I)) >= PUNCTUATION_THRESHOLDS['and_per_sentence']
                     and len(re.findall(r"\b[A-Za-z]+(?:['’][A-Za-z]+)?\b",sent)) >= PUNCTUATION_THRESHOLDS['and_chain_min_words']):
                 add('CONJUNCTION_CHAIN_REVIEW','Review a long and-chain. Splitting by scientific role is preferable to replacing every comma with and.',offset)
-        for match in re.finditer(r'(?<=\w)[,，](?=\w)|\w[ \t]+[,.!?]|(?<=[a-z])\.(?=[A-Z][a-z])',clean):
+        for match in re.finditer(r'(?<=\w)[,，](?=\w)|\w[ \t]+[,.!?]|(?<=[a-z])\.(?=[A-Za-z]{2,})',clean):
             add('PUNCT_SPACING_REVIEW','Review punctuation spacing in prose. Preserve decimal marks, source strings, language conventions and intentional notation.',match.start())
         block.clear()
 
@@ -158,9 +311,10 @@ def punctuation_findings(lines: list[tuple[int, str, str]]) -> list[dict[str, An
 
 def lint_text(text: str) -> list[dict[str, Any]]:
     """Return findings without modifying the text. Retains the v2 list API."""
-    findings: list[dict[str, Any]]=[]
+    findings: list[dict[str, Any]]=character_findings(text)
     prose_lines: list[tuple[int, str, str]]=[]
     source_lines=text.splitlines()
+    contribution_lines=set()
     yaml_start=None; fence_state=None; math_state=None; reference_level=None; contribution_level=None
     def add(n, rule, message, original, severity='review'):
         findings.append({'line':n,'rule':rule,'severity':severity,
@@ -212,11 +366,15 @@ def lint_text(text: str) -> list[dict[str, Any]]:
             continue
         if line.lstrip().startswith('>'):
             add(number,'QUOTATION_REVIEW','Verify exact quotation and source. Do not automatically rewrite it.',original); continue
-        clean=mask_inline(line)
+        prose_lines.append((number, mask_inline(line, protect_quotes=False), original))
+        if contribution_level is not None:
+            contribution_lines.add(number)
+    prose_lines, quote_flags = quote_context(prose_lines)
+    findings.extend(quote_flags)
+    for number, clean, original in prose_lines:
         if re.search(r'(?<!\\)(?:`|\$|\\\(|\\\[)',clean):
             add(number,'PARSE_UNCLOSED_INLINE','Check an unmatched supported delimiter. Escape literal currency markers. This region is not fully checked.',original,'incomplete')
         clean=re.sub(r'^(\s*(?:\*\*)?)Keywords:',r'\1Keywords',clean,count=1)
-        prose_lines.append((number,clean,original))
         checks=((bool(re.search('[;；]', clean)),'PUNCT_SEMICOLON','Rewrite the prose semicolon.'),
                 (bool(re.search('[:：]', clean)),'PUNCT_COLON','Review the prose colon. Keywords and reference entries are exempt.'),
                 (bool(re.search('[\u2013\u2014]',clean)),'PUNCT_LONG_DASH','Rewrite prose without long dashes.'),
@@ -224,13 +382,13 @@ def lint_text(text: str) -> list[dict[str, Any]]:
                 (bool(CONTRACTIONS.search(clean)),'CONTRACTION','Expand contractions. Preserve possessives and exact source strings.'))
         for matched,rule,message in checks:
             if matched: add(number,rule,message,original,'required_fix')
-        if not line.lstrip().startswith('|'):
+        if not original.lstrip().startswith('|'):
             for match in re.finditer('[\u0370-\u03ff\u1f00-\u1fff°±≤]',clean):
                 around=clean[max(0,match.start()-8):match.end()+8]
                 if not re.search(r'\d',around):
                     add(number,'SYMBOL_CONTEXT_REVIEW','Use the quantity name in prose. Verify whether this is legitimate numeric notation or an exact identifier before editing.',original)
                     break
-        if contribution_level is not None and re.search(r'\b\d+(?:\.\d+)?\s*(?:%|ms\b|seconds?\b|minutes?\b|accuracy\b|percent\b|เปอร์เซ็นต์|วินาที)',clean,re.I):
+        if number in contribution_lines and re.search(r'\b\d+(?:\.\d+)?\s*(?:%|ms\b|seconds?\b|minutes?\b|accuracy\b|percent\b|เปอร์เซ็นต์|วินาที)',clean,re.I):
             add(number,'CONTRIBUTION_RESULT','Move numerical performance results out of contribution bullets. Structural counts and identifiers need manual classification.',original,'required_fix')
         if SLOP.search(clean):
             add(number,'STYLE_CANDIDATE','Inspect for unsupported significance or generic filler. Context may justify the phrase. This is not evidence of AI authorship.',original)
@@ -240,6 +398,8 @@ def lint_text(text: str) -> list[dict[str, Any]]:
         if state is not None:
             add(state,rule,'Close or correct this protected region. Inspection is incomplete.','', 'incomplete')
     findings.extend(punctuation_findings(prose_lines))
+    for finding in findings:
+        finding['excerpt'] = safe_excerpt(finding['excerpt'])[:180]
     return sorted(findings,key=lambda item:item['line'])
 
 
@@ -249,8 +409,8 @@ def inspect_text(text: str) -> dict[str, Any]:
     return {'status':'incomplete' if incomplete else 'needs_review' if findings else 'no_flags_in_checked_scope',
             'findings':findings,'authorship_detection':False,
             'punctuation_thresholds':dict(PUNCTUATION_THRESHOLDS),
-            'checked':['supported prose punctuation','common contractions','pending markers','selected wording candidates','supported delimiter integrity','selected symbol contexts','selected contribution results','sentence-level punctuation review candidates'],
-            'not_checked':['scientific_validity','grammar_correctness','all citation/quotation/notation forms','Thai sentence segmentation','semantic_equivalence','citation_support','full Markdown grammar','all Greek-symbol contexts','all contribution results','layout','anonymity','authorship']}
+            'checked':['supported prose punctuation','common contractions','pending markers','selected wording candidates','supported delimiter integrity','selected symbol contexts','selected contribution results','sentence-level punctuation review candidates','selected quote balance','selected source-character integrity'],
+            'not_checked':['scientific_validity','grammar_correctness','all citation/quotation/notation forms','Thai sentence segmentation','semantic_equivalence','citation_support','full Markdown grammar','all Greek-symbol contexts','all contribution results','rendered glyph appearance','all dotted identifiers','all fragment patterns','layout','anonymity','authorship']}
 
 
 def main(argv=None) -> int:

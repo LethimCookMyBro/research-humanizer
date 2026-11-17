@@ -4,7 +4,7 @@
 
 **Clear research writing. Traceable claims. Real evidence.**
 
-[![Version](https://img.shields.io/badge/version-2.3.1-2563eb?style=flat-square)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-2.3.2-2563eb?style=flat-square)](CHANGELOG.md)
 [![License](https://img.shields.io/badge/license-MIT-0f766e?style=flat-square)](LICENSE)
 [![Languages](https://img.shields.io/badge/guides-English%20%2B%20Thai-475569?style=flat-square)](skills/research-paper-craft/SKILL.md)
 [![Status](https://img.shields.io/badge/status-preview-b45309?style=flat-square)](docs/KNOWN_ISSUES.md)
@@ -14,9 +14,13 @@
 [Install](#install) · [Use](#use) · [Scope](#scope) · [Validation](#validation)
 
 
-**[Project website](https://research-humanizer.vercel.app/)** · [Release v2.3.1](https://github.com/LethimCookMyBro/research-humanizer/releases/tag/v2.3.1)
+**[Project website](https://research-humanizer.vercel.app/)** · [Release v2.3.2](https://github.com/LethimCookMyBro/research-humanizer/releases/tag/v2.3.2)
 
 </div>
+
+**2.3.2** closes the seven retained punctuation-probe misses and adds contextual quotation and Unicode checks. It preserves scientific notation and never rewrites inputs automatically. [Patch notes](docs/releases/v2.3.2.md) · [Executed checks](docs/VERIFICATION.md).
+
+
 
 Research Humanizer is an academic writing skill and full-paper research companion for Claude Code and Codex. Pair it with ARS `ars-full` to apply research-specific humanizing from the first draft through literature, metrics, figures and final document checks. Use it for different researchers and fields, with private author context when available. Revision and read-only audit modes remain available.
 
