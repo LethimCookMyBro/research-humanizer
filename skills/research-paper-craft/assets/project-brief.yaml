@@ -37,3 +37,13 @@ tool_availability:
 native_word_verification_required_if_docx: true
 external_upload_authorized: false
 publication_or_submission_authorized: false
+
+# Optional safeguard context. Fill only when relevant; no schema migration.
+audience_decision: null
+authorized_actions: []
+protected_elements: []
+evidence_cutoff: null
+commented_version: null
+recipient_scope: null
+deadline_with_timezone: null
+decision_owner: null

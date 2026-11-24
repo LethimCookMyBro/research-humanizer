@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.3.4, 2026-11-24
+
+- Merge the prior grounded-opening and information-preserving concision amendment.
+- Add bilingual R51–R56 safeguards mapped to 72 user-supplied lessons. Reuse existing records and preserve all R00–R50 bodies.
+- Cover feedback origin and mark targets, actual study versions, event and clock definitions, denominators, cross-artifact dependencies and authorized recipient-specific delivery.
+- Add 25 authored pressure scenarios and 29 static contract tests. The five runtime auditors are unchanged.
+- Keep private linked source records out of the package. Their underlying events were not independently inspected.
+- Publish the maintainer-authorized Preview using the existing tested release workflow. Live model/ARS behavior and native Word checks remain Not Run.
+
 ## 2.3.3, 2026-11-17
 
 - Add a bilingual research-reasoning module for scoped gaps, contribution, impact, RQ/evidence alignment and limits.

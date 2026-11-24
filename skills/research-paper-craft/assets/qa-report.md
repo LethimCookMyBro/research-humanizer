@@ -64,3 +64,18 @@ Support status is Verified, Partially Supported, Unverified, Proposed, Contradic
 ### Decisions Requiring Researcher Approval
 
 Use none identified or not checked where appropriate. Do not prefill favorable findings.
+
+## Task-scoped safeguard checks
+
+Reuse the existing brief, Decision log, Number ledger, Source manifest and Figure register. These are prompts for inspection, not completed findings. Skip irrelevant checks with a reason.
+
+| Check | Artifact or location | Evidence of operation | Status | Issue or action |
+| --- | --- | --- | --- | --- |
+| Feedback origin, commented version and intended target | Not recorded | Not recorded | Not checked | Separate actual instruction from interpretation |
+| Master title, protected content and authorization | Not recorded | Not recorded | Not checked | Compare visible artifact, metadata and form |
+| Planned/deployed/experienced conditions and cohort flow | Not recorded | Not recorded | Not checked | Link actual runs and analysis units |
+| Denominators, opportunities, retries, joins and clocks | Not recorded | Not recorded | Not checked | Inspect metric-specific eligibility and hand calculations |
+| Cross-artifact claims, references and panel dependencies | Not recorded | Not recorded | Not checked | Trace the same result across final versions |
+| Caption, notes, editable equations and actual exports | Not recorded | Not recorded | Not checked | Inspect the final saved files |
+| Site-specific ethics, funding and re-identification risks | Not recorded | Not recorded | Not checked | Keep required ethics and minimize disclosure |
+| Recipient, remote version, permissions and read-back | Not recorded | Not recorded | Not checked | Upload and submission require their own authority |

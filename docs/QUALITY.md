@@ -73,7 +73,7 @@ Checked 16 November 2026. These motivate source preservation and reporting check
 - [Agent Skills specification](https://agentskills.io/specification) describes metadata and progressive disclosure.
 
 
-## v2.3.3 research-reasoning extension, unpublished
+## v2.3.3 research-reasoning extension
 
 The [architecture audit](plans/v2.3.3-architecture-audit.md) identifies overlapping existing rules before additions. R48–R50 add scoped gap/contribution/impact decisions, feedback validation and an audit output contract. They extend research-paper-craft; they do not replace its Humanizer or add a second workflow.
 
@@ -91,3 +91,9 @@ Use Verified, Partially Supported, Unverified, Proposed, Contradicted and Not Ap
 The optional [record contract](../skills/research-paper-craft/references/research-reasoning-records.md) references the existing ledgers. Old CSV headers, the full-paper JSON template and archived rule fingerprints remain unchanged. No extension means the previous script checks only. A lightweight language edit must not be turned into an unsolicited literature audit.
 
 [Research-reasoning scenarios](../evals/research-reasoning-scenarios.md) describe future agent evaluation. They are not reported as executed model trials. See [the upgrade report](UPGRADE-v2.3.3.md) and [verification](VERIFICATION.md) for actual results and remaining limits.
+
+## v2.3.4 safeguards evidence boundary
+
+Version 2.3.4 adds R51–R56 and the earlier opening/concision amendment. The 72-item map establishes instructional coverage only. The supplied guide is a synthesis, not an inspected transcript of each advisor comment. Referenced private sources were not fetched, copied or published. Scoped measurement checks do not prescribe the same experiment to every discipline.
+
+Runtime auditors are byte-identical to v2.3.3. There is no automatic image-mark interpretation, event-log analysis, online-file read-back, privacy certification or rendered-layout validation added by these instructions. Authored scenarios are not model responses. Local test results and integrity checks appear in the new verification record. Live ARS, independent model/reader evaluation and native Word rendering remain Not Run.

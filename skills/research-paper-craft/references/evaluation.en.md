@@ -1,5 +1,7 @@
 # Evaluation and reproducibility
 
+For feedback, observed data or artifact delivery, load only the relevant section of [research safeguards](research-safeguards.en.md). Reuse existing records and preserve the current workflow owner.
+
 Read only for the current task phase. The core rules in SKILL.md remain active.
 
 For a scientific audit or substantive research decision, load [research reasoning](research-reasoning.en.md). Reuse the records below. Language-only edits do not require the full review.

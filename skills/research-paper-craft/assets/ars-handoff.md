@@ -63,3 +63,9 @@ Blank working record. Complete from actual files and decisions. Keep outside the
 - Language-only edit scope retained when a full research review is not requested
 
 Do not create a second pipeline or promote a filled record to scientific approval.
+
+## Research safeguards
+
+Pass the authorized action, commented/master versions, feedback origin and target, actual-run evidence, measurement denominators and delivery checks in the existing handoff when relevant. ARS remains the sole workflow owner. Load the matching research-safeguards guide sections, not a second pipeline. Language-only edits stay lightweight.
+
+ส่งขอบเขตที่อนุญาต ฉบับที่มีคอมเมนต์และฉบับหลัก ที่มาของความเห็นและเป้าหมาย หลักฐานรอบจริง ตัวหาร และขั้นส่งมอบตามงาน ใช้ handoff เดิมและไม่เริ่มกระบวนการซ้อน ARS

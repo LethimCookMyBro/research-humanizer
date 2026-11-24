@@ -1,0 +1,1624 @@
+{
+  "version": "2.3.4",
+  "source_kind": "user-supplied synthesis",
+  "source_title": "คู่มือกันพลาดของผม",
+  "source_sha256": "b767206a186ee5f6ae5b37aba865b8a1469d5c7c1cedd8d1b8cab1a4727c3c75",
+  "private_linked_sources_inspected": false,
+  "universal_validation_claimed": false,
+  "raw_private_source_redistributed": false,
+  "items": [
+    {
+      "source_item": 1,
+      "source_heading_th": "แยก “ตรวจ” จาก “ลงมือ” และ “เผยแพร่”",
+      "topic_en": "Action scope and independent publication permission",
+      "existing_rules": [
+        "R01",
+        "R02",
+        "R49"
+      ],
+      "extension_rule": "R51",
+      "scope": "Feedback or revision with an identified source and authorization boundary",
+      "adaptation": "Preserve attribution and approval; do not assume private linked evidence was inspected.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 2,
+      "source_heading_th": "อย่าเรียกทุกความเห็นว่าอาจารย์สั่ง",
+      "topic_en": "Feedback origin and decision authority",
+      "existing_rules": [
+        "R01",
+        "R02",
+        "R49"
+      ],
+      "extension_rule": "R51",
+      "scope": "Feedback or revision with an identified source and authorization boundary",
+      "adaptation": "Preserve attribution and approval; do not assume private linked evidence was inspected.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 3,
+      "source_heading_th": "วง กากบาท ลูกศร และการขีดเส้นใต้ไม่ใช่คำสั่งเดียวกัน",
+      "topic_en": "Marks target labels, text, positions or data",
+      "existing_rules": [
+        "R01",
+        "R02",
+        "R49"
+      ],
+      "extension_rule": "R51",
+      "scope": "Feedback or revision with an identified source and authorization boundary",
+      "adaptation": "Preserve attribution and approval; do not assume private linked evidence was inspected.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 4,
+      "source_heading_th": "อ่านคอมเมนต์บนฉบับที่คนคอมเมนต์เห็น",
+      "topic_en": "Commented version and duplicate/cropped sources",
+      "existing_rules": [
+        "R01",
+        "R02",
+        "R49"
+      ],
+      "extension_rule": "R51",
+      "scope": "Feedback or revision with an identified source and authorization boundary",
+      "adaptation": "Preserve attribution and approval; do not assume private linked evidence was inspected.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 5,
+      "source_heading_th": "แยก “แก้แทน” กับ “เพิ่ม”",
+      "topic_en": "Replacement versus addition and protected content",
+      "existing_rules": [
+        "R01",
+        "R02",
+        "R49"
+      ],
+      "extension_rule": "R51",
+      "scope": "Feedback or revision with an identified source and authorization boundary",
+      "adaptation": "Preserve attribution and approval; do not assume private linked evidence was inspected.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 6,
+      "source_heading_th": "ชื่อเรื่องเป็นข้อมูลควบคุม",
+      "topic_en": "Approved title across artifact and metadata",
+      "existing_rules": [
+        "R01",
+        "R02",
+        "R49"
+      ],
+      "extension_rule": "R51",
+      "scope": "Feedback or revision with an identified source and authorization boundary",
+      "adaptation": "Preserve attribution and approval; do not assume private linked evidence was inspected.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 7,
+      "source_heading_th": "กำหนดบทบาทของแต่ละงานก่อนแยกเขียน",
+      "topic_en": "Distinct contributions from a shared project",
+      "existing_rules": [
+        "R01",
+        "R02",
+        "R49"
+      ],
+      "extension_rule": "R51",
+      "scope": "Feedback or revision with an identified source and authorization boundary",
+      "adaptation": "Preserve attribution and approval; do not assume private linked evidence was inspected.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 8,
+      "source_heading_th": "Abstract ต้องมีเหตุให้ทำก่อนเล่าวิธี",
+      "topic_en": "Motivation before equipment inventory",
+      "existing_rules": [
+        "R06",
+        "R07",
+        "R08",
+        "R10",
+        "R11",
+        "R16",
+        "R17",
+        "R48"
+      ],
+      "extension_rule": "R52",
+      "scope": "Scientific drafting or substantive revision, adapted to the article type",
+      "adaptation": "Apply reader/argument checks without a fixed paragraph count or invented result.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 9,
+      "source_heading_th": "เขียนผลหลักก่อนจัดสำนวน Abstract",
+      "topic_en": "Main result and condition reversals before abstract polish",
+      "existing_rules": [
+        "R06",
+        "R07",
+        "R08",
+        "R10",
+        "R11",
+        "R16",
+        "R17",
+        "R48"
+      ],
+      "extension_rule": "R52",
+      "scope": "Scientific drafting or substantive revision, adapted to the article type",
+      "adaptation": "Apply reader/argument checks without a fixed paragraph count or invented result.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 10,
+      "source_heading_th": "ตัวอย่างสำนวนไม่ใช่ผลทดลอง",
+      "topic_en": "Style examples do not provide findings",
+      "existing_rules": [
+        "R06",
+        "R07",
+        "R08",
+        "R10",
+        "R11",
+        "R16",
+        "R17",
+        "R48"
+      ],
+      "extension_rule": "R52",
+      "scope": "Scientific drafting or substantive revision, adapted to the article type",
+      "adaptation": "Apply reader/argument checks without a fixed paragraph count or invented result.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 11,
+      "source_heading_th": "ตั้งคำถามที่เครื่องมือวัดตอบได้",
+      "topic_en": "RQ matches measured quantity",
+      "existing_rules": [
+        "R06",
+        "R07",
+        "R08",
+        "R10",
+        "R11",
+        "R16",
+        "R17",
+        "R48"
+      ],
+      "extension_rule": "R52",
+      "scope": "Scientific drafting or substantive revision, adapted to the article type",
+      "adaptation": "Apply reader/argument checks without a fixed paragraph count or invented result.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 12,
+      "source_heading_th": "จากงานก่อนหน้า ให้ผลก่อนข้อจำกัด",
+      "topic_en": "Prior findings before bounded limitations",
+      "existing_rules": [
+        "R06",
+        "R07",
+        "R08",
+        "R10",
+        "R11",
+        "R16",
+        "R17",
+        "R48"
+      ],
+      "extension_rule": "R52",
+      "scope": "Scientific drafting or substantive revision, adapted to the article type",
+      "adaptation": "Apply reader/argument checks without a fixed paragraph count or invented result.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 13,
+      "source_heading_th": "เทียบกับงานที่ใกล้ที่สุด ไม่ใช่งานที่ต่างที่สุด",
+      "topic_en": "Closest comparable work and novelty scope",
+      "existing_rules": [
+        "R06",
+        "R07",
+        "R08",
+        "R10",
+        "R11",
+        "R16",
+        "R17",
+        "R48"
+      ],
+      "extension_rule": "R52",
+      "scope": "Scientific drafting or substantive revision, adapted to the article type",
+      "adaptation": "Apply reader/argument checks without a fixed paragraph count or invented result.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 14,
+      "source_heading_th": "ส่วนต่าง ๆ มีหน้าที่คนละอย่าง",
+      "topic_en": "Section roles without losing substantive content",
+      "existing_rules": [
+        "R06",
+        "R07",
+        "R08",
+        "R10",
+        "R11",
+        "R16",
+        "R17",
+        "R48"
+      ],
+      "extension_rule": "R52",
+      "scope": "Scientific drafting or substantive revision, adapted to the article type",
+      "adaptation": "Apply reader/argument checks without a fixed paragraph count or invented result.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 15,
+      "source_heading_th": "ตัดศัพท์และสเปกด้วยเกณฑ์ ไม่ใช่ตัดตามความยาว",
+      "topic_en": "Terminology and replication-critical detail",
+      "existing_rules": [
+        "R06",
+        "R07",
+        "R08",
+        "R10",
+        "R11",
+        "R16",
+        "R17",
+        "R48"
+      ],
+      "extension_rule": "R52",
+      "scope": "Scientific drafting or substantive revision, adapted to the article type",
+      "adaptation": "Apply reader/argument checks without a fixed paragraph count or invented result.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 16,
+      "source_heading_th": "สรุปผลให้ใช้ได้ แต่ไม่แต่งคำแนะนำเกินข้อมูล",
+      "topic_en": "Bounded implications and prospective work",
+      "existing_rules": [
+        "R06",
+        "R07",
+        "R08",
+        "R10",
+        "R11",
+        "R16",
+        "R17",
+        "R48"
+      ],
+      "extension_rule": "R52",
+      "scope": "Scientific drafting or substantive revision, adapted to the article type",
+      "adaptation": "Apply reader/argument checks without a fixed paragraph count or invented result.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 17,
+      "source_heading_th": "จำนวนที่รับสมัคร ≠ จำนวนที่วิเคราะห์ ≠ จำนวนหน่วยวิเคราะห์",
+      "topic_en": "Participant flow and analysis units",
+      "existing_rules": [
+        "R02",
+        "R12",
+        "R14",
+        "R15",
+        "R48"
+      ],
+      "extension_rule": "R53",
+      "scope": "Empirical data, deployed systems or measurement claims when applicable",
+      "adaptation": "Use actual protocol and records; examples do not define a universal experiment.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 18,
+      "source_heading_th": "วาดเส้นเวลาที่ผู้เข้าร่วมผ่านจริง",
+      "topic_en": "Actual timeline and timestamp meaning",
+      "existing_rules": [
+        "R02",
+        "R12",
+        "R14",
+        "R15",
+        "R48"
+      ],
+      "extension_rule": "R53",
+      "scope": "Empirical data, deployed systems or measurement claims when applicable",
+      "adaptation": "Use actual protocol and records; examples do not define a universal experiment.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 19,
+      "source_heading_th": "บอกระดับการควบคุมตามจริง",
+      "topic_en": "Randomization and counterbalance claims",
+      "existing_rules": [
+        "R02",
+        "R12",
+        "R14",
+        "R15",
+        "R48"
+      ],
+      "extension_rule": "R53",
+      "scope": "Empirical data, deployed systems or measurement claims when applicable",
+      "adaptation": "Use actual protocol and records; examples do not define a universal experiment.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 20,
+      "source_heading_th": "สิ่งที่ออกแบบตั้งใจ ≠ สิ่งที่ติดตั้ง ≠ สิ่งที่ผู้ใช้ได้เห็น",
+      "topic_en": "Planned, deployed and experienced versions",
+      "existing_rules": [
+        "R02",
+        "R12",
+        "R14",
+        "R15",
+        "R48"
+      ],
+      "extension_rule": "R53",
+      "scope": "Empirical data, deployed systems or measurement claims when applicable",
+      "adaptation": "Use actual protocol and records; examples do not define a universal experiment.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 21,
+      "source_heading_th": "สองภาษา/สองไซต์มี “เนื้อหาเทียบกันได้” ไม่เท่ากับ “ประสบการณ์เท่ากัน”",
+      "topic_en": "Language/site experience comparability",
+      "existing_rules": [
+        "R02",
+        "R12",
+        "R14",
+        "R15",
+        "R48"
+      ],
+      "extension_rule": "R53",
+      "scope": "Empirical data, deployed systems or measurement claims when applicable",
+      "adaptation": "Use actual protocol and records; examples do not define a universal experiment.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 22,
+      "source_heading_th": "การออกแบบอาจชี้นำพฤติกรรมที่วัด",
+      "topic_en": "Design-induced exposure and behavior",
+      "existing_rules": [
+        "R02",
+        "R12",
+        "R14",
+        "R15",
+        "R48"
+      ],
+      "extension_rule": "R53",
+      "scope": "Empirical data, deployed systems or measurement claims when applicable",
+      "adaptation": "Use actual protocol and records; examples do not define a universal experiment.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 23,
+      "source_heading_th": "ความยากที่ออกแบบ ≠ ความยากที่วัดได้",
+      "topic_en": "Designed versus measured difficulty",
+      "existing_rules": [
+        "R02",
+        "R12",
+        "R14",
+        "R15",
+        "R48"
+      ],
+      "extension_rule": "R53",
+      "scope": "Empirical data, deployed systems or measurement claims when applicable",
+      "adaptation": "Use actual protocol and records; examples do not define a universal experiment.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 24,
+      "source_heading_th": "เขียนกติกาการตัดข้อมูลก่อนดูว่าออกมาสวยหรือไม่",
+      "topic_en": "Missingness and scoped exclusions",
+      "existing_rules": [
+        "R02",
+        "R12",
+        "R14",
+        "R15",
+        "R48"
+      ],
+      "extension_rule": "R53",
+      "scope": "Empirical data, deployed systems or measurement claims when applicable",
+      "adaptation": "Use actual protocol and records; examples do not define a universal experiment.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 25,
+      "source_heading_th": "หากมีรอบเริ่มซ้ำ ให้ประกาศกติกาเลือกรอบเดียวกันทุกคน",
+      "topic_en": "Consistent retry-selection rules",
+      "existing_rules": [
+        "R02",
+        "R12",
+        "R14",
+        "R15",
+        "R48"
+      ],
+      "extension_rule": "R53",
+      "scope": "Empirical data, deployed systems or measurement claims when applicable",
+      "adaptation": "Use actual protocol and records; examples do not define a universal experiment.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 26,
+      "source_heading_th": "กำหนดหน่วยและจุดเริ่ม–จบของนาฬิกา",
+      "topic_en": "Clock boundaries, pauses and units",
+      "existing_rules": [
+        "R02",
+        "R12",
+        "R14",
+        "R15",
+        "R48"
+      ],
+      "extension_rule": "R53",
+      "scope": "Empirical data, deployed systems or measurement claims when applicable",
+      "adaptation": "Use actual protocol and records; examples do not define a universal experiment.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 27,
+      "source_heading_th": "แยกการกระทำผู้ใช้จากการเปลี่ยนสถานะอัตโนมัติ",
+      "topic_en": "User actions versus automatic states",
+      "existing_rules": [
+        "R02",
+        "R12",
+        "R14",
+        "R15",
+        "R48"
+      ],
+      "extension_rule": "R53",
+      "scope": "Empirical data, deployed systems or measurement claims when applicable",
+      "adaptation": "Use actual protocol and records; examples do not define a universal experiment.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 28,
+      "source_heading_th": "กำหนดขอบเขตของคำว่า “หลัง”",
+      "topic_en": "Response-window onset, end and ties",
+      "existing_rules": [
+        "R02",
+        "R12",
+        "R14",
+        "R15",
+        "R48"
+      ],
+      "extension_rule": "R53",
+      "scope": "Empirical data, deployed systems or measurement claims when applicable",
+      "adaptation": "Use actual protocol and records; examples do not define a universal experiment.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 29,
+      "source_heading_th": "จับคู่ข้อมูลข้ามแหล่งอย่างตรวจย้อนกลับได้",
+      "topic_en": "Keyed source joins and cardinality",
+      "existing_rules": [
+        "R02",
+        "R12",
+        "R14",
+        "R15",
+        "R48"
+      ],
+      "extension_rule": "R53",
+      "scope": "Empirical data, deployed systems or measurement claims when applicable",
+      "adaptation": "Use actual protocol and records; examples do not define a universal experiment.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 30,
+      "source_heading_th": "นิยามตัววัดต้องตรงการทำงานจริง รวมข้อยกเว้น",
+      "topic_en": "Implementation exceptions and unknown observations",
+      "existing_rules": [
+        "R02",
+        "R12",
+        "R14",
+        "R15",
+        "R48"
+      ],
+      "extension_rule": "R53",
+      "scope": "Empirical data, deployed systems or measurement claims when applicable",
+      "adaptation": "Use actual protocol and records; examples do not define a universal experiment.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 31,
+      "source_heading_th": "แยกคน ครั้ง ช่วงเวลา และระยะเวลา",
+      "topic_en": "People, events, intervals and concentration",
+      "existing_rules": [
+        "R04",
+        "R13",
+        "R14",
+        "R15",
+        "R16",
+        "R48"
+      ],
+      "extension_rule": "R54",
+      "scope": "Quantities or interpretations for which the specified measurement exists",
+      "adaptation": "Use the justified estimand and relevant checks; do not impose statistics or selective exclusion.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 32,
+      "source_heading_th": "เลือกตัวหารและลำดับการเฉลี่ยให้ตรงคำถาม",
+      "topic_en": "Weighting and aggregation order",
+      "existing_rules": [
+        "R04",
+        "R13",
+        "R14",
+        "R15",
+        "R16",
+        "R48"
+      ],
+      "extension_rule": "R54",
+      "scope": "Quantities or interpretations for which the specified measurement exists",
+      "adaptation": "Use the justified estimand and relevant checks; do not impose statistics or selective exclusion.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 33,
+      "source_heading_th": "แยก “ไม่มีโอกาสเกิด” จาก “มีโอกาสแต่ไม่ทำ”",
+      "topic_en": "Opportunity versus zero response",
+      "existing_rules": [
+        "R04",
+        "R13",
+        "R14",
+        "R15",
+        "R16",
+        "R48"
+      ],
+      "extension_rule": "R54",
+      "scope": "Quantities or interpretations for which the specified measurement exists",
+      "adaptation": "Use the justified estimand and relevant checks; do not impose statistics or selective exclusion.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 34,
+      "source_heading_th": "คำเดียวกันอาจเป็นคนละตัววัด",
+      "topic_en": "Measurement-supported behavioral verbs",
+      "existing_rules": [
+        "R04",
+        "R13",
+        "R14",
+        "R15",
+        "R16",
+        "R48"
+      ],
+      "extension_rule": "R54",
+      "scope": "Quantities or interpretations for which the specified measurement exists",
+      "adaptation": "Use the justified estimand and relevant checks; do not impose statistics or selective exclusion.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 35,
+      "source_heading_th": "ตรวจสเกลจากแบบที่ให้ผู้เข้าร่วมจริง",
+      "topic_en": "Actual questionnaire anchors and scoring",
+      "existing_rules": [
+        "R04",
+        "R13",
+        "R14",
+        "R15",
+        "R16",
+        "R48"
+      ],
+      "extension_rule": "R54",
+      "scope": "Quantities or interpretations for which the specified measurement exists",
+      "adaptation": "Use the justified estimand and relevant checks; do not impose statistics or selective exclusion.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 36,
+      "source_heading_th": "เขียนว่าสถิติอะไร ไม่ใช่แค่ตัวเลขเท่าไร",
+      "topic_en": "Statistic labels, rounding and counts",
+      "existing_rules": [
+        "R04",
+        "R13",
+        "R14",
+        "R15",
+        "R16",
+        "R48"
+      ],
+      "extension_rule": "R54",
+      "scope": "Quantities or interpretations for which the specified measurement exists",
+      "adaptation": "Use the justified estimand and relevant checks; do not impose statistics or selective exclusion.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 37,
+      "source_heading_th": "ตรวจสมการด้วยตัวอย่างที่คำนวณด้วยมือได้",
+      "topic_en": "Hand-computable equation boundaries",
+      "existing_rules": [
+        "R04",
+        "R13",
+        "R14",
+        "R15",
+        "R16",
+        "R48"
+      ],
+      "extension_rule": "R54",
+      "scope": "Quantities or interpretations for which the specified measurement exists",
+      "adaptation": "Use the justified estimand and relevant checks; do not impose statistics or selective exclusion.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 38,
+      "source_heading_th": "แยกสิ่งที่ข้อมูลบอก กับเหตุผลที่เป็นไปได้",
+      "topic_en": "Causality, equivalence, interaction and culture",
+      "existing_rules": [
+        "R04",
+        "R13",
+        "R14",
+        "R15",
+        "R16",
+        "R48"
+      ],
+      "extension_rule": "R54",
+      "scope": "Quantities or interpretations for which the specified measurement exists",
+      "adaptation": "Use the justified estimand and relevant checks; do not impose statistics or selective exclusion.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 39,
+      "source_heading_th": "ทดสอบความสอดคล้องข้ามสิ่งส่งมอบ",
+      "topic_en": "Cross-artifact result lineage",
+      "existing_rules": [
+        "R05",
+        "R18",
+        "R19",
+        "R20",
+        "R21",
+        "R31",
+        "R40"
+      ],
+      "extension_rule": "R55",
+      "scope": "Artifacts and dependencies actually requested and available",
+      "adaptation": "Verify requested outputs in their actual tools; lack of rendering is Not Run.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 40,
+      "source_heading_th": "เลือกอ้างอิงจากประโยคที่ต้องรองรับ",
+      "topic_en": "Claim-level citation support",
+      "existing_rules": [
+        "R05",
+        "R18",
+        "R19",
+        "R20",
+        "R21",
+        "R31",
+        "R40"
+      ],
+      "extension_rule": "R55",
+      "scope": "Artifacts and dependencies actually requested and available",
+      "adaptation": "Verify requested outputs in their actual tools; lack of rendering is Not Run.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 41,
+      "source_heading_th": "ไม่เหมาว่าสองงานวัดสิ่งเดียวเพราะใช้ศัพท์เหมือนกัน",
+      "topic_en": "Comparable constructs and measurement sources",
+      "existing_rules": [
+        "R05",
+        "R18",
+        "R19",
+        "R20",
+        "R21",
+        "R31",
+        "R40"
+      ],
+      "extension_rule": "R55",
+      "scope": "Artifacts and dependencies actually requested and available",
+      "adaptation": "Verify requested outputs in their actual tools; lack of rendering is Not Run.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 42,
+      "source_heading_th": "ตัดอ้างอิงแล้วต้องแก้ทั้งสาย",
+      "topic_en": "Reference-removal dependencies",
+      "existing_rules": [
+        "R05",
+        "R18",
+        "R19",
+        "R20",
+        "R21",
+        "R31",
+        "R40"
+      ],
+      "extension_rule": "R55",
+      "scope": "Artifacts and dependencies actually requested and available",
+      "adaptation": "Verify requested outputs in their actual tools; lack of rendering is Not Run.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 43,
+      "source_heading_th": "ภาพต้องบอกสิ่งที่คนเห็นในเวลานั้น",
+      "topic_en": "Role and time of genuine images",
+      "existing_rules": [
+        "R05",
+        "R18",
+        "R19",
+        "R20",
+        "R21",
+        "R31",
+        "R40"
+      ],
+      "extension_rule": "R55",
+      "scope": "Artifacts and dependencies actually requested and available",
+      "adaptation": "Verify requested outputs in their actual tools; lack of rendering is Not Run.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 44,
+      "source_heading_th": "ทำรูปให้อ่านได้โดยไม่ต้องเดาบริบท",
+      "topic_en": "Caption encoding and reader comprehension",
+      "existing_rules": [
+        "R05",
+        "R18",
+        "R19",
+        "R20",
+        "R21",
+        "R31",
+        "R40"
+      ],
+      "extension_rule": "R55",
+      "scope": "Artifacts and dependencies actually requested and available",
+      "adaptation": "Verify requested outputs in their actual tools; lack of rendering is Not Run.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 45,
+      "source_heading_th": "ย้ายกราฟไม่ใช่แค่เปลี่ยนหมายเลขใต้รูป",
+      "topic_en": "Figure renumbering and panel dependencies",
+      "existing_rules": [
+        "R05",
+        "R18",
+        "R19",
+        "R20",
+        "R21",
+        "R31",
+        "R40"
+      ],
+      "extension_rule": "R55",
+      "scope": "Artifacts and dependencies actually requested and available",
+      "adaptation": "Verify requested outputs in their actual tools; lack of rendering is Not Run.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 46,
+      "source_heading_th": "ช่องว่างหน้ากระดาษไม่ใช่หลักฐานว่าข้อความหาย",
+      "topic_en": "Whitespace is not missing content",
+      "existing_rules": [
+        "R05",
+        "R18",
+        "R19",
+        "R20",
+        "R21",
+        "R31",
+        "R40"
+      ],
+      "extension_rule": "R55",
+      "scope": "Artifacts and dependencies actually requested and available",
+      "adaptation": "Verify requested outputs in their actual tools; lack of rendering is Not Run.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 47,
+      "source_heading_th": "ตรวจ PDF ที่ได้จากโปรแกรมส่งออกจริง",
+      "topic_en": "Final exported artifact visual review",
+      "existing_rules": [
+        "R05",
+        "R18",
+        "R19",
+        "R20",
+        "R21",
+        "R31",
+        "R40"
+      ],
+      "extension_rule": "R55",
+      "scope": "Artifacts and dependencies actually requested and available",
+      "adaptation": "Verify requested outputs in their actual tools; lack of rendering is Not Run.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 48,
+      "source_heading_th": "สไลด์กับบทพูดต้องชี้สิ่งเดียวกัน",
+      "topic_en": "Slides and spoken claims match",
+      "existing_rules": [
+        "R05",
+        "R18",
+        "R19",
+        "R20",
+        "R21",
+        "R31",
+        "R40"
+      ],
+      "extension_rule": "R55",
+      "scope": "Artifacts and dependencies actually requested and available",
+      "adaptation": "Verify requested outputs in their actual tools; lack of rendering is Not Run.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 49,
+      "source_heading_th": "การปกปิดชื่อไม่ใช่การลบความรับผิดชอบ",
+      "topic_en": "Anonymity without erasing ethics",
+      "existing_rules": [
+        "R24",
+        "R25",
+        "R26",
+        "R27",
+        "R28",
+        "R29",
+        "R49",
+        "R50"
+      ],
+      "extension_rule": "R56",
+      "scope": "Relevant ethics, privacy or delivery operation only",
+      "adaptation": "Require the applicable authority and scope; do not inherit a former project or venue decision.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 50,
+      "source_heading_th": "กำหนดว่าใครจะขอบคุณ เมื่อไร และเรื่องอะไร",
+      "topic_en": "Confirmed funding versus future reimbursement",
+      "existing_rules": [
+        "R24",
+        "R25",
+        "R26",
+        "R27",
+        "R28",
+        "R29",
+        "R49",
+        "R50"
+      ],
+      "extension_rule": "R56",
+      "scope": "Relevant ethics, privacy or delivery operation only",
+      "adaptation": "Require the applicable authority and scope; do not inherit a former project or venue decision.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 51,
+      "source_heading_th": "รุ่นที่ต่างภาษาหรือต่างผู้รับต้องไม่ขัดกัน",
+      "topic_en": "Cross-language and recipient consistency",
+      "existing_rules": [
+        "R24",
+        "R25",
+        "R26",
+        "R27",
+        "R28",
+        "R29",
+        "R49",
+        "R50"
+      ],
+      "extension_rule": "R56",
+      "scope": "Relevant ethics, privacy or delivery operation only",
+      "adaptation": "Require the applicable authority and scope; do not inherit a former project or venue decision.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 52,
+      "source_heading_th": "ใช้ฉบับหลักเดียวและเก็บจุดย้อนกลับก่อนแก้",
+      "topic_en": "Recoverable authoritative master",
+      "existing_rules": [
+        "R24",
+        "R25",
+        "R26",
+        "R27",
+        "R28",
+        "R29",
+        "R49",
+        "R50"
+      ],
+      "extension_rule": "R56",
+      "scope": "Relevant ethics, privacy or delivery operation only",
+      "adaptation": "Require the applicable authority and scope; do not inherit a former project or venue decision.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 53,
+      "source_heading_th": "แยกเอกสารถึงผู้อ่านออกจากประวัติพัฒนา",
+      "topic_en": "Reader-facing text versus internal history",
+      "existing_rules": [
+        "R24",
+        "R25",
+        "R26",
+        "R27",
+        "R28",
+        "R29",
+        "R49",
+        "R50"
+      ],
+      "extension_rule": "R56",
+      "scope": "Relevant ethics, privacy or delivery operation only",
+      "adaptation": "Require the applicable authority and scope; do not inherit a former project or venue decision.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 54,
+      "source_heading_th": "อัปโหลดสำเร็จไม่เท่ากับผู้รับได้ไฟล์ที่ตรวจแล้ว",
+      "topic_en": "Remote identity, concurrent edits and read-back",
+      "existing_rules": [
+        "R24",
+        "R25",
+        "R26",
+        "R27",
+        "R28",
+        "R29",
+        "R49",
+        "R50"
+      ],
+      "extension_rule": "R56",
+      "scope": "Relevant ethics, privacy or delivery operation only",
+      "adaptation": "Require the applicable authority and scope; do not inherit a former project or venue decision.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 55,
+      "source_heading_th": "ตั้งสิทธิ์และส่งข้อมูลเท่าที่ผู้รับต้องใช้",
+      "topic_en": "Least necessary data and recipient rights",
+      "existing_rules": [
+        "R24",
+        "R25",
+        "R26",
+        "R27",
+        "R28",
+        "R29",
+        "R49",
+        "R50"
+      ],
+      "extension_rule": "R56",
+      "scope": "Relevant ethics, privacy or delivery operation only",
+      "adaptation": "Require the applicable authority and scope; do not inherit a former project or venue decision.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 56,
+      "source_heading_th": "รายงานความพร้อมตามระดับ ไม่รับประกันแทนผู้อื่น",
+      "topic_en": "Evidence-specific delivery readiness",
+      "existing_rules": [
+        "R24",
+        "R25",
+        "R26",
+        "R27",
+        "R28",
+        "R29",
+        "R49",
+        "R50"
+      ],
+      "extension_rule": "R56",
+      "scope": "Relevant ethics, privacy or delivery operation only",
+      "adaptation": "Require the applicable authority and scope; do not inherit a former project or venue decision.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 57,
+      "source_heading_th": "เปอร์เซ็นต์กับจุดเปอร์เซ็นต์ตอบคนละอย่าง",
+      "topic_en": "Percentage points, base and sensitivity",
+      "existing_rules": [
+        "R04",
+        "R13",
+        "R14",
+        "R15",
+        "R16",
+        "R48"
+      ],
+      "extension_rule": "R54",
+      "scope": "Quantities or interpretations for which the specified measurement exists",
+      "adaptation": "Use the justified estimand and relevant checks; do not impose statistics or selective exclusion.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 58,
+      "source_heading_th": "อย่าตั้งสมมติฐานย้อนหลังตามผลที่เด่น",
+      "topic_en": "Exploratory versus prespecified hypotheses",
+      "existing_rules": [
+        "R04",
+        "R13",
+        "R14",
+        "R15",
+        "R16",
+        "R48"
+      ],
+      "extension_rule": "R54",
+      "scope": "Quantities or interpretations for which the specified measurement exists",
+      "adaptation": "Use the justified estimand and relevant checks; do not impose statistics or selective exclusion.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 59,
+      "source_heading_th": "ตรวจสายข้อมูล ไม่ยืมความละเอียดจากเครื่องมือข้างเคียง",
+      "topic_en": "Timestamp precision versus sampling and bins",
+      "existing_rules": [
+        "R04",
+        "R13",
+        "R14",
+        "R15",
+        "R16",
+        "R48"
+      ],
+      "extension_rule": "R54",
+      "scope": "Quantities or interpretations for which the specified measurement exists",
+      "adaptation": "Use the justified estimand and relevant checks; do not impose statistics or selective exclusion.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 60,
+      "source_heading_th": "ส่วนของเวลาที่เท่ากันไม่ใช่ขั้นตอนของงาน",
+      "topic_en": "Equal time fractions versus task stages",
+      "existing_rules": [
+        "R04",
+        "R13",
+        "R14",
+        "R15",
+        "R16",
+        "R48"
+      ],
+      "extension_rule": "R54",
+      "scope": "Quantities or interpretations for which the specified measurement exists",
+      "adaptation": "Use the justified estimand and relevant checks; do not impose statistics or selective exclusion.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 61,
+      "source_heading_th": "รักษาข้อยกเว้นที่เปลี่ยนความหมายของผล",
+      "topic_en": "Unrounded ranks and consequential exceptions",
+      "existing_rules": [
+        "R04",
+        "R13",
+        "R14",
+        "R15",
+        "R16",
+        "R48"
+      ],
+      "extension_rule": "R54",
+      "scope": "Quantities or interpretations for which the specified measurement exists",
+      "adaptation": "Use the justified estimand and relevant checks; do not impose statistics or selective exclusion.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 62,
+      "source_heading_th": "ถอนรูปต้องถอนข้อความที่พึ่งรูป ไม่ใช่ถอนเลขเดียวกันทุกที่",
+      "topic_en": "Figure-removal dependency tracing",
+      "existing_rules": [
+        "R05",
+        "R18",
+        "R19",
+        "R20",
+        "R21",
+        "R31",
+        "R40"
+      ],
+      "extension_rule": "R55",
+      "scope": "Artifacts and dependencies actually requested and available",
+      "adaptation": "Verify requested outputs in their actual tools; lack of rendering is Not Run.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 63,
+      "source_heading_th": "แยกสาเหตุ อาการ และข้อสันนิษฐานเมื่อระบบผิดพลาด",
+      "topic_en": "Observed failure versus inferred cause",
+      "existing_rules": [
+        "R04",
+        "R13",
+        "R14",
+        "R15",
+        "R16",
+        "R48"
+      ],
+      "extension_rule": "R54",
+      "scope": "Quantities or interpretations for which the specified measurement exists",
+      "adaptation": "Use the justified estimand and relevant checks; do not impose statistics or selective exclusion.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 64,
+      "source_heading_th": "ทดสอบตัวเอกสารพร้อมสิ่งที่ผู้อ่านต้องใช้คู่กัน",
+      "topic_en": "Readable companion notes, editable equations and links",
+      "existing_rules": [
+        "R05",
+        "R18",
+        "R19",
+        "R20",
+        "R21",
+        "R31",
+        "R40"
+      ],
+      "extension_rule": "R55",
+      "scope": "Artifacts and dependencies actually requested and available",
+      "adaptation": "Verify requested outputs in their actual tools; lack of rendering is Not Run.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 65,
+      "source_heading_th": "บอกว่าหลักฐานแต่ละชิ้นพิสูจน์ได้ถึงขั้นไหน",
+      "topic_en": "Component render versus connected or reproduced evidence",
+      "existing_rules": [
+        "R05",
+        "R18",
+        "R19",
+        "R20",
+        "R21",
+        "R31",
+        "R40"
+      ],
+      "extension_rule": "R55",
+      "scope": "Artifacts and dependencies actually requested and available",
+      "adaptation": "Verify requested outputs in their actual tools; lack of rendering is Not Run.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 66,
+      "source_heading_th": "แยก DEV, pilot และข้อมูลจริงทุกครั้งที่นำมาใช้ซ้ำ",
+      "topic_en": "Development, pilot and real cohorts",
+      "existing_rules": [
+        "R02",
+        "R12",
+        "R14",
+        "R15",
+        "R48"
+      ],
+      "extension_rule": "R53",
+      "scope": "Empirical data, deployed systems or measurement claims when applicable",
+      "adaptation": "Use actual protocol and records; examples do not define a universal experiment.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 67,
+      "source_heading_th": "ทำบัญชีแหล่งภาพและซ้อมส่งต่องาน",
+      "topic_en": "Image register and honest demonstration",
+      "existing_rules": [
+        "R05",
+        "R18",
+        "R19",
+        "R20",
+        "R21",
+        "R31",
+        "R40"
+      ],
+      "extension_rule": "R55",
+      "scope": "Artifacts and dependencies actually requested and available",
+      "adaptation": "Verify requested outputs in their actual tools; lack of rendering is Not Run.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 68,
+      "source_heading_th": "แฟ้มผลสรุปต้องเปิดเดี่ยว ๆ แล้วเข้าใจได้",
+      "topic_en": "Self-contained result sheets and transcription limits",
+      "existing_rules": [
+        "R05",
+        "R18",
+        "R19",
+        "R20",
+        "R21",
+        "R31",
+        "R40"
+      ],
+      "extension_rule": "R55",
+      "scope": "Artifacts and dependencies actually requested and available",
+      "adaptation": "Verify requested outputs in their actual tools; lack of rendering is Not Run.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 69,
+      "source_heading_th": "ปกปิดตัวตนด้วยการลองเชื่อมข้อมูล",
+      "topic_en": "Cross-table re-identification risk",
+      "existing_rules": [
+        "R24",
+        "R25",
+        "R26",
+        "R27",
+        "R28",
+        "R29",
+        "R49",
+        "R50"
+      ],
+      "extension_rule": "R56",
+      "scope": "Relevant ethics, privacy or delivery operation only",
+      "adaptation": "Require the applicable authority and scope; do not inherit a former project or venue decision.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 70,
+      "source_heading_th": "สองไซต์อาจมีสถานะจริยธรรมต่างกัน",
+      "topic_en": "Site-specific ethics status",
+      "existing_rules": [
+        "R24",
+        "R25",
+        "R26",
+        "R27",
+        "R28",
+        "R29",
+        "R49",
+        "R50"
+      ],
+      "extension_rule": "R56",
+      "scope": "Relevant ethics, privacy or delivery operation only",
+      "adaptation": "Require the applicable authority and scope; do not inherit a former project or venue decision.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 71,
+      "source_heading_th": "รายงานผลการทดสอบไม่ผ่านตามจริงแม้แก้ทางอื่นผ่าน",
+      "topic_en": "Failed full tests are not repaired by a partial preview",
+      "existing_rules": [
+        "R24",
+        "R25",
+        "R26",
+        "R27",
+        "R28",
+        "R29",
+        "R49",
+        "R50"
+      ],
+      "extension_rule": "R56",
+      "scope": "Relevant ethics, privacy or delivery operation only",
+      "adaptation": "Require the applicable authority and scope; do not inherit a former project or venue decision.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    },
+    {
+      "source_item": 72,
+      "source_heading_th": "งานนำเสนอต้องจบด้วยการตัดสินใจที่ต้องการ",
+      "topic_en": "Decision-oriented presentation and actual rehearsal",
+      "existing_rules": [
+        "R05",
+        "R18",
+        "R19",
+        "R20",
+        "R21",
+        "R31",
+        "R40"
+      ],
+      "extension_rule": "R55",
+      "scope": "Artifacts and dependencies actually requested and available",
+      "adaptation": "Verify requested outputs in their actual tools; lack of rendering is Not Run.",
+      "targets": {
+        "en": "references/research-safeguards.en.md",
+        "th": "references/research-safeguards.th.md"
+      },
+      "validation": "Scoped operating instruction; no universal empirical validation claimed"
+    }
+  ],
+  "unchanged_auditor_hashes": {
+    "audit_docx.py": "c566b7a6576fad31d77c84956a5094391b91997953cf9650f132ebc5ac035141",
+    "audit_figures.py": "17b4723d52f64e45bb02b95abfb3b457f74a5c0b44e7fa44b385210bd31acd7f",
+    "audit_full_paper.py": "4f511cf861a8b866a80d0bfa1d786812b6ee0a5a262c6a9476b536b0b2d942f3",
+    "lint_manuscript.py": "c4ff523ef809e3a959aaf490e5a90d9ca1b2bef04813375d9878da77244fee2a",
+    "review_revision.py": "03f7dbe8e8f229c94924ee29b38a7151cd82b389c7b9e77916fb3ff1032494d6"
+  },
+  "new_rule_fingerprints": [
+    {
+      "language": "en",
+      "rule": "R51",
+      "file": "references/research-safeguards.en.md",
+      "sha256": "58d9c3ff80aab0b560eeb9d1f21af39a02daf6b2767e84bd912fe66945a1603a"
+    },
+    {
+      "language": "en",
+      "rule": "R52",
+      "file": "references/research-safeguards.en.md",
+      "sha256": "eb39c4d54170809da13846b4b13b6bd26552de171845e7fc06a0b34a0f5674e1"
+    },
+    {
+      "language": "en",
+      "rule": "R53",
+      "file": "references/research-safeguards.en.md",
+      "sha256": "ce4c59bc324dd5834f4b5fae76ece8a28ab4bd42cc648c1a430524cc42aa1bfb"
+    },
+    {
+      "language": "en",
+      "rule": "R54",
+      "file": "references/research-safeguards.en.md",
+      "sha256": "332ddc13ebf1b2390c1e45c6bd549976717a6d90616e4984a407b7d0000ed2ef"
+    },
+    {
+      "language": "en",
+      "rule": "R55",
+      "file": "references/research-safeguards.en.md",
+      "sha256": "6641b2c19a62f5316fc4fd708c62854b069411de4ec910cc567bd282cb1d6a10"
+    },
+    {
+      "language": "en",
+      "rule": "R56",
+      "file": "references/research-safeguards.en.md",
+      "sha256": "5d0b07cda80cbb668725d84538a88f6e580f6e56b6fd2bdfb1b66edcb7eb8a98"
+    },
+    {
+      "language": "th",
+      "rule": "R51",
+      "file": "references/research-safeguards.th.md",
+      "sha256": "19c370db53e491e31c4fd452470f5ae390fd5b52a7bbd5a35fc194066f294852"
+    },
+    {
+      "language": "th",
+      "rule": "R52",
+      "file": "references/research-safeguards.th.md",
+      "sha256": "8f3cede2bbd563f631225fe3883edaeef8a55a66bc3111f2ea9de5830b14c1bd"
+    },
+    {
+      "language": "th",
+      "rule": "R53",
+      "file": "references/research-safeguards.th.md",
+      "sha256": "6f505df7a7a6163fb6a809d5d19eaecab70155cf4962b87aa1797d85172c3ca4"
+    },
+    {
+      "language": "th",
+      "rule": "R54",
+      "file": "references/research-safeguards.th.md",
+      "sha256": "73b75747e9415d783ab94f92b12da72eabe421fa71064fafcc7d960ab4158c34"
+    },
+    {
+      "language": "th",
+      "rule": "R55",
+      "file": "references/research-safeguards.th.md",
+      "sha256": "5e3dc80a0338d465b065601c0d371460ba605602ac7ee1710b83d4b2f59336e8"
+    },
+    {
+      "language": "th",
+      "rule": "R56",
+      "file": "references/research-safeguards.th.md",
+      "sha256": "9a7a143db6b1b4e7fd43705056a299e6817462dedba3f42112ca0fb2182e61b5"
+    }
+  ]
+}

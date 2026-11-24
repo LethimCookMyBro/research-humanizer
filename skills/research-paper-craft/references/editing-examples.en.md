@@ -109,3 +109,53 @@ One acceptable response
 Preserve
 
 Keep all three outputs. A real triad is allowed.
+
+## O01
+
+Synthetic source note
+
+The task allows participants to open instructions. The planned question concerns when instructions are consulted relative to task state. Logs record instruction access and task state. There is no evidence that an instruction format improves performance. A completion outcome alone contains no instruction-access sequence.
+
+Draft
+
+> This revolutionary system transforms training and dramatically improves learning.
+
+One acceptable opening
+
+> Completion alone does not show when a participant consulted instructions. This study examines instruction use alongside the recorded task state.
+
+Preserve
+
+This is a design rationale and study question, not an observed performance improvement or a literature novelty claim. Do not change consultation into need. Do not infer a causal effect or a population-wide preference. An ordinary concrete opening is sufficient.
+
+## O02
+
+Synthetic source note
+
+Mean completion time includes completed trials without logging interruptions. Abandoned trials remain in the completion-rate denominator. These are two different analysis sets.
+
+Draft
+
+> It is important to note that the calculation of mean completion time includes only completed trials that had no logging interruptions. It should also be noted that abandoned trials remain in the completion-rate denominator.
+
+One acceptable concise revision
+
+> Mean completion time includes completed trials without logging interruptions. Abandoned trials remain in the completion-rate denominator.
+
+Preserve
+
+Keep both inclusion rules and the two denominators. The shorter sentence “All trials were analyzed” is not equivalent. A word-count reduction cannot excuse this change.
+
+## O03
+
+Synthetic source note and adequate draft
+
+> The study examines how participants consult instructions during assembly.
+
+One acceptable response
+
+> The study examines how participants consult instructions during assembly.
+
+Preserve
+
+Keep this unchanged when it fits the paragraph. Do not add a dramatic first line or an untested learning benefit. These examples are not recorded model responses or mandatory wording for other papers.

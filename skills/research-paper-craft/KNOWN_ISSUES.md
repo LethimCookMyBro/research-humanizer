@@ -34,3 +34,7 @@ The seven misses in the retained 28-case v2.3.1 probe are now regression-tested.
 ## Research reasoning limits in 2.3.3
 
 The six-dimensional procedure is a project review contract, not a validated universal quality instrument. Optional record checks inspect declarations and locators only. They do not open referenced evidence or establish novelty, causal validity, suitability, gap closure or genuine approval. Agent compliance, cross-domain performance and live ARS integration have not been evaluated. A language-only edit does not trigger a full research audit. No automatic memory learning, commit, publication or expert-rule promotion is implemented.
+
+## Local 2.3.4 safeguards
+
+The new safeguards and 72-item coverage map are source-grounded operating instructions. They are not automatic source, event, figure, privacy or delivery verification. Their private originating records were not inspected. The new synthetic cases have not been executed as model trials. Runtime scripts remain unchanged.

@@ -4,6 +4,20 @@ Read only for the current task phase. The core rules in SKILL.md remain active.
 
 For a scientific audit or substantive research decision, load [research reasoning](research-reasoning.en.md). Reuse the records below. Language-only edits do not require the full review.
 
+### Opening and length check
+
+Use this check when drafting a title, abstract or Introduction, or when shortening a manuscript. It operationalizes R06, R08 and R10 rather than starting another scientific audit. For a local edit, check only the changed passage and affected claims. Keep an adequate opening unchanged.
+
+Build interest from a traceable premise in the actual problem, a documented constraint, a defensible comparison or a precise unresolved question. In the opening passage, check that the intended reader can identify what is being studied and why the question matters. Keep that reason within the available evidence. When the reason is only a plausible implication, label it accordingly. Do not manufacture urgency, prevalence, anecdotes or an unmeasured benefit. Ask for missing study facts before adding them. These are reading questions, not a fixed paragraph template or an instruction to make every first sentence surprising.
+
+Check the opening promise against the RQ, evidence-bearing sections and conclusion. Broad context is allowed, but identify the population and setting actually examined and the part of the problem this study can address. Do not promise a practical benefit that the study measures only as preference, feasibility or a proposed use. Narrow an overbroad promise rather than selecting favorable results to complete a story. Scientific changes require researcher approval under R48.
+
+For substantive sections, distinguish a research argument from a feature inventory or development diary. Retain implementation details that justify the method, define a measurement or enable reproduction. State the supported finding or argument and its scope rather than repeating what was built. Use appropriate evidence for qualitative and theoretical work too. A protocol or unfinished study remains planned work, not a completed evaluation.
+
+Derive a provisional length budget from the actual venue and article type. There is no universal word count or fixed shortening percentage. In a compression pass, remove duplicated claims, irrelevant background and process narration first. Combine prose that merely reads out tables. Preserve denominators, exclusions, metric definitions, uncertainty, counterevidence, proof assumptions, interpretive procedure and citation attachment when they affect the claim or reproducibility. Move secondary details only to an allowed and actually supplied supplement with a precise cross-reference. Do not hide a decisive limitation there or compress clear sentences into acronym-heavy fragments. If necessary content exceeds the limit, report the tradeoff and seek a scope decision, not smaller type.
+
+Use the existing paper map and QA report to record the premise source, the evidence addressing the opening promise and any information lost or relocated during shortening. Mark what is unverified and do not conceal missing research behind polished prose. A source-level reader review is required. There is no engagement score, authorship score or automatic scientific approval.
+
 ## R06 Build an argument before writing sections
 
 State the research question and the narrowest defensible answer in the working plan. Map each proposed contribution to the evidence needed to support it. Separate the motivation, method, evaluation, interpretation, and limits.

@@ -4,7 +4,7 @@
 
 **Clear research writing. Traceable claims. Real evidence.**
 
-[![Version](https://img.shields.io/badge/version-2.3.3-2563eb?style=flat-square)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-2.3.4-2563eb?style=flat-square)](CHANGELOG.md)
 [![License](https://img.shields.io/badge/license-MIT-0f766e?style=flat-square)](LICENSE)
 [![Languages](https://img.shields.io/badge/guides-English%20%2B%20Thai-475569?style=flat-square)](skills/research-paper-craft/SKILL.md)
 [![Status](https://img.shields.io/badge/status-preview-b45309?style=flat-square)](docs/KNOWN_ISSUES.md)
@@ -14,11 +14,13 @@
 [Install](#install) · [Use](#use) · [Scope](#scope) · [Validation](#validation)
 
 
-**[Project website](https://research-humanizer.vercel.app/)** · [Release v2.3.2](https://github.com/LethimCookMyBro/research-humanizer/releases/tag/v2.3.2)
+**[Project website](https://research-humanizer.vercel.app/)** · [Release v2.3.4](https://github.com/LethimCookMyBro/research-humanizer/releases/tag/v2.3.4)
 
 </div>
 
-**2.3.3 Preview.** It adds scoped research-gap, originality, impact and RQ/evidence review to the existing skill. Language-only humanizing stays lightweight. [Upgrade notes](docs/releases/v2.3.3.md) · [Architecture audit](docs/plans/v2.3.3-architecture-audit.md). Refresh the marketplace and update the plugin to load this version. [Release and downloads](https://github.com/LethimCookMyBro/research-humanizer/releases/tag/v2.3.3).
+**2.3.4 Preview.** Adds evidence-grounded openings, information-preserving concision, scoped feedback and revision checks, study-version and measurement safeguards, cross-artifact consistency, and verified delivery guidance to the existing skill. All 72 supplied lessons map to scoped instructions. The five runtime auditors remain unchanged. [Upgrade report](docs/UPGRADE-v2.3.4.md) · [Release notes](docs/releases/v2.3.4.md).
+
+**2.3.3.** It adds scoped research-gap, originality, impact and RQ/evidence review to the existing skill. Language-only humanizing stays lightweight. [Upgrade notes](docs/releases/v2.3.3.md) · [Architecture audit](docs/plans/v2.3.3-architecture-audit.md). [Release and downloads](https://github.com/LethimCookMyBro/research-humanizer/releases/tag/v2.3.3).
 
 **2.3.2** closes the seven retained punctuation-probe misses and adds contextual quotation and Unicode checks. It preserves scientific notation and never rewrites inputs automatically. [Patch notes](docs/releases/v2.3.2.md) · [Executed checks](docs/VERIFICATION.md).
 

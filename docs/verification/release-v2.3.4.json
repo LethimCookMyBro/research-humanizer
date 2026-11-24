@@ -1,0 +1,64 @@
+{
+  "version": "2.3.4",
+  "status": "local review candidate",
+  "prepared_on": "2026-11-23",
+  "python": "3.13.5",
+  "baseline": {
+    "published_commit": "664cf952cfa6854ccf4fcc67145e4b9492226207",
+    "verified_functional_trees": {
+      "skills": "baf80e6953879c5898a9ef8ffe3b9deee7fd3398",
+      "commands": "c491a77a0c6f21d3ee2cc4846bc4744502cb20f2",
+      "tests": "4b7569480cf86b8fccb06c08e7578cf1d62a6219",
+      "evals": "d521aecd60eb8d6b6e0657d444932569f3e4143c",
+      ".github": "5ba2aa9d407415607304c104e2a4eed2014d7bf1"
+    },
+    "root_docs": "Supplied candidate root documentation, not claimed byte-identical to published root.",
+    "publication": "No push or release authorized in this update."
+  },
+  "new_contract_baseline_failures": [
+    {
+      "suite": "safeguards",
+      "exit_code": 1,
+      "summary": "21 tests in 0.005s"
+    },
+    {
+      "suite": "opening",
+      "exit_code": 1,
+      "summary": "8 tests in 0.003s"
+    }
+  ],
+  "suites": [
+    {
+      "suite": "repository",
+      "tests": 111,
+      "exit_code": 0,
+      "status": "Passed"
+    },
+    {
+      "suite": "skill",
+      "tests": 355,
+      "exit_code": 0,
+      "status": "Passed"
+    },
+    {
+      "suite": "historical",
+      "tests": 5,
+      "exit_code": 0,
+      "status": "Passed"
+    }
+  ],
+  "passed": 471,
+  "failed": 0,
+  "source_items_mapped": 72,
+  "old_rule_bodies_preserved": 102,
+  "runtime_core_words": 999,
+  "unchanged_runtime_auditors": 5,
+  "private_source_links_checked": 18,
+  "private_source_link_leaks": 0,
+  "independent_model_evaluation": "Not Run",
+  "live_ars": "Not Run",
+  "native_word": "Not Run",
+  "git_push": "Not Run",
+  "release": "Not Run",
+  "website_deployment": "Not Run"
+}

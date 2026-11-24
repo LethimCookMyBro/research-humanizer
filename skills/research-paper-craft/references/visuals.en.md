@@ -1,5 +1,7 @@
 # Scientific visuals and tables
 
+For feedback, observed data or artifact delivery, load only the relevant section of [research safeguards](research-safeguards.en.md). Reuse existing records and preserve the current workflow owner.
+
 Read only for the current task phase. The core rules in SKILL.md remain active.
 
 ## R18 Plan visuals by scientific function

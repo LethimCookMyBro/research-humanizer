@@ -15,3 +15,7 @@ Each response record must contain case_id, model, host, run_id, executed_at, pro
 Have a reviewer inspect claim preservation against source notes before rating clarity, specificity, author voice, editing necessity, visual honesty and researcher effort. Randomize presentation and hide condition labels from the reviewer where feasible. Keep meaning errors separate from readability preferences. A model judging itself is not independent evaluation. Record disagreements and critical errors, not a made-up human-likeness percentage. Test acceptable unchanged outputs and repeated editing too.
 
 A release may pass software tests while model evaluation remains not executed. Do not replace missing observations with hand-written ideal answers. acceptable_example in the case bank is an illustrative answer, not an exact-match target and not included in exported prompts. Human authorship, publication acceptance and stars are never evaluation outcomes.
+
+## v2.3.4 safeguard scenarios
+
+`research-safeguards-cases.jsonl` contains authored synthetic pressure cases. They have not been run against an independent model. Static tests check their coverage and metadata, not compliance or scientific truth. Use the actual authorized host and retain responses, model/version, input hashes and reviewer judgments for a later behavioral evaluation. Do not count these cases as measured improvements.

@@ -1,5 +1,7 @@
 # Full-paper drafting
 
+For feedback, observed data or artifact delivery, load only the relevant section of [research safeguards](research-safeguards.en.md). Reuse existing records and preserve the current workflow owner.
+
 Use for an explicit whole-manuscript request, with ARS or standalone. Use the existing evidence, writing, methods, visuals and submission modules at the relevant phase. This contract applies to different researchers and disciplines, not one author's project.
 
 For a scientific audit or substantive research decision, load [research reasoning](research-reasoning.en.md). Reuse the records below. Language-only edits do not require the full review.

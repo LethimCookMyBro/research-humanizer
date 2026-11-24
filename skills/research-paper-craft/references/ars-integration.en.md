@@ -1,5 +1,7 @@
 # ARS and research-specific humanizing
 
+For feedback, observed data or artifact delivery, load only the relevant section of [research safeguards](research-safeguards.en.md). Reuse existing records and preserve the current workflow owner.
+
 This is a prompt-level interoperability contract, not a runtime hook, automatic plugin merger, or measured end-to-end integration. Read the installed dependencies before using them. Their source versions and inspected paths are pinned in [integrations.json](../provenance/integrations.json). ARS is a separate dependency and is not copied into this package.
 
 For a scientific audit or substantive research decision, load [research reasoning](research-reasoning.en.md). Reuse the records below. Language-only edits do not require the full review.

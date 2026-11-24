@@ -4,6 +4,8 @@ Read only for the current task phase. The core rules in SKILL.md remain active.
 
 Load [punctuation review](punctuation.en.md) before drafting or revising prose and captions.
 
+Only for opening or length work, use the [opening and length check](paper.en.md#opening-and-length-check). Keep local humanizing lightweight.
+
 ## R07 Apply the house style to manuscript prose
 
 Use moderately formal language that a researcher could read aloud in a lecture. Prefer familiar words and direct verbs. Introduce a technical term only when it improves precision. Keep indispensable terminology stable instead of cycling through synonyms.

@@ -128,3 +128,13 @@ All three commands should succeed for this revision. A new GitHub workflow runs 
 - [Original targeted audit](audit-v2.0/README.md)
 
 Old logs describe old revisions. They are preserved rather than rewritten as if their failures had never occurred.
+
+## Local v2.3.4 candidate verification, 23 November 2026
+
+The candidate-stage record reports 111 repository checks, 355 skill tests and 5 historical regressions, totaling 471. The 29 added static contracts first exposed missing guidance on the prior baseline. All 102 old bilingual rule bodies and five runtime auditors were preserved. The 72-item instructional map is not independent verification of the underlying private source files or a model evaluation.
+
+## v2.3.4 publication preparation, 24 November 2026
+
+The maintainer authorized publishing the reviewed candidate. Its ZIP SHA-256 is `f887102b6602cfd00e6ef473a05966477f4f2d59457e34f264b8f3ce7362e5b7`. The published base is commit `664cf952cfa6854ccf4fcc67145e4b9492226207`. The candidate and the locally prepared payload passed all 471 tests again. Publication-only edits reconcile current version labels and release wording while retaining existing published history. The existing workflow independently tests the actual remote commit before issuing its preview release.
+
+The historical [candidate verification](verification/release-v2.3.4.json) records the original Not Run items. Live ARS integration, independent model and reader evaluation, and native Word rendering remain Not Run. The release workflow result establishes publication status. These tests do not establish scientific correctness or publication readiness.

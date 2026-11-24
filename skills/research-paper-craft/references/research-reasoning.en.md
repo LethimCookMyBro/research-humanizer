@@ -1,5 +1,7 @@
 # Research reasoning and gap validation
 
+For feedback, observed data or artifact delivery, load only the relevant section of [research safeguards](research-safeguards.en.md). Reuse existing records and preserve the current workflow owner.
+
 Load for a Scientific Audit, Research Gap Review, full-paper planning/review or a substantive revision. Language-only humanizing does not trigger a full research review. Keep the existing evidence, literature, evaluation and writing rules. This module adds questions and decisions, not a second workflow or a scientific quality score.
 
 ## R48 Check the scientific argument within its scope
